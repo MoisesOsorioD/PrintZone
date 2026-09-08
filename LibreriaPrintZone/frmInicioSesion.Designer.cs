@@ -1,6 +1,6 @@
 ﻿namespace LibreriaPrintZone
 {
-    partial class InicioSesion
+    partial class frmInicioSesion
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
             label1 = new Label();
             label2 = new Label();
             pictureBox1 = new PictureBox();
@@ -39,6 +39,7 @@
             textBox2 = new TextBox();
             button1 = new Button();
             pictureBox3 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -87,11 +88,11 @@
             // textBox1
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(522, 217);
             textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Ingresa tu usuario";
-            textBox1.Size = new Size(359, 30);
+            textBox1.PlaceholderText = " Ingresa tu usuario";
+            textBox1.Size = new Size(359, 34);
             textBox1.TabIndex = 4;
             textBox1.TabStop = false;
             // 
@@ -118,12 +119,12 @@
             // textBox2
             // 
             textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox2.Location = new Point(522, 321);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.PlaceholderText = "Ingresa tu contraseña";
-            textBox2.Size = new Size(359, 30);
+            textBox2.PlaceholderText = " Ingresa tu contraseña";
+            textBox2.Size = new Size(359, 34);
             textBox2.TabIndex = 7;
             textBox2.TabStop = false;
             // 
@@ -152,12 +153,23 @@
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
             // 
+            // button2
+            // 
+            button2.Location = new Point(536, 506);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 10;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // InicioSesion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(933, 582);
+            Controls.Add(button2);
             Controls.Add(pictureBox3);
             Controls.Add(button1);
             Controls.Add(textBox2);
@@ -190,5 +202,6 @@
         private TextBox textBox2;
         private Button button1;
         private PictureBox pictureBox3;
+        private Button button2;
     }
 }

@@ -8,13 +8,11 @@ using System.Windows.Forms;
 
 namespace LibreriaPrintZone
 {
-    public partial class PanelPrincipal : Form
+    public partial class frmCategorias : Form
     {
-        public PanelPrincipal()
+        public frmCategorias()
         {
             InitializeComponent();
         }
-
-        
     }
 }

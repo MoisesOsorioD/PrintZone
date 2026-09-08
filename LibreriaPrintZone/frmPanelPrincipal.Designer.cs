@@ -1,6 +1,6 @@
 ﻿namespace LibreriaPrintZone
 {
-    partial class PanelPrincipal
+    partial class frmPanelPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PanelPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPanelPrincipal));
             panel1 = new Panel();
             button8 = new Button();
             button7 = new Button();
