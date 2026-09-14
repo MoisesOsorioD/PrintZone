@@ -7,12 +7,11 @@ namespace LibreriaPrintZone
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            frmProductos frmProductos = new frmProductos();
-            frmProductos.Show();
+            frmLayouts frmLayouts = new frmLayouts();
+            frmLayouts.Show();
             this.Hide();
-            
         }
     }
 }

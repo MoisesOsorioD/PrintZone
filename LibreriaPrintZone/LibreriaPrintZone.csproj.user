@@ -7,6 +7,9 @@
     <Compile Update="Views\frmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\frmLayouts.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Views\frmPanelPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

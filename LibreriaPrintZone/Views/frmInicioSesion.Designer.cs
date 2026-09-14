@@ -33,13 +33,12 @@
             label2 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             pictureBox2 = new PictureBox();
             label4 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            txtContrasena = new TextBox();
+            btnIniciarSesion = new Button();
             pictureBox3 = new PictureBox();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -85,16 +84,16 @@
             label3.TabIndex = 3;
             label3.Text = "Usuario";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(522, 217);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Ingresa tu usuario";
-            textBox1.Size = new Size(359, 34);
-            textBox1.TabIndex = 4;
-            textBox1.TabStop = false;
+            txtUsuario.BorderStyle = BorderStyle.FixedSingle;
+            txtUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtUsuario.Location = new Point(522, 217);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = " Ingresa tu usuario";
+            txtUsuario.Size = new Size(359, 34);
+            txtUsuario.TabIndex = 4;
+            txtUsuario.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -116,31 +115,32 @@
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
-            // textBox2
+            // txtContrasena
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(522, 321);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.PlaceholderText = " Ingresa tu contraseña";
-            textBox2.Size = new Size(359, 34);
-            textBox2.TabIndex = 7;
-            textBox2.TabStop = false;
+            txtContrasena.BorderStyle = BorderStyle.FixedSingle;
+            txtContrasena.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContrasena.Location = new Point(522, 321);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
+            txtContrasena.PlaceholderText = " Ingresa tu contraseña";
+            txtContrasena.Size = new Size(359, 34);
+            txtContrasena.TabIndex = 7;
+            txtContrasena.TabStop = false;
             // 
-            // button1
+            // btnIniciarSesion
             // 
-            button1.BackColor = Color.FromArgb(26, 99, 212);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatStyle = FlatStyle.Popup;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(463, 401);
-            button1.Name = "button1";
-            button1.Size = new Size(418, 46);
-            button1.TabIndex = 8;
-            button1.Text = "Iniciar Sesión";
-            button1.UseVisualStyleBackColor = false;
+            btnIniciarSesion.BackColor = Color.FromArgb(26, 99, 212);
+            btnIniciarSesion.Cursor = Cursors.Hand;
+            btnIniciarSesion.FlatStyle = FlatStyle.Popup;
+            btnIniciarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnIniciarSesion.ForeColor = Color.White;
+            btnIniciarSesion.Location = new Point(463, 401);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(418, 46);
+            btnIniciarSesion.TabIndex = 8;
+            btnIniciarSesion.Text = "Iniciar Sesión";
+            btnIniciarSesion.UseVisualStyleBackColor = false;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
             // pictureBox3
             // 
@@ -153,29 +153,18 @@
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
             // 
-            // button2
-            // 
-            button2.Location = new Point(536, 506);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 10;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // frmInicioSesion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(933, 582);
-            Controls.Add(button2);
             Controls.Add(pictureBox3);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
+            Controls.Add(btnIniciarSesion);
+            Controls.Add(txtContrasena);
             Controls.Add(label4);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             Controls.Add(label3);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
@@ -196,12 +185,11 @@
         private Label label2;
         private PictureBox pictureBox1;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private PictureBox pictureBox2;
         private Label label4;
-        private TextBox textBox2;
-        private Button button1;
+        private TextBox txtContrasena;
+        private Button btnIniciarSesion;
         private PictureBox pictureBox3;
-        private Button button2;
     }
 }

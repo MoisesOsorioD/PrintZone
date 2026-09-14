@@ -30,24 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            panel1 = new Panel();
-            button8 = new Button();
-            button7 = new Button();
-            button6 = new Button();
-            button2 = new Button();
-            button5 = new Button();
-            button4 = new Button();
-            button3 = new Button();
-            button1 = new Button();
-            pictureBox9 = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
@@ -105,16 +87,6 @@
             label13 = new Label();
             textBox2 = new TextBox();
             groupBox1 = new GroupBox();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
@@ -135,249 +107,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             SuspendLayout();
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(3, 37, 91);
-            panel1.Controls.Add(button8);
-            panel1.Controls.Add(button7);
-            panel1.Controls.Add(button6);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(pictureBox8);
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(pictureBox6);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(pictureBox4);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(263, 903);
-            panel1.TabIndex = 1;
-            // 
-            // button8
-            // 
-            button8.Cursor = Cursors.Hand;
-            button8.FlatAppearance.BorderSize = 0;
-            button8.FlatStyle = FlatStyle.Flat;
-            button8.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.ForeColor = Color.White;
-            button8.Location = new Point(82, 631);
-            button8.Name = "button8";
-            button8.Size = new Size(153, 43);
-            button8.TabIndex = 23;
-            button8.Text = "Configuración";
-            button8.TextAlign = ContentAlignment.MiddleLeft;
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            button7.Cursor = Cursors.Hand;
-            button7.FlatAppearance.BorderSize = 0;
-            button7.FlatStyle = FlatStyle.Flat;
-            button7.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.ForeColor = Color.White;
-            button7.Location = new Point(82, 570);
-            button7.Name = "button7";
-            button7.Size = new Size(153, 43);
-            button7.TabIndex = 22;
-            button7.Text = "Usuarios";
-            button7.TextAlign = ContentAlignment.MiddleLeft;
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            button6.Cursor = Cursors.Hand;
-            button6.FlatAppearance.BorderSize = 0;
-            button6.FlatStyle = FlatStyle.Flat;
-            button6.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.ForeColor = Color.White;
-            button6.Location = new Point(82, 507);
-            button6.Name = "button6";
-            button6.Size = new Size(153, 43);
-            button6.TabIndex = 21;
-            button6.Text = "Salidas";
-            button6.TextAlign = ContentAlignment.MiddleLeft;
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(82, 255);
-            button2.Name = "button2";
-            button2.Size = new Size(153, 43);
-            button2.TabIndex = 17;
-            button2.Text = "Productos";
-            button2.TextAlign = ContentAlignment.MiddleLeft;
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            button5.Cursor = Cursors.Hand;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(82, 444);
-            button5.Name = "button5";
-            button5.Size = new Size(153, 43);
-            button5.TabIndex = 20;
-            button5.Text = "Entradas";
-            button5.TextAlign = ContentAlignment.MiddleLeft;
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(82, 381);
-            button4.Name = "button4";
-            button4.Size = new Size(153, 43);
-            button4.TabIndex = 19;
-            button4.Text = "Proveedores";
-            button4.TextAlign = ContentAlignment.MiddleLeft;
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(82, 318);
-            button3.Name = "button3";
-            button3.Size = new Size(153, 43);
-            button3.TabIndex = 18;
-            button3.Text = "Categorías";
-            button3.TextAlign = ContentAlignment.MiddleLeft;
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(3, 37, 91);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(82, 192);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 43);
-            button1.TabIndex = 16;
-            button1.Text = "Inicio";
-            button1.TextAlign = ContentAlignment.MiddleLeft;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(3, 3);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(257, 156);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 15;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(33, 631);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(41, 48);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 13;
-            pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(33, 570);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(43, 48);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 11;
-            pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(33, 507);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(43, 48);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 9;
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(33, 444);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(43, 48);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 7;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(33, 381);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(43, 48);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(33, 318);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(43, 48);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 255);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 48);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 192);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(386, 65);
+            label2.Location = new Point(227, 65);
             label2.Name = "label2";
             label2.Size = new Size(415, 23);
             label2.TabIndex = 7;
@@ -387,7 +121,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(355, 9);
+            label1.Location = new Point(196, 9);
             label1.Name = "label1";
             label1.Size = new Size(183, 46);
             label1.TabIndex = 6;
@@ -396,7 +130,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(266, 0);
+            pictureBox10.Location = new Point(107, 0);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -412,7 +146,7 @@
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(textBox1);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(279, 481);
+            panel2.Location = new Point(120, 481);
             panel2.Name = "panel2";
             panel2.Size = new Size(929, 192);
             panel2.TabIndex = 9;
@@ -544,7 +278,7 @@
             dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
-            dataGridView1.Location = new Point(279, 689);
+            dataGridView1.Location = new Point(120, 689);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(646, 230);
@@ -646,7 +380,7 @@
             panel5.Controls.Add(pictureBox17);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(textBox2);
-            panel5.Location = new Point(1226, 318);
+            panel5.Location = new Point(1067, 318);
             panel5.Name = "panel5";
             panel5.Size = new Size(524, 551);
             panel5.TabIndex = 12;
@@ -959,7 +693,7 @@
             // 
             groupBox1.BackColor = Color.FromArgb(220, 233, 247);
             groupBox1.FlatStyle = FlatStyle.System;
-            groupBox1.Location = new Point(311, 150);
+            groupBox1.Location = new Point(152, 150);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(798, 125);
             groupBox1.TabIndex = 13;
@@ -971,7 +705,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1765, 903);
+            ClientSize = new Size(1632, 915);
             Controls.Add(groupBox1);
             Controls.Add(panel5);
             Controls.Add(dataGridView1);
@@ -979,20 +713,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
-            Controls.Add(panel1);
             Name = "frmProductos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmProductos";
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -1020,25 +743,6 @@
         }
 
         #endregion
-
-        private Panel panel1;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button2;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button1;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
