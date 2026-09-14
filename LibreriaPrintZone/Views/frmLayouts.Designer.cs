@@ -49,9 +49,14 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             pictureBox16 = new PictureBox();
-            button12 = new Button();
+            btnRolUsuario = new Button();
             panelContenido = new Panel();
+            panelMenu = new Panel();
+            btnSalir = new Button();
+            btnCerrarSesion = new Button();
+            btnPerfil = new Button();
             timerSidebar = new System.Windows.Forms.Timer(components);
+            timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -63,6 +68,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            panelContenido.SuspendLayout();
+            panelMenu.SuspendLayout();
             SuspendLayout();
             // 
             // panelSidebar
@@ -307,41 +314,102 @@
             // pictureBox16
             // 
             pictureBox16.Image = Properties.Resources.Usuario;
-            pictureBox16.Location = new Point(1308, 3);
+            pictureBox16.Location = new Point(1362, 3);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(77, 70);
             pictureBox16.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox16.TabIndex = 10;
             pictureBox16.TabStop = false;
             // 
-            // button12
+            // btnRolUsuario
             // 
-            button12.Cursor = Cursors.Hand;
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button12.Image = (Image)resources.GetObject("button12.Image");
-            button12.ImageAlign = ContentAlignment.MiddleRight;
-            button12.Location = new Point(1391, 21);
-            button12.Name = "button12";
-            button12.Size = new Size(160, 35);
-            button12.TabIndex = 10;
-            button12.Text = "Administrador";
-            button12.TextAlign = ContentAlignment.MiddleLeft;
-            button12.UseVisualStyleBackColor = true;
+            btnRolUsuario.Cursor = Cursors.Hand;
+            btnRolUsuario.FlatAppearance.BorderSize = 0;
+            btnRolUsuario.FlatStyle = FlatStyle.Flat;
+            btnRolUsuario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRolUsuario.ImageAlign = ContentAlignment.MiddleRight;
+            btnRolUsuario.Location = new Point(1445, 21);
+            btnRolUsuario.Name = "btnRolUsuario";
+            btnRolUsuario.Size = new Size(160, 35);
+            btnRolUsuario.TabIndex = 10;
+            btnRolUsuario.Text = "Administrador";
+            btnRolUsuario.TextAlign = ContentAlignment.MiddleLeft;
+            btnRolUsuario.UseVisualStyleBackColor = true;
+            btnRolUsuario.Click += btnRolUsuario_Click;
             // 
             // panelContenido
             // 
+            panelContenido.Controls.Add(panelMenu);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(1632, 915);
             panelContenido.TabIndex = 11;
             // 
+            // panelMenu
+            // 
+            panelMenu.BackColor = Color.FromArgb(242, 249, 254);
+            panelMenu.BorderStyle = BorderStyle.FixedSingle;
+            panelMenu.Controls.Add(btnSalir);
+            panelMenu.Controls.Add(btnCerrarSesion);
+            panelMenu.Controls.Add(btnPerfil);
+            panelMenu.Location = new Point(1425, 79);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(195, 308);
+            panelMenu.TabIndex = 0;
+            // 
+            // btnSalir
+            // 
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnSalir.Location = new Point(10, 192);
+            btnSalir.Name = "btnSalir";
+            btnSalir.Size = new Size(173, 29);
+            btnSalir.TabIndex = 2;
+            btnSalir.Text = "Salir";
+            btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
+            // 
+            // btnCerrarSesion
+            // 
+            btnCerrarSesion.Cursor = Cursors.Hand;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.FlatStyle = FlatStyle.Flat;
+            btnCerrarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
+            btnCerrarSesion.ForeColor = SystemColors.ControlText;
+            btnCerrarSesion.Location = new Point(10, 110);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(173, 29);
+            btnCerrarSesion.TabIndex = 1;
+            btnCerrarSesion.Text = "Cerrar Sesion";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
+            // 
+            // btnPerfil
+            // 
+            btnPerfil.Cursor = Cursors.Hand;
+            btnPerfil.FlatAppearance.BorderSize = 0;
+            btnPerfil.FlatStyle = FlatStyle.Flat;
+            btnPerfil.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPerfil.Location = new Point(10, 44);
+            btnPerfil.Name = "btnPerfil";
+            btnPerfil.Size = new Size(173, 29);
+            btnPerfil.TabIndex = 0;
+            btnPerfil.Text = "Perfil";
+            btnPerfil.UseVisualStyleBackColor = true;
+            btnPerfil.Click += btnPerfil_Click;
+            // 
             // timerSidebar
             // 
             timerSidebar.Interval = 10;
             timerSidebar.Tick += timerSidebar_Tick;
+            // 
+            // timerMenu
+            // 
+            timerMenu.Interval = 10;
+            timerMenu.Tick += timerMenu_Tick;
             // 
             // frmLayouts
             // 
@@ -349,7 +417,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(button12);
+            Controls.Add(btnRolUsuario);
             Controls.Add(pictureBox16);
             Controls.Add(panelSidebar);
             Controls.Add(panelContenido);
@@ -367,6 +435,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            panelContenido.ResumeLayout(false);
+            panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -391,8 +461,13 @@
         private Button btnConfiguracion;
         private Button btnUsuarios;
         private PictureBox pictureBox16;
-        private Button button12;
+        private Button btnRolUsuario;
         private Panel panelContenido;
         private System.Windows.Forms.Timer timerSidebar;
+        private System.Windows.Forms.Timer timerMenu;
+        private Panel panelMenu;
+        private Button btnSalir;
+        private Button btnCerrarSesion;
+        private Button btnPerfil;
     }
 }

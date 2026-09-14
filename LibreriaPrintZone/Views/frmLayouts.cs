@@ -26,12 +26,28 @@ namespace LibreriaPrintZone
 
 
         // ==========================================
+        // VARIABLES DEL MENÚ DESPLEGABLE
+        // ==========================================
+
+        private int alturaMenu = 0;
+
+        // La altura original de panelMenu es 308
+        private int alturaMaxima = 308;
+
+        private bool abrirMenu = false;
+
+
+        // ==========================================
         // CONSTRUCTOR
         // ==========================================
 
         public frmLayouts()
         {
             InitializeComponent();
+
+            // ======================================
+            // CONFIGURAR SIDEBAR
+            // ======================================
 
             // El sidebar inicia contraído
             panelSidebar.Width = anchoContraido;
@@ -42,6 +58,22 @@ namespace LibreriaPrintZone
 
             // Ajustar el logo al iniciar
             AjustarLogo();
+
+
+            // ==========================================
+            // CONFIGURAR MENÚ DESPLEGABLE
+            // ==========================================
+
+            // El menú inicia cerrado
+            alturaMenu = 0;
+
+            panelMenu.Height = 0;
+            panelMenu.Visible = false;
+
+
+            // ======================================
+            // FORMULARIO INICIAL
+            // ======================================
 
             AbrirFormulario(new frmPanelPrincipal());
         }
@@ -238,9 +270,150 @@ namespace LibreriaPrintZone
             AbrirFormulario(new frmProductos());
         }
 
+
+        // ==========================================
+        // BOTÓN INICIO
+        // ==========================================
+
         private void btnInicio_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmPanelPrincipal());
+        }
+
+
+        // ==========================================
+        // TIMER DEL MENÚ DESPLEGABLE
+        // ==========================================
+
+        private void timerMenu_Tick(object sender, EventArgs e)
+        {
+            if (abrirMenu)
+            {
+                // Aumentar la altura poco a poco
+                alturaMenu += 25;
+
+                if (alturaMenu >= alturaMaxima)
+                {
+                    alturaMenu = alturaMaxima;
+                    timerMenu.Stop();
+                }
+            }
+            else
+            {
+                // Disminuir la altura poco a poco
+                alturaMenu -= 25;
+
+                if (alturaMenu <= 0)
+                {
+                    alturaMenu = 0;
+
+                    panelMenu.Height = 0;
+                    panelMenu.Visible = false;
+
+                    timerMenu.Stop();
+                    return;
+                }
+            }
+
+            panelMenu.Height = alturaMenu;
+        }
+
+
+        // ==========================================
+        // BOTÓN ROL USUARIO
+        // ==========================================
+
+        private void btnRolUsuario_Click(object sender, EventArgs e)
+        {
+            if (panelMenu.Visible == false)
+            {
+                // Preparar el menú para abrirse
+                abrirMenu = true;
+
+                alturaMenu = 0;
+                panelMenu.Height = 0;
+
+                panelMenu.Visible = true;
+                panelMenu.BringToFront();
+
+                timerMenu.Start();
+            }
+            else
+            {
+                // Preparar el menú para cerrarse
+                abrirMenu = false;
+
+                timerMenu.Start();
+            }
+        }
+
+
+        // ==========================================
+        // BOTÓN PERFIL
+        // ==========================================
+
+        private void btnPerfil_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Aquí se abrirá el perfil del usuario.",
+                "Perfil",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+            );
+        }
+
+
+        // ==========================================
+        // BOTÓN CERRAR SESIÓN
+        // ==========================================
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "¿Está seguro que desea cerrar sesión?",
+                "Cerrar sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Crear el formulario de inicio de sesión
+                frmInicioSesion login = new frmInicioSesion();
+
+                // Mostrar el login
+                login.Show();
+
+                // Cuando se cierre el login,
+                // cerramos también este formulario
+                login.FormClosed += (s, args) =>
+                {
+                    this.Close();
+                };
+
+                // Ocultar el formulario principal
+                this.Hide();
+            }
+        }
+
+
+        // ==========================================
+        // BOTÓN SALIR
+        // ==========================================
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show(
+                "¿Está seguro que desea salir del programa?",
+                "Salir",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (resultado == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

@@ -93,7 +93,7 @@
             panel7.Controls.Add(label12);
             panel7.Controls.Add(pictureBox14);
             panel7.Controls.Add(label13);
-            panel7.Location = new Point(1061, 154);
+            panel7.Location = new Point(1196, 143);
             panel7.Name = "panel7";
             panel7.Size = new Size(384, 116);
             panel7.TabIndex = 17;
@@ -370,7 +370,7 @@
             panel3.Controls.Add(label7);
             panel3.Controls.Add(pictureBox11);
             panel3.Controls.Add(label6);
-            panel3.Location = new Point(621, 154);
+            panel3.Location = new Point(756, 143);
             panel3.Name = "panel3";
             panel3.Size = new Size(384, 116);
             panel3.TabIndex = 14;
