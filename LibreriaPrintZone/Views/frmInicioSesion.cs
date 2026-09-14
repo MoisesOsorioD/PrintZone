@@ -9,8 +9,8 @@ namespace LibreriaPrintZone
 
         private void button2_Click(object sender, EventArgs e)
         {
-            frmCategorias frmCategorias = new frmCategorias();
-            frmCategorias.Show();
+            frmProductos frmProductos = new frmProductos();
+            frmProductos.Show();
             this.Hide();
             
         }

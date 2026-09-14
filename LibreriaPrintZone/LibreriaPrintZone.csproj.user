@@ -1,13 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="frmCategorias.cs">
+    <Compile Update="Views\frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmInicioSesion.cs">
+    <Compile Update="Views\frmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmPanelPrincipal.cs">
+    <Compile Update="Views\frmPanelPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

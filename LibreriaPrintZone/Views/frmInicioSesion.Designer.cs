@@ -163,7 +163,7 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // InicioSesion
+            // frmInicioSesion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -180,7 +180,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "InicioSesion";
+            Name = "frmInicioSesion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de Sesión";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -87,8 +87,6 @@
             label13 = new Label();
             textBox2 = new TextBox();
             label12 = new Label();
-            button12 = new Button();
-            pictureBox16 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -114,7 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -785,40 +782,12 @@
             label12.TabIndex = 8;
             label12.Text = "Detalles de la categoría";
             // 
-            // button12
-            // 
-            button12.Cursor = Cursors.Hand;
-            button12.FlatAppearance.BorderSize = 0;
-            button12.FlatStyle = FlatStyle.Flat;
-            button12.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button12.Image = (Image)resources.GetObject("button12.Image");
-            button12.ImageAlign = ContentAlignment.MiddleRight;
-            button12.Location = new Point(1335, 21);
-            button12.Name = "button12";
-            button12.Size = new Size(160, 35);
-            button12.TabIndex = 11;
-            button12.Text = "Administrador";
-            button12.TextAlign = ContentAlignment.MiddleLeft;
-            button12.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox16
-            // 
-            pictureBox16.Image = Properties.Resources.Usuario;
-            pictureBox16.Location = new Point(1252, 3);
-            pictureBox16.Name = "pictureBox16";
-            pictureBox16.Size = new Size(77, 70);
-            pictureBox16.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox16.TabIndex = 12;
-            pictureBox16.TabStop = false;
-            // 
             // frmCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1519, 772);
-            Controls.Add(button12);
-            Controls.Add(pictureBox16);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -861,7 +830,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -921,8 +889,6 @@
         private Label label14;
         private TextBox textBox4;
         private TextBox textBox3;
-        private Button button12;
-        private PictureBox pictureBox16;
         private Button button9;
         private PictureBox pictureBox15;
         private PictureBox pictureBox17;
