@@ -445,5 +445,10 @@ namespace LibreriaPrintZone
                 Application.Exit();
             }
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmCategorias());
+        }
     }
 }

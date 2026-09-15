@@ -202,6 +202,7 @@
             btnCategorias.Text = "Categorías";
             btnCategorias.TextAlign = ContentAlignment.MiddleLeft;
             btnCategorias.UseVisualStyleBackColor = true;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnInicio
             // 

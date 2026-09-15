@@ -205,7 +205,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
+            panel5.BackColor = Color.FromArgb(242, 249, 254);
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel1);
             panel5.Controls.Add(comboBox1);
