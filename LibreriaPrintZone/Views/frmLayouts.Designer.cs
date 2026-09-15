@@ -224,7 +224,7 @@
             // pbLogo
             // 
             pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
-            pbLogo.Location = new Point(3, 3);
+            pbLogo.Location = new Point(3, 21);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(96, 168);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -314,7 +314,7 @@
             // pictureBox16
             // 
             pictureBox16.Image = Properties.Resources.Usuario;
-            pictureBox16.Location = new Point(1362, 3);
+            pictureBox16.Location = new Point(1348, 3);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(77, 70);
             pictureBox16.SizeMode = PictureBoxSizeMode.Zoom;
@@ -327,8 +327,9 @@
             btnRolUsuario.FlatAppearance.BorderSize = 0;
             btnRolUsuario.FlatStyle = FlatStyle.Flat;
             btnRolUsuario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRolUsuario.Image = (Image)resources.GetObject("btnRolUsuario.Image");
             btnRolUsuario.ImageAlign = ContentAlignment.MiddleRight;
-            btnRolUsuario.Location = new Point(1445, 21);
+            btnRolUsuario.Location = new Point(1431, 21);
             btnRolUsuario.Name = "btnRolUsuario";
             btnRolUsuario.Size = new Size(160, 35);
             btnRolUsuario.TabIndex = 10;
@@ -353,7 +354,7 @@
             panelMenu.Controls.Add(btnSalir);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnPerfil);
-            panelMenu.Location = new Point(1425, 79);
+            panelMenu.Location = new Point(1409, 79);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(195, 308);
             panelMenu.TabIndex = 0;
@@ -423,7 +424,7 @@
             Controls.Add(panelContenido);
             Name = "frmLayouts";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "PanelPrincipal";
+            Text = "Layouts";
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();

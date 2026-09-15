@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
@@ -273,8 +273,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
@@ -715,7 +715,7 @@
             Controls.Add(pictureBox10);
             Name = "frmProductos";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmProductos";
+            Text = "Librería PrintZone - Gestión de Productos";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

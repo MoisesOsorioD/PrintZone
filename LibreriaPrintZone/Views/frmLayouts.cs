@@ -223,8 +223,32 @@ namespace LibreriaPrintZone
 
         private void AjustarLogo()
         {
-            pbLogo.Left = 0;
-            pbLogo.Width = panelSidebar.Width;
+            // Tamaño normal del logo
+            int anchoLogo = 150;
+            int altoLogo = 150;
+
+            pbLogo.Width = anchoLogo;
+            pbLogo.Height = altoLogo;
+
+            // Cuando el Sidebar está completamente cerrado
+            if (panelSidebar.Width <= anchoContraido)
+            {
+                pbLogo.Visible = false;
+
+                // Lo dejamos fuera hacia la izquierda
+                pbLogo.Left = -anchoLogo;
+
+                return;
+            }
+
+            // Mostrar el logo
+            pbLogo.Visible = true;
+
+            // Calculamos la posición horizontal del logo
+            int posicionFinal = (panelSidebar.Width - anchoLogo) / 2;
+
+            // El logo se mueve siguiendo el crecimiento del Sidebar
+            pbLogo.Left = posicionFinal;
         }
 
 
@@ -242,6 +266,11 @@ namespace LibreriaPrintZone
             }
 
             formularioActivo = formulario;
+
+            // Cambiar el título de frmLayouts
+            // según el formulario que se está mostrando
+            this.Text = formulario.Text;
+
 
             // Configurar el formulario para que
             // funcione dentro del panel
