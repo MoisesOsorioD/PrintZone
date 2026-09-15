@@ -313,8 +313,8 @@
             // 
             // pictureBox16
             // 
-            pictureBox16.Image = Properties.Resources.Usuario;
-            pictureBox16.Location = new Point(1348, 3);
+            pictureBox16.Image = Properties.Resources.Contraseña;
+            pictureBox16.Location = new Point(1348, 1);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new Size(77, 70);
             pictureBox16.SizeMode = PictureBoxSizeMode.Zoom;
@@ -340,6 +340,7 @@
             // 
             // panelContenido
             // 
+            panelContenido.Controls.Add(pictureBox16);
             panelContenido.Controls.Add(panelMenu);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
@@ -349,14 +350,14 @@
             // 
             // panelMenu
             // 
-            panelMenu.BackColor = Color.FromArgb(242, 249, 254);
+            panelMenu.BackColor = Color.FromArgb(3, 37, 91);
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
             panelMenu.Controls.Add(btnSalir);
             panelMenu.Controls.Add(btnCerrarSesion);
             panelMenu.Controls.Add(btnPerfil);
-            panelMenu.Location = new Point(1409, 79);
+            panelMenu.Location = new Point(1421, 77);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(195, 308);
+            panelMenu.Size = new Size(182, 308);
             panelMenu.TabIndex = 0;
             // 
             // btnSalir
@@ -365,9 +366,10 @@
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            btnSalir.Location = new Point(10, 192);
+            btnSalir.ForeColor = Color.White;
+            btnSalir.Location = new Point(16, 184);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(173, 29);
+            btnSalir.Size = new Size(148, 29);
             btnSalir.TabIndex = 2;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
@@ -379,10 +381,10 @@
             btnCerrarSesion.FlatAppearance.BorderSize = 0;
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
-            btnCerrarSesion.ForeColor = SystemColors.ControlText;
-            btnCerrarSesion.Location = new Point(10, 110);
+            btnCerrarSesion.ForeColor = Color.White;
+            btnCerrarSesion.Location = new Point(16, 110);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(173, 29);
+            btnCerrarSesion.Size = new Size(148, 29);
             btnCerrarSesion.TabIndex = 1;
             btnCerrarSesion.Text = "Cerrar Sesion";
             btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -394,9 +396,10 @@
             btnPerfil.FlatAppearance.BorderSize = 0;
             btnPerfil.FlatStyle = FlatStyle.Flat;
             btnPerfil.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPerfil.Location = new Point(10, 44);
+            btnPerfil.ForeColor = Color.White;
+            btnPerfil.Location = new Point(16, 43);
             btnPerfil.Name = "btnPerfil";
-            btnPerfil.Size = new Size(173, 29);
+            btnPerfil.Size = new Size(148, 29);
             btnPerfil.TabIndex = 0;
             btnPerfil.Text = "Perfil";
             btnPerfil.UseVisualStyleBackColor = true;
@@ -419,7 +422,6 @@
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
             Controls.Add(btnRolUsuario);
-            Controls.Add(pictureBox16);
             Controls.Add(panelSidebar);
             Controls.Add(panelContenido);
             Name = "frmLayouts";

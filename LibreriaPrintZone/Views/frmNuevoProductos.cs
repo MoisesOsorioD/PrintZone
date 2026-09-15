@@ -1,5 +1,4 @@
-﻿using LibreriaPrintZone.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,26 +6,23 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LibreriaPrintZone
+namespace LibreriaPrintZone.Views
 {
-    public partial class frmProductos : Form
+    public partial class frmNuevoProductos : Form
     {
-
-
-        public frmProductos()
+        public frmNuevoProductos()
         {
             InitializeComponent();
         }
 
-        private void btnNuevoProductos_Click(object sender, EventArgs e)
+        private void btnRegresarFrmProductos_Click(object sender, EventArgs e)
         {
             frmLayouts principal = this.ParentForm as frmLayouts;
 
             if (principal != null)
             {
-                principal.AbrirFormulario(new frmNuevoProductos());
+                principal.AbrirFormulario(new frmProductos());
             }
-
         }
     }
 }

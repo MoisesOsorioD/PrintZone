@@ -256,13 +256,14 @@ namespace LibreriaPrintZone
         // ABRIR FORMULARIO DENTRO DE PANELCONTENIDO
         // ==========================================
 
-        private void AbrirFormulario(Form formulario)
+        public void AbrirFormulario(Form formulario)
         {
             // Si ya hay un formulario abierto,
             // lo cerramos
             if (formularioActivo != null)
             {
                 formularioActivo.Close();
+                formularioActivo = null;
             }
 
             formularioActivo = formulario;
@@ -282,7 +283,7 @@ namespace LibreriaPrintZone
             panelContenido.Controls.Add(formulario);
 
             // Guardarlo como formulario activo
-            panelContenido.Tag = formulario;
+            //panelContenido.Tag = formulario;
 
             // Mostrarlo
             formulario.BringToFront();
