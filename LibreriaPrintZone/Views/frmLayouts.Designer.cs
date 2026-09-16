@@ -187,6 +187,7 @@
             btnProveedores.Text = "Proveedores";
             btnProveedores.TextAlign = ContentAlignment.MiddleLeft;
             btnProveedores.UseVisualStyleBackColor = true;
+            btnProveedores.Click += btnProveedores_Click;
             // 
             // btnCategorias
             // 
