@@ -141,6 +141,7 @@
             btnSalidas.Text = "Salidas";
             btnSalidas.TextAlign = ContentAlignment.MiddleLeft;
             btnSalidas.UseVisualStyleBackColor = true;
+            btnSalidas.Click += btnSalidas_Click;
             // 
             // btnProductos
             // 

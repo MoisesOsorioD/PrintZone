@@ -25,5 +25,8 @@
     <Compile Update="Views\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Views\frmSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
