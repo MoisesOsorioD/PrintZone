@@ -455,5 +455,10 @@ namespace LibreriaPrintZone
         {
             AbrirFormulario(new frmProveedores());
         }
+
+        private void btnEntradas_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmEntradas());
+        }
     }
 }

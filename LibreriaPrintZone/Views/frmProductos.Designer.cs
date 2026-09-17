@@ -572,7 +572,7 @@
             btnNuevoProductos.Name = "btnNuevoProductos";
             btnNuevoProductos.Size = new Size(189, 37);
             btnNuevoProductos.TabIndex = 39;
-            btnNuevoProductos.Text = "Nuevo Productos";
+            btnNuevoProductos.Text = "Nuevo Producto";
             btnNuevoProductos.TextAlign = ContentAlignment.MiddleRight;
             btnNuevoProductos.UseVisualStyleBackColor = false;
             btnNuevoProductos.Click += btnNuevoProductos_Click;

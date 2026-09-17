@@ -172,6 +172,7 @@
             btnEntradas.Text = "Entradas";
             btnEntradas.TextAlign = ContentAlignment.MiddleLeft;
             btnEntradas.UseVisualStyleBackColor = true;
+            btnEntradas.Click += btnEntradas_Click;
             // 
             // btnProveedores
             // 
