@@ -384,12 +384,7 @@ namespace LibreriaPrintZone
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Aquí se abrirá el perfil del usuario.",
-                "Perfil",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            AbrirFormulario(new frmPerfil());
         }
 
 
@@ -464,6 +459,16 @@ namespace LibreriaPrintZone
         private void btnSalidas_Click(object sender, EventArgs e)
         {
             AbrirFormulario(new frmSalidas());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmUsuarios());
+        }
+
+        private void btnConfiguracion_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(new frmConfiguracion());
         }
     }
 }

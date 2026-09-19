@@ -111,6 +111,7 @@
             btnConfiguracion.Text = "Configuración";
             btnConfiguracion.TextAlign = ContentAlignment.MiddleLeft;
             btnConfiguracion.UseVisualStyleBackColor = true;
+            btnConfiguracion.Click += btnConfiguracion_Click;
             // 
             // btnUsuarios
             // 
@@ -126,6 +127,7 @@
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
             btnUsuarios.UseVisualStyleBackColor = true;
+            btnUsuarios.Click += btnUsuarios_Click;
             // 
             // btnSalidas
             // 
