@@ -47,22 +47,21 @@
             label7 = new Label();
             label8 = new Label();
             panel5 = new Panel();
-            pictureBox15 = new PictureBox();
             label11 = new Label();
+            pictureBox15 = new PictureBox();
             dataGridView1 = new DataGridView();
             colCategoriaC = new DataGridViewTextBoxColumn();
             colProductoC = new DataGridViewTextBoxColumn();
             pictureBox14 = new PictureBox();
             textBox1 = new TextBox();
             panel6 = new Panel();
+            label12 = new Label();
             pictureBox1 = new PictureBox();
-            pictureBox17 = new PictureBox();
             button9 = new Button();
             button11 = new Button();
             button10 = new Button();
             label13 = new Label();
             textBox2 = new TextBox();
-            label12 = new Label();
             button2 = new Button();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -78,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -178,7 +176,7 @@
             // 
             // pictureBox12
             // 
-            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
+            pictureBox12.Image = Properties.Resources.CategoriaMas;
             pictureBox12.Location = new Point(3, 12);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(90, 94);
@@ -231,7 +229,7 @@
             // 
             // pictureBox13
             // 
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Image = Properties.Resources.Categoria_Menos;
             pictureBox13.Location = new Point(3, 12);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(90, 94);
@@ -271,25 +269,25 @@
             panel5.Size = new Size(932, 455);
             panel5.TabIndex = 9;
             // 
-            // pictureBox15
-            // 
-            pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
-            pictureBox15.Location = new Point(33, 22);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(40, 40);
-            pictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox15.TabIndex = 7;
-            pictureBox15.TabStop = false;
-            // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label11.Location = new Point(66, 29);
+            label11.Location = new Point(99, 40);
             label11.Name = "label11";
             label11.Size = new Size(230, 25);
             label11.TabIndex = 6;
             label11.Text = "Categorías registradas";
+            // 
+            // pictureBox15
+            // 
+            pictureBox15.Image = Properties.Resources.Detalle_categoria;
+            pictureBox15.Location = new Point(33, 22);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(60, 60);
+            pictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox15.TabIndex = 7;
+            pictureBox15.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -341,7 +339,6 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label12);
             panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(pictureBox17);
             panel6.Controls.Add(button9);
             panel6.Controls.Add(button11);
             panel6.Controls.Add(button10);
@@ -352,25 +349,25 @@
             panel6.Size = new Size(445, 508);
             panel6.TabIndex = 10;
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
+            label12.Location = new Point(88, 75);
+            label12.Name = "label12";
+            label12.Size = new Size(238, 25);
+            label12.TabIndex = 8;
+            label12.Text = "Detalles de la categoría";
+            // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(41, 69);
+            pictureBox1.Image = Properties.Resources.Detalle_categoria;
+            pictureBox1.Location = new Point(23, 52);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(40, 40);
+            pictureBox1.Size = new Size(60, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            pictureBox17.Image = (Image)resources.GetObject("pictureBox17.Image");
-            pictureBox17.Location = new Point(41, 136);
-            pictureBox17.Name = "pictureBox17";
-            pictureBox17.Size = new Size(30, 30);
-            pictureBox17.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox17.TabIndex = 8;
-            pictureBox17.TabStop = false;
             // 
             // button9
             // 
@@ -381,7 +378,7 @@
             button9.ForeColor = Color.White;
             button9.Image = (Image)resources.GetObject("button9.Image");
             button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(164, 245);
+            button9.Location = new Point(299, 245);
             button9.Name = "button9";
             button9.Size = new Size(109, 37);
             button9.TabIndex = 15;
@@ -398,7 +395,7 @@
             button11.ForeColor = Color.White;
             button11.Image = (Image)resources.GetObject("button11.Image");
             button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(298, 245);
+            button11.Location = new Point(162, 245);
             button11.Name = "button11";
             button11.Size = new Size(109, 37);
             button11.TabIndex = 8;
@@ -427,7 +424,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(73, 137);
+            label13.Location = new Point(41, 149);
             label13.Name = "label13";
             label13.Size = new Size(171, 20);
             label13.TabIndex = 10;
@@ -440,16 +437,6 @@
             textBox2.PlaceholderText = " Ej. Libros";
             textBox2.Size = new Size(342, 27);
             textBox2.TabIndex = 9;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label12.Location = new Point(73, 75);
-            label12.Name = "label12";
-            label12.Size = new Size(238, 25);
-            label12.TabIndex = 8;
-            label12.Text = "Detalles de la categoría";
             // 
             // button2
             // 
@@ -475,7 +462,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Image = Properties.Resources.Buscar;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(1319, 243);
             button1.Name = "button1";
@@ -524,7 +511,6 @@
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -560,7 +546,6 @@
         private Button button11;
         private Button button9;
         private PictureBox pictureBox15;
-        private PictureBox pictureBox17;
         private DataGridViewTextBoxColumn colCategoriaC;
         private DataGridViewTextBoxColumn colProductoC;
         private Button button2;

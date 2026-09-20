@@ -67,7 +67,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Usuario;
-            pictureBox1.Location = new Point(451, 194);
+            pictureBox1.Location = new Point(453, 199);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(77, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -98,7 +98,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Contraseña;
-            pictureBox2.Location = new Point(451, 298);
+            pictureBox2.Location = new Point(453, 303);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(77, 70);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;

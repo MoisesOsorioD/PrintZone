@@ -52,15 +52,11 @@
             textBox7 = new TextBox();
             button10 = new Button();
             label13 = new Label();
-            pictureBox19 = new PictureBox();
-            pictureBox15 = new PictureBox();
             label14 = new Label();
             textBox4 = new TextBox();
             comboBox2 = new ComboBox();
-            pictureBox1 = new PictureBox();
             label12 = new Label();
             comboBox1 = new ComboBox();
-            pictureBox17 = new PictureBox();
             label15 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
@@ -85,10 +81,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
@@ -118,7 +110,7 @@
             // 
             // pictureBox10
             // 
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
+            pictureBox10.Image = Properties.Resources.Entrada_2;
             pictureBox10.Location = new Point(123, 2);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
@@ -151,7 +143,7 @@
             // 
             // pictureBox13
             // 
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Image = Properties.Resources.Informacion_comercial;
             pictureBox13.Location = new Point(3, 12);
             pictureBox13.Name = "pictureBox13";
             pictureBox13.Size = new Size(90, 94);
@@ -204,7 +196,7 @@
             // 
             // pictureBox12
             // 
-            pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
+            pictureBox12.Image = Properties.Resources.Categoria_Menos;
             pictureBox12.Location = new Point(3, 12);
             pictureBox12.Name = "pictureBox12";
             pictureBox12.Size = new Size(90, 94);
@@ -257,7 +249,7 @@
             // 
             // pictureBox11
             // 
-            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Image = Properties.Resources.Entrada_2;
             pictureBox11.Location = new Point(3, 12);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(90, 94);
@@ -293,15 +285,11 @@
             panel5.Controls.Add(textBox7);
             panel5.Controls.Add(button10);
             panel5.Controls.Add(label13);
-            panel5.Controls.Add(pictureBox19);
-            panel5.Controls.Add(pictureBox15);
             panel5.Controls.Add(label14);
             panel5.Controls.Add(textBox4);
             panel5.Controls.Add(comboBox2);
-            panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(comboBox1);
-            panel5.Controls.Add(pictureBox17);
             panel5.Controls.Add(label15);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label16);
@@ -355,37 +343,17 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(51, 299);
+            label13.Location = new Point(19, 311);
             label13.Name = "label13";
             label13.Size = new Size(102, 20);
             label13.TabIndex = 55;
             label13.Text = "Costo del lote";
             // 
-            // pictureBox19
-            // 
-            pictureBox19.Image = (Image)resources.GetObject("pictureBox19.Image");
-            pictureBox19.Location = new Point(19, 298);
-            pictureBox19.Name = "pictureBox19";
-            pictureBox19.Size = new Size(30, 30);
-            pictureBox19.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox19.TabIndex = 53;
-            pictureBox19.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
-            pictureBox15.Location = new Point(19, 216);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(30, 30);
-            pictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox15.TabIndex = 50;
-            pictureBox15.TabStop = false;
-            // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(51, 217);
+            label14.Location = new Point(19, 229);
             label14.Name = "label14";
             label14.Size = new Size(70, 20);
             label14.TabIndex = 52;
@@ -407,21 +375,11 @@
             comboBox2.Size = new Size(425, 28);
             comboBox2.TabIndex = 20;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 135);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 30);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 18;
-            pictureBox1.TabStop = false;
-            // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(51, 136);
+            label12.Location = new Point(19, 150);
             label12.Name = "label12";
             label12.Size = new Size(72, 20);
             label12.TabIndex = 19;
@@ -435,21 +393,11 @@
             comboBox1.Size = new Size(425, 28);
             comboBox1.TabIndex = 17;
             // 
-            // pictureBox17
-            // 
-            pictureBox17.Image = (Image)resources.GetObject("pictureBox17.Image");
-            pictureBox17.Location = new Point(19, 57);
-            pictureBox17.Name = "pictureBox17";
-            pictureBox17.Size = new Size(30, 30);
-            pictureBox17.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox17.TabIndex = 14;
-            pictureBox17.TabStop = false;
-            // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(51, 58);
+            label15.Location = new Point(19, 70);
             label15.Name = "label15";
             label15.Size = new Size(81, 20);
             label15.TabIndex = 16;
@@ -482,7 +430,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Image = Properties.Resources.Buscar;
             button1.ImageAlign = ContentAlignment.MiddleLeft;
             button1.Location = new Point(1318, 253);
             button1.Name = "button1";
@@ -590,7 +538,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label17.Location = new Point(66, 29);
+            label17.Location = new Point(83, 34);
             label17.Name = "label17";
             label17.Size = new Size(211, 25);
             label17.TabIndex = 6;
@@ -598,10 +546,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(33, 22);
+            pictureBox3.Image = Properties.Resources.Categoria_Menos;
+            pictureBox3.Location = new Point(20, 15);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(40, 40);
+            pictureBox3.Size = new Size(60, 60);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
@@ -639,10 +587,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox19).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel7.ResumeLayout(false);
@@ -674,18 +618,14 @@
         private Label label3;
         private Label label11;
         private Panel panel5;
-        private PictureBox pictureBox17;
         private Label label15;
         private PictureBox pictureBox2;
         private Label label16;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
-        private PictureBox pictureBox1;
         private Label label12;
         private TextBox textBox7;
         private Label label13;
-        private PictureBox pictureBox19;
-        private PictureBox pictureBox15;
         private Label label14;
         private TextBox textBox4;
         private Button button11;

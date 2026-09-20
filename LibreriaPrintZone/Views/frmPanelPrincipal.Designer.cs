@@ -50,10 +50,10 @@
             pictureBox11 = new PictureBox();
             label6 = new Label();
             panel2 = new Panel();
-            pictureBox10 = new PictureBox();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
+            pictureBox10 = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             dateTimePicker1 = new DateTimePicker();
@@ -105,7 +105,7 @@
             // 
             // pictureBox14
             // 
-            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Image = Properties.Resources.Entradas_hoy;
             pictureBox14.Location = new Point(2, 30);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(90, 94);
@@ -208,7 +208,7 @@
             // 
             // pictureBox15
             // 
-            pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
+            pictureBox15.Image = Properties.Resources.Movimiento_recientes;
             pictureBox15.Location = new Point(6, 3);
             pictureBox15.Name = "pictureBox15";
             pictureBox15.Size = new Size(87, 86);
@@ -251,7 +251,7 @@
             // 
             // pictureBox11
             // 
-            pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
+            pictureBox11.Image = Properties.Resources.Alerta_stock_minino;
             pictureBox11.Location = new Point(3, 30);
             pictureBox11.Name = "pictureBox11";
             pictureBox11.Size = new Size(90, 94);
@@ -273,24 +273,14 @@
             // 
             panel2.BackColor = Color.FromArgb(242, 249, 254);
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(pictureBox10);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(label3);
+            panel2.Controls.Add(pictureBox10);
             panel2.Location = new Point(171, 154);
             panel2.Name = "panel2";
             panel2.Size = new Size(424, 164);
             panel2.TabIndex = 13;
-            // 
-            // pictureBox10
-            // 
-            pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(3, 32);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(90, 94);
-            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox10.TabIndex = 5;
-            pictureBox10.TabStop = false;
             // 
             // label5
             // 
@@ -322,6 +312,16 @@
             label3.TabIndex = 0;
             label3.Text = "Total de productos";
             // 
+            // pictureBox10
+            // 
+            pictureBox10.Image = Properties.Resources.Total_de_productos;
+            pictureBox10.Location = new Point(3, 32);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(90, 94);
+            pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox10.TabIndex = 5;
+            pictureBox10.TabStop = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -351,7 +351,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Image = Properties.Resources.Calendario;
             pictureBox1.Location = new Point(1178, 76);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(60, 60);
