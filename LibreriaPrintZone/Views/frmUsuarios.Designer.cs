@@ -251,7 +251,7 @@
             // 
             textBox3.Location = new Point(19, 103);
             textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = " Ej. 50";
+            textBox3.PlaceholderText = " Ej. Lety32";
             textBox3.Size = new Size(425, 27);
             textBox3.TabIndex = 76;
             // 
@@ -285,7 +285,7 @@
             // 
             textBox7.Location = new Point(18, 261);
             textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. Venta";
+            textBox7.PlaceholderText = " Ej. lety000";
             textBox7.Size = new Size(425, 27);
             textBox7.TabIndex = 54;
             // 
@@ -329,7 +329,7 @@
             // 
             textBox4.Location = new Point(18, 180);
             textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. 50";
+            textBox4.PlaceholderText = " Ej. Lety Lopez";
             textBox4.Size = new Size(425, 27);
             textBox4.TabIndex = 51;
             // 

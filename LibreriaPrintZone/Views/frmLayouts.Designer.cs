@@ -50,7 +50,6 @@
             pictureBox1 = new PictureBox();
             btnRolUsuario = new Button();
             panelContenido = new Panel();
-            pictureBox9 = new PictureBox();
             panelMenu = new Panel();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
@@ -68,7 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelContenido.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             panelMenu.SuspendLayout();
             SuspendLayout();
             // 
@@ -336,23 +334,12 @@
             // 
             // panelContenido
             // 
-            panelContenido.Controls.Add(pictureBox9);
             panelContenido.Controls.Add(panelMenu);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(1632, 915);
             panelContenido.TabIndex = 11;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = Properties.Resources.Usuario;
-            pictureBox9.Location = new Point(1354, 3);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(59, 62);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 1;
-            pictureBox9.TabStop = false;
             // 
             // panelMenu
             // 
@@ -444,7 +431,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelContenido.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -477,6 +463,5 @@
         private Button btnSalir;
         private Button btnCerrarSesion;
         private Button btnPerfil;
-        private PictureBox pictureBox9;
     }
 }

@@ -344,15 +344,15 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(1238, 91);
+            dateTimePicker1.Location = new Point(1210, 91);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(287, 27);
+            dateTimePicker1.Size = new Size(315, 27);
             dateTimePicker1.TabIndex = 19;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Calendario;
-            pictureBox1.Location = new Point(1178, 76);
+            pictureBox1.Location = new Point(1149, 76);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(60, 60);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
