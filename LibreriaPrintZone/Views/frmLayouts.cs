@@ -31,8 +31,8 @@ namespace LibreriaPrintZone
 
         private int alturaMenu = 0;
 
-        // La altura original de panelMenu es 308
-        private int alturaMaxima = 308;
+        // La altura original de panelMenu es 221
+        private int alturaMaxima = 221;
 
         private bool abrirMenu = false;
 
@@ -382,10 +382,7 @@ namespace LibreriaPrintZone
         // BOTÓN PERFIL
         // ==========================================
 
-        private void btnPerfil_Click(object sender, EventArgs e)
-        {
-            AbrirFormulario(new frmPerfil());
-        }
+        
 
 
         // ==========================================

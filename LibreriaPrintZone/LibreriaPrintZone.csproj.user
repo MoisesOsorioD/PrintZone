@@ -22,9 +22,6 @@
     <Compile Update="Views\frmPanelPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Views\frmPerfil.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Views\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>

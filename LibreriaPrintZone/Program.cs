@@ -1,16 +1,29 @@
+using LibreriaPrintZone.Models;
+
 namespace LibreriaPrintZone
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
+            Task.Run(() =>
+            {
+                try
+                {
+                    using var context = new InventarioPrintzoneContext();
+
+                    _ = context.Model;
+                    context.Database.CanConnect();
+                }
+                catch
+                {
+                    // La aplicación continuará normalmente.
+                }
+            });
+
             Application.Run(new frmInicioSesion());
         }
     }

@@ -53,7 +53,6 @@
             panelMenu = new Panel();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
-            btnPerfil = new Button();
             timerSidebar = new System.Windows.Forms.Timer(components);
             timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
@@ -347,10 +346,9 @@
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
             panelMenu.Controls.Add(btnSalir);
             panelMenu.Controls.Add(btnCerrarSesion);
-            panelMenu.Controls.Add(btnPerfil);
             panelMenu.Location = new Point(1421, 77);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(182, 308);
+            panelMenu.Size = new Size(182, 221);
             panelMenu.TabIndex = 0;
             // 
             // btnSalir
@@ -360,7 +358,7 @@
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             btnSalir.ForeColor = Color.White;
-            btnSalir.Location = new Point(9, 204);
+            btnSalir.Location = new Point(9, 122);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(155, 40);
             btnSalir.TabIndex = 2;
@@ -375,28 +373,13 @@
             btnCerrarSesion.FlatStyle = FlatStyle.Flat;
             btnCerrarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold);
             btnCerrarSesion.ForeColor = Color.White;
-            btnCerrarSesion.Location = new Point(16, 124);
+            btnCerrarSesion.Location = new Point(16, 42);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(148, 40);
             btnCerrarSesion.TabIndex = 1;
             btnCerrarSesion.Text = "Cerrar Sesion";
             btnCerrarSesion.UseVisualStyleBackColor = true;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
-            // 
-            // btnPerfil
-            // 
-            btnPerfil.Cursor = Cursors.Hand;
-            btnPerfil.FlatAppearance.BorderSize = 0;
-            btnPerfil.FlatStyle = FlatStyle.Flat;
-            btnPerfil.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPerfil.ForeColor = Color.White;
-            btnPerfil.Location = new Point(16, 53);
-            btnPerfil.Name = "btnPerfil";
-            btnPerfil.Size = new Size(148, 40);
-            btnPerfil.TabIndex = 0;
-            btnPerfil.Text = "Perfil";
-            btnPerfil.UseVisualStyleBackColor = true;
-            btnPerfil.Click += btnPerfil_Click;
             // 
             // timerSidebar
             // 
@@ -462,6 +445,5 @@
         private Panel panelMenu;
         private Button btnSalir;
         private Button btnCerrarSesion;
-        private Button btnPerfil;
     }
 }
