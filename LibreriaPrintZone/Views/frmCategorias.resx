@@ -810,10 +810,16 @@
         +6esIPNNG9q6fhb/aJzNxdsaZ6Cc87uE/w+0x3UOx5j4SwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="colCategoriaC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colNombreCategoria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="colProductoC.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="colCantidadProductos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colNombreCategoria.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="colCantidadProductos.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <data name="pictureBox14.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -842,7 +848,7 @@
         kiRJkiSb/APe4gDAY689RQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABBElEQVRIS9WUYRHCMAyFkYCESUDC
@@ -853,7 +859,7 @@
         J+QThGN3TC4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button11.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLimpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABOklEQVRIS92UYXUCMRCEkYAEJCAF
@@ -865,7 +871,7 @@
         bYYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button10.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAAAyElEQVRIS92V0Q2DMBBDGaWblg3a
@@ -873,18 +879,6 @@
         wkLqI7qWsLDpE5aU3y2J4hSoJN3CR+yKtiWV/L2Zn41BbI81BrE91hjE9tDovINGvuxKFDsjRjvhXBQ7
         g9rBHHVAg9rBHHVAg9rBHHVAg9rBHHVAg9rBHHVw5bku5Fx6Klbmijm38Bd4sr9SjAu/zEyZndn727wA
         YaloUyZdecAAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="button2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABOklEQVRIS92UYXUCMRCEkYAEJCAF
-        B1QCDoqD4gAcFAfUAXVAHVTC8OaYvbdMkrvwl++9+0Em7Owm2V0s3goAJwA3AEv9XgLYAPjWenDV2ofH
-        mATAnwKsFDgHbcE9fUbJ4JgC/ADYyTQqWzOoJfDp8QqSQbDzPY7Mgy/XnzADnvFe38r3ZlTRv/63cX2k
-        UkFw9L1OqoRGw1EW6GIj6/wNFejMb/6/AMBFJn2X7kQ5vh6kKs6uddFhwJdGyirnyidh0AwylURTSNi7
-        f9lg7GLXetFzJVfXKJ4lzjZXC3U3KS85iRfXeklHWD5TTc7oxperSAlW72ZAjUZotHa9hY2KMvsMgEMy
-        md782L9NwfeuV9F4CNj+LH98XWoorsVoIIfnKDNU5n0LZt+eoHPIiE/4NwVlz3CNWn1yvg13OS2vpLsX
-        bYYAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

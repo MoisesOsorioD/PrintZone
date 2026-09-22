@@ -34,36 +34,34 @@
             pictureBox10 = new PictureBox();
             panel2 = new Panel();
             pictureBox11 = new PictureBox();
-            label5 = new Label();
+            lblTotalCategorias = new Label();
             label3 = new Label();
             panel3 = new Panel();
-            label9 = new Label();
+            lblCantidadMasProductos = new Label();
             pictureBox12 = new PictureBox();
-            label4 = new Label();
+            lblCategoriaMasProductos = new Label();
             label6 = new Label();
             panel4 = new Panel();
-            label10 = new Label();
+            lblCantidadMenosUsada = new Label();
             pictureBox13 = new PictureBox();
-            label7 = new Label();
+            lblCategoriaMenosUsada = new Label();
             label8 = new Label();
             panel5 = new Panel();
             label11 = new Label();
             pictureBox15 = new PictureBox();
-            dataGridView1 = new DataGridView();
-            colCategoriaC = new DataGridViewTextBoxColumn();
-            colProductoC = new DataGridViewTextBoxColumn();
+            dgvCategorias = new DataGridView();
+            colNombreCategoria = new DataGridViewTextBoxColumn();
+            colCantidadProductos = new DataGridViewTextBoxColumn();
             pictureBox14 = new PictureBox();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             panel6 = new Panel();
             label12 = new Label();
             pictureBox1 = new PictureBox();
-            button9 = new Button();
-            button11 = new Button();
-            button10 = new Button();
+            btnEliminar = new Button();
+            btnLimpiar = new Button();
+            btnGuardar = new Button();
             label13 = new Label();
-            textBox2 = new TextBox();
-            button2 = new Button();
-            button1 = new Button();
+            txtNombreCategoria = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -73,7 +71,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -114,7 +112,7 @@
             panel2.BackColor = Color.FromArgb(242, 249, 254);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lblTotalCategorias);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(131, 107);
             panel2.Name = "panel2";
@@ -131,15 +129,15 @@
             pictureBox11.TabIndex = 5;
             pictureBox11.TabStop = false;
             // 
-            // label5
+            // lblTotalCategorias
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 38);
-            label5.TabIndex = 2;
-            label5.Text = "10";
+            lblTotalCategorias.AutoSize = true;
+            lblTotalCategorias.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalCategorias.Location = new Point(99, 38);
+            lblTotalCategorias.Name = "lblTotalCategorias";
+            lblTotalCategorias.Size = new Size(49, 38);
+            lblTotalCategorias.TabIndex = 2;
+            lblTotalCategorias.Text = "10";
             // 
             // label3
             // 
@@ -155,24 +153,24 @@
             // 
             panel3.BackColor = Color.FromArgb(242, 249, 254);
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label9);
+            panel3.Controls.Add(lblCantidadMasProductos);
             panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblCategoriaMasProductos);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(647, 107);
             panel3.Name = "panel3";
             panel3.Size = new Size(445, 116);
             panel3.TabIndex = 7;
             // 
-            // label9
+            // lblCantidadMasProductos
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(99, 83);
-            label9.Name = "label9";
-            label9.Size = new Size(110, 23);
-            label9.TabIndex = 9;
-            label9.Text = "40 productos";
+            lblCantidadMasProductos.AutoSize = true;
+            lblCantidadMasProductos.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidadMasProductos.Location = new Point(99, 83);
+            lblCantidadMasProductos.Name = "lblCantidadMasProductos";
+            lblCantidadMasProductos.Size = new Size(110, 23);
+            lblCantidadMasProductos.TabIndex = 9;
+            lblCantidadMasProductos.Text = "40 productos";
             // 
             // pictureBox12
             // 
@@ -184,15 +182,15 @@
             pictureBox12.TabIndex = 5;
             pictureBox12.TabStop = false;
             // 
-            // label4
+            // lblCategoriaMasProductos
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(137, 38);
-            label4.TabIndex = 2;
-            label4.Text = "Papelería";
+            lblCategoriaMasProductos.AutoSize = true;
+            lblCategoriaMasProductos.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategoriaMasProductos.Location = new Point(99, 38);
+            lblCategoriaMasProductos.Name = "lblCategoriaMasProductos";
+            lblCategoriaMasProductos.Size = new Size(137, 38);
+            lblCategoriaMasProductos.TabIndex = 2;
+            lblCategoriaMasProductos.Text = "Papelería";
             // 
             // label6
             // 
@@ -208,24 +206,24 @@
             // 
             panel4.BackColor = Color.FromArgb(242, 249, 254);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblCantidadMenosUsada);
             panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lblCategoriaMenosUsada);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1138, 107);
             panel4.Name = "panel4";
             panel4.Size = new Size(441, 116);
             panel4.TabIndex = 8;
             // 
-            // label10
+            // lblCantidadMenosUsada
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(99, 83);
-            label10.Name = "label10";
-            label10.Size = new Size(101, 23);
-            label10.TabIndex = 10;
-            label10.Text = "4 productos";
+            lblCantidadMenosUsada.AutoSize = true;
+            lblCantidadMenosUsada.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidadMenosUsada.Location = new Point(99, 83);
+            lblCantidadMenosUsada.Name = "lblCantidadMenosUsada";
+            lblCantidadMenosUsada.Size = new Size(101, 23);
+            lblCantidadMenosUsada.TabIndex = 10;
+            lblCantidadMenosUsada.Text = "4 productos";
             // 
             // pictureBox13
             // 
@@ -237,15 +235,15 @@
             pictureBox13.TabIndex = 5;
             pictureBox13.TabStop = false;
             // 
-            // label7
+            // lblCategoriaMenosUsada
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(110, 38);
-            label7.TabIndex = 2;
-            label7.Text = "Oficina";
+            lblCategoriaMenosUsada.AutoSize = true;
+            lblCategoriaMenosUsada.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategoriaMenosUsada.Location = new Point(99, 38);
+            lblCategoriaMenosUsada.Name = "lblCategoriaMenosUsada";
+            lblCategoriaMenosUsada.Size = new Size(110, 38);
+            lblCategoriaMenosUsada.TabIndex = 2;
+            lblCategoriaMenosUsada.Text = "Oficina";
             // 
             // label8
             // 
@@ -263,7 +261,7 @@
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(label11);
             panel5.Controls.Add(pictureBox15);
-            panel5.Controls.Add(dataGridView1);
+            panel5.Controls.Add(dgvCategorias);
             panel5.Location = new Point(647, 293);
             panel5.Name = "panel5";
             panel5.Size = new Size(932, 455);
@@ -289,30 +287,31 @@
             pictureBox15.TabIndex = 7;
             pictureBox15.TabStop = false;
             // 
-            // dataGridView1
+            // dgvCategorias
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colCategoriaC, colProductoC });
-            dataGridView1.Location = new Point(33, 97);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(877, 317);
-            dataGridView1.TabIndex = 0;
+            dgvCategorias.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCategorias.Columns.AddRange(new DataGridViewColumn[] { colNombreCategoria, colCantidadProductos });
+            dgvCategorias.Location = new Point(33, 97);
+            dgvCategorias.Name = "dgvCategorias";
+            dgvCategorias.RowHeadersWidth = 51;
+            dgvCategorias.Size = new Size(877, 317);
+            dgvCategorias.TabIndex = 0;
+            dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
-            // colCategoriaC
+            // colNombreCategoria
             // 
-            colCategoriaC.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCategoriaC.HeaderText = "Nombre de Categoría";
-            colCategoriaC.MinimumWidth = 6;
-            colCategoriaC.Name = "colCategoriaC";
+            colNombreCategoria.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colNombreCategoria.HeaderText = "Nombre de Categoría";
+            colNombreCategoria.MinimumWidth = 6;
+            colNombreCategoria.Name = "colNombreCategoria";
             // 
-            // colProductoC
+            // colCantidadProductos
             // 
-            colProductoC.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProductoC.HeaderText = "Producto";
-            colProductoC.MinimumWidth = 6;
-            colProductoC.Name = "colProductoC";
+            colCantidadProductos.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCantidadProductos.HeaderText = "Producto";
+            colCantidadProductos.MinimumWidth = 6;
+            colCantidadProductos.Name = "colCantidadProductos";
             // 
             // pictureBox14
             // 
@@ -324,14 +323,15 @@
             pictureBox14.TabIndex = 6;
             pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(697, 245);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar categoría por nombre...";
-            textBox1.Size = new Size(597, 30);
-            textBox1.TabIndex = 1;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(697, 245);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar categoría por nombre...";
+            txtBuscar.Size = new Size(882, 30);
+            txtBuscar.TabIndex = 1;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panel6
             // 
@@ -339,11 +339,11 @@
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(label12);
             panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(button9);
-            panel6.Controls.Add(button11);
-            panel6.Controls.Add(button10);
+            panel6.Controls.Add(btnEliminar);
+            panel6.Controls.Add(btnLimpiar);
+            panel6.Controls.Add(btnGuardar);
             panel6.Controls.Add(label13);
-            panel6.Controls.Add(textBox2);
+            panel6.Controls.Add(txtNombreCategoria);
             panel6.Location = new Point(131, 240);
             panel6.Name = "panel6";
             panel6.Size = new Size(445, 508);
@@ -369,56 +369,59 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
-            // button9
+            // btnEliminar
             // 
-            button9.BackColor = Color.FromArgb(234, 45, 89);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(299, 245);
-            button9.Name = "button9";
-            button9.Size = new Size(109, 37);
-            button9.TabIndex = 15;
-            button9.Text = "Eliminar";
-            button9.TextAlign = ContentAlignment.MiddleRight;
-            button9.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(234, 45, 89);
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(299, 245);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(109, 37);
+            btnEliminar.TabIndex = 15;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button11
+            // btnLimpiar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(162, 245);
-            button11.Name = "button11";
-            button11.Size = new Size(109, 37);
-            button11.TabIndex = 8;
-            button11.Text = "Limpiar";
-            button11.TextAlign = ContentAlignment.MiddleRight;
-            button11.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(171, 245);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(109, 37);
+            btnLimpiar.TabIndex = 8;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // button10
+            // btnGuardar
             // 
-            button10.BackColor = Color.FromArgb(2, 113, 249);
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(23, 245);
-            button10.Name = "button10";
-            button10.Size = new Size(112, 37);
-            button10.TabIndex = 8;
-            button10.Text = "Guardar";
-            button10.TextAlign = ContentAlignment.MiddleRight;
-            button10.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(2, 113, 249);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(23, 245);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(125, 37);
+            btnGuardar.TabIndex = 8;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label13
             // 
@@ -430,47 +433,13 @@
             label13.TabIndex = 10;
             label13.Text = "Nombre de la categoría";
             // 
-            // textBox2
+            // txtNombreCategoria
             // 
-            textBox2.Location = new Point(41, 172);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = " Ej. Libros";
-            textBox2.Size = new Size(342, 27);
-            textBox2.TabIndex = 9;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1458, 243);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 37);
-            button2.TabIndex = 42;
-            button2.Text = "Limpiar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Buscar;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1319, 243);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 43;
-            button1.Text = "Buscar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            txtNombreCategoria.Location = new Point(41, 172);
+            txtNombreCategoria.Name = "txtNombreCategoria";
+            txtNombreCategoria.PlaceholderText = " Ej. Libros";
+            txtNombreCategoria.Size = new Size(342, 27);
+            txtNombreCategoria.TabIndex = 9;
             // 
             // frmCategorias
             // 
@@ -478,13 +447,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1614, 868);
-            Controls.Add(button1);
-            Controls.Add(button2);
             Controls.Add(panel6);
             Controls.Add(pictureBox14);
             Controls.Add(panel5);
             Controls.Add(panel4);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(label2);
@@ -506,7 +473,7 @@
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -521,35 +488,33 @@
         private PictureBox pictureBox10;
         private Panel panel2;
         private PictureBox pictureBox11;
-        private Label label5;
+        private Label lblTotalCategorias;
         private Label label3;
         private Panel panel3;
         private PictureBox pictureBox12;
-        private Label label4;
+        private Label lblCategoriaMasProductos;
         private Label label6;
         private Panel panel4;
         private PictureBox pictureBox13;
-        private Label label7;
+        private Label lblCategoriaMenosUsada;
         private Label label8;
-        private Label label9;
-        private Label label10;
+        private Label lblCantidadMasProductos;
+        private Label lblCantidadMenosUsada;
         private Panel panel5;
-        private DataGridView dataGridView1;
-        private TextBox textBox1;
+        private DataGridView dgvCategorias;
+        private TextBox txtBuscar;
         private PictureBox pictureBox14;
         private Label label11;
         private Panel panel6;
         private Label label12;
-        private TextBox textBox2;
+        private TextBox txtNombreCategoria;
         private Label label13;
-        private Button button10;
-        private Button button11;
-        private Button button9;
+        private Button btnGuardar;
+        private Button btnLimpiar;
+        private Button btnEliminar;
         private PictureBox pictureBox15;
-        private DataGridViewTextBoxColumn colCategoriaC;
-        private DataGridViewTextBoxColumn colProductoC;
-        private Button button2;
         private PictureBox pictureBox1;
-        private Button button1;
+        private DataGridViewTextBoxColumn colNombreCategoria;
+        private DataGridViewTextBoxColumn colCantidadProductos;
     }
 }
