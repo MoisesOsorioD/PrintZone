@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
@@ -111,15 +111,15 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
-            dataGridView1.Location = new Point(687, 209);
+            dataGridView1.Location = new Point(687, 255);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(933, 647);
+            dataGridView1.Size = new Size(933, 601);
             dataGridView1.TabIndex = 8;
             // 
             // colProductoP
@@ -480,16 +480,16 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(999, 140);
+            textBox1.Location = new Point(733, 209);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = " Buscar productos por nombre o código de barra";
-            textBox1.Size = new Size(621, 30);
+            textBox1.Size = new Size(887, 30);
             textBox1.TabIndex = 42;
             // 
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(953, 140);
+            pictureBox14.Location = new Point(687, 209);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;

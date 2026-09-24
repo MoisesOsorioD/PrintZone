@@ -50,9 +50,11 @@
             pictureBox1 = new PictureBox();
             btnRolUsuario = new Button();
             panelContenido = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             panelMenu = new Panel();
             btnSalir = new Button();
             btnCerrarSesion = new Button();
+            pictureBox9 = new PictureBox();
             timerSidebar = new System.Windows.Forms.Timer(components);
             timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
@@ -67,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelContenido.SuspendLayout();
             panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             SuspendLayout();
             // 
             // panelSidebar
@@ -334,11 +337,20 @@
             // panelContenido
             // 
             panelContenido.Controls.Add(panelMenu);
+            panelContenido.Controls.Add(dateTimePicker1);
+            panelContenido.Controls.Add(pictureBox9);
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
             panelContenido.Name = "panelContenido";
             panelContenido.Size = new Size(1632, 915);
             panelContenido.TabIndex = 11;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(1276, 87);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(308, 27);
+            dateTimePicker1.TabIndex = 21;
             // 
             // panelMenu
             // 
@@ -381,6 +393,16 @@
             btnCerrarSesion.UseVisualStyleBackColor = true;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
+            // pictureBox9
+            // 
+            pictureBox9.Image = Properties.Resources.Calendario;
+            pictureBox9.Location = new Point(1217, 69);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(60, 60);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 20;
+            pictureBox9.TabStop = false;
+            // 
             // timerSidebar
             // 
             timerSidebar.Interval = 10;
@@ -415,6 +437,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelContenido.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ResumeLayout(false);
         }
 
@@ -445,5 +468,7 @@
         private Panel panelMenu;
         private Button btnSalir;
         private Button btnCerrarSesion;
+        private PictureBox pictureBox9;
+        private DateTimePicker dateTimePicker1;
     }
 }

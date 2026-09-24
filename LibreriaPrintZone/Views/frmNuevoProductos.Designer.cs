@@ -53,7 +53,6 @@
             pictureBox12 = new PictureBox();
             pictureBox11 = new PictureBox();
             label18 = new Label();
-            pictureBox9 = new PictureBox();
             label17 = new Label();
             pictureBox8 = new PictureBox();
             label16 = new Label();
@@ -87,6 +86,7 @@
             textBox9 = new TextBox();
             pictureBox4 = new PictureBox();
             label6 = new Label();
+            pictureBox13 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -96,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel7.SuspendLayout();
@@ -109,6 +108,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -277,6 +277,7 @@
             // 
             panel3.BackColor = Color.FromArgb(247, 251, 255);
             panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(pictureBox13);
             panel3.Controls.Add(pictureBox23);
             panel3.Controls.Add(pictureBox20);
             panel3.Controls.Add(label22);
@@ -284,7 +285,6 @@
             panel3.Controls.Add(pictureBox12);
             panel3.Controls.Add(pictureBox11);
             panel3.Controls.Add(label18);
-            panel3.Controls.Add(pictureBox9);
             panel3.Controls.Add(label17);
             panel3.Controls.Add(pictureBox8);
             panel3.Controls.Add(label16);
@@ -366,21 +366,11 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(398, 210);
+            label18.Location = new Point(404, 406);
             label18.Name = "label18";
             label18.Size = new Size(102, 20);
             label18.TabIndex = 16;
             label18.Text = "Stock mínimo";
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(362, 200);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(40, 40);
-            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox9.TabIndex = 52;
-            pictureBox9.TabStop = false;
             // 
             // label17
             // 
@@ -741,6 +731,16 @@
             label6.TabIndex = 6;
             label6.Text = "Control de inventario";
             // 
+            // pictureBox13
+            // 
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(364, 394);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(40, 40);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 58;
+            pictureBox13.TabStop = false;
+            // 
             // frmNuevoProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -769,7 +769,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel7.ResumeLayout(false);
@@ -786,6 +785,7 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -845,10 +845,10 @@
         private PictureBox pictureBox14;
         private PictureBox pictureBox12;
         private PictureBox pictureBox11;
-        private PictureBox pictureBox9;
         private PictureBox pictureBox8;
         private PictureBox pictureBox6;
         private PictureBox pictureBox20;
         private PictureBox pictureBox23;
+        private PictureBox pictureBox13;
     }
 }

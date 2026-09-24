@@ -56,8 +56,6 @@
             pictureBox10 = new PictureBox();
             label2 = new Label();
             label1 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            pictureBox1 = new PictureBox();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel6.SuspendLayout();
@@ -67,7 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel7
@@ -342,31 +339,12 @@
             label1.TabIndex = 11;
             label1.Text = "¡Bienvenido, Administrador!";
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(1210, 91);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(315, 27);
-            dateTimePicker1.TabIndex = 19;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.Calendario;
-            pictureBox1.Location = new Point(1149, 76);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(60, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
             // frmPanelPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(pictureBox1);
-            Controls.Add(dateTimePicker1);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel3);
@@ -388,7 +366,6 @@
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -415,13 +392,11 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private DateTimePicker dateTimePicker1;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn colFechaPP;
         private DataGridViewTextBoxColumn colMovimientoPP;
         private DataGridViewTextBoxColumn colProductoPP;
         private DataGridViewTextBoxColumn colCantidadPP;
         private DataGridViewTextBoxColumn colProveedorPP;
-        private PictureBox pictureBox1;
     }
 }

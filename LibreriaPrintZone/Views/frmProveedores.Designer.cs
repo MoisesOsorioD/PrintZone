@@ -83,8 +83,6 @@
             colMontoMinimoP = new DataGridViewTextBoxColumn();
             label15 = new Label();
             pictureBox3 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
             pictureBox14 = new PictureBox();
             textBox1 = new TextBox();
             panel4.SuspendLayout();
@@ -579,9 +577,9 @@
             panel7.Controls.Add(dataGridView1);
             panel7.Controls.Add(label15);
             panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(700, 346);
+            panel7.Location = new Point(700, 293);
             panel7.Name = "panel7";
-            panel7.Size = new Size(872, 555);
+            panel7.Size = new Size(872, 608);
             panel7.TabIndex = 52;
             // 
             // dataGridView1
@@ -664,44 +662,10 @@
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Buscar;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1312, 281);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 56;
-            button1.Text = "Buscar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1451, 281);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 37);
-            button2.TabIndex = 55;
-            button2.Text = "Limpiar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(700, 283);
+            pictureBox14.Location = new Point(696, 247);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
@@ -711,10 +675,10 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(744, 288);
+            textBox1.Location = new Point(740, 252);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = " Buscar proveedor...";
-            textBox1.Size = new Size(553, 30);
+            textBox1.Size = new Size(832, 30);
             textBox1.TabIndex = 53;
             // 
             // frmProveedores
@@ -723,8 +687,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(button1);
-            Controls.Add(button2);
             Controls.Add(pictureBox14);
             Controls.Add(textBox1);
             Controls.Add(panel7);
@@ -816,8 +778,6 @@
         private Panel panel7;
         private Label label15;
         private PictureBox pictureBox3;
-        private Button button1;
-        private Button button2;
         private PictureBox pictureBox14;
         private TextBox textBox1;
         private DataGridView dataGridView1;

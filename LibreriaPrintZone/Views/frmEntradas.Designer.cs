@@ -60,8 +60,6 @@
             label15 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
-            button1 = new Button();
-            button2 = new Button();
             pictureBox14 = new PictureBox();
             textBox1 = new TextBox();
             panel7 = new Panel();
@@ -423,40 +421,6 @@
             label16.TabIndex = 6;
             label16.Text = "Registrar entrada";
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Buscar;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1318, 253);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 61;
-            button1.Text = "Buscar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1457, 253);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 37);
-            button2.TabIndex = 60;
-            button2.Text = "Limpiar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
@@ -473,7 +437,7 @@
             textBox1.Location = new Point(689, 260);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = " Buscar entradas...";
-            textBox1.Size = new Size(614, 30);
+            textBox1.Size = new Size(882, 30);
             textBox1.TabIndex = 58;
             // 
             // panel7
@@ -560,8 +524,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(button1);
-            Controls.Add(button2);
             Controls.Add(pictureBox14);
             Controls.Add(textBox1);
             Controls.Add(panel7);
@@ -630,8 +592,6 @@
         private TextBox textBox4;
         private Button button11;
         private Button button10;
-        private Button button1;
-        private Button button2;
         private PictureBox pictureBox14;
         private TextBox textBox1;
         private Panel panel7;

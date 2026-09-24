@@ -74,8 +74,6 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            button1 = new Button();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -94,7 +92,7 @@
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(632, 263);
+            pictureBox14.Location = new Point(632, 256);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
@@ -104,10 +102,10 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(678, 270);
+            textBox1.Location = new Point(678, 263);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = " Buscar usuarios...";
-            textBox1.Size = new Size(614, 30);
+            textBox1.Size = new Size(889, 30);
             textBox1.TabIndex = 78;
             // 
             // panel7
@@ -117,9 +115,9 @@
             panel7.Controls.Add(dataGridView1);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(632, 328);
+            panel7.Location = new Point(632, 302);
             panel7.Name = "panel7";
-            panel7.Size = new Size(935, 509);
+            panel7.Size = new Size(935, 535);
             panel7.TabIndex = 77;
             // 
             // dataGridView1
@@ -373,7 +371,7 @@
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1119, 118);
             panel4.Name = "panel4";
-            panel4.Size = new Size(441, 116);
+            panel4.Size = new Size(448, 116);
             panel4.TabIndex = 75;
             // 
             // label10
@@ -552,48 +550,12 @@
             pictureBox10.TabIndex = 72;
             pictureBox10.TabStop = false;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Buscar;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1307, 263);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 81;
-            button1.Text = "Buscar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(1446, 263);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 37);
-            button2.TabIndex = 80;
-            button2.Text = "Limpiar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
-            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(button1);
-            Controls.Add(button2);
             Controls.Add(pictureBox14);
             Controls.Add(textBox1);
             Controls.Add(panel7);
@@ -666,8 +628,6 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Button button1;
-        private Button button2;
         private TextBox textBox3;
         private ComboBox comboBox1;
         private CheckBox checkBox1;
