@@ -36,7 +36,7 @@
             txtUsuario = new TextBox();
             pictureBox2 = new PictureBox();
             label4 = new Label();
-            txtContrasena = new TextBox();
+            txtContra = new TextBox();
             btnIniciarSesion = new Button();
             pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -115,17 +115,17 @@
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
-            // txtContrasena
+            // txtContra
             // 
-            txtContrasena.BorderStyle = BorderStyle.FixedSingle;
-            txtContrasena.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContrasena.Location = new Point(522, 321);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.PasswordChar = '*';
-            txtContrasena.PlaceholderText = " Ingresa tu contraseña";
-            txtContrasena.Size = new Size(359, 34);
-            txtContrasena.TabIndex = 7;
-            txtContrasena.TabStop = false;
+            txtContra.BorderStyle = BorderStyle.FixedSingle;
+            txtContra.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtContra.Location = new Point(522, 321);
+            txtContra.Name = "txtContra";
+            txtContra.PasswordChar = '*';
+            txtContra.PlaceholderText = " Ingresa tu contraseña";
+            txtContra.Size = new Size(359, 34);
+            txtContra.TabIndex = 7;
+            txtContra.TabStop = false;
             // 
             // btnIniciarSesion
             // 
@@ -161,7 +161,7 @@
             ClientSize = new Size(933, 582);
             Controls.Add(pictureBox3);
             Controls.Add(btnIniciarSesion);
-            Controls.Add(txtContrasena);
+            Controls.Add(txtContra);
             Controls.Add(label4);
             Controls.Add(pictureBox2);
             Controls.Add(txtUsuario);
@@ -188,7 +188,7 @@
         private TextBox txtUsuario;
         private PictureBox pictureBox2;
         private Label label4;
-        private TextBox txtContrasena;
+        private TextBox txtContra;
         private Button btnIniciarSesion;
         private PictureBox pictureBox3;
     }

@@ -30,36 +30,35 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPanelPrincipal));
             panel7 = new Panel();
-            label11 = new Label();
-            label12 = new Label();
+            lblEntradasHoy = new Label();
+            lblDescripcionEntradas = new Label();
             pictureBox14 = new PictureBox();
-            label13 = new Label();
+            lblTituloTarjeta3 = new Label();
             panel6 = new Panel();
-            dataGridView1 = new DataGridView();
-            colFechaPP = new DataGridViewTextBoxColumn();
-            colMovimientoPP = new DataGridViewTextBoxColumn();
-            colProductoPP = new DataGridViewTextBoxColumn();
-            colCantidadPP = new DataGridViewTextBoxColumn();
-            colProveedorPP = new DataGridViewTextBoxColumn();
+            dgvMovimientos = new DataGridView();
             button11 = new Button();
             label14 = new Label();
             pictureBox15 = new PictureBox();
             panel3 = new Panel();
-            label8 = new Label();
-            label7 = new Label();
+            lblProductosStockMinimo = new Label();
+            lblDescripcionStock = new Label();
             pictureBox11 = new PictureBox();
-            label6 = new Label();
+            lblTituloTarjeta2 = new Label();
             panel2 = new Panel();
-            label5 = new Label();
-            label4 = new Label();
-            label3 = new Label();
+            lblTotalProductos = new Label();
+            lblDescripcionProductos = new Label();
+            lblTituloTarjeta1 = new Label();
             pictureBox10 = new PictureBox();
-            label2 = new Label();
-            label1 = new Label();
+            lblDescripcion = new Label();
+            lblBienvenida = new Label();
+            colFecha = new DataGridViewTextBoxColumn();
+            colMovimiento = new DataGridViewTextBoxColumn();
+            colProducto = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMovimientos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -71,34 +70,34 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(label11);
-            panel7.Controls.Add(label12);
+            panel7.Controls.Add(lblEntradasHoy);
+            panel7.Controls.Add(lblDescripcionEntradas);
             panel7.Controls.Add(pictureBox14);
-            panel7.Controls.Add(label13);
+            panel7.Controls.Add(lblTituloTarjeta3);
             panel7.Location = new Point(1101, 154);
             panel7.Name = "panel7";
             panel7.Size = new Size(424, 164);
             panel7.TabIndex = 17;
             // 
-            // label11
+            // lblEntradasHoy
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(98, 63);
-            label11.Name = "label11";
-            label11.Size = new Size(49, 38);
-            label11.TabIndex = 8;
-            label11.Text = "20";
+            lblEntradasHoy.AutoSize = true;
+            lblEntradasHoy.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEntradasHoy.Location = new Point(98, 63);
+            lblEntradasHoy.Name = "lblEntradasHoy";
+            lblEntradasHoy.Size = new Size(49, 38);
+            lblEntradasHoy.TabIndex = 8;
+            lblEntradasHoy.Text = "20";
             // 
-            // label12
+            // lblDescripcionEntradas
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(98, 101);
-            label12.Name = "label12";
-            label12.Size = new Size(174, 23);
-            label12.TabIndex = 7;
-            label12.Text = "Registros de entradas";
+            lblDescripcionEntradas.AutoSize = true;
+            lblDescripcionEntradas.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescripcionEntradas.Location = new Point(98, 101);
+            lblDescripcionEntradas.Name = "lblDescripcionEntradas";
+            lblDescripcionEntradas.Size = new Size(174, 23);
+            lblDescripcionEntradas.TabIndex = 7;
+            lblDescripcionEntradas.Text = "Registros de entradas";
             // 
             // pictureBox14
             // 
@@ -110,20 +109,20 @@
             pictureBox14.TabIndex = 6;
             pictureBox14.TabStop = false;
             // 
-            // label13
+            // lblTituloTarjeta3
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            label13.Location = new Point(98, 32);
-            label13.Name = "label13";
-            label13.Size = new Size(195, 25);
-            label13.TabIndex = 0;
-            label13.Text = "Total de entradas hoy";
+            lblTituloTarjeta3.AutoSize = true;
+            lblTituloTarjeta3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblTituloTarjeta3.Location = new Point(98, 32);
+            lblTituloTarjeta3.Name = "lblTituloTarjeta3";
+            lblTituloTarjeta3.Size = new Size(195, 25);
+            lblTituloTarjeta3.TabIndex = 0;
+            lblTituloTarjeta3.Text = "Total de entradas hoy";
             // 
             // panel6
             // 
             panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(dataGridView1);
+            panel6.Controls.Add(dgvMovimientos);
             panel6.Controls.Add(button11);
             panel6.Controls.Add(label14);
             panel6.Controls.Add(pictureBox15);
@@ -132,51 +131,17 @@
             panel6.Size = new Size(1354, 413);
             panel6.TabIndex = 18;
             // 
-            // dataGridView1
+            // dgvMovimientos
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colFechaPP, colMovimientoPP, colProductoPP, colCantidadPP, colProveedorPP });
-            dataGridView1.Location = new Point(-1, 95);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1354, 317);
-            dataGridView1.TabIndex = 11;
-            // 
-            // colFechaPP
-            // 
-            colFechaPP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colFechaPP.HeaderText = "Fecha";
-            colFechaPP.MinimumWidth = 6;
-            colFechaPP.Name = "colFechaPP";
-            // 
-            // colMovimientoPP
-            // 
-            colMovimientoPP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colMovimientoPP.HeaderText = "Movimiento";
-            colMovimientoPP.MinimumWidth = 6;
-            colMovimientoPP.Name = "colMovimientoPP";
-            // 
-            // colProductoPP
-            // 
-            colProductoPP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProductoPP.HeaderText = "Producto";
-            colProductoPP.MinimumWidth = 6;
-            colProductoPP.Name = "colProductoPP";
-            // 
-            // colCantidadPP
-            // 
-            colCantidadPP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCantidadPP.HeaderText = "Cantidad";
-            colCantidadPP.MinimumWidth = 6;
-            colCantidadPP.Name = "colCantidadPP";
-            // 
-            // colProveedorPP
-            // 
-            colProveedorPP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProveedorPP.HeaderText = "Proveedor";
-            colProveedorPP.MinimumWidth = 6;
-            colProveedorPP.Name = "colProveedorPP";
+            dgvMovimientos.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvMovimientos.Columns.AddRange(new DataGridViewColumn[] { colFecha, colMovimiento, colProducto, colCantidad });
+            dgvMovimientos.Location = new Point(-1, 95);
+            dgvMovimientos.Name = "dgvMovimientos";
+            dgvMovimientos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dgvMovimientos.RowHeadersWidth = 51;
+            dgvMovimientos.Size = new Size(1354, 317);
+            dgvMovimientos.TabIndex = 11;
             // 
             // button11
             // 
@@ -217,34 +182,34 @@
             // 
             panel3.BackColor = Color.FromArgb(242, 249, 254);
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label8);
-            panel3.Controls.Add(label7);
+            panel3.Controls.Add(lblProductosStockMinimo);
+            panel3.Controls.Add(lblDescripcionStock);
             panel3.Controls.Add(pictureBox11);
-            panel3.Controls.Add(label6);
+            panel3.Controls.Add(lblTituloTarjeta2);
             panel3.Location = new Point(637, 154);
             panel3.Name = "panel3";
             panel3.Size = new Size(424, 164);
             panel3.TabIndex = 14;
             // 
-            // label8
+            // lblProductosStockMinimo
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(99, 63);
-            label8.Name = "label8";
-            label8.Size = new Size(33, 38);
-            label8.TabIndex = 8;
-            label8.Text = "8";
+            lblProductosStockMinimo.AutoSize = true;
+            lblProductosStockMinimo.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductosStockMinimo.Location = new Point(99, 63);
+            lblProductosStockMinimo.Name = "lblProductosStockMinimo";
+            lblProductosStockMinimo.Size = new Size(33, 38);
+            lblProductosStockMinimo.TabIndex = 8;
+            lblProductosStockMinimo.Text = "8";
             // 
-            // label7
+            // lblDescripcionStock
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 101);
-            label7.Name = "label7";
-            label7.Size = new Size(148, 23);
-            label7.TabIndex = 7;
-            label7.Text = "Requiere atención";
+            lblDescripcionStock.AutoSize = true;
+            lblDescripcionStock.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescripcionStock.Location = new Point(99, 101);
+            lblDescripcionStock.Name = "lblDescripcionStock";
+            lblDescripcionStock.Size = new Size(148, 23);
+            lblDescripcionStock.TabIndex = 7;
+            lblDescripcionStock.Text = "Requiere atención";
             // 
             // pictureBox11
             // 
@@ -256,58 +221,58 @@
             pictureBox11.TabIndex = 6;
             pictureBox11.TabStop = false;
             // 
-            // label6
+            // lblTituloTarjeta2
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            label6.Location = new Point(99, 32);
-            label6.Name = "label6";
-            label6.Size = new Size(255, 25);
-            label6.TabIndex = 0;
-            label6.Text = "Productos con stock mínimo";
+            lblTituloTarjeta2.AutoSize = true;
+            lblTituloTarjeta2.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblTituloTarjeta2.Location = new Point(99, 32);
+            lblTituloTarjeta2.Name = "lblTituloTarjeta2";
+            lblTituloTarjeta2.Size = new Size(255, 25);
+            lblTituloTarjeta2.TabIndex = 0;
+            lblTituloTarjeta2.Text = "Productos con stock mínimo";
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(242, 249, 254);
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
-            panel2.Controls.Add(label3);
+            panel2.Controls.Add(lblTotalProductos);
+            panel2.Controls.Add(lblDescripcionProductos);
+            panel2.Controls.Add(lblTituloTarjeta1);
             panel2.Controls.Add(pictureBox10);
             panel2.Location = new Point(171, 154);
             panel2.Name = "panel2";
             panel2.Size = new Size(424, 164);
             panel2.TabIndex = 13;
             // 
-            // label5
+            // lblTotalProductos
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 58);
-            label5.Name = "label5";
-            label5.Size = new Size(65, 38);
-            label5.TabIndex = 2;
-            label5.Text = "100";
+            lblTotalProductos.AutoSize = true;
+            lblTotalProductos.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalProductos.Location = new Point(99, 58);
+            lblTotalProductos.Name = "lblTotalProductos";
+            lblTotalProductos.Size = new Size(65, 38);
+            lblTotalProductos.TabIndex = 2;
+            lblTotalProductos.Text = "100";
             // 
-            // label4
+            // lblDescripcionProductos
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 101);
-            label4.Name = "label4";
-            label4.Size = new Size(280, 23);
-            label4.TabIndex = 1;
-            label4.Text = "Productos registrado en el sistemas";
+            lblDescripcionProductos.AutoSize = true;
+            lblDescripcionProductos.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDescripcionProductos.Location = new Point(99, 101);
+            lblDescripcionProductos.Name = "lblDescripcionProductos";
+            lblDescripcionProductos.Size = new Size(280, 23);
+            lblDescripcionProductos.TabIndex = 1;
+            lblDescripcionProductos.Text = "Productos registrado en el sistemas";
             // 
-            // label3
+            // lblTituloTarjeta1
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            label3.Location = new Point(99, 32);
-            label3.Name = "label3";
-            label3.Size = new Size(170, 25);
-            label3.TabIndex = 0;
-            label3.Text = "Total de productos";
+            lblTituloTarjeta1.AutoSize = true;
+            lblTituloTarjeta1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            lblTituloTarjeta1.Location = new Point(99, 32);
+            lblTituloTarjeta1.Name = "lblTituloTarjeta1";
+            lblTituloTarjeta1.Size = new Size(170, 25);
+            lblTituloTarjeta1.TabIndex = 0;
+            lblTituloTarjeta1.Text = "Total de productos";
             // 
             // pictureBox10
             // 
@@ -319,25 +284,53 @@
             pictureBox10.TabIndex = 5;
             pictureBox10.TabStop = false;
             // 
-            // label2
+            // lblDescripcion
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(189, 100);
-            label2.Name = "label2";
-            label2.Size = new Size(406, 23);
-            label2.TabIndex = 12;
-            label2.Text = "Aquí tienes un resumen del estado de tu inventario.";
+            lblDescripcion.AutoSize = true;
+            lblDescripcion.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDescripcion.Location = new Point(189, 100);
+            lblDescripcion.Name = "lblDescripcion";
+            lblDescripcion.Size = new Size(406, 23);
+            lblDescripcion.TabIndex = 12;
+            lblDescripcion.Text = "Aquí tienes un resumen del estado de tu inventario.";
             // 
-            // label1
+            // lblBienvenida
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(158, 44);
-            label1.Name = "label1";
-            label1.Size = new Size(473, 46);
-            label1.TabIndex = 11;
-            label1.Text = "¡Bienvenido, Administrador!";
+            lblBienvenida.AutoSize = true;
+            lblBienvenida.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBienvenida.Location = new Point(158, 44);
+            lblBienvenida.Name = "lblBienvenida";
+            lblBienvenida.Size = new Size(473, 46);
+            lblBienvenida.TabIndex = 11;
+            lblBienvenida.Text = "¡Bienvenido, Administrador!";
+            // 
+            // colFecha
+            // 
+            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colFecha.HeaderText = "Fecha";
+            colFecha.MinimumWidth = 6;
+            colFecha.Name = "colFecha";
+            // 
+            // colMovimiento
+            // 
+            colMovimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colMovimiento.HeaderText = "Movimiento";
+            colMovimiento.MinimumWidth = 6;
+            colMovimiento.Name = "colMovimiento";
+            // 
+            // colProducto
+            // 
+            colProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colProducto.HeaderText = "Producto";
+            colProducto.MinimumWidth = 6;
+            colProducto.Name = "colProducto";
+            // 
+            // colCantidad
+            // 
+            colCantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
             // 
             // frmPanelPrincipal
             // 
@@ -349,8 +342,8 @@
             Controls.Add(panel6);
             Controls.Add(panel3);
             Controls.Add(panel2);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblDescripcion);
+            Controls.Add(lblBienvenida);
             Name = "frmPanelPrincipal";
             Text = "Librería PrintZone - Sistema de Inventario";
             panel7.ResumeLayout(false);
@@ -358,7 +351,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvMovimientos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -372,31 +365,30 @@
 
         #endregion
         private Panel panel7;
-        private Label label11;
-        private Label label12;
+        private Label lblEntradasHoy;
+        private Label lblDescripcionEntradas;
         private PictureBox pictureBox14;
-        private Label label13;
+        private Label lblTituloTarjeta3;
         private Panel panel6;
         private Button button11;
         private Label label14;
         private PictureBox pictureBox15;
         private Panel panel3;
-        private Label label8;
-        private Label label7;
+        private Label lblProductosStockMinimo;
+        private Label lblDescripcionStock;
         private PictureBox pictureBox11;
-        private Label label6;
+        private Label lblTituloTarjeta2;
         private Panel panel2;
         private PictureBox pictureBox10;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn colFechaPP;
-        private DataGridViewTextBoxColumn colMovimientoPP;
-        private DataGridViewTextBoxColumn colProductoPP;
-        private DataGridViewTextBoxColumn colCantidadPP;
-        private DataGridViewTextBoxColumn colProveedorPP;
+        private Label lblTotalProductos;
+        private Label lblDescripcionProductos;
+        private Label lblTituloTarjeta1;
+        private Label lblDescripcion;
+        private Label lblBienvenida;
+        private DataGridView dgvMovimientos;
+        private DataGridViewTextBoxColumn colFecha;
+        private DataGridViewTextBoxColumn colMovimiento;
+        private DataGridViewTextBoxColumn colProducto;
+        private DataGridViewTextBoxColumn colCantidad;
     }
 }

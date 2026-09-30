@@ -12,60 +12,66 @@ namespace LibreriaPrintZone.Controllers
             _context = new InventarioPrintzoneContext();
         }
 
-
         public List<Categoria> ObtenerCategorias()
         {
-            return _context.Categorias
-                .Include(c => c.Productos)
+            var categorias = _context.Categorias
+                .FromSqlRaw("EXEC sp_Categorias_Listar")
                 .AsNoTracking()
                 .ToList();
-        }
 
+            var idsCategorias = categorias
+                .Select(c => c.IdCategoria)
+                .ToList();
+
+            var productos = _context.Productos
+                .AsNoTracking()
+                .Where(p => idsCategorias.Contains(p.IdCategoria))
+                .ToList();
+
+            foreach (var categoria in categorias)
+            {
+                categoria.Productos = productos
+                    .Where(p => p.IdCategoria == categoria.IdCategoria)
+                    .ToList();
+            }
+
+            return categorias;
+        }
 
         public void GuardarCategoria(string nombreCategoria)
         {
-            var categoria = new Categoria
-            {
-                NombreCategoria = nombreCategoria
-            };
-
-            _context.Categorias.Add(categoria);
-            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(
+                "EXEC sp_Categorias_Insertar @p0",
+                nombreCategoria
+            );
         }
-
 
         public void ActualizarCategoria(int idCategoria, string nombreCategoria)
         {
-            var categoria = _context.Categorias.Find(idCategoria);
-
-            if (categoria == null)
-                return;
-
-            categoria.NombreCategoria = nombreCategoria;
-
-            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(
+                "EXEC sp_Categorias_Actualizar @p0, @p1",
+                idCategoria,
+                nombreCategoria
+            );
         }
-
 
         public bool EliminarCategoria(int idCategoria)
         {
-            var categoria = _context.Categorias
-                .Include(c => c.Productos)
-                .FirstOrDefault(c => c.IdCategoria == idCategoria);
+            try
+            {
+                _context.Database.ExecuteSqlRaw(
+                    "EXEC sp_Categorias_Eliminar @p0",
+                    idCategoria
+                );
 
-            if (categoria == null)
+                return true;
+            }
+            catch
+            {
                 return false;
-
-            if (categoria.Productos.Any())
-                return false;
-
-            _context.Categorias.Remove(categoria);
-            _context.SaveChanges();
-
-            return true;
+            }
         }
 
-        //TARJETAS
         public int ObtenerTotalCategorias()
         {
             return _context.Categorias.Count();
@@ -87,8 +93,6 @@ namespace LibreriaPrintZone.Controllers
                 .FirstOrDefault();
         }
 
-
-        //BUSCADOR
         public List<Categoria> BuscarCategorias(string texto)
         {
             return _context.Categorias
