@@ -36,7 +36,11 @@
             lblTituloTarjeta3 = new Label();
             panel6 = new Panel();
             dgvMovimientos = new DataGridView();
-            button11 = new Button();
+            colFecha = new DataGridViewTextBoxColumn();
+            colMovimiento = new DataGridViewTextBoxColumn();
+            colProducto = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
+            btnVerTodos = new Button();
             label14 = new Label();
             pictureBox15 = new PictureBox();
             panel3 = new Panel();
@@ -51,10 +55,6 @@
             pictureBox10 = new PictureBox();
             lblDescripcion = new Label();
             lblBienvenida = new Label();
-            colFecha = new DataGridViewTextBoxColumn();
-            colMovimiento = new DataGridViewTextBoxColumn();
-            colProducto = new DataGridViewTextBoxColumn();
-            colCantidad = new DataGridViewTextBoxColumn();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel6.SuspendLayout();
@@ -123,7 +123,7 @@
             // 
             panel6.BorderStyle = BorderStyle.FixedSingle;
             panel6.Controls.Add(dgvMovimientos);
-            panel6.Controls.Add(button11);
+            panel6.Controls.Add(btnVerTodos);
             panel6.Controls.Add(label14);
             panel6.Controls.Add(pictureBox15);
             panel6.Location = new Point(171, 367);
@@ -143,20 +143,49 @@
             dgvMovimientos.Size = new Size(1354, 317);
             dgvMovimientos.TabIndex = 11;
             // 
-            // button11
+            // colFecha
             // 
-            button11.Cursor = Cursors.Hand;
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleRight;
-            button11.Location = new Point(1195, 31);
-            button11.Name = "button11";
-            button11.Size = new Size(143, 35);
-            button11.TabIndex = 10;
-            button11.Text = "Ver todos";
-            button11.UseVisualStyleBackColor = true;
+            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colFecha.HeaderText = "Fecha";
+            colFecha.MinimumWidth = 6;
+            colFecha.Name = "colFecha";
+            // 
+            // colMovimiento
+            // 
+            colMovimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colMovimiento.HeaderText = "Movimiento";
+            colMovimiento.MinimumWidth = 6;
+            colMovimiento.Name = "colMovimiento";
+            // 
+            // colProducto
+            // 
+            colProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colProducto.HeaderText = "Producto";
+            colProducto.MinimumWidth = 6;
+            colProducto.Name = "colProducto";
+            // 
+            // colCantidad
+            // 
+            colCantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
+            // 
+            // btnVerTodos
+            // 
+            btnVerTodos.Cursor = Cursors.Hand;
+            btnVerTodos.FlatAppearance.BorderSize = 0;
+            btnVerTodos.FlatStyle = FlatStyle.Flat;
+            btnVerTodos.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVerTodos.Image = (Image)resources.GetObject("btnVerTodos.Image");
+            btnVerTodos.ImageAlign = ContentAlignment.MiddleRight;
+            btnVerTodos.Location = new Point(1195, 31);
+            btnVerTodos.Name = "btnVerTodos";
+            btnVerTodos.Size = new Size(143, 35);
+            btnVerTodos.TabIndex = 10;
+            btnVerTodos.Text = "Ver todos";
+            btnVerTodos.UseVisualStyleBackColor = true;
+            btnVerTodos.Click += btnVerTodos_Click;
             // 
             // label14
             // 
@@ -304,34 +333,6 @@
             lblBienvenida.TabIndex = 11;
             lblBienvenida.Text = "¡Bienvenido, Administrador!";
             // 
-            // colFecha
-            // 
-            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colFecha.HeaderText = "Fecha";
-            colFecha.MinimumWidth = 6;
-            colFecha.Name = "colFecha";
-            // 
-            // colMovimiento
-            // 
-            colMovimiento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colMovimiento.HeaderText = "Movimiento";
-            colMovimiento.MinimumWidth = 6;
-            colMovimiento.Name = "colMovimiento";
-            // 
-            // colProducto
-            // 
-            colProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProducto.HeaderText = "Producto";
-            colProducto.MinimumWidth = 6;
-            colProducto.Name = "colProducto";
-            // 
-            // colCantidad
-            // 
-            colCantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCantidad.HeaderText = "Cantidad";
-            colCantidad.MinimumWidth = 6;
-            colCantidad.Name = "colCantidad";
-            // 
             // frmPanelPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -370,7 +371,7 @@
         private PictureBox pictureBox14;
         private Label lblTituloTarjeta3;
         private Panel panel6;
-        private Button button11;
+        private Button btnVerTodos;
         private Label label14;
         private PictureBox pictureBox15;
         private Panel panel3;

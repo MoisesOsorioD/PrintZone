@@ -1,7 +1,6 @@
 ﻿using LibreriaPrintZone.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -93,13 +92,13 @@ namespace LibreriaPrintZone.Views
             {
                 using var context = new InventarioPrintzoneContext();
 
-                // =================================================
-                // POR AHORA NOS ENFOCAMOS EN ADMINISTRADOR
-                // =================================================
-
                 if (_rol == "Administrador")
                 {
                     CargarDashboardAdministrador(context);
+                }
+                else if (_rol == "Vendedor")
+                {
+                    CargarDashboardVendedor(context);
                 }
             }
             catch (Exception ex)
@@ -231,6 +230,84 @@ namespace LibreriaPrintZone.Views
         }
 
         // =========================================================
+        // DASHBOARD VENDEDOR
+        // =========================================================
+
+        private void CargarDashboardVendedor(
+            InventarioPrintzoneContext context)
+        {
+            // =====================================================
+            // TARJETAS
+            // =====================================================
+
+            var resultado = context.Database
+                .SqlQueryRaw<DashboardVendedorResultado>(
+                    "EXEC sp_Dashboard_Vendedor"
+                )
+                .AsEnumerable()
+                .FirstOrDefault();
+
+            if (resultado != null)
+            {
+                lblTotalProductos.Text =
+                    resultado.total_salidas_hoy.ToString();
+
+                lblProductosStockMinimo.Text =
+                    string.IsNullOrWhiteSpace(
+                        resultado.producto_mas_salidas)
+                        ? "-"
+                        : resultado.producto_mas_salidas;
+
+                lblEntradasHoy.Text =
+                    string.IsNullOrWhiteSpace(
+                        resultado.categoria_mas_salidas)
+                        ? "-"
+                        : resultado.categoria_mas_salidas;
+            }
+            else
+            {
+                lblTotalProductos.Text = "0";
+                lblProductosStockMinimo.Text = "-";
+                lblEntradasHoy.Text = "-";
+            }
+
+            // =====================================================
+            // DATAGRID DEL VENDEDOR
+            // =====================================================
+
+            CargarMovimientosVendedor(context);
+        }
+
+        // =========================================================
+        // MOVIMIENTOS DEL VENDEDOR
+        // =========================================================
+
+        private void CargarMovimientosVendedor(
+            InventarioPrintzoneContext context)
+        {
+            var salidas = context.Salidas
+                .AsNoTracking()
+                .Include(s => s.IdProductoNavigation)
+                .OrderByDescending(s => s.FechaSalida)
+                .Take(10)
+                .ToList();
+
+            dgvMovimientos.Rows.Clear();
+
+            foreach (var salida in salidas)
+            {
+                dgvMovimientos.Rows.Add(
+                    salida.FechaSalida.ToString("dd/MM/yyyy"),
+                    "Salida",
+                    salida.IdProductoNavigation.Nombre,
+                    salida.Cantidad
+                );
+            }
+
+            dgvMovimientos.ClearSelection();
+        }
+
+        // =========================================================
         // RESULTADO DEL PROCEDIMIENTO DEL ADMINISTRADOR
         // =========================================================
 
@@ -241,6 +318,19 @@ namespace LibreriaPrintZone.Views
             public int productos_stock_minimo { get; set; }
 
             public int entradas_hoy { get; set; }
+        }
+
+        // =========================================================
+        // RESULTADO DEL PROCEDIMIENTO DEL VENDEDOR
+        // =========================================================
+
+        public class DashboardVendedorResultado
+        {
+            public int total_salidas_hoy { get; set; }
+
+            public string? producto_mas_salidas { get; set; }
+
+            public string? categoria_mas_salidas { get; set; }
         }
 
         // =========================================================
@@ -256,7 +346,116 @@ namespace LibreriaPrintZone.Views
             public string Producto { get; set; } = "";
 
             public int Cantidad { get; set; }
-
         }
+
+        private void btnVerTodos_Click(object sender, EventArgs e)
+        {
+            if (_rol == "Administrador")
+            {
+                using Form dialogo = new Form();
+
+                dialogo.Text = "Consultar movimientos";
+                dialogo.StartPosition = FormStartPosition.CenterParent;
+                dialogo.FormBorderStyle = FormBorderStyle.FixedDialog;
+                dialogo.MaximizeBox = false;
+                dialogo.MinimizeBox = false;
+                dialogo.ShowInTaskbar = false;
+                dialogo.ClientSize = new Size(360, 170);
+                dialogo.BackColor = Color.White;
+
+                Label lblPregunta = new Label
+                {
+                    Text = "¿A dónde desea ir?",
+                    Font = new Font(
+                        "Segoe UI",
+                        11,
+                        FontStyle.Bold
+                    ),
+                    ForeColor = Color.FromArgb(16, 42, 82),
+                    AutoSize = true,
+                    Location = new Point(105, 25)
+                };
+
+                Button btnEntradas = new Button
+                {
+                    Text = "Entradas",
+                    Font = new Font(
+                        "Segoe UI",
+                        9,
+                        FontStyle.Bold
+                    ),
+                    ForeColor = Color.White,
+                    BackColor = Color.FromArgb(36, 111, 219),
+                    FlatStyle = FlatStyle.Flat,
+                    Size = new Size(110, 40),
+                    Location = new Point(55, 70),
+                    Cursor = Cursors.Hand
+                };
+
+                btnEntradas.FlatAppearance.BorderSize = 0;
+
+                Button btnSalidas = new Button
+                {
+                    Text = "Salidas",
+                    Font = new Font(
+                        "Segoe UI",
+                        9,
+                        FontStyle.Bold
+                    ),
+                    ForeColor = Color.White,
+                    BackColor = Color.FromArgb(36, 111, 219),
+                    FlatStyle = FlatStyle.Flat,
+                    Size = new Size(110, 40),
+                    Location = new Point(195, 70),
+                    Cursor = Cursors.Hand
+                };
+
+                btnSalidas.FlatAppearance.BorderSize = 0;
+
+                btnEntradas.Click += (s, args) =>
+                {
+                    dialogo.DialogResult = DialogResult.Yes;
+                    dialogo.Close();
+                };
+
+                btnSalidas.Click += (s, args) =>
+                {
+                    dialogo.DialogResult = DialogResult.No;
+                    dialogo.Close();
+                };
+
+                dialogo.Controls.Add(lblPregunta);
+                dialogo.Controls.Add(btnEntradas);
+                dialogo.Controls.Add(btnSalidas);
+
+                DialogResult resultado = dialogo.ShowDialog(this);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    if (this.ParentForm is frmLayouts layout)
+                    {
+                        layout.AbrirFormulario(new frmEntradas());
+                    }
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    if (this.ParentForm is frmLayouts layout)
+                    {
+                        layout.AbrirFormulario(new frmSalidas());
+                    }
+                }
+            }
+            else if (_rol == "Vendedor")
+            {
+                if (this.ParentForm is frmLayouts layout)
+                {
+                    layout.AbrirFormulario(new frmSalidas());
+                }
+            }
+        }
+
+
+
+
     }
 }
