@@ -555,7 +555,7 @@
         ptoRVK79lxL+f5s2dO1I3uiUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button9.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABBElEQVRIS9WUYRHCMAyFkYCESUDC
@@ -566,7 +566,7 @@
         J+QThGN3TC4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnLimpiar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABOklEQVRIS92UYXUCMRCEkYAEJCAF
@@ -602,6 +602,18 @@
         R1gM37KsEypUL0dfuG0RbVAeWw3fsrwTgKg40xkY4ojRJQ/hhBYWRoxXX0n/c+c3CvwN8fg813IPgz/D
         6JKHc0JE0gkB6HXC1g4+OUiPE1b+7cRQrE7gmuQirE5ILkRzgsvbVB6dPSfkIuwIhq4/560bwTR+kiRJ
         kiRJkiSb/APe4gDAY689RQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnProductosInactivos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAA50RVh0U29mdHdhcmUARmlnbWGesZZjAAABOklEQVRIS92UYXUCMRCEkYAEJCAF
+        B1QCDoqD4gAcFAfUAXVAHVTC8OaYvbdMkrvwl++9+0Em7Owm2V0s3goAJwA3AEv9XgLYAPjWenDV2ofH
+        mATAnwKsFDgHbcE9fUbJ4JgC/ADYyTQqWzOoJfDp8QqSQbDzPY7Mgy/XnzADnvFe38r3ZlTRv/63cX2k
+        UkFw9L1OqoRGw1EW6GIj6/wNFejMb/6/AMBFJn2X7kQ5vh6kKs6uddFhwJdGyirnyidh0AwylURTSNi7
+        f9lg7GLXetFzJVfXKJ4lzjZXC3U3KS85iRfXeklHWD5TTc7oxperSAlW72ZAjUZotHa9hY2KMvsMgEMy
+        md782L9NwfeuV9F4CNj+LH98XWoorsVoIIfnKDNU5n0LZt+eoHPIiE/4NwVlz3CNWn1yvg13OS2vpLsX
+        bYYAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

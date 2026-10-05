@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            dataGridView1 = new DataGridView();
+            dgvProductos = new DataGridView();
             colProductoP = new DataGridViewTextBoxColumn();
             colDescripcionP = new DataGridViewTextBoxColumn();
             colMarcaP = new DataGridViewTextBoxColumn();
@@ -47,32 +47,33 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
+            cmbCategoria = new ComboBox();
             label15 = new Label();
             label14 = new Label();
-            textBox9 = new TextBox();
+            txtStockMinimo = new TextBox();
             label12 = new Label();
-            textBox7 = new TextBox();
+            txtCodigoBarras = new TextBox();
             label11 = new Label();
-            textBox8 = new TextBox();
+            txtStockActual = new TextBox();
             label10 = new Label();
-            textBox6 = new TextBox();
+            txtPrecioVenta = new TextBox();
             label9 = new Label();
-            textBox5 = new TextBox();
+            txtPrecioCompra = new TextBox();
             label8 = new Label();
-            textBox4 = new TextBox();
+            txtMarca = new TextBox();
             label7 = new Label();
-            textBox3 = new TextBox();
+            txtDescripcion = new TextBox();
             label13 = new Label();
-            textBox2 = new TextBox();
-            button9 = new Button();
-            button11 = new Button();
+            txtProducto = new TextBox();
+            btnEliminar = new Button();
+            btnGuardar = new Button();
             btnNuevoProductos = new Button();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            btnLimpiar = new Button();
+            txtBuscar = new TextBox();
             pictureBox14 = new PictureBox();
+            btnProductosInactivos = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel5.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -109,18 +110,18 @@
             pictureBox10.TabIndex = 8;
             pictureBox10.TabStop = false;
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
-            dataGridView1.Location = new Point(687, 255);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(933, 601);
-            dataGridView1.TabIndex = 8;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvProductos.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
+            dgvProductos.Location = new Point(687, 255);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.Size = new Size(933, 601);
+            dgvProductos.TabIndex = 8;
             // 
             // colProductoP
             // 
@@ -190,24 +191,24 @@
             panel5.BackColor = Color.FromArgb(242, 249, 254);
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel1);
-            panel5.Controls.Add(comboBox1);
+            panel5.Controls.Add(cmbCategoria);
             panel5.Controls.Add(label15);
             panel5.Controls.Add(label14);
-            panel5.Controls.Add(textBox9);
+            panel5.Controls.Add(txtStockMinimo);
             panel5.Controls.Add(label12);
-            panel5.Controls.Add(textBox7);
+            panel5.Controls.Add(txtCodigoBarras);
             panel5.Controls.Add(label11);
-            panel5.Controls.Add(textBox8);
+            panel5.Controls.Add(txtStockActual);
             panel5.Controls.Add(label10);
-            panel5.Controls.Add(textBox6);
+            panel5.Controls.Add(txtPrecioVenta);
             panel5.Controls.Add(label9);
-            panel5.Controls.Add(textBox5);
+            panel5.Controls.Add(txtPrecioCompra);
             panel5.Controls.Add(label8);
-            panel5.Controls.Add(textBox4);
+            panel5.Controls.Add(txtMarca);
             panel5.Controls.Add(label7);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(txtDescripcion);
             panel5.Controls.Add(label13);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(txtProducto);
             panel5.Location = new Point(139, 209);
             panel5.Name = "panel5";
             panel5.Size = new Size(524, 647);
@@ -244,13 +245,13 @@
             label3.TabIndex = 0;
             label3.Text = "El stock actual no se edita manualmente.\r\nSe actualiza desde las Entradas y Salidas.";
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(27, 280);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(227, 28);
-            comboBox1.TabIndex = 35;
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(27, 280);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(227, 28);
+            cmbCategoria.TabIndex = 35;
             // 
             // label15
             // 
@@ -272,13 +273,12 @@
             label14.TabIndex = 34;
             label14.Text = "Stock minimo";
             // 
-            // textBox9
+            // txtStockMinimo
             // 
-            textBox9.Location = new Point(276, 438);
-            textBox9.Name = "textBox9";
-            textBox9.PlaceholderText = " 10";
-            textBox9.Size = new Size(227, 27);
-            textBox9.TabIndex = 33;
+            txtStockMinimo.Location = new Point(276, 438);
+            txtStockMinimo.Name = "txtStockMinimo";
+            txtStockMinimo.Size = new Size(227, 27);
+            txtStockMinimo.TabIndex = 33;
             // 
             // label12
             // 
@@ -290,13 +290,12 @@
             label12.TabIndex = 31;
             label12.Text = "Stock actual";
             // 
-            // textBox7
+            // txtCodigoBarras
             // 
-            textBox7.Location = new Point(276, 280);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " 18495632";
-            textBox7.Size = new Size(226, 27);
-            textBox7.TabIndex = 27;
+            txtCodigoBarras.Location = new Point(276, 280);
+            txtCodigoBarras.Name = "txtCodigoBarras";
+            txtCodigoBarras.Size = new Size(226, 27);
+            txtCodigoBarras.TabIndex = 27;
             // 
             // label11
             // 
@@ -308,14 +307,13 @@
             label11.TabIndex = 28;
             label11.Text = "Código de barras";
             // 
-            // textBox8
+            // txtStockActual
             // 
-            textBox8.Location = new Point(27, 438);
-            textBox8.Name = "textBox8";
-            textBox8.PlaceholderText = " 50";
-            textBox8.ReadOnly = true;
-            textBox8.Size = new Size(226, 27);
-            textBox8.TabIndex = 30;
+            txtStockActual.Location = new Point(27, 438);
+            txtStockActual.Name = "txtStockActual";
+            txtStockActual.ReadOnly = true;
+            txtStockActual.Size = new Size(226, 27);
+            txtStockActual.TabIndex = 30;
             // 
             // label10
             // 
@@ -327,13 +325,12 @@
             label10.TabIndex = 25;
             label10.Text = "Precio de venta";
             // 
-            // textBox6
+            // txtPrecioVenta
             // 
-            textBox6.Location = new Point(276, 360);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "  C$ 200.00";
-            textBox6.Size = new Size(227, 27);
-            textBox6.TabIndex = 24;
+            txtPrecioVenta.Location = new Point(276, 360);
+            txtPrecioVenta.Name = "txtPrecioVenta";
+            txtPrecioVenta.Size = new Size(227, 27);
+            txtPrecioVenta.TabIndex = 24;
             // 
             // label9
             // 
@@ -345,13 +342,12 @@
             label9.TabIndex = 22;
             label9.Text = "Precio de compra";
             // 
-            // textBox5
+            // txtPrecioCompra
             // 
-            textBox5.Location = new Point(27, 360);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = " C$ 150.00";
-            textBox5.Size = new Size(226, 27);
-            textBox5.TabIndex = 21;
+            txtPrecioCompra.Location = new Point(27, 360);
+            txtPrecioCompra.Name = "txtPrecioCompra";
+            txtPrecioCompra.Size = new Size(226, 27);
+            txtPrecioCompra.TabIndex = 21;
             // 
             // label8
             // 
@@ -363,13 +359,12 @@
             label8.TabIndex = 19;
             label8.Text = "Marca";
             // 
-            // textBox4
+            // txtMarca
             // 
-            textBox4.Location = new Point(277, 92);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Report";
-            textBox4.Size = new Size(226, 27);
-            textBox4.TabIndex = 18;
+            txtMarca.Location = new Point(277, 92);
+            txtMarca.Name = "txtMarca";
+            txtMarca.Size = new Size(226, 27);
+            txtMarca.TabIndex = 18;
             // 
             // label7
             // 
@@ -381,14 +376,13 @@
             label7.TabIndex = 16;
             label7.Text = "Descripción";
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            textBox3.Location = new Point(27, 172);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = " Papel bond tamaño carta, 500 hojas.";
-            textBox3.Size = new Size(475, 57);
-            textBox3.TabIndex = 15;
+            txtDescripcion.Location = new Point(27, 172);
+            txtDescripcion.Multiline = true;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.Size = new Size(475, 57);
+            txtDescripcion.TabIndex = 15;
             // 
             // label13
             // 
@@ -400,47 +394,48 @@
             label13.TabIndex = 13;
             label13.Text = "Producto";
             // 
-            // textBox2
+            // txtProducto
             // 
-            textBox2.Location = new Point(27, 92);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = " Resma de papel";
-            textBox2.Size = new Size(226, 27);
-            textBox2.TabIndex = 12;
+            txtProducto.Location = new Point(27, 92);
+            txtProducto.Name = "txtProducto";
+            txtProducto.Size = new Size(226, 27);
+            txtProducto.TabIndex = 12;
             // 
-            // button9
+            // btnEliminar
             // 
-            button9.BackColor = Color.FromArgb(234, 45, 89);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(687, 133);
-            button9.Name = "button9";
-            button9.Size = new Size(121, 37);
-            button9.TabIndex = 40;
-            button9.Text = "Eliminar";
-            button9.TextAlign = ContentAlignment.MiddleRight;
-            button9.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(234, 45, 89);
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(911, 133);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(121, 37);
+            btnEliminar.TabIndex = 40;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button11
+            // btnGuardar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = Properties.Resources.Guardar;
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(365, 133);
-            button11.Name = "button11";
-            button11.Size = new Size(121, 37);
-            button11.TabIndex = 38;
-            button11.Text = "Guardar";
-            button11.TextAlign = ContentAlignment.MiddleRight;
-            button11.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(2, 113, 249);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = Properties.Resources.Guardar;
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(355, 133);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(137, 37);
+            btnGuardar.TabIndex = 38;
+            btnGuardar.Text = "Actualizar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevoProductos
             // 
@@ -458,33 +453,35 @@
             btnNuevoProductos.Text = "Nuevo Producto";
             btnNuevoProductos.TextAlign = ContentAlignment.MiddleRight;
             btnNuevoProductos.UseVisualStyleBackColor = false;
-            btnNuevoProductos.Click += btnNuevoProductos_Click;
+            btnNuevoProductos.Click += btnNuevoProducto_Click;
             // 
-            // button1
+            // btnLimpiar
             // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(522, 133);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 41;
-            button1.Text = "Limipar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(528, 133);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(121, 37);
+            btnLimpiar.TabIndex = 41;
+            btnLimpiar.Text = "Limipar";
+            btnLimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(733, 209);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar productos por nombre o código de barra";
-            textBox1.Size = new Size(887, 30);
-            textBox1.TabIndex = 42;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(733, 209);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar productos por nombre o código de barra";
+            txtBuscar.Size = new Size(887, 30);
+            txtBuscar.TabIndex = 42;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // pictureBox14
             // 
@@ -496,20 +493,39 @@
             pictureBox14.TabIndex = 60;
             pictureBox14.TabStop = false;
             // 
+            // btnProductosInactivos
+            // 
+            btnProductosInactivos.BackColor = Color.FromArgb(2, 113, 249);
+            btnProductosInactivos.FlatAppearance.BorderSize = 0;
+            btnProductosInactivos.FlatStyle = FlatStyle.Flat;
+            btnProductosInactivos.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProductosInactivos.ForeColor = Color.White;
+            btnProductosInactivos.Image = (Image)resources.GetObject("btnProductosInactivos.Image");
+            btnProductosInactivos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnProductosInactivos.Location = new Point(687, 133);
+            btnProductosInactivos.Name = "btnProductosInactivos";
+            btnProductosInactivos.Size = new Size(201, 37);
+            btnProductosInactivos.TabIndex = 61;
+            btnProductosInactivos.Text = "Productos Inactivos";
+            btnProductosInactivos.TextAlign = ContentAlignment.MiddleRight;
+            btnProductosInactivos.UseVisualStyleBackColor = false;
+            btnProductosInactivos.Click += btnProductosInactivos_Click;
+            // 
             // frmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
+            Controls.Add(btnProductosInactivos);
             Controls.Add(pictureBox14);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            Controls.Add(button9);
-            Controls.Add(button11);
+            Controls.Add(txtBuscar);
+            Controls.Add(btnLimpiar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnGuardar);
             Controls.Add(panel5);
             Controls.Add(btnNuevoProductos);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvProductos);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -517,7 +533,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de Productos";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
             panel1.ResumeLayout(false);
@@ -532,7 +548,7 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private DataGridView dataGridView1;
+        private DataGridView dgvProductos;
         private DataGridViewTextBoxColumn colProductoP;
         private DataGridViewTextBoxColumn colDescripcionP;
         private DataGridViewTextBoxColumn colMarcaP;
@@ -544,31 +560,32 @@
         private DataGridViewTextBoxColumn colCategoriaP;
         private Panel panel5;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox txtPrecioVenta;
         private Label label9;
-        private TextBox textBox5;
+        private TextBox txtPrecioCompra;
         private Label label8;
-        private TextBox textBox4;
+        private TextBox txtMarca;
         private Label label7;
-        private TextBox textBox3;
+        private TextBox txtDescripcion;
         private Label label13;
-        private TextBox textBox2;
+        private TextBox txtProducto;
         private Label label12;
-        private TextBox textBox8;
+        private TextBox txtStockActual;
         private Label label11;
-        private TextBox textBox7;
-        private ComboBox comboBox1;
+        private TextBox txtCodigoBarras;
+        private ComboBox cmbCategoria;
         private Label label15;
         private Label label14;
-        private TextBox textBox9;
-        private Button button9;
-        private Button button11;
+        private TextBox txtStockMinimo;
+        private Button btnEliminar;
+        private Button btnGuardar;
         private Button btnNuevoProductos;
-        private Button button1;
-        private TextBox textBox1;
+        private Button btnLimpiar;
+        private TextBox txtBuscar;
         private Panel panel1;
         private Label label3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox14;
+        private Button btnProductosInactivos;
     }
 }
