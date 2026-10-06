@@ -58,19 +58,19 @@
             pictureBox2 = new PictureBox();
             label16 = new Label();
             panel4 = new Panel();
-            label10 = new Label();
+            lblCantidadProductoMasSalidas = new Label();
             pictureBox13 = new PictureBox();
-            label7 = new Label();
+            lblProductoMasSalidas = new Label();
             label8 = new Label();
             panel3 = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
-            label4 = new Label();
+            lblUnidadesRetiradas = new Label();
             label6 = new Label();
             panel2 = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
-            label5 = new Label();
+            lblTotalS = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
@@ -387,24 +387,24 @@
             // 
             panel4.BackColor = Color.FromArgb(242, 249, 254);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblCantidadProductoMasSalidas);
             panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lblProductoMasSalidas);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1133, 112);
             panel4.Name = "panel4";
             panel4.Size = new Size(448, 116);
             panel4.TabIndex = 65;
             // 
-            // label10
+            // lblCantidadProductoMasSalidas
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(99, 83);
-            label10.Name = "label10";
-            label10.Size = new Size(111, 23);
-            label10.TabIndex = 10;
-            label10.Text = "300 unidades";
+            lblCantidadProductoMasSalidas.AutoSize = true;
+            lblCantidadProductoMasSalidas.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidadProductoMasSalidas.Location = new Point(99, 83);
+            lblCantidadProductoMasSalidas.Name = "lblCantidadProductoMasSalidas";
+            lblCantidadProductoMasSalidas.Size = new Size(111, 23);
+            lblCantidadProductoMasSalidas.TabIndex = 10;
+            lblCantidadProductoMasSalidas.Text = "300 unidades";
             // 
             // pictureBox13
             // 
@@ -416,15 +416,15 @@
             pictureBox13.TabIndex = 5;
             pictureBox13.TabStop = false;
             // 
-            // label7
+            // lblProductoMasSalidas
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(258, 38);
-            label7.TabIndex = 2;
-            label7.Text = "Cuaderno infantils";
+            lblProductoMasSalidas.AutoSize = true;
+            lblProductoMasSalidas.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProductoMasSalidas.Location = new Point(99, 38);
+            lblProductoMasSalidas.Name = "lblProductoMasSalidas";
+            lblProductoMasSalidas.Size = new Size(258, 38);
+            lblProductoMasSalidas.TabIndex = 2;
+            lblProductoMasSalidas.Text = "Cuaderno infantils";
             // 
             // label8
             // 
@@ -442,7 +442,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label9);
             panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblUnidadesRetiradas);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(642, 112);
             panel3.Name = "panel3";
@@ -469,15 +469,15 @@
             pictureBox12.TabIndex = 5;
             pictureBox12.TabStop = false;
             // 
-            // label4
+            // lblUnidadesRetiradas
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 38);
-            label4.TabIndex = 2;
-            label4.Text = "1";
+            lblUnidadesRetiradas.AutoSize = true;
+            lblUnidadesRetiradas.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnidadesRetiradas.Location = new Point(99, 38);
+            lblUnidadesRetiradas.Name = "lblUnidadesRetiradas";
+            lblUnidadesRetiradas.Size = new Size(33, 38);
+            lblUnidadesRetiradas.TabIndex = 2;
+            lblUnidadesRetiradas.Text = "1";
             // 
             // label6
             // 
@@ -495,7 +495,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label11);
             panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lblTotalS);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(126, 112);
             panel2.Name = "panel2";
@@ -522,15 +522,15 @@
             pictureBox11.TabIndex = 5;
             pictureBox11.TabStop = false;
             // 
-            // label5
+            // lblTotalS
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 38);
-            label5.TabIndex = 2;
-            label5.Text = "0";
+            lblTotalS.AutoSize = true;
+            lblTotalS.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalS.Location = new Point(99, 38);
+            lblTotalS.Name = "lblTotalS";
+            lblTotalS.Size = new Size(33, 38);
+            lblTotalS.TabIndex = 2;
+            lblTotalS.Text = "0";
             // 
             // label3
             // 
@@ -636,19 +636,19 @@
         private PictureBox pictureBox2;
         private Label label16;
         private Panel panel4;
-        private Label label10;
+        private Label lblCantidadProductoMasSalidas;
         private PictureBox pictureBox13;
-        private Label label7;
+        private Label lblProductoMasSalidas;
         private Label label8;
         private Panel panel3;
         private Label label9;
         private PictureBox pictureBox12;
-        private Label label4;
+        private Label lblUnidadesRetiradas;
         private Label label6;
         private Panel panel2;
         private Label label11;
         private PictureBox pictureBox11;
-        private Label label5;
+        private Label lblTotalS;
         private Label label3;
         private Label label2;
         private Label label1;

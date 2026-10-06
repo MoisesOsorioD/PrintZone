@@ -41,14 +41,19 @@ namespace LibreriaPrintZone.Views
                 txtBuscar_TextChanged;
 
             Load += frmSalidas_Load;
+
             CargarProductos();
             CargarSalidas();
+            ActualizarTarjetas();
         }
 
+        // =========================================================
+        // LOAD DEL FORMULARIO
+        // =========================================================
 
         private void frmSalidas_Load(
-    object? sender,
-    EventArgs e)
+            object? sender,
+            EventArgs e)
         {
             CargarUsuarioActual();
         }
@@ -258,8 +263,8 @@ namespace LibreriaPrintZone.Views
         // =========================================================
 
         private void ActualizarAlertaStock(
-            int stockActual,
-            int stockMinimo)
+    int stockActual,
+    int stockMinimo)
         {
             if (stockActual <= stockMinimo)
             {
@@ -269,6 +274,8 @@ namespace LibreriaPrintZone.Views
                         COLOR_ROJO_G,
                         COLOR_ROJO_B
                     );
+
+                lblStockDisponible.Text = "Stock Bajo";
             }
             else
             {
@@ -278,6 +285,8 @@ namespace LibreriaPrintZone.Views
                         COLOR_AZUL_G,
                         COLOR_AZUL_B
                     );
+
+                lblStockDisponible.Text = "Stock Disponible";
             }
         }
 
@@ -332,6 +341,60 @@ namespace LibreriaPrintZone.Views
             }
 
             dgvSalidas.ClearSelection();
+        }
+
+        // =========================================================
+        // ACTUALIZAR TARJETAS
+        // =========================================================
+
+        private void ActualizarTarjetas()
+        {
+            try
+            {
+                int totalSalidas =
+                    _controller.ObtenerTotalSalidas();
+
+                int totalUnidades =
+                    _controller.ObtenerTotalUnidades();
+
+                ProductoMasSalidas? productoMasSalidas =
+                    _controller.ObtenerProductoConMasSalidas();
+
+                lblTotalS.Text =
+                    totalSalidas.ToString("N0");
+
+                lblUnidadesRetiradas.Text =
+                    totalUnidades.ToString("N0");
+
+                if (productoMasSalidas == null)
+                {
+                    lblProductoMasSalidas.Text =
+                        "Sin registros";
+
+                    lblCantidadProductoMasSalidas.Text =
+                        "0 unidades";
+                }
+                else
+                {
+                    lblProductoMasSalidas.Text =
+                        productoMasSalidas.nombre_producto;
+
+                    lblCantidadProductoMasSalidas.Text =
+                        productoMasSalidas.total_unidades
+                        .ToString("N0") +
+                        " unidades";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudieron actualizar las tarjetas.\n\n" +
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
         // =========================================================
@@ -491,6 +554,8 @@ namespace LibreriaPrintZone.Views
                 CargarProductos();
 
                 CargarSalidas();
+
+                ActualizarTarjetas();
             }
             catch (Exception ex)
             {
@@ -529,6 +594,7 @@ namespace LibreriaPrintZone.Views
             txtBuscar.Clear();
 
             lblCantidadStock.Text = "0";
+            lblStockDisponible.Text = "Stock Disponible";
 
             panelStockDisponible.BackColor =
                 Color.FromArgb(
