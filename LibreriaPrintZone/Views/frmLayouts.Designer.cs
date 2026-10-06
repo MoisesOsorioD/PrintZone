@@ -40,14 +40,14 @@
             btnCategorias = new Button();
             btnInicio = new Button();
             pbLogo = new PictureBox();
-            pictureBox8 = new PictureBox();
-            pictureBox7 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
+            pbIconoConfiguracion = new PictureBox();
+            pbIconoUsuarios = new PictureBox();
+            pbIconoSalidas = new PictureBox();
+            pbIconoEntradas = new PictureBox();
+            pbIconoProveedores = new PictureBox();
+            pbIconoCategorias = new PictureBox();
+            pbIconoProductos = new PictureBox();
+            pbIconoInicio = new PictureBox();
             btnRolUsuario = new Button();
             panelContenido = new Panel();
             panelMenu = new Panel();
@@ -57,14 +57,14 @@
             timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoSalidas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoEntradas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoProveedores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoCategorias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoProductos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoInicio).BeginInit();
             panelContenido.SuspendLayout();
             panelMenu.SuspendLayout();
             SuspendLayout();
@@ -81,14 +81,14 @@
             panelSidebar.Controls.Add(btnCategorias);
             panelSidebar.Controls.Add(btnInicio);
             panelSidebar.Controls.Add(pbLogo);
-            panelSidebar.Controls.Add(pictureBox8);
-            panelSidebar.Controls.Add(pictureBox7);
-            panelSidebar.Controls.Add(pictureBox6);
-            panelSidebar.Controls.Add(pictureBox5);
-            panelSidebar.Controls.Add(pictureBox4);
-            panelSidebar.Controls.Add(pictureBox3);
-            panelSidebar.Controls.Add(pictureBox2);
-            panelSidebar.Controls.Add(pictureBox1);
+            panelSidebar.Controls.Add(pbIconoConfiguracion);
+            panelSidebar.Controls.Add(pbIconoUsuarios);
+            panelSidebar.Controls.Add(pbIconoSalidas);
+            panelSidebar.Controls.Add(pbIconoEntradas);
+            panelSidebar.Controls.Add(pbIconoProveedores);
+            panelSidebar.Controls.Add(pbIconoCategorias);
+            panelSidebar.Controls.Add(pbIconoProductos);
+            panelSidebar.Controls.Add(pbIconoInicio);
             panelSidebar.Location = new Point(0, 0);
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(100, 915);
@@ -234,85 +234,85 @@
             pbLogo.TabIndex = 15;
             pbLogo.TabStop = false;
             // 
-            // pictureBox8
+            // pbIconoConfiguracion
             // 
-            pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
-            pictureBox8.Location = new Point(33, 631);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(41, 48);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 13;
-            pictureBox8.TabStop = false;
+            pbIconoConfiguracion.Image = (Image)resources.GetObject("pbIconoConfiguracion.Image");
+            pbIconoConfiguracion.Location = new Point(33, 631);
+            pbIconoConfiguracion.Name = "pbIconoConfiguracion";
+            pbIconoConfiguracion.Size = new Size(41, 48);
+            pbIconoConfiguracion.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoConfiguracion.TabIndex = 13;
+            pbIconoConfiguracion.TabStop = false;
             // 
-            // pictureBox7
+            // pbIconoUsuarios
             // 
-            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
-            pictureBox7.Location = new Point(33, 570);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(43, 48);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 11;
-            pictureBox7.TabStop = false;
+            pbIconoUsuarios.Image = (Image)resources.GetObject("pbIconoUsuarios.Image");
+            pbIconoUsuarios.Location = new Point(33, 570);
+            pbIconoUsuarios.Name = "pbIconoUsuarios";
+            pbIconoUsuarios.Size = new Size(43, 48);
+            pbIconoUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoUsuarios.TabIndex = 11;
+            pbIconoUsuarios.TabStop = false;
             // 
-            // pictureBox6
+            // pbIconoSalidas
             // 
-            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(33, 507);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(43, 48);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 9;
-            pictureBox6.TabStop = false;
+            pbIconoSalidas.Image = (Image)resources.GetObject("pbIconoSalidas.Image");
+            pbIconoSalidas.Location = new Point(33, 507);
+            pbIconoSalidas.Name = "pbIconoSalidas";
+            pbIconoSalidas.Size = new Size(43, 48);
+            pbIconoSalidas.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoSalidas.TabIndex = 9;
+            pbIconoSalidas.TabStop = false;
             // 
-            // pictureBox5
+            // pbIconoEntradas
             // 
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(33, 444);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(43, 48);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 7;
-            pictureBox5.TabStop = false;
+            pbIconoEntradas.Image = (Image)resources.GetObject("pbIconoEntradas.Image");
+            pbIconoEntradas.Location = new Point(33, 444);
+            pbIconoEntradas.Name = "pbIconoEntradas";
+            pbIconoEntradas.Size = new Size(43, 48);
+            pbIconoEntradas.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoEntradas.TabIndex = 7;
+            pbIconoEntradas.TabStop = false;
             // 
-            // pictureBox4
+            // pbIconoProveedores
             // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(33, 381);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(43, 48);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
+            pbIconoProveedores.Image = (Image)resources.GetObject("pbIconoProveedores.Image");
+            pbIconoProveedores.Location = new Point(33, 381);
+            pbIconoProveedores.Name = "pbIconoProveedores";
+            pbIconoProveedores.Size = new Size(43, 48);
+            pbIconoProveedores.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoProveedores.TabIndex = 5;
+            pbIconoProveedores.TabStop = false;
             // 
-            // pictureBox3
+            // pbIconoCategorias
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(33, 318);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(43, 48);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
+            pbIconoCategorias.Image = (Image)resources.GetObject("pbIconoCategorias.Image");
+            pbIconoCategorias.Location = new Point(33, 318);
+            pbIconoCategorias.Name = "pbIconoCategorias";
+            pbIconoCategorias.Size = new Size(43, 48);
+            pbIconoCategorias.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoCategorias.TabIndex = 4;
+            pbIconoCategorias.TabStop = false;
             // 
-            // pictureBox2
+            // pbIconoProductos
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(33, 255);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(43, 48);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            pbIconoProductos.Image = (Image)resources.GetObject("pbIconoProductos.Image");
+            pbIconoProductos.Location = new Point(33, 255);
+            pbIconoProductos.Name = "pbIconoProductos";
+            pbIconoProductos.Size = new Size(43, 48);
+            pbIconoProductos.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoProductos.TabIndex = 2;
+            pbIconoProductos.TabStop = false;
             // 
-            // pictureBox1
+            // pbIconoInicio
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 192);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(43, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            pbIconoInicio.Image = (Image)resources.GetObject("pbIconoInicio.Image");
+            pbIconoInicio.Location = new Point(33, 192);
+            pbIconoInicio.Name = "pbIconoInicio";
+            pbIconoInicio.Size = new Size(43, 48);
+            pbIconoInicio.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoInicio.TabIndex = 1;
+            pbIconoInicio.TabStop = false;
             // 
             // btnRolUsuario
             // 
@@ -405,14 +405,14 @@
             Text = "Layouts";
             panelSidebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoSalidas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoEntradas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoProveedores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoCategorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoProductos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoInicio).EndInit();
             panelContenido.ResumeLayout(false);
             panelMenu.ResumeLayout(false);
             ResumeLayout(false);
@@ -421,14 +421,14 @@
         #endregion
 
         private Panel panelSidebar;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox8;
+        private PictureBox pbIconoInicio;
+        private PictureBox pbIconoProductos;
+        private PictureBox pbIconoCategorias;
+        private PictureBox pbIconoProveedores;
+        private PictureBox pbIconoEntradas;
+        private PictureBox pbIconoSalidas;
+        private PictureBox pbIconoUsuarios;
+        private PictureBox pbIconoConfiguracion;
         private PictureBox pbLogo;
         private Button btnInicio;
         private Button btnCategorias;

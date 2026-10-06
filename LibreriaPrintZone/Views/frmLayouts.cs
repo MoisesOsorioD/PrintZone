@@ -21,6 +21,8 @@ namespace LibreriaPrintZone
         private readonly string _nombreUsuarioActual;
 
 
+
+
         // ==========================================
         // VARIABLES DEL SIDEBAR
         // ==========================================
@@ -31,6 +33,12 @@ namespace LibreriaPrintZone
         private int anchoExpandido = 258;
 
         private Form formularioActivo = null;
+
+        // Guardar posición original de Salidas
+        private int posicionOriginalSalidas;
+
+        // Guardar posición original del icono de Salidas
+        private int posicionOriginalIconoSalidas;
 
 
         // ==========================================
@@ -49,9 +57,9 @@ namespace LibreriaPrintZone
         // ==========================================
 
         public frmLayouts(
-    int idUsuario,
-    string rol,
-    string nombreCompleto)
+            int idUsuario,
+            string rol,
+            string nombreCompleto)
         {
             InitializeComponent();
 
@@ -75,8 +83,16 @@ namespace LibreriaPrintZone
 
 
             // ======================================
-            // CONFIGURAR MENÚ
+            // GUARDAR POSICIONES ORIGINALES
             // ======================================
+
+            posicionOriginalSalidas = btnSalidas.Top;
+            posicionOriginalIconoSalidas = pbIconoSalidas.Top;
+
+
+            // ==========================================
+            // CONFIGURAR MENÚ
+            // ==========================================
 
             alturaMenu = 0;
 
@@ -104,7 +120,6 @@ namespace LibreriaPrintZone
         }
 
 
-
         public int IdUsuarioActual
         {
             get
@@ -122,6 +137,14 @@ namespace LibreriaPrintZone
             }
         }
 
+        public string RolUsuarioActual
+        {
+            get
+            {
+                return RolUsuario;
+            }
+        }
+
 
         // ==========================================
         // CONFIGURAR PERMISOS SEGÚN ROL
@@ -130,7 +153,7 @@ namespace LibreriaPrintZone
         private void ConfigurarPermisos()
         {
             bool esAdmin = RolUsuario.Equals(
-                "Admin",
+                "Administrador",
                 StringComparison.OrdinalIgnoreCase
             );
 
@@ -154,6 +177,22 @@ namespace LibreriaPrintZone
                 btnSalidas.Visible = true;
                 btnUsuarios.Visible = true;
                 btnConfiguracion.Visible = true;
+
+
+                // Mostrar iconos
+                pbIconoInicio.Visible = true;
+                pbIconoProductos.Visible = true;
+                pbIconoCategorias.Visible = true;
+                pbIconoProveedores.Visible = true;
+                pbIconoEntradas.Visible = true;
+                pbIconoSalidas.Visible = true;
+                pbIconoUsuarios.Visible = true;
+                pbIconoConfiguracion.Visible = true;
+
+
+                // Restaurar posición original de Salidas
+                btnSalidas.Top = posicionOriginalSalidas;
+                pbIconoSalidas.Top = posicionOriginalIconoSalidas;
             }
 
 
@@ -163,20 +202,47 @@ namespace LibreriaPrintZone
 
             if (esVendedor)
             {
+                // ----------------------------------
+                // OPCIONES PERMITIDAS
+                // ----------------------------------
+
                 btnInicio.Visible = true;
-
-                // Puede consultar productos
                 btnProductos.Visible = true;
-
-                // Puede trabajar con salidas
                 btnSalidas.Visible = true;
 
-                // No puede acceder a estas opciones
+
+                // Mostrar iconos permitidos
+                pbIconoInicio.Visible = true;
+                pbIconoProductos.Visible = true;
+                pbIconoSalidas.Visible = true;
+
+
+                // ----------------------------------
+                // OPCIONES NO PERMITIDAS
+                // ----------------------------------
+
                 btnCategorias.Visible = false;
                 btnProveedores.Visible = false;
                 btnEntradas.Visible = false;
                 btnUsuarios.Visible = false;
                 btnConfiguracion.Visible = false;
+
+
+                // Ocultar iconos no permitidos
+                pbIconoCategorias.Visible = false;
+                pbIconoProveedores.Visible = false;
+                pbIconoEntradas.Visible = false;
+                pbIconoUsuarios.Visible = false;
+                pbIconoConfiguracion.Visible = false;
+
+
+                // ----------------------------------
+                // MOVER SALIDAS HACIA ARRIBA
+                // ----------------------------------
+
+                btnSalidas.Top = btnCategorias.Top;
+
+                pbIconoSalidas.Top = btnSalidas.Top;
             }
         }
 
@@ -401,11 +467,11 @@ namespace LibreriaPrintZone
         // ==========================================
 
         private void btnProductos_Click(
-            object sender,
-            EventArgs e)
+    object sender,
+    EventArgs e)
         {
             AbrirFormulario(
-                new frmProductos()
+                new frmProductos(RolUsuario)
             );
         }
 

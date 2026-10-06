@@ -220,7 +220,7 @@ namespace LibreriaPrintZone.Views
         {
             if (this.ParentForm is frmLayouts layout)
             {
-                layout.AbrirFormulario(new frmProductos());
+                layout.AbrirFormulario(new frmProductos(layout.RolUsuarioActual));
             }
         }
     }

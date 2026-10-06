@@ -13,27 +13,98 @@ namespace LibreriaPrintZone
     public partial class frmProductos : Form
     {
         private readonly ProductosController _productosController;
+        private readonly string _rolUsuario;
+
         private int _idProductoSeleccionado = 0;
         private bool _activoProductoSeleccionado = true;
-        public frmProductos()
+
+        public frmProductos(string rolUsuario)
         {
             InitializeComponent();
 
+            _rolUsuario = rolUsuario;
+
             _productosController = new ProductosController();
+
             dgvProductos.CellClick += dgvProductos_CellClick;
+
             ConfigurarFormulario();
+            ConfigurarPermisos();
             CargarCategorias();
             CargarProductos();
         }
+
+
+        // ==========================================
+        // CONFIGURAR PERMISOS SEGÚN ROL
+        // ==========================================
+
+        private void ConfigurarPermisos()
+        {
+            bool esVendedor = _rolUsuario.Equals(
+                "Vendedor",
+                StringComparison.OrdinalIgnoreCase
+            );
+
+            if (!esVendedor)
+                return;
+
+
+            // ==========================================
+            // VENDEDOR: SOLO CONSULTA
+            // ==========================================
+
+            // Ocultar botones que modifican productos
+            btnNuevoProductos.Visible = false;
+            btnProductosInactivos.Visible = false;
+            btnGuardar.Visible = false;
+            btnEliminar.Visible = false;
+
+
+            // ==========================================
+            // MOSTRAR SOLAMENTE LIMPIAR
+            // ==========================================
+
+            btnLimpiar.Visible = true;
+
+
+            // Mover Limpiar a la posición donde estaba
+            // Nuevo Producto
+            btnLimpiar.Location = btnNuevoProductos.Location;
+
+
+            // ==========================================
+            // CAMPOS SOLO PARA CONSULTA
+            // ==========================================
+
+            txtProducto.ReadOnly = true;
+            txtDescripcion.ReadOnly = true;
+            txtMarca.ReadOnly = true;
+            txtCodigoBarras.ReadOnly = true;
+            txtPrecioCompra.ReadOnly = true;
+            txtPrecioVenta.ReadOnly = true;
+            txtStockActual.ReadOnly = true;
+            txtStockMinimo.ReadOnly = true;
+
+            cmbCategoria.Enabled = false;
+        }
+
 
         private void ConfigurarFormulario()
         {
             txtStockActual.ReadOnly = true;
 
-            txtPrecioCompra.TextAlign = HorizontalAlignment.Right;
-            txtPrecioVenta.TextAlign = HorizontalAlignment.Right;
-            txtStockActual.TextAlign = HorizontalAlignment.Center;
-            txtStockMinimo.TextAlign = HorizontalAlignment.Center;
+            txtPrecioCompra.TextAlign =
+                HorizontalAlignment.Right;
+
+            txtPrecioVenta.TextAlign =
+                HorizontalAlignment.Right;
+
+            txtStockActual.TextAlign =
+                HorizontalAlignment.Center;
+
+            txtStockMinimo.TextAlign =
+                HorizontalAlignment.Center;
 
             ConfigurarGrid();
         }
@@ -125,15 +196,21 @@ namespace LibreriaPrintZone
                 )
             );
 
-            dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvProductos.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
             dgvProductos.MultiSelect = false;
             dgvProductos.ReadOnly = true;
             dgvProductos.AllowUserToAddRows = false;
             dgvProductos.AllowUserToDeleteRows = false;
             dgvProductos.AllowUserToResizeRows = false;
-            dgvProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+
+            dgvProductos.AutoSizeRowsMode =
+                DataGridViewAutoSizeRowsMode.None;
+
             dgvProductos.RowHeadersVisible = false;
         }
+
 
         private DataGridViewTextBoxColumn CrearColumna(
             string nombre,
@@ -147,9 +224,11 @@ namespace LibreriaPrintZone
                 HeaderText = encabezado,
                 DataPropertyName = propiedad,
                 Width = ancho,
-                SortMode = DataGridViewColumnSortMode.NotSortable
+                SortMode =
+                    DataGridViewColumnSortMode.NotSortable
             };
         }
+
 
         private void CargarCategorias()
         {
@@ -159,8 +238,12 @@ namespace LibreriaPrintZone
                     _productosController.ObtenerCategorias();
 
                 cmbCategoria.DataSource = categorias;
-                cmbCategoria.DisplayMember = "NombreCategoria";
-                cmbCategoria.ValueMember = "IdCategoria";
+
+                cmbCategoria.DisplayMember =
+                    "NombreCategoria";
+
+                cmbCategoria.ValueMember =
+                    "IdCategoria";
 
                 cmbCategoria.SelectedIndex = -1;
             }
@@ -176,11 +259,13 @@ namespace LibreriaPrintZone
             }
         }
 
+
         private void CargarProductos()
         {
             try
             {
-                List<ProductoListado> productos = _productosController.ObtenerProductos();
+                List<ProductoListado> productos =
+                    _productosController.ObtenerProductos();
 
                 dgvProductos.DataSource = productos;
 
@@ -198,24 +283,31 @@ namespace LibreriaPrintZone
             }
         }
 
+
         private void BuscarProductos()
         {
             try
             {
-                string texto = txtBuscar.Text.Trim();
+                string texto =
+                    txtBuscar.Text.Trim();
 
                 List<ProductoListado> productos;
 
                 if (string.IsNullOrWhiteSpace(texto))
                 {
-                    productos = _productosController.ObtenerProductos();
+                    productos =
+                        _productosController.ObtenerProductos();
                 }
                 else
                 {
-                    productos = _productosController.BuscarProductos(texto);
+                    productos =
+                        _productosController.BuscarProductos(
+                            texto
+                        );
                 }
 
-                dgvProductos.DataSource = productos;
+                dgvProductos.DataSource =
+                    productos;
 
                 dgvProductos.ClearSelection();
             }
@@ -231,6 +323,7 @@ namespace LibreriaPrintZone
             }
         }
 
+
         private void dgvProductos_CellClick(
             object? sender,
             DataGridViewCellEventArgs e)
@@ -238,19 +331,29 @@ namespace LibreriaPrintZone
             if (e.RowIndex < 0)
                 return;
 
-            if (dgvProductos.Rows[e.RowIndex].DataBoundItem
-                is not ProductoListado producto)
+            if (dgvProductos.Rows[e.RowIndex]
+                .DataBoundItem is not ProductoListado producto)
             {
                 return;
             }
 
-            _idProductoSeleccionado = producto.id_producto;
-            _activoProductoSeleccionado = producto.activo;
+            _idProductoSeleccionado =
+                producto.id_producto;
 
-            txtProducto.Text = producto.nombre;
-            txtDescripcion.Text = producto.descripcion ?? "";
-            txtMarca.Text = producto.marca ?? "";
-            txtCodigoBarras.Text = producto.codigo_barras ?? "";
+            _activoProductoSeleccionado =
+                producto.activo;
+
+            txtProducto.Text =
+                producto.nombre;
+
+            txtDescripcion.Text =
+                producto.descripcion ?? "";
+
+            txtMarca.Text =
+                producto.marca ?? "";
+
+            txtCodigoBarras.Text =
+                producto.codigo_barras ?? "";
 
             txtPrecioCompra.Text =
                 producto.precio_compra.ToString("0.00");
@@ -264,11 +367,23 @@ namespace LibreriaPrintZone
             txtStockMinimo.Text =
                 producto.stock_minimo.ToString();
 
-            cmbCategoria.SelectedValue = producto.id_categoria;
+            cmbCategoria.SelectedValue =
+                producto.id_categoria;
         }
 
-        private void btnGuardar_Click(object? sender, EventArgs e)
+
+        private void btnGuardar_Click(
+            object? sender,
+            EventArgs e)
         {
+            if (_rolUsuario.Equals(
+                "Vendedor",
+                StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+
             if (_idProductoSeleccionado == 0)
             {
                 MessageBox.Show(
@@ -281,26 +396,33 @@ namespace LibreriaPrintZone
                 return;
             }
 
+
             if (!ValidarDatos())
                 return;
 
+
             try
             {
-                decimal precioCompra = ObtenerDecimal(
-                    txtPrecioCompra.Text
-                );
+                decimal precioCompra =
+                    ObtenerDecimal(
+                        txtPrecioCompra.Text
+                    );
 
-                decimal precioVenta = ObtenerDecimal(
-                    txtPrecioVenta.Text
-                );
+                decimal precioVenta =
+                    ObtenerDecimal(
+                        txtPrecioVenta.Text
+                    );
 
-                int stockMinimo = int.Parse(
-                    txtStockMinimo.Text.Trim()
-                );
+                int stockMinimo =
+                    int.Parse(
+                        txtStockMinimo.Text.Trim()
+                    );
 
-                int idCategoria = Convert.ToInt32(
-                    cmbCategoria.SelectedValue
-                );
+                int idCategoria =
+                    Convert.ToInt32(
+                        cmbCategoria.SelectedValue
+                    );
+
 
                 _productosController.ActualizarProducto(
                     _idProductoSeleccionado,
@@ -315,12 +437,14 @@ namespace LibreriaPrintZone
                     _activoProductoSeleccionado
                 );
 
+
                 MessageBox.Show(
                     "El producto se actualizó correctamente.",
                     "Producto",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+
 
                 CargarProductos();
                 LimpiarFormulario();
@@ -337,8 +461,19 @@ namespace LibreriaPrintZone
             }
         }
 
-        private void btnEliminar_Click(object? sender, EventArgs e)
+
+        private void btnEliminar_Click(
+            object? sender,
+            EventArgs e)
         {
+            if (_rolUsuario.Equals(
+                "Vendedor",
+                StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+
             if (_idProductoSeleccionado == 0)
             {
                 MessageBox.Show(
@@ -351,15 +486,19 @@ namespace LibreriaPrintZone
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show(
-                "¿Está seguro que desea desactivar este producto?",
-                "Desactivar producto",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
+
+            DialogResult resultado =
+                MessageBox.Show(
+                    "¿Está seguro que desea desactivar este producto?",
+                    "Desactivar producto",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
 
             if (resultado != DialogResult.Yes)
                 return;
+
 
             try
             {
@@ -367,12 +506,14 @@ namespace LibreriaPrintZone
                     _idProductoSeleccionado
                 );
 
+
                 MessageBox.Show(
                     "El producto se desactivó correctamente.",
                     "Producto",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+
 
                 CargarProductos();
                 LimpiarFormulario();
@@ -389,10 +530,14 @@ namespace LibreriaPrintZone
             }
         }
 
-        private void btnLimpiar_Click(object? sender, EventArgs e)
+
+        private void btnLimpiar_Click(
+            object? sender,
+            EventArgs e)
         {
             LimpiarFormulario();
         }
+
 
         private void LimpiarFormulario()
         {
@@ -413,13 +558,27 @@ namespace LibreriaPrintZone
             dgvProductos.ClearSelection();
         }
 
-        private void btnNuevoProducto_Click(object? sender, EventArgs e)
+
+        private void btnNuevoProducto_Click(
+            object? sender,
+            EventArgs e)
         {
+            if (_rolUsuario.Equals(
+                "Vendedor",
+                StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+
             if (this.ParentForm is frmLayouts layout)
             {
-                layout.AbrirFormulario(new frmNuevoProductos());
+                layout.AbrirFormulario(
+                    new frmNuevoProductos()
+                );
             }
         }
+
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -428,9 +587,11 @@ namespace LibreriaPrintZone
             BuscarProductos();
         }
 
+
         private bool ValidarDatos()
         {
-            if (string.IsNullOrWhiteSpace(txtProducto.Text))
+            if (string.IsNullOrWhiteSpace(
+                txtProducto.Text))
             {
                 MessageBox.Show(
                     "Ingrese el nombre del producto.",
@@ -440,8 +601,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtProducto.Focus();
+
                 return false;
             }
+
 
             if (cmbCategoria.SelectedIndex == -1)
             {
@@ -453,8 +616,10 @@ namespace LibreriaPrintZone
                 );
 
                 cmbCategoria.Focus();
+
                 return false;
             }
+
 
             if (!ObtenerDecimalSeguro(
                 txtPrecioCompra.Text,
@@ -468,8 +633,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtPrecioCompra.Focus();
+
                 return false;
             }
+
 
             if (!ObtenerDecimalSeguro(
                 txtPrecioVenta.Text,
@@ -483,8 +650,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtPrecioVenta.Focus();
+
                 return false;
             }
+
 
             if (!int.TryParse(
                 txtStockMinimo.Text.Trim(),
@@ -498,8 +667,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtStockMinimo.Focus();
+
                 return false;
             }
+
 
             if (precioCompra < 0)
             {
@@ -511,8 +682,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtPrecioCompra.Focus();
+
                 return false;
             }
+
 
             if (precioVenta < 0)
             {
@@ -524,8 +697,10 @@ namespace LibreriaPrintZone
                 );
 
                 txtPrecioVenta.Focus();
+
                 return false;
             }
+
 
             if (stockMinimo < 0)
             {
@@ -537,18 +712,23 @@ namespace LibreriaPrintZone
                 );
 
                 txtStockMinimo.Focus();
+
                 return false;
             }
+
 
             return true;
         }
 
-        private decimal ObtenerDecimal(string texto)
+
+        private decimal ObtenerDecimal(
+            string texto)
         {
             texto = texto
                 .Replace("C$", "")
                 .Replace("$", "")
                 .Trim();
+
 
             if (decimal.TryParse(
                 texto,
@@ -559,8 +739,10 @@ namespace LibreriaPrintZone
                 return resultado;
             }
 
+
             return 0;
         }
+
 
         private bool ObtenerDecimalSeguro(
             string texto,
@@ -571,6 +753,7 @@ namespace LibreriaPrintZone
                 .Replace("$", "")
                 .Trim();
 
+
             return decimal.TryParse(
                 texto,
                 NumberStyles.Number,
@@ -579,11 +762,24 @@ namespace LibreriaPrintZone
             );
         }
 
-        private void btnProductosInactivos_Click(object sender, EventArgs e)
+
+        private void btnProductosInactivos_Click(
+            object sender,
+            EventArgs e)
         {
+            if (_rolUsuario.Equals(
+                "Vendedor",
+                StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+
             if (this.ParentForm is frmLayouts layout)
             {
-                layout.AbrirFormulario(new frmProductosInactivos());
+                layout.AbrirFormulario(
+                    new frmProductosInactivos()
+                );
             }
         }
     }
