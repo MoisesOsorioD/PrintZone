@@ -30,30 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalidas));
             pictureBox14 = new PictureBox();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             panel7 = new Panel();
-            dataGridView1 = new DataGridView();
-            colFechaS = new DataGridViewTextBoxColumn();
-            colProductoS = new DataGridViewTextBoxColumn();
-            colCantidadS = new DataGridViewTextBoxColumn();
-            colMotivoS = new DataGridViewTextBoxColumn();
-            colUsuarioS = new DataGridViewTextBoxColumn();
+            dgvSalidas = new DataGridView();
+            colFecha = new DataGridViewTextBoxColumn();
+            colProducto = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
+            colMotivo = new DataGridViewTextBoxColumn();
+            colUsuario = new DataGridViewTextBoxColumn();
             label17 = new Label();
             pictureBox3 = new PictureBox();
             panel5 = new Panel();
-            textBox2 = new TextBox();
+            txtUsuario = new TextBox();
             label19 = new Label();
-            panel6 = new Panel();
-            label18 = new Label();
+            panelStockDisponible = new Panel();
+            lblCantidadStock = new Label();
             pictureBox4 = new PictureBox();
-            label15 = new Label();
-            button11 = new Button();
-            textBox7 = new TextBox();
-            button10 = new Button();
+            lblStockDisponible = new Label();
+            btnLimpiar = new Button();
+            txtMotivo = new TextBox();
+            btnRegistrarSalida = new Button();
             label13 = new Label();
             label14 = new Label();
-            textBox4 = new TextBox();
-            comboBox2 = new ComboBox();
+            txtCantidad = new TextBox();
+            cmbProducto = new ComboBox();
             label12 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
@@ -77,10 +77,10 @@
             pictureBox10 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSalidas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel5.SuspendLayout();
-            panel6.SuspendLayout();
+            panelStockDisponible.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel4.SuspendLayout();
@@ -102,20 +102,21 @@
             pictureBox14.TabIndex = 69;
             pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(688, 253);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar salidas...";
-            textBox1.Size = new Size(893, 30);
-            textBox1.TabIndex = 68;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(688, 253);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar salidas...";
+            txtBuscar.Size = new Size(893, 30);
+            txtBuscar.TabIndex = 68;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(dataGridView1);
+            panel7.Controls.Add(dgvSalidas);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
             panel7.Location = new Point(646, 292);
@@ -123,51 +124,51 @@
             panel7.Size = new Size(935, 539);
             panel7.TabIndex = 67;
             // 
-            // dataGridView1
+            // dgvSalidas
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colFechaS, colProductoS, colCantidadS, colMotivoS, colUsuarioS });
-            dataGridView1.Location = new Point(20, 81);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(896, 405);
-            dataGridView1.TabIndex = 8;
+            dgvSalidas.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvSalidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSalidas.Columns.AddRange(new DataGridViewColumn[] { colFecha, colProducto, colCantidad, colMotivo, colUsuario });
+            dgvSalidas.Location = new Point(20, 81);
+            dgvSalidas.Name = "dgvSalidas";
+            dgvSalidas.RowHeadersWidth = 51;
+            dgvSalidas.Size = new Size(896, 405);
+            dgvSalidas.TabIndex = 8;
             // 
-            // colFechaS
+            // colFecha
             // 
-            colFechaS.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colFechaS.HeaderText = "Fecha";
-            colFechaS.MinimumWidth = 6;
-            colFechaS.Name = "colFechaS";
+            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colFecha.HeaderText = "Fecha";
+            colFecha.MinimumWidth = 6;
+            colFecha.Name = "colFecha";
             // 
-            // colProductoS
+            // colProducto
             // 
-            colProductoS.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProductoS.HeaderText = "Producto";
-            colProductoS.MinimumWidth = 6;
-            colProductoS.Name = "colProductoS";
+            colProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colProducto.HeaderText = "Producto";
+            colProducto.MinimumWidth = 6;
+            colProducto.Name = "colProducto";
             // 
-            // colCantidadS
+            // colCantidad
             // 
-            colCantidadS.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCantidadS.HeaderText = "Cantidad";
-            colCantidadS.MinimumWidth = 6;
-            colCantidadS.Name = "colCantidadS";
+            colCantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
             // 
-            // colMotivoS
+            // colMotivo
             // 
-            colMotivoS.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colMotivoS.HeaderText = "Motivo";
-            colMotivoS.MinimumWidth = 6;
-            colMotivoS.Name = "colMotivoS";
+            colMotivo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colMotivo.HeaderText = "Motivo";
+            colMotivo.MinimumWidth = 6;
+            colMotivo.Name = "colMotivo";
             // 
-            // colUsuarioS
+            // colUsuario
             // 
-            colUsuarioS.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colUsuarioS.HeaderText = "Usuario";
-            colUsuarioS.MinimumWidth = 6;
-            colUsuarioS.Name = "colUsuarioS";
+            colUsuario.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colUsuario.HeaderText = "Usuario";
+            colUsuario.MinimumWidth = 6;
+            colUsuario.Name = "colUsuario";
             // 
             // label17
             // 
@@ -193,16 +194,16 @@
             // 
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(txtUsuario);
             panel5.Controls.Add(label19);
-            panel5.Controls.Add(panel6);
-            panel5.Controls.Add(button11);
-            panel5.Controls.Add(textBox7);
-            panel5.Controls.Add(button10);
+            panel5.Controls.Add(panelStockDisponible);
+            panel5.Controls.Add(btnLimpiar);
+            panel5.Controls.Add(txtMotivo);
+            panel5.Controls.Add(btnRegistrarSalida);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(label14);
-            panel5.Controls.Add(textBox4);
-            panel5.Controls.Add(comboBox2);
+            panel5.Controls.Add(txtCantidad);
+            panel5.Controls.Add(cmbProducto);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label16);
@@ -211,13 +212,13 @@
             panel5.Size = new Size(475, 578);
             panel5.TabIndex = 66;
             // 
-            // textBox2
+            // txtUsuario
             // 
-            textBox2.Location = new Point(18, 431);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = " ...";
-            textBox2.Size = new Size(425, 27);
-            textBox2.TabIndex = 74;
+            txtUsuario.Location = new Point(18, 431);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = " ...";
+            txtUsuario.Size = new Size(425, 27);
+            txtUsuario.TabIndex = 74;
             // 
             // label19
             // 
@@ -229,27 +230,27 @@
             label19.TabIndex = 75;
             label19.Text = "Usuario";
             // 
-            // panel6
+            // panelStockDisponible
             // 
-            panel6.BackColor = Color.FromArgb(220, 233, 247);
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(label18);
-            panel6.Controls.Add(pictureBox4);
-            panel6.Controls.Add(label15);
-            panel6.Location = new Point(19, 149);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(425, 69);
-            panel6.TabIndex = 72;
+            panelStockDisponible.BackColor = Color.FromArgb(220, 233, 247);
+            panelStockDisponible.BorderStyle = BorderStyle.FixedSingle;
+            panelStockDisponible.Controls.Add(lblCantidadStock);
+            panelStockDisponible.Controls.Add(pictureBox4);
+            panelStockDisponible.Controls.Add(lblStockDisponible);
+            panelStockDisponible.Location = new Point(19, 149);
+            panelStockDisponible.Name = "panelStockDisponible";
+            panelStockDisponible.Size = new Size(425, 69);
+            panelStockDisponible.TabIndex = 72;
             // 
-            // label18
+            // lblCantidadStock
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label18.Location = new Point(68, 34);
-            label18.Name = "label18";
-            label18.Size = new Size(102, 23);
-            label18.TabIndex = 11;
-            label18.Text = "25 unidades";
+            lblCantidadStock.AutoSize = true;
+            lblCantidadStock.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidadStock.Location = new Point(68, 34);
+            lblCantidadStock.Name = "lblCantidadStock";
+            lblCantidadStock.Size = new Size(102, 23);
+            lblCantidadStock.TabIndex = 11;
+            lblCantidadStock.Text = "25 unidades";
             // 
             // pictureBox4
             // 
@@ -261,57 +262,59 @@
             pictureBox4.TabIndex = 1;
             pictureBox4.TabStop = false;
             // 
-            // label15
+            // lblStockDisponible
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.ForeColor = SystemColors.ControlText;
-            label15.Location = new Point(68, 11);
-            label15.Name = "label15";
-            label15.Size = new Size(146, 23);
-            label15.TabIndex = 0;
-            label15.Text = "Stock Disponible";
+            lblStockDisponible.AutoSize = true;
+            lblStockDisponible.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblStockDisponible.ForeColor = SystemColors.ControlText;
+            lblStockDisponible.Location = new Point(68, 11);
+            lblStockDisponible.Name = "lblStockDisponible";
+            lblStockDisponible.Size = new Size(146, 23);
+            lblStockDisponible.TabIndex = 0;
+            lblStockDisponible.Text = "Stock Disponible";
             // 
-            // button11
+            // btnLimpiar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(254, 484);
-            button11.Name = "button11";
-            button11.Size = new Size(195, 37);
-            button11.TabIndex = 56;
-            button11.Text = "Limpiar";
-            button11.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(254, 484);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(195, 37);
+            btnLimpiar.TabIndex = 56;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // textBox7
+            // txtMotivo
             // 
-            textBox7.Location = new Point(18, 351);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. Venta";
-            textBox7.Size = new Size(425, 27);
-            textBox7.TabIndex = 54;
+            txtMotivo.Location = new Point(18, 351);
+            txtMotivo.Name = "txtMotivo";
+            txtMotivo.PlaceholderText = " Ej. Venta";
+            txtMotivo.Size = new Size(425, 27);
+            txtMotivo.TabIndex = 54;
             // 
-            // button10
+            // btnRegistrarSalida
             // 
-            button10.BackColor = Color.FromArgb(2, 113, 249);
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(18, 484);
-            button10.Name = "button10";
-            button10.Size = new Size(195, 37);
-            button10.TabIndex = 57;
-            button10.Text = "Registrar salida";
-            button10.TextAlign = ContentAlignment.MiddleRight;
-            button10.UseVisualStyleBackColor = false;
+            btnRegistrarSalida.BackColor = Color.FromArgb(2, 113, 249);
+            btnRegistrarSalida.FlatAppearance.BorderSize = 0;
+            btnRegistrarSalida.FlatStyle = FlatStyle.Flat;
+            btnRegistrarSalida.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrarSalida.ForeColor = Color.White;
+            btnRegistrarSalida.Image = (Image)resources.GetObject("btnRegistrarSalida.Image");
+            btnRegistrarSalida.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegistrarSalida.Location = new Point(18, 484);
+            btnRegistrarSalida.Name = "btnRegistrarSalida";
+            btnRegistrarSalida.Size = new Size(195, 37);
+            btnRegistrarSalida.TabIndex = 57;
+            btnRegistrarSalida.Text = "Registrar salida";
+            btnRegistrarSalida.TextAlign = ContentAlignment.MiddleRight;
+            btnRegistrarSalida.UseVisualStyleBackColor = false;
+            btnRegistrarSalida.Click += btnRegistrarSalida_Click;
             // 
             // label13
             // 
@@ -333,21 +336,22 @@
             label14.TabIndex = 52;
             label14.Text = "Cantidad a retrirar";
             // 
-            // textBox4
+            // txtCantidad
             // 
-            textBox4.Location = new Point(18, 270);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. 50";
-            textBox4.Size = new Size(425, 27);
-            textBox4.TabIndex = 51;
+            txtCantidad.Location = new Point(18, 270);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.PlaceholderText = " Ej. 50";
+            txtCantidad.Size = new Size(425, 27);
+            txtCantidad.TabIndex = 51;
             // 
-            // comboBox2
+            // cmbProducto
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(19, 103);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(425, 28);
-            comboBox2.TabIndex = 20;
+            cmbProducto.FormattingEnabled = true;
+            cmbProducto.Location = new Point(19, 103);
+            cmbProducto.Name = "cmbProducto";
+            cmbProducto.Size = new Size(425, 28);
+            cmbProducto.TabIndex = 20;
+            cmbProducto.SelectedIndexChanged += cmbProducto_SelectedIndexChanged;
             // 
             // label12
             // 
@@ -418,9 +422,9 @@
             label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(99, 38);
             label7.Name = "label7";
-            label7.Size = new Size(246, 38);
+            label7.Size = new Size(258, 38);
             label7.TabIndex = 2;
-            label7.Text = "Cuaderno infantil";
+            label7.Text = "Cuaderno infantils";
             // 
             // label8
             // 
@@ -471,9 +475,9 @@
             label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.Location = new Point(99, 38);
             label4.Name = "label4";
-            label4.Size = new Size(89, 38);
+            label4.Size = new Size(33, 38);
             label4.TabIndex = 2;
-            label4.Text = "1,500";
+            label4.Text = "1";
             // 
             // label6
             // 
@@ -524,9 +528,9 @@
             label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.Location = new Point(99, 38);
             label5.Name = "label5";
-            label5.Size = new Size(49, 38);
+            label5.Size = new Size(33, 38);
             label5.TabIndex = 2;
-            label5.Text = "45";
+            label5.Text = "0";
             // 
             // label3
             // 
@@ -575,7 +579,7 @@
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(panel7);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -590,12 +594,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSalidas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelStockDisponible.ResumeLayout(false);
+            panelStockDisponible.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel4.ResumeLayout(false);
@@ -615,19 +619,19 @@
         #endregion
 
         private PictureBox pictureBox14;
-        private TextBox textBox1;
+        private TextBox txtBuscar;
         private Panel panel7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvSalidas;
         private Label label17;
         private PictureBox pictureBox3;
         private Panel panel5;
-        private Button button11;
-        private TextBox textBox7;
-        private Button button10;
+        private Button btnLimpiar;
+        private TextBox txtMotivo;
+        private Button btnRegistrarSalida;
         private Label label13;
         private Label label14;
-        private TextBox textBox4;
-        private ComboBox comboBox2;
+        private TextBox txtCantidad;
+        private ComboBox cmbProducto;
         private Label label12;
         private PictureBox pictureBox2;
         private Label label16;
@@ -649,16 +653,16 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel6;
+        private Panel panelStockDisponible;
         private PictureBox pictureBox4;
-        private Label label15;
-        private Label label18;
-        private TextBox textBox2;
+        private Label lblStockDisponible;
+        private Label lblCantidadStock;
+        private TextBox txtUsuario;
         private Label label19;
-        private DataGridViewTextBoxColumn colFechaS;
-        private DataGridViewTextBoxColumn colProductoS;
-        private DataGridViewTextBoxColumn colCantidadS;
-        private DataGridViewTextBoxColumn colMotivoS;
-        private DataGridViewTextBoxColumn colUsuarioS;
+        private DataGridViewTextBoxColumn colFecha;
+        private DataGridViewTextBoxColumn colProducto;
+        private DataGridViewTextBoxColumn colCantidad;
+        private DataGridViewTextBoxColumn colMotivo;
+        private DataGridViewTextBoxColumn colUsuario;
     }
 }

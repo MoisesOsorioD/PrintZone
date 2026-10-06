@@ -17,6 +17,8 @@ namespace LibreriaPrintZone
 
         private string RolUsuario;
         private string NombreUsuario;
+        private readonly int _idUsuarioActual;
+        private readonly string _nombreUsuarioActual;
 
 
         // ==========================================
@@ -46,9 +48,15 @@ namespace LibreriaPrintZone
         // CONSTRUCTOR
         // ==========================================
 
-        public frmLayouts(string rol, string nombreCompleto)
+        public frmLayouts(
+    int idUsuario,
+    string rol,
+    string nombreCompleto)
         {
             InitializeComponent();
+
+            _idUsuarioActual = idUsuario;
+            _nombreUsuarioActual = nombreCompleto;
 
             // Guardar información del usuario
             RolUsuario = rol;
@@ -93,6 +101,25 @@ namespace LibreriaPrintZone
                     NombreUsuario
                 )
             );
+        }
+
+
+
+        public int IdUsuarioActual
+        {
+            get
+            {
+                return _idUsuarioActual;
+            }
+        }
+
+
+        public string NombreUsuarioActual
+        {
+            get
+            {
+                return _nombreUsuarioActual;
+            }
         }
 
 

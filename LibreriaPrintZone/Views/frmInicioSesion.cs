@@ -69,6 +69,7 @@ namespace LibreriaPrintZone
                 }
 
                 frmLayouts principal = new frmLayouts(
+                    usuario.IdUsuario,
                     usuario.Rol,
                     usuario.NombreCompleto
                 );
