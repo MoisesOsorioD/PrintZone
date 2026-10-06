@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             pictureBox14 = new PictureBox();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             panel7 = new Panel();
-            dataGridView1 = new DataGridView();
+            dgvUsuarios = new DataGridView();
             colUsuarioU = new DataGridViewTextBoxColumn();
             colNombreCompletoU = new DataGridViewTextBoxColumn();
             colRolU = new DataGridViewTextBoxColumn();
@@ -42,41 +42,41 @@
             pictureBox3 = new PictureBox();
             panel5 = new Panel();
             label15 = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            checkBox1 = new CheckBox();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
+            dtpFechaCreacion = new DateTimePicker();
+            chkActivo = new CheckBox();
+            cmbRol = new ComboBox();
+            txtNombreUsuario = new TextBox();
             label19 = new Label();
-            button11 = new Button();
-            textBox7 = new TextBox();
-            button10 = new Button();
+            btnLimpiar = new Button();
+            txtClave = new TextBox();
+            btnGuardar = new Button();
             label13 = new Label();
             label14 = new Label();
-            textBox4 = new TextBox();
+            txtNombreCompleto = new TextBox();
             label12 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
             panel4 = new Panel();
             label10 = new Label();
             pictureBox13 = new PictureBox();
-            label7 = new Label();
+            lblUsuariosDesactivados = new Label();
             label8 = new Label();
             panel3 = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
-            label4 = new Label();
+            lblUsuariosActivos = new Label();
             label6 = new Label();
             panel2 = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
-            label5 = new Label();
+            lblTotalUsuarios = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -99,20 +99,21 @@
             pictureBox14.TabIndex = 79;
             pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(678, 263);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar usuarios...";
-            textBox1.Size = new Size(889, 30);
-            textBox1.TabIndex = 78;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(678, 263);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar usuarios...";
+            txtBuscar.Size = new Size(889, 30);
+            txtBuscar.TabIndex = 78;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(dataGridView1);
+            panel7.Controls.Add(dgvUsuarios);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
             panel7.Location = new Point(632, 302);
@@ -120,16 +121,16 @@
             panel7.Size = new Size(935, 535);
             panel7.TabIndex = 77;
             // 
-            // dataGridView1
+            // dgvUsuarios
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colUsuarioU, colNombreCompletoU, colRolU, colEstadoU, colFechaCreacionU });
-            dataGridView1.Location = new Point(20, 81);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(896, 405);
-            dataGridView1.TabIndex = 8;
+            dgvUsuarios.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { colUsuarioU, colNombreCompletoU, colRolU, colEstadoU, colFechaCreacionU });
+            dgvUsuarios.Location = new Point(20, 81);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersWidth = 51;
+            dgvUsuarios.Size = new Size(896, 405);
+            dgvUsuarios.TabIndex = 8;
             // 
             // colUsuarioU
             // 
@@ -191,17 +192,17 @@
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(label15);
-            panel5.Controls.Add(dateTimePicker1);
-            panel5.Controls.Add(checkBox1);
-            panel5.Controls.Add(comboBox1);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(dtpFechaCreacion);
+            panel5.Controls.Add(chkActivo);
+            panel5.Controls.Add(cmbRol);
+            panel5.Controls.Add(txtNombreUsuario);
             panel5.Controls.Add(label19);
-            panel5.Controls.Add(button11);
-            panel5.Controls.Add(textBox7);
-            panel5.Controls.Add(button10);
+            panel5.Controls.Add(btnLimpiar);
+            panel5.Controls.Add(txtClave);
+            panel5.Controls.Add(btnGuardar);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(label14);
-            panel5.Controls.Add(textBox4);
+            panel5.Controls.Add(txtNombreCompleto);
             panel5.Controls.Add(label12);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label16);
@@ -220,38 +221,39 @@
             label15.TabIndex = 80;
             label15.Text = "Fecha de creación";
             // 
-            // dateTimePicker1
+            // dtpFechaCreacion
             // 
-            dateTimePicker1.Location = new Point(19, 455);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(424, 27);
-            dateTimePicker1.TabIndex = 79;
+            dtpFechaCreacion.Location = new Point(19, 455);
+            dtpFechaCreacion.Name = "dtpFechaCreacion";
+            dtpFechaCreacion.Size = new Size(424, 27);
+            dtpFechaCreacion.TabIndex = 79;
             // 
-            // checkBox1
+            // chkActivo
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(18, 386);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(125, 24);
-            checkBox1.TabIndex = 78;
-            checkBox1.Text = "Usuario activo";
-            checkBox1.UseVisualStyleBackColor = true;
+            chkActivo.AutoSize = true;
+            chkActivo.Location = new Point(18, 386);
+            chkActivo.Name = "chkActivo";
+            chkActivo.Size = new Size(125, 24);
+            chkActivo.TabIndex = 78;
+            chkActivo.Text = "Usuario activo";
+            chkActivo.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbRol
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(18, 336);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(425, 28);
-            comboBox1.TabIndex = 77;
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Items.AddRange(new object[] { "Administrador", "Vendedor" });
+            cmbRol.Location = new Point(18, 336);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(425, 28);
+            cmbRol.TabIndex = 77;
             // 
-            // textBox3
+            // txtNombreUsuario
             // 
-            textBox3.Location = new Point(19, 103);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = " Ej. Lety32";
-            textBox3.Size = new Size(425, 27);
-            textBox3.TabIndex = 76;
+            txtNombreUsuario.Location = new Point(19, 103);
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.PlaceholderText = " Ej. Lety32";
+            txtNombreUsuario.Size = new Size(425, 27);
+            txtNombreUsuario.TabIndex = 76;
             // 
             // label19
             // 
@@ -263,45 +265,47 @@
             label19.TabIndex = 75;
             label19.Text = "Rol";
             // 
-            // button11
+            // btnLimpiar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(283, 506);
-            button11.Name = "button11";
-            button11.Size = new Size(160, 37);
-            button11.TabIndex = 56;
-            button11.Text = "Limpiar";
-            button11.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(283, 506);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(160, 37);
+            btnLimpiar.TabIndex = 56;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // textBox7
+            // txtClave
             // 
-            textBox7.Location = new Point(18, 261);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. lety000";
-            textBox7.Size = new Size(425, 27);
-            textBox7.TabIndex = 54;
+            txtClave.Location = new Point(18, 261);
+            txtClave.Name = "txtClave";
+            txtClave.PlaceholderText = " Ej. lety000";
+            txtClave.Size = new Size(425, 27);
+            txtClave.TabIndex = 54;
             // 
-            // button10
+            // btnGuardar
             // 
-            button10.BackColor = Color.FromArgb(2, 113, 249);
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(18, 506);
-            button10.Name = "button10";
-            button10.Size = new Size(160, 37);
-            button10.TabIndex = 57;
-            button10.Text = "Guardar";
-            button10.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(2, 113, 249);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(18, 506);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(160, 37);
+            btnGuardar.TabIndex = 57;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label13
             // 
@@ -323,13 +327,13 @@
             label14.TabIndex = 52;
             label14.Text = "Nombre completo";
             // 
-            // textBox4
+            // txtNombreCompleto
             // 
-            textBox4.Location = new Point(18, 180);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. Lety Lopez";
-            textBox4.Size = new Size(425, 27);
-            textBox4.TabIndex = 51;
+            txtNombreCompleto.Location = new Point(18, 180);
+            txtNombreCompleto.Name = "txtNombreCompleto";
+            txtNombreCompleto.PlaceholderText = " Ej. Lety Lopez";
+            txtNombreCompleto.Size = new Size(425, 27);
+            txtNombreCompleto.TabIndex = 51;
             // 
             // label12
             // 
@@ -367,7 +371,7 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label10);
             panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lblUsuariosDesactivados);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1119, 118);
             panel4.Name = "panel4";
@@ -394,15 +398,15 @@
             pictureBox13.TabIndex = 5;
             pictureBox13.TabStop = false;
             // 
-            // label7
+            // lblUsuariosDesactivados
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(33, 38);
-            label7.TabIndex = 2;
-            label7.Text = "0";
+            lblUsuariosDesactivados.AutoSize = true;
+            lblUsuariosDesactivados.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuariosDesactivados.Location = new Point(99, 38);
+            lblUsuariosDesactivados.Name = "lblUsuariosDesactivados";
+            lblUsuariosDesactivados.Size = new Size(33, 38);
+            lblUsuariosDesactivados.TabIndex = 2;
+            lblUsuariosDesactivados.Text = "0";
             // 
             // label8
             // 
@@ -420,7 +424,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label9);
             panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblUsuariosActivos);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(628, 118);
             panel3.Name = "panel3";
@@ -447,15 +451,15 @@
             pictureBox12.TabIndex = 5;
             pictureBox12.TabStop = false;
             // 
-            // label4
+            // lblUsuariosActivos
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(33, 38);
-            label4.TabIndex = 2;
-            label4.Text = "2";
+            lblUsuariosActivos.AutoSize = true;
+            lblUsuariosActivos.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuariosActivos.Location = new Point(99, 38);
+            lblUsuariosActivos.Name = "lblUsuariosActivos";
+            lblUsuariosActivos.Size = new Size(33, 38);
+            lblUsuariosActivos.TabIndex = 2;
+            lblUsuariosActivos.Text = "0";
             // 
             // label6
             // 
@@ -473,7 +477,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label11);
             panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lblTotalUsuarios);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(112, 118);
             panel2.Name = "panel2";
@@ -500,15 +504,15 @@
             pictureBox11.TabIndex = 5;
             pictureBox11.TabStop = false;
             // 
-            // label5
+            // lblTotalUsuarios
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(33, 38);
-            label5.TabIndex = 2;
-            label5.Text = "2";
+            lblTotalUsuarios.AutoSize = true;
+            lblTotalUsuarios.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalUsuarios.Location = new Point(99, 38);
+            lblTotalUsuarios.Name = "lblTotalUsuarios";
+            lblTotalUsuarios.Size = new Size(33, 38);
+            lblTotalUsuarios.TabIndex = 2;
+            lblTotalUsuarios.Text = "0";
             // 
             // label3
             // 
@@ -557,7 +561,7 @@
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(panel7);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -572,7 +576,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
@@ -594,44 +598,44 @@
         #endregion
 
         private PictureBox pictureBox14;
-        private TextBox textBox1;
+        private TextBox txtBuscar;
         private Panel panel7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuarios;
         private Label label17;
         private PictureBox pictureBox3;
         private Panel panel5;
         private Label label19;
-        private Button button11;
-        private TextBox textBox7;
-        private Button button10;
+        private Button btnLimpiar;
+        private TextBox txtClave;
+        private Button btnGuardar;
         private Label label13;
         private Label label14;
-        private TextBox textBox4;
+        private TextBox txtNombreCompleto;
         private Label label12;
         private PictureBox pictureBox2;
         private Label label16;
         private Panel panel4;
         private Label label10;
         private PictureBox pictureBox13;
-        private Label label7;
+        private Label lblUsuariosDesactivados;
         private Label label8;
         private Panel panel3;
         private Label label9;
         private PictureBox pictureBox12;
-        private Label label4;
+        private Label lblUsuariosActivos;
         private Label label6;
         private Panel panel2;
         private Label label11;
         private PictureBox pictureBox11;
-        private Label label5;
+        private Label lblTotalUsuarios;
         private Label label3;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private TextBox textBox3;
-        private ComboBox comboBox1;
-        private CheckBox checkBox1;
-        private DateTimePicker dateTimePicker1;
+        private TextBox txtNombreUsuario;
+        private ComboBox cmbRol;
+        private CheckBox chkActivo;
+        private DateTimePicker dtpFechaCreacion;
         private Label label15;
         private DataGridViewTextBoxColumn colUsuarioU;
         private DataGridViewTextBoxColumn colNombreCompletoU;
