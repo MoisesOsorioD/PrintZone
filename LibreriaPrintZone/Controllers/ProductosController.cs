@@ -31,6 +31,103 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
+        public void InsertarProducto(
+            string nombre,
+            string? descripcion,
+            string? marca,
+            decimal? precioCompra,
+            decimal? precioVenta,
+            string? codigoBarras,
+            int? stockMinimo,
+            int idCategoria)
+        {
+            var parametroNombre = new Microsoft.Data.SqlClient.SqlParameter(
+                "@nombre",
+                System.Data.SqlDbType.VarChar,
+                100
+            )
+            {
+                Value = nombre
+            };
+
+            var parametroDescripcion = new Microsoft.Data.SqlClient.SqlParameter(
+                "@descripcion",
+                System.Data.SqlDbType.VarChar,
+                250
+            )
+            {
+                Value = descripcion ?? ""
+            };
+
+            var parametroMarca = new Microsoft.Data.SqlClient.SqlParameter(
+                "@marca",
+                System.Data.SqlDbType.VarChar,
+                100
+            )
+            {
+                Value = marca ?? ""
+            };
+
+            var parametroPrecioCompra = new Microsoft.Data.SqlClient.SqlParameter(
+                "@precio_compra",
+                System.Data.SqlDbType.Decimal
+            )
+            {
+                Precision = 10,
+                Scale = 2,
+                Value = precioCompra ?? 0
+            };
+
+            var parametroPrecioVenta = new Microsoft.Data.SqlClient.SqlParameter(
+                "@precio_venta",
+                System.Data.SqlDbType.Decimal
+            )
+            {
+                Precision = 10,
+                Scale = 2,
+                Value = precioVenta ?? 0
+            };
+
+            var parametroCodigoBarras = new Microsoft.Data.SqlClient.SqlParameter(
+                "@codigo_barras",
+                System.Data.SqlDbType.VarChar,
+                100
+            )
+            {
+                Value = codigoBarras ?? ""
+            };
+
+            var parametroStockMinimo = new Microsoft.Data.SqlClient.SqlParameter(
+                "@stock_minimo",
+                System.Data.SqlDbType.Int
+            )
+            {
+                Value = stockMinimo ?? 0
+            };
+
+            var parametroCategoria = new Microsoft.Data.SqlClient.SqlParameter(
+                "@id_categoria",
+                System.Data.SqlDbType.Int
+            )
+            {
+                Value = idCategoria
+            };
+
+            _context.Database.ExecuteSqlRaw(
+                "EXEC sp_Productos_Insertar " +
+                "@nombre, @descripcion, @marca, @precio_compra, " +
+                "@precio_venta, @codigo_barras, @stock_minimo, @id_categoria",
+                parametroNombre,
+                parametroDescripcion,
+                parametroMarca,
+                parametroPrecioCompra,
+                parametroPrecioVenta,
+                parametroCodigoBarras,
+                parametroStockMinimo,
+                parametroCategoria
+            );
+        }
+
         public void ActualizarProducto(
             int idProducto,
             string nombre,

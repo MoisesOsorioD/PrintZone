@@ -33,19 +33,20 @@
             label1 = new Label();
             pictureBox10 = new PictureBox();
             panel5 = new Panel();
-            textBox7 = new TextBox();
+            txtCodigoBarras = new TextBox();
             label11 = new Label();
             label8 = new Label();
-            textBox4 = new TextBox();
+            txtMarca = new TextBox();
             label7 = new Label();
-            textBox3 = new TextBox();
-            comboBox1 = new ComboBox();
+            txtDescripcion = new TextBox();
+            cmbCategoria = new ComboBox();
             label15 = new Label();
             label13 = new Label();
-            textBox2 = new TextBox();
+            txtNombre = new TextBox();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             panel3 = new Panel();
+            pictureBox13 = new PictureBox();
             pictureBox23 = new PictureBox();
             pictureBox20 = new PictureBox();
             label22 = new Label();
@@ -67,15 +68,15 @@
             label19 = new Label();
             label5 = new Label();
             pictureBox3 = new PictureBox();
-            btnRegresarFrmProductos = new Button();
+            btnCancelar = new Button();
             panel4 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
+            btnLimpiar = new Button();
+            btnGuardar = new Button();
             panel1 = new Panel();
             label10 = new Label();
-            textBox6 = new TextBox();
+            txtPrecioVenta = new TextBox();
             label9 = new Label();
-            textBox5 = new TextBox();
+            txtPrecioCompra = new TextBox();
             pictureBox7 = new PictureBox();
             label12 = new Label();
             panel2 = new Panel();
@@ -83,14 +84,14 @@
             pictureBox2 = new PictureBox();
             label4 = new Label();
             label14 = new Label();
-            textBox9 = new TextBox();
+            txtStockMinimo = new TextBox();
             pictureBox4 = new PictureBox();
             label6 = new Label();
-            pictureBox13 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox23).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
@@ -108,7 +109,6 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -145,16 +145,16 @@
             // 
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox7);
+            panel5.Controls.Add(txtCodigoBarras);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(label8);
-            panel5.Controls.Add(textBox4);
+            panel5.Controls.Add(txtMarca);
             panel5.Controls.Add(label7);
-            panel5.Controls.Add(textBox3);
-            panel5.Controls.Add(comboBox1);
+            panel5.Controls.Add(txtDescripcion);
+            panel5.Controls.Add(cmbCategoria);
             panel5.Controls.Add(label15);
             panel5.Controls.Add(label13);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(txtNombre);
             panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(label3);
             panel5.Location = new Point(137, 139);
@@ -162,13 +162,13 @@
             panel5.Size = new Size(863, 255);
             panel5.TabIndex = 13;
             // 
-            // textBox7
+            // txtCodigoBarras
             // 
-            textBox7.Location = new Point(599, 183);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. 18495632";
-            textBox7.Size = new Size(226, 27);
-            textBox7.TabIndex = 48;
+            txtCodigoBarras.Location = new Point(599, 183);
+            txtCodigoBarras.Name = "txtCodigoBarras";
+            txtCodigoBarras.PlaceholderText = " Ej. 18495632";
+            txtCodigoBarras.Size = new Size(226, 27);
+            txtCodigoBarras.TabIndex = 48;
             // 
             // label11
             // 
@@ -190,13 +190,13 @@
             label8.TabIndex = 46;
             label8.Text = "Marca";
             // 
-            // textBox4
+            // txtMarca
             // 
-            textBox4.Location = new Point(599, 93);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. Report";
-            textBox4.Size = new Size(226, 27);
-            textBox4.TabIndex = 45;
+            txtMarca.Location = new Point(599, 93);
+            txtMarca.Name = "txtMarca";
+            txtMarca.PlaceholderText = " Ej. Report";
+            txtMarca.Size = new Size(226, 27);
+            txtMarca.TabIndex = 45;
             // 
             // label7
             // 
@@ -208,22 +208,22 @@
             label7.TabIndex = 43;
             label7.Text = "Descripción";
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            textBox3.Location = new Point(19, 174);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = " Ej. Papel bond tamaño carta, 500 hojas.";
-            textBox3.Size = new Size(512, 57);
-            textBox3.TabIndex = 42;
+            txtDescripcion.Location = new Point(19, 174);
+            txtDescripcion.Multiline = true;
+            txtDescripcion.Name = "txtDescripcion";
+            txtDescripcion.PlaceholderText = " Ej. Papel bond tamaño carta, 500 hojas.";
+            txtDescripcion.Size = new Size(512, 57);
+            txtDescripcion.TabIndex = 42;
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(304, 93);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(227, 28);
-            comboBox1.TabIndex = 38;
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(304, 93);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(227, 28);
+            cmbCategoria.TabIndex = 38;
             // 
             // label15
             // 
@@ -245,13 +245,13 @@
             label13.TabIndex = 16;
             label13.Text = "Producto";
             // 
-            // textBox2
+            // txtNombre
             // 
-            textBox2.Location = new Point(19, 93);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = " Ej. Resma de papel";
-            textBox2.Size = new Size(226, 27);
-            textBox2.TabIndex = 15;
+            txtNombre.Location = new Point(19, 93);
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = " Ej. Resma de papel";
+            txtNombre.Size = new Size(226, 27);
+            txtNombre.TabIndex = 15;
             // 
             // pictureBox1
             // 
@@ -297,17 +297,27 @@
             panel3.Controls.Add(label19);
             panel3.Controls.Add(label5);
             panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(1047, 139);
+            panel3.Location = new Point(1023, 139);
             panel3.Name = "panel3";
-            panel3.Size = new Size(551, 588);
+            panel3.Size = new Size(575, 588);
             panel3.TabIndex = 14;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
+            pictureBox13.Location = new Point(394, 394);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new Size(50, 50);
+            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox13.TabIndex = 58;
+            pictureBox13.TabStop = false;
             // 
             // pictureBox23
             // 
             pictureBox23.Image = (Image)resources.GetObject("pictureBox23.Image");
             pictureBox23.Location = new Point(207, 394);
             pictureBox23.Name = "pictureBox23";
-            pictureBox23.Size = new Size(40, 40);
+            pictureBox23.Size = new Size(50, 50);
             pictureBox23.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox23.TabIndex = 57;
             pictureBox23.TabStop = false;
@@ -315,9 +325,9 @@
             // pictureBox20
             // 
             pictureBox20.Image = (Image)resources.GetObject("pictureBox20.Image");
-            pictureBox20.Location = new Point(27, 394);
+            pictureBox20.Location = new Point(16, 394);
             pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new Size(40, 40);
+            pictureBox20.Size = new Size(50, 50);
             pictureBox20.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox20.TabIndex = 56;
             pictureBox20.TabStop = false;
@@ -326,7 +336,7 @@
             // 
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.Location = new Point(404, 335);
+            label22.Location = new Point(444, 335);
             label22.Name = "label22";
             label22.Size = new Size(120, 20);
             label22.TabIndex = 20;
@@ -335,9 +345,9 @@
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(362, 325);
+            pictureBox14.Location = new Point(394, 318);
             pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(40, 40);
+            pictureBox14.Size = new Size(50, 50);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox14.TabIndex = 55;
             pictureBox14.TabStop = false;
@@ -345,9 +355,9 @@
             // pictureBox12
             // 
             pictureBox12.Image = (Image)resources.GetObject("pictureBox12.Image");
-            pictureBox12.Location = new Point(207, 325);
+            pictureBox12.Location = new Point(207, 318);
             pictureBox12.Name = "pictureBox12";
-            pictureBox12.Size = new Size(40, 40);
+            pictureBox12.Size = new Size(50, 50);
             pictureBox12.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox12.TabIndex = 54;
             pictureBox12.TabStop = false;
@@ -355,9 +365,9 @@
             // pictureBox11
             // 
             pictureBox11.Image = (Image)resources.GetObject("pictureBox11.Image");
-            pictureBox11.Location = new Point(27, 325);
+            pictureBox11.Location = new Point(16, 318);
             pictureBox11.Name = "pictureBox11";
-            pictureBox11.Size = new Size(40, 40);
+            pictureBox11.Size = new Size(50, 50);
             pictureBox11.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox11.TabIndex = 53;
             pictureBox11.TabStop = false;
@@ -366,7 +376,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(404, 406);
+            label18.Location = new Point(448, 406);
             label18.Name = "label18";
             label18.Size = new Size(102, 20);
             label18.TabIndex = 16;
@@ -376,7 +386,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(239, 210);
+            label17.Location = new Point(261, 214);
             label17.Name = "label17";
             label17.Size = new Size(75, 20);
             label17.TabIndex = 15;
@@ -387,7 +397,7 @@
             pictureBox8.Image = (Image)resources.GetObject("pictureBox8.Image");
             pictureBox8.Location = new Point(207, 200);
             pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(40, 40);
+            pictureBox8.Size = new Size(50, 50);
             pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox8.TabIndex = 51;
             pictureBox8.TabStop = false;
@@ -396,7 +406,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(63, 210);
+            label16.Location = new Point(69, 214);
             label16.Name = "label16";
             label16.Size = new Size(66, 20);
             label16.TabIndex = 14;
@@ -405,9 +415,9 @@
             // pictureBox6
             // 
             pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
-            pictureBox6.Location = new Point(27, 200);
+            pictureBox6.Location = new Point(16, 200);
             pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(40, 40);
+            pictureBox6.Size = new Size(50, 50);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox6.TabIndex = 50;
             pictureBox6.TabStop = false;
@@ -447,7 +457,7 @@
             // 
             label24.AutoSize = true;
             label24.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label24.Location = new Point(243, 406);
+            label24.Location = new Point(261, 406);
             label24.Name = "label24";
             label24.Size = new Size(115, 20);
             label24.TabIndex = 22;
@@ -457,7 +467,7 @@
             // 
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label23.Location = new Point(63, 406);
+            label23.Location = new Point(69, 406);
             label23.Name = "label23";
             label23.Size = new Size(129, 20);
             label23.TabIndex = 21;
@@ -467,7 +477,7 @@
             // 
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label21.Location = new Point(243, 335);
+            label21.Location = new Point(261, 335);
             label21.Name = "label21";
             label21.Size = new Size(52, 20);
             label21.TabIndex = 19;
@@ -477,7 +487,7 @@
             // 
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label20.Location = new Point(63, 335);
+            label20.Location = new Point(69, 335);
             label20.Name = "label20";
             label20.Size = new Size(89, 20);
             label20.TabIndex = 18;
@@ -508,83 +518,85 @@
             pictureBox3.Image = Properties.Resources.Campos_o_no;
             pictureBox3.Location = new Point(3, -1);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(543, 160);
+            pictureBox3.Size = new Size(571, 160);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
             // 
-            // btnRegresarFrmProductos
+            // btnCancelar
             // 
-            btnRegresarFrmProductos.BackColor = Color.FromArgb(2, 113, 249);
-            btnRegresarFrmProductos.FlatAppearance.BorderSize = 0;
-            btnRegresarFrmProductos.FlatStyle = FlatStyle.Flat;
-            btnRegresarFrmProductos.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresarFrmProductos.ForeColor = Color.White;
-            btnRegresarFrmProductos.Image = Properties.Resources.Cancelar;
-            btnRegresarFrmProductos.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegresarFrmProductos.Location = new Point(1165, 23);
-            btnRegresarFrmProductos.Name = "btnRegresarFrmProductos";
-            btnRegresarFrmProductos.Size = new Size(121, 37);
-            btnRegresarFrmProductos.TabIndex = 39;
-            btnRegresarFrmProductos.Text = "Cancelar";
-            btnRegresarFrmProductos.TextAlign = ContentAlignment.MiddleRight;
-            btnRegresarFrmProductos.UseVisualStyleBackColor = false;
-            btnRegresarFrmProductos.Click += btnRegresarFrmProductos_Click;
+            btnCancelar.BackColor = Color.FromArgb(2, 113, 249);
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Image = Properties.Resources.Cancelar;
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(1165, 23);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(121, 37);
+            btnCancelar.TabIndex = 39;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.TextAlign = ContentAlignment.MiddleRight;
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(247, 251, 255);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(button2);
-            panel4.Controls.Add(button1);
-            panel4.Controls.Add(btnRegresarFrmProductos);
+            panel4.Controls.Add(btnLimpiar);
+            panel4.Controls.Add(btnGuardar);
+            panel4.Controls.Add(btnCancelar);
             panel4.Location = new Point(137, 777);
             panel4.Name = "panel4";
             panel4.Size = new Size(1461, 87);
             panel4.TabIndex = 16;
             // 
-            // button2
+            // btnLimpiar
             // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(22, 23);
-            button2.Name = "button2";
-            button2.Size = new Size(121, 37);
-            button2.TabIndex = 41;
-            button2.Text = "Limpiar";
-            button2.TextAlign = ContentAlignment.MiddleRight;
-            button2.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(22, 23);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(121, 37);
+            btnLimpiar.TabIndex = 41;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = Properties.Resources.Guardar;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(1315, 23);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 37);
-            button1.TabIndex = 40;
-            button1.Text = "Guardar";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(2, 113, 249);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = Properties.Resources.Guardar;
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(1315, 23);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(121, 37);
+            btnGuardar.TabIndex = 40;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(247, 251, 255);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label10);
-            panel1.Controls.Add(textBox6);
+            panel1.Controls.Add(txtPrecioVenta);
             panel1.Controls.Add(label9);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtPrecioCompra);
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(label12);
             panel1.Location = new Point(137, 415);
@@ -602,13 +614,13 @@
             label10.TabIndex = 31;
             label10.Text = "Precio de venta";
             // 
-            // textBox6
+            // txtPrecioVenta
             // 
-            textBox6.Location = new Point(304, 95);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = " Ej. C$ 200.00";
-            textBox6.Size = new Size(227, 27);
-            textBox6.TabIndex = 30;
+            txtPrecioVenta.Location = new Point(304, 95);
+            txtPrecioVenta.Name = "txtPrecioVenta";
+            txtPrecioVenta.PlaceholderText = " Ej. C$ 200.00";
+            txtPrecioVenta.Size = new Size(227, 27);
+            txtPrecioVenta.TabIndex = 30;
             // 
             // label9
             // 
@@ -620,13 +632,13 @@
             label9.TabIndex = 28;
             label9.Text = "Precio de compra";
             // 
-            // textBox5
+            // txtPrecioCompra
             // 
-            textBox5.Location = new Point(19, 95);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = " Ej. C$ 150.00";
-            textBox5.Size = new Size(226, 27);
-            textBox5.TabIndex = 27;
+            txtPrecioCompra.Location = new Point(19, 95);
+            txtPrecioCompra.Name = "txtPrecioCompra";
+            txtPrecioCompra.PlaceholderText = " Ej. C$ 150.00";
+            txtPrecioCompra.Size = new Size(226, 27);
+            txtPrecioCompra.TabIndex = 27;
             // 
             // pictureBox7
             // 
@@ -654,7 +666,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(panel6);
             panel2.Controls.Add(label14);
-            panel2.Controls.Add(textBox9);
+            panel2.Controls.Add(txtStockMinimo);
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(label6);
             panel2.Location = new Point(137, 581);
@@ -703,13 +715,13 @@
             label14.TabIndex = 37;
             label14.Text = "Stock minimo";
             // 
-            // textBox9
+            // txtStockMinimo
             // 
-            textBox9.Location = new Point(18, 95);
-            textBox9.Name = "textBox9";
-            textBox9.PlaceholderText = " Ej. 10";
-            textBox9.Size = new Size(227, 27);
-            textBox9.TabIndex = 36;
+            txtStockMinimo.Location = new Point(18, 95);
+            txtStockMinimo.Name = "txtStockMinimo";
+            txtStockMinimo.PlaceholderText = " Ej. 10";
+            txtStockMinimo.Size = new Size(227, 27);
+            txtStockMinimo.TabIndex = 36;
             // 
             // pictureBox4
             // 
@@ -730,16 +742,6 @@
             label6.Size = new Size(194, 25);
             label6.TabIndex = 6;
             label6.Text = "Control de inventario";
-            // 
-            // pictureBox13
-            // 
-            pictureBox13.Image = (Image)resources.GetObject("pictureBox13.Image");
-            pictureBox13.Location = new Point(364, 394);
-            pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(40, 40);
-            pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox13.TabIndex = 58;
-            pictureBox13.TabStop = false;
             // 
             // frmNuevoProductos
             // 
@@ -764,6 +766,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox23).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
@@ -785,7 +788,6 @@
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -797,34 +799,34 @@
         private PictureBox pictureBox10;
         private Panel panel5;
         private Panel panel3;
-        private Button btnRegresarFrmProductos;
+        private Button btnCancelar;
         private Panel panel4;
-        private Button button2;
-        private Button button1;
+        private Button btnLimpiar;
+        private Button btnGuardar;
         private PictureBox pictureBox1;
         private Label label3;
         private Label label13;
-        private TextBox textBox2;
-        private ComboBox comboBox1;
+        private TextBox txtNombre;
+        private ComboBox cmbCategoria;
         private Label label15;
         private Label label7;
-        private TextBox textBox3;
+        private TextBox txtDescripcion;
         private Label label8;
-        private TextBox textBox4;
-        private TextBox textBox7;
+        private TextBox txtMarca;
+        private TextBox txtCodigoBarras;
         private Label label11;
         private Panel panel1;
         private PictureBox pictureBox7;
         private Label label12;
         private Label label10;
-        private TextBox textBox6;
+        private TextBox txtPrecioVenta;
         private Label label9;
-        private TextBox textBox5;
+        private TextBox txtPrecioCompra;
         private Panel panel2;
         private PictureBox pictureBox4;
         private Label label6;
         private Label label14;
-        private TextBox textBox9;
+        private TextBox txtStockMinimo;
         private Panel panel6;
         private PictureBox pictureBox2;
         private Label label4;
