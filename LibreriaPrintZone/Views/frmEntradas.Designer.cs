@@ -35,40 +35,40 @@
             panel4 = new Panel();
             label10 = new Label();
             pictureBox13 = new PictureBox();
-            label7 = new Label();
+            lblInversionInventario = new Label();
             label8 = new Label();
             panel3 = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
-            label4 = new Label();
+            lblUnidadesIngresadas = new Label();
             label6 = new Label();
             panel2 = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
-            label5 = new Label();
+            lblTotalEntradas = new Label();
             label3 = new Label();
             panel5 = new Panel();
-            button11 = new Button();
-            textBox7 = new TextBox();
-            button10 = new Button();
+            btnLimpiar = new Button();
+            txtCostoLote = new TextBox();
+            btnRegistrarEntrada = new Button();
             label13 = new Label();
             label14 = new Label();
-            textBox4 = new TextBox();
-            comboBox2 = new ComboBox();
+            txtCantidad = new TextBox();
+            cmbProducto = new ComboBox();
             label12 = new Label();
-            comboBox1 = new ComboBox();
+            cmbProveedor = new ComboBox();
             label15 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
             pictureBox14 = new PictureBox();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             panel7 = new Panel();
-            dataGridView1 = new DataGridView();
-            colFechaE = new DataGridViewTextBoxColumn();
-            colProductoE = new DataGridViewTextBoxColumn();
-            colProveedorE = new DataGridViewTextBoxColumn();
-            colCantidadE = new DataGridViewTextBoxColumn();
-            colCostoLoteE = new DataGridViewTextBoxColumn();
+            dgvEntradas = new DataGridView();
+            colFecha = new DataGridViewTextBoxColumn();
+            colProducto = new DataGridViewTextBoxColumn();
+            colProveedor = new DataGridViewTextBoxColumn();
+            colCantidad = new DataGridViewTextBoxColumn();
+            colCostoLote = new DataGridViewTextBoxColumn();
             label17 = new Label();
             pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
@@ -82,7 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEntradas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -122,7 +122,7 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(label10);
             panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lblInversionInventario);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1130, 108);
             panel4.Name = "panel4";
@@ -149,15 +149,15 @@
             pictureBox13.TabIndex = 5;
             pictureBox13.TabStop = false;
             // 
-            // label7
+            // lblInversionInventario
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(146, 38);
-            label7.TabIndex = 2;
-            label7.Text = "C$ 67,500";
+            lblInversionInventario.AutoSize = true;
+            lblInversionInventario.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInversionInventario.Location = new Point(99, 38);
+            lblInversionInventario.Name = "lblInversionInventario";
+            lblInversionInventario.Size = new Size(146, 38);
+            lblInversionInventario.TabIndex = 2;
+            lblInversionInventario.Text = "C$ 67,500";
             // 
             // label8
             // 
@@ -175,7 +175,7 @@
             panel3.BorderStyle = BorderStyle.FixedSingle;
             panel3.Controls.Add(label9);
             panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblUnidadesIngresadas);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(639, 108);
             panel3.Name = "panel3";
@@ -202,15 +202,15 @@
             pictureBox12.TabIndex = 5;
             pictureBox12.TabStop = false;
             // 
-            // label4
+            // lblUnidadesIngresadas
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 38);
-            label4.TabIndex = 2;
-            label4.Text = "3,500";
+            lblUnidadesIngresadas.AutoSize = true;
+            lblUnidadesIngresadas.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUnidadesIngresadas.Location = new Point(99, 38);
+            lblUnidadesIngresadas.Name = "lblUnidadesIngresadas";
+            lblUnidadesIngresadas.Size = new Size(89, 38);
+            lblUnidadesIngresadas.TabIndex = 2;
+            lblUnidadesIngresadas.Text = "3,500";
             // 
             // label6
             // 
@@ -228,7 +228,7 @@
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label11);
             panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lblTotalEntradas);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(123, 108);
             panel2.Name = "panel2";
@@ -255,15 +255,15 @@
             pictureBox11.TabIndex = 5;
             pictureBox11.TabStop = false;
             // 
-            // label5
+            // lblTotalEntradas
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 38);
-            label5.TabIndex = 2;
-            label5.Text = "10";
+            lblTotalEntradas.AutoSize = true;
+            lblTotalEntradas.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalEntradas.Location = new Point(99, 38);
+            lblTotalEntradas.Name = "lblTotalEntradas";
+            lblTotalEntradas.Size = new Size(49, 38);
+            lblTotalEntradas.TabIndex = 2;
+            lblTotalEntradas.Text = "10";
             // 
             // label3
             // 
@@ -279,15 +279,15 @@
             // 
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(button11);
-            panel5.Controls.Add(textBox7);
-            panel5.Controls.Add(button10);
+            panel5.Controls.Add(btnLimpiar);
+            panel5.Controls.Add(txtCostoLote);
+            panel5.Controls.Add(btnRegistrarEntrada);
             panel5.Controls.Add(label13);
             panel5.Controls.Add(label14);
-            panel5.Controls.Add(textBox4);
-            panel5.Controls.Add(comboBox2);
+            panel5.Controls.Add(txtCantidad);
+            panel5.Controls.Add(cmbProducto);
             panel5.Controls.Add(label12);
-            panel5.Controls.Add(comboBox1);
+            panel5.Controls.Add(cmbProveedor);
             panel5.Controls.Add(label15);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label16);
@@ -296,46 +296,48 @@
             panel5.Size = new Size(475, 578);
             panel5.TabIndex = 19;
             // 
-            // button11
+            // btnLimpiar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(255, 400);
-            button11.Name = "button11";
-            button11.Size = new Size(195, 37);
-            button11.TabIndex = 56;
-            button11.Text = "Limpiar";
-            button11.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(255, 400);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(195, 37);
+            btnLimpiar.TabIndex = 56;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // textBox7
+            // txtCostoLote
             // 
-            textBox7.Location = new Point(19, 334);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. C$ 23,000";
-            textBox7.Size = new Size(425, 27);
-            textBox7.TabIndex = 54;
+            txtCostoLote.Location = new Point(19, 334);
+            txtCostoLote.Name = "txtCostoLote";
+            txtCostoLote.PlaceholderText = " Ej. C$ 23,000";
+            txtCostoLote.Size = new Size(425, 27);
+            txtCostoLote.TabIndex = 54;
             // 
-            // button10
+            // btnRegistrarEntrada
             // 
-            button10.BackColor = Color.FromArgb(2, 113, 249);
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(19, 400);
-            button10.Name = "button10";
-            button10.Size = new Size(195, 37);
-            button10.TabIndex = 57;
-            button10.Text = "Registrar entrada";
-            button10.TextAlign = ContentAlignment.MiddleRight;
-            button10.UseVisualStyleBackColor = false;
+            btnRegistrarEntrada.BackColor = Color.FromArgb(2, 113, 249);
+            btnRegistrarEntrada.FlatAppearance.BorderSize = 0;
+            btnRegistrarEntrada.FlatStyle = FlatStyle.Flat;
+            btnRegistrarEntrada.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegistrarEntrada.ForeColor = Color.White;
+            btnRegistrarEntrada.Image = (Image)resources.GetObject("btnRegistrarEntrada.Image");
+            btnRegistrarEntrada.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRegistrarEntrada.Location = new Point(19, 400);
+            btnRegistrarEntrada.Name = "btnRegistrarEntrada";
+            btnRegistrarEntrada.Size = new Size(195, 37);
+            btnRegistrarEntrada.TabIndex = 57;
+            btnRegistrarEntrada.Text = "Registrar entrada";
+            btnRegistrarEntrada.TextAlign = ContentAlignment.MiddleRight;
+            btnRegistrarEntrada.UseVisualStyleBackColor = false;
+            btnRegistrarEntrada.Click += btnRegistrarEntrada_Click;
             // 
             // label13
             // 
@@ -357,21 +359,21 @@
             label14.TabIndex = 52;
             label14.Text = "Cantidad";
             // 
-            // textBox4
+            // txtCantidad
             // 
-            textBox4.Location = new Point(19, 252);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. 50";
-            textBox4.Size = new Size(425, 27);
-            textBox4.TabIndex = 51;
+            txtCantidad.Location = new Point(19, 252);
+            txtCantidad.Name = "txtCantidad";
+            txtCantidad.PlaceholderText = " Ej. 50";
+            txtCantidad.Size = new Size(425, 27);
+            txtCantidad.TabIndex = 51;
             // 
-            // comboBox2
+            // cmbProducto
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(19, 171);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(425, 28);
-            comboBox2.TabIndex = 20;
+            cmbProducto.FormattingEnabled = true;
+            cmbProducto.Location = new Point(19, 171);
+            cmbProducto.Name = "cmbProducto";
+            cmbProducto.Size = new Size(425, 28);
+            cmbProducto.TabIndex = 20;
             // 
             // label12
             // 
@@ -383,13 +385,13 @@
             label12.TabIndex = 19;
             label12.Text = "Producto";
             // 
-            // comboBox1
+            // cmbProveedor
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(19, 93);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(425, 28);
-            comboBox1.TabIndex = 17;
+            cmbProveedor.FormattingEnabled = true;
+            cmbProveedor.Location = new Point(19, 93);
+            cmbProveedor.Name = "cmbProveedor";
+            cmbProveedor.Size = new Size(425, 28);
+            cmbProveedor.TabIndex = 17;
             // 
             // label15
             // 
@@ -431,20 +433,21 @@
             pictureBox14.TabIndex = 59;
             pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(689, 260);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar entradas...";
-            textBox1.Size = new Size(882, 30);
-            textBox1.TabIndex = 58;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(689, 260);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar entradas...";
+            txtBuscar.Size = new Size(882, 30);
+            txtBuscar.TabIndex = 58;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panel7
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(dataGridView1);
+            panel7.Controls.Add(dgvEntradas);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
             panel7.Location = new Point(643, 318);
@@ -452,51 +455,51 @@
             panel7.Size = new Size(935, 509);
             panel7.TabIndex = 57;
             // 
-            // dataGridView1
+            // dgvEntradas
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colFechaE, colProductoE, colProveedorE, colCantidadE, colCostoLoteE });
-            dataGridView1.Location = new Point(20, 81);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(896, 405);
-            dataGridView1.TabIndex = 8;
+            dgvEntradas.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEntradas.Columns.AddRange(new DataGridViewColumn[] { colFecha, colProducto, colProveedor, colCantidad, colCostoLote });
+            dgvEntradas.Location = new Point(20, 81);
+            dgvEntradas.Name = "dgvEntradas";
+            dgvEntradas.RowHeadersWidth = 51;
+            dgvEntradas.Size = new Size(896, 405);
+            dgvEntradas.TabIndex = 8;
             // 
-            // colFechaE
+            // colFecha
             // 
-            colFechaE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colFechaE.HeaderText = "Fecha";
-            colFechaE.MinimumWidth = 6;
-            colFechaE.Name = "colFechaE";
+            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colFecha.HeaderText = "Fecha";
+            colFecha.MinimumWidth = 6;
+            colFecha.Name = "colFecha";
             // 
-            // colProductoE
+            // colProducto
             // 
-            colProductoE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProductoE.HeaderText = "Producto";
-            colProductoE.MinimumWidth = 6;
-            colProductoE.Name = "colProductoE";
+            colProducto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colProducto.HeaderText = "Producto";
+            colProducto.MinimumWidth = 6;
+            colProducto.Name = "colProducto";
             // 
-            // colProveedorE
+            // colProveedor
             // 
-            colProveedorE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colProveedorE.HeaderText = "Proveedor";
-            colProveedorE.MinimumWidth = 6;
-            colProveedorE.Name = "colProveedorE";
+            colProveedor.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colProveedor.HeaderText = "Proveedor";
+            colProveedor.MinimumWidth = 6;
+            colProveedor.Name = "colProveedor";
             // 
-            // colCantidadE
+            // colCantidad
             // 
-            colCantidadE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCantidadE.HeaderText = "Cantidad";
-            colCantidadE.MinimumWidth = 6;
-            colCantidadE.Name = "colCantidadE";
+            colCantidad.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCantidad.HeaderText = "Cantidad";
+            colCantidad.MinimumWidth = 6;
+            colCantidad.Name = "colCantidad";
             // 
-            // colCostoLoteE
+            // colCostoLote
             // 
-            colCostoLoteE.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCostoLoteE.HeaderText = "Costo del lote";
-            colCostoLoteE.MinimumWidth = 6;
-            colCostoLoteE.Name = "colCostoLoteE";
+            colCostoLote.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCostoLote.HeaderText = "Costo del lote";
+            colCostoLote.MinimumWidth = 6;
+            colCostoLote.Name = "colCostoLote";
             // 
             // label17
             // 
@@ -525,7 +528,7 @@
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(panel7);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -553,7 +556,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEntradas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -567,41 +570,41 @@
         private Panel panel4;
         private Label label10;
         private PictureBox pictureBox13;
-        private Label label7;
+        private Label lblInversionInventario;
         private Label label8;
         private Panel panel3;
         private Label label9;
         private PictureBox pictureBox12;
-        private Label label4;
+        private Label lblUnidadesIngresadas;
         private Label label6;
         private Panel panel2;
         private PictureBox pictureBox11;
-        private Label label5;
+        private Label lblTotalEntradas;
         private Label label3;
         private Label label11;
         private Panel panel5;
         private Label label15;
         private PictureBox pictureBox2;
         private Label label16;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cmbProveedor;
+        private ComboBox cmbProducto;
         private Label label12;
-        private TextBox textBox7;
+        private TextBox txtCostoLote;
         private Label label13;
         private Label label14;
-        private TextBox textBox4;
-        private Button button11;
-        private Button button10;
+        private TextBox txtCantidad;
+        private Button btnLimpiar;
+        private Button btnRegistrarEntrada;
         private PictureBox pictureBox14;
-        private TextBox textBox1;
+        private TextBox txtBuscar;
         private Panel panel7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvEntradas;
         private Label label17;
         private PictureBox pictureBox3;
-        private DataGridViewTextBoxColumn colFechaE;
-        private DataGridViewTextBoxColumn colProductoE;
-        private DataGridViewTextBoxColumn colProveedorE;
-        private DataGridViewTextBoxColumn colCantidadE;
-        private DataGridViewTextBoxColumn colCostoLoteE;
+        private DataGridViewTextBoxColumn colFecha;
+        private DataGridViewTextBoxColumn colProducto;
+        private DataGridViewTextBoxColumn colProveedor;
+        private DataGridViewTextBoxColumn colCantidad;
+        private DataGridViewTextBoxColumn colCostoLote;
     }
 }
