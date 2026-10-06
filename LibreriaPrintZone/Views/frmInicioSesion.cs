@@ -71,8 +71,9 @@ namespace LibreriaPrintZone
                 frmLayouts principal = new frmLayouts(
                     usuario.IdUsuario,
                     usuario.Rol,
+                    usuario.NombreUsuario,
                     usuario.NombreCompleto
-                );
+                    );
 
                 principal.Show();
 

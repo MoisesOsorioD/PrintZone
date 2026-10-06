@@ -17,8 +17,13 @@ namespace LibreriaPrintZone
 
         private string RolUsuario;
         private string NombreUsuario;
+
+        // AGREGADO: nombre de usuario de la cuenta
+        private string NombreUsuarioCuenta;
+
         private readonly int _idUsuarioActual;
         private readonly string _nombreUsuarioActual;
+
 
 
 
@@ -59,6 +64,7 @@ namespace LibreriaPrintZone
         public frmLayouts(
             int idUsuario,
             string rol,
+            string nombreUsuario,
             string nombreCompleto)
         {
             InitializeComponent();
@@ -69,6 +75,14 @@ namespace LibreriaPrintZone
             // Guardar información del usuario
             RolUsuario = rol;
             NombreUsuario = nombreCompleto;
+
+            // AGREGADO:
+            // Guardar el nombre de usuario de la cuenta
+            NombreUsuarioCuenta = nombreUsuario;
+
+            // AGREGADO:
+            // Mostrar el nombre de usuario en el botón
+            btnRolUsuario.Text = NombreUsuarioCuenta;
 
 
             // ======================================
@@ -467,8 +481,8 @@ namespace LibreriaPrintZone
         // ==========================================
 
         private void btnProductos_Click(
-    object sender,
-    EventArgs e)
+            object sender,
+            EventArgs e)
         {
             AbrirFormulario(
                 new frmProductos(RolUsuario)
