@@ -30,61 +30,61 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
             panel4 = new Panel();
-            label10 = new Label();
+            lblCantidadProductosProveedor = new Label();
             pictureBox13 = new PictureBox();
-            label7 = new Label();
+            lblProveedorMasProductos = new Label();
             label8 = new Label();
             panel3 = new Panel();
-            label9 = new Label();
+            lblProveedorRecienteDescripcion = new Label();
             pictureBox12 = new PictureBox();
-            label4 = new Label();
+            lblProveedorReciente = new Label();
             label6 = new Label();
             panel2 = new Panel();
             pictureBox11 = new PictureBox();
-            label5 = new Label();
+            lblTotalProveedores = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
             panel5 = new Panel();
-            textBox7 = new TextBox();
+            txtTelefono = new TextBox();
             label11 = new Label();
             label12 = new Label();
-            textBox4 = new TextBox();
+            txtCorreo = new TextBox();
             label13 = new Label();
-            textBox3 = new TextBox();
+            txtDireccion = new TextBox();
             label14 = new Label();
-            textBox2 = new TextBox();
+            txtNombreEmpresa = new TextBox();
             pictureBox2 = new PictureBox();
             label16 = new Label();
             panel1 = new Panel();
             label17 = new Label();
-            textBox5 = new TextBox();
+            txtTelefonoAgente = new TextBox();
             label19 = new Label();
-            textBox8 = new TextBox();
+            txtNombreAgente = new TextBox();
             pictureBox7 = new PictureBox();
             label20 = new Label();
             panel6 = new Panel();
-            button9 = new Button();
-            button11 = new Button();
-            button10 = new Button();
+            btnEliminar = new Button();
+            btnLimpiar = new Button();
+            btnGuardar = new Button();
             label18 = new Label();
-            textBox6 = new TextBox();
+            txtMontoMinimoCompra = new TextBox();
             pictureBox8 = new PictureBox();
             label21 = new Label();
             panel7 = new Panel();
-            dataGridView1 = new DataGridView();
-            colEmpresaP = new DataGridViewTextBoxColumn();
-            colDireccionP = new DataGridViewTextBoxColumn();
-            colCorreoP = new DataGridViewTextBoxColumn();
-            colTelefonoP = new DataGridViewTextBoxColumn();
-            colNombreAgenteP = new DataGridViewTextBoxColumn();
-            colTelefonoAgenteP = new DataGridViewTextBoxColumn();
-            colMontoMinimoP = new DataGridViewTextBoxColumn();
+            dgvProveedores = new DataGridView();
+            colEmpresa = new DataGridViewTextBoxColumn();
+            colDireccion = new DataGridViewTextBoxColumn();
+            colCorreo = new DataGridViewTextBoxColumn();
+            colTelefono = new DataGridViewTextBoxColumn();
+            colNombreAgente = new DataGridViewTextBoxColumn();
+            colTelefonoAgente = new DataGridViewTextBoxColumn();
+            colMontoMinimo = new DataGridViewTextBoxColumn();
             label15 = new Label();
             pictureBox3 = new PictureBox();
             pictureBox14 = new PictureBox();
-            textBox1 = new TextBox();
+            txtBuscar = new TextBox();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panel3.SuspendLayout();
@@ -99,7 +99,7 @@
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
@@ -108,24 +108,24 @@
             // 
             panel4.BackColor = Color.FromArgb(242, 249, 254);
             panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblCantidadProductosProveedor);
             panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(label7);
+            panel4.Controls.Add(lblProveedorMasProductos);
             panel4.Controls.Add(label8);
             panel4.Location = new Point(1131, 116);
             panel4.Name = "panel4";
             panel4.Size = new Size(441, 116);
             panel4.TabIndex = 14;
             // 
-            // label10
+            // lblCantidadProductosProveedor
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(99, 83);
-            label10.Name = "label10";
-            label10.Size = new Size(110, 23);
-            label10.TabIndex = 10;
-            label10.Text = "50 productos";
+            lblCantidadProductosProveedor.AutoSize = true;
+            lblCantidadProductosProveedor.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCantidadProductosProveedor.Location = new Point(99, 83);
+            lblCantidadProductosProveedor.Name = "lblCantidadProductosProveedor";
+            lblCantidadProductosProveedor.Size = new Size(110, 23);
+            lblCantidadProductosProveedor.TabIndex = 10;
+            lblCantidadProductosProveedor.Text = "50 productos";
             // 
             // pictureBox13
             // 
@@ -137,15 +137,15 @@
             pictureBox13.TabIndex = 5;
             pictureBox13.TabStop = false;
             // 
-            // label7
+            // lblProveedorMasProductos
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(99, 38);
-            label7.Name = "label7";
-            label7.Size = new Size(275, 38);
-            label7.TabIndex = 2;
-            label7.Text = "Distribuidora Norte";
+            lblProveedorMasProductos.AutoSize = true;
+            lblProveedorMasProductos.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProveedorMasProductos.Location = new Point(99, 38);
+            lblProveedorMasProductos.Name = "lblProveedorMasProductos";
+            lblProveedorMasProductos.Size = new Size(275, 38);
+            lblProveedorMasProductos.TabIndex = 2;
+            lblProveedorMasProductos.Text = "Distribuidora Norte";
             // 
             // label8
             // 
@@ -161,24 +161,24 @@
             // 
             panel3.BackColor = Color.FromArgb(242, 249, 254);
             panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label9);
+            panel3.Controls.Add(lblProveedorRecienteDescripcion);
             panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblProveedorReciente);
             panel3.Controls.Add(label6);
             panel3.Location = new Point(640, 116);
             panel3.Name = "panel3";
             panel3.Size = new Size(445, 116);
             panel3.TabIndex = 13;
             // 
-            // label9
+            // lblProveedorRecienteDescripcion
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(99, 83);
-            label9.Name = "label9";
-            label9.Size = new Size(226, 23);
-            label9.TabIndex = 9;
-            label9.Text = "Último proveedor registrado";
+            lblProveedorRecienteDescripcion.AutoSize = true;
+            lblProveedorRecienteDescripcion.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblProveedorRecienteDescripcion.Location = new Point(99, 83);
+            lblProveedorRecienteDescripcion.Name = "lblProveedorRecienteDescripcion";
+            lblProveedorRecienteDescripcion.Size = new Size(226, 23);
+            lblProveedorRecienteDescripcion.TabIndex = 9;
+            lblProveedorRecienteDescripcion.Text = "Último proveedor registrado";
             // 
             // pictureBox12
             // 
@@ -190,15 +190,15 @@
             pictureBox12.TabIndex = 5;
             pictureBox12.TabStop = false;
             // 
-            // label4
+            // lblProveedorReciente
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(99, 38);
-            label4.Name = "label4";
-            label4.Size = new Size(275, 38);
-            label4.TabIndex = 2;
-            label4.Text = "Distribuidora Norte";
+            lblProveedorReciente.AutoSize = true;
+            lblProveedorReciente.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProveedorReciente.Location = new Point(99, 38);
+            lblProveedorReciente.Name = "lblProveedorReciente";
+            lblProveedorReciente.Size = new Size(275, 38);
+            lblProveedorReciente.TabIndex = 2;
+            lblProveedorReciente.Text = "Distribuidora Norte";
             // 
             // label6
             // 
@@ -215,7 +215,7 @@
             panel2.BackColor = Color.FromArgb(242, 249, 254);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(lblTotalProveedores);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(124, 116);
             panel2.Name = "panel2";
@@ -232,15 +232,15 @@
             pictureBox11.TabIndex = 5;
             pictureBox11.TabStop = false;
             // 
-            // label5
+            // lblTotalProveedores
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(99, 38);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 38);
-            label5.TabIndex = 2;
-            label5.Text = "10";
+            lblTotalProveedores.AutoSize = true;
+            lblTotalProveedores.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotalProveedores.Location = new Point(99, 38);
+            lblTotalProveedores.Name = "lblTotalProveedores";
+            lblTotalProveedores.Size = new Size(49, 38);
+            lblTotalProveedores.TabIndex = 2;
+            lblTotalProveedores.Text = "10";
             // 
             // label3
             // 
@@ -286,14 +286,14 @@
             // 
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(textBox7);
+            panel5.Controls.Add(txtTelefono);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(label12);
-            panel5.Controls.Add(textBox4);
+            panel5.Controls.Add(txtCorreo);
             panel5.Controls.Add(label13);
-            panel5.Controls.Add(textBox3);
+            panel5.Controls.Add(txtDireccion);
             panel5.Controls.Add(label14);
-            panel5.Controls.Add(textBox2);
+            panel5.Controls.Add(txtNombreEmpresa);
             panel5.Controls.Add(pictureBox2);
             panel5.Controls.Add(label16);
             panel5.Location = new Point(124, 252);
@@ -301,13 +301,13 @@
             panel5.Size = new Size(542, 255);
             panel5.TabIndex = 15;
             // 
-            // textBox7
+            // txtTelefono
             // 
-            textBox7.Location = new Point(294, 175);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = " Ej. 2255-4433";
-            textBox7.Size = new Size(226, 27);
-            textBox7.TabIndex = 48;
+            txtTelefono.Location = new Point(294, 175);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = " Ej. 2255-4433";
+            txtTelefono.Size = new Size(226, 27);
+            txtTelefono.TabIndex = 48;
             // 
             // label11
             // 
@@ -329,13 +329,13 @@
             label12.TabIndex = 46;
             label12.Text = "Correo";
             // 
-            // textBox4
+            // txtCorreo
             // 
-            textBox4.Location = new Point(294, 93);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = " Ej. contacto@empresa.com";
-            textBox4.Size = new Size(226, 27);
-            textBox4.TabIndex = 45;
+            txtCorreo.Location = new Point(294, 93);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = " Ej. contacto@empresa.com";
+            txtCorreo.Size = new Size(226, 27);
+            txtCorreo.TabIndex = 45;
             // 
             // label13
             // 
@@ -347,14 +347,14 @@
             label13.TabIndex = 43;
             label13.Text = "Dirección";
             // 
-            // textBox3
+            // txtDireccion
             // 
-            textBox3.Location = new Point(19, 174);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = " Ej. Estelí, Nicaragua";
-            textBox3.Size = new Size(254, 57);
-            textBox3.TabIndex = 42;
+            txtDireccion.Location = new Point(19, 174);
+            txtDireccion.Multiline = true;
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.PlaceholderText = " Ej. Estelí, Nicaragua";
+            txtDireccion.Size = new Size(254, 57);
+            txtDireccion.TabIndex = 42;
             // 
             // label14
             // 
@@ -366,13 +366,13 @@
             label14.TabIndex = 16;
             label14.Text = "Nombre de la empresa";
             // 
-            // textBox2
+            // txtNombreEmpresa
             // 
-            textBox2.Location = new Point(19, 93);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = " Ej. Distribuidora Norte";
-            textBox2.Size = new Size(254, 27);
-            textBox2.TabIndex = 15;
+            txtNombreEmpresa.Location = new Point(19, 93);
+            txtNombreEmpresa.Name = "txtNombreEmpresa";
+            txtNombreEmpresa.PlaceholderText = " Ej. Distribuidora Norte";
+            txtNombreEmpresa.Size = new Size(254, 27);
+            txtNombreEmpresa.TabIndex = 15;
             // 
             // pictureBox2
             // 
@@ -399,9 +399,9 @@
             panel1.BackColor = Color.FromArgb(247, 251, 255);
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(label17);
-            panel1.Controls.Add(textBox5);
+            panel1.Controls.Add(txtTelefonoAgente);
             panel1.Controls.Add(label19);
-            panel1.Controls.Add(textBox8);
+            panel1.Controls.Add(txtNombreAgente);
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(label20);
             panel1.Location = new Point(124, 518);
@@ -419,13 +419,13 @@
             label17.TabIndex = 46;
             label17.Text = "Teléfono del agente";
             // 
-            // textBox5
+            // txtTelefonoAgente
             // 
-            textBox5.Location = new Point(294, 92);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = " Ej. 5522-1199";
-            textBox5.Size = new Size(226, 27);
-            textBox5.TabIndex = 45;
+            txtTelefonoAgente.Location = new Point(294, 92);
+            txtTelefonoAgente.Name = "txtTelefonoAgente";
+            txtTelefonoAgente.PlaceholderText = " Ej. 5522-1199";
+            txtTelefonoAgente.Size = new Size(226, 27);
+            txtTelefonoAgente.TabIndex = 45;
             // 
             // label19
             // 
@@ -437,13 +437,13 @@
             label19.TabIndex = 16;
             label19.Text = "Nombre del agente";
             // 
-            // textBox8
+            // txtNombreAgente
             // 
-            textBox8.Location = new Point(19, 93);
-            textBox8.Name = "textBox8";
-            textBox8.PlaceholderText = " Ej. Juan Lopez";
-            textBox8.Size = new Size(254, 27);
-            textBox8.TabIndex = 15;
+            txtNombreAgente.Location = new Point(19, 93);
+            txtNombreAgente.Name = "txtNombreAgente";
+            txtNombreAgente.PlaceholderText = " Ej. Juan Lopez";
+            txtNombreAgente.Size = new Size(254, 27);
+            txtNombreAgente.TabIndex = 15;
             // 
             // pictureBox7
             // 
@@ -469,11 +469,11 @@
             // 
             panel6.BackColor = Color.FromArgb(247, 251, 255);
             panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(button9);
-            panel6.Controls.Add(button11);
-            panel6.Controls.Add(button10);
+            panel6.Controls.Add(btnEliminar);
+            panel6.Controls.Add(btnLimpiar);
+            panel6.Controls.Add(btnGuardar);
             panel6.Controls.Add(label18);
-            panel6.Controls.Add(textBox6);
+            panel6.Controls.Add(txtMontoMinimoCompra);
             panel6.Controls.Add(pictureBox8);
             panel6.Controls.Add(label21);
             panel6.Location = new Point(124, 684);
@@ -481,56 +481,59 @@
             panel6.Size = new Size(542, 217);
             panel6.TabIndex = 51;
             // 
-            // button9
+            // btnEliminar
             // 
-            button9.BackColor = Color.FromArgb(234, 45, 89);
-            button9.FlatAppearance.BorderSize = 0;
-            button9.FlatStyle = FlatStyle.Flat;
-            button9.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button9.ForeColor = Color.White;
-            button9.Image = (Image)resources.GetObject("button9.Image");
-            button9.ImageAlign = ContentAlignment.MiddleLeft;
-            button9.Location = new Point(294, 154);
-            button9.Name = "button9";
-            button9.Size = new Size(109, 37);
-            button9.TabIndex = 19;
-            button9.Text = "Eliminar";
-            button9.TextAlign = ContentAlignment.MiddleRight;
-            button9.UseVisualStyleBackColor = false;
+            btnEliminar.BackColor = Color.FromArgb(234, 45, 89);
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(331, 154);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(109, 37);
+            btnEliminar.TabIndex = 19;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.TextAlign = ContentAlignment.MiddleRight;
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
-            // button11
+            // btnLimpiar
             // 
-            button11.BackColor = Color.FromArgb(2, 113, 249);
-            button11.FlatAppearance.BorderSize = 0;
-            button11.FlatStyle = FlatStyle.Flat;
-            button11.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.ForeColor = Color.White;
-            button11.Image = (Image)resources.GetObject("button11.Image");
-            button11.ImageAlign = ContentAlignment.MiddleLeft;
-            button11.Location = new Point(158, 154);
-            button11.Name = "button11";
-            button11.Size = new Size(109, 37);
-            button11.TabIndex = 17;
-            button11.Text = "Limpiar";
-            button11.TextAlign = ContentAlignment.MiddleRight;
-            button11.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(2, 113, 249);
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
+            btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLimpiar.Location = new Point(195, 154);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(109, 37);
+            btnLimpiar.TabIndex = 17;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.TextAlign = ContentAlignment.MiddleRight;
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
-            // button10
+            // btnGuardar
             // 
-            button10.BackColor = Color.FromArgb(2, 113, 249);
-            button10.FlatAppearance.BorderSize = 0;
-            button10.FlatStyle = FlatStyle.Flat;
-            button10.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.ForeColor = Color.White;
-            button10.Image = (Image)resources.GetObject("button10.Image");
-            button10.ImageAlign = ContentAlignment.MiddleLeft;
-            button10.Location = new Point(19, 154);
-            button10.Name = "button10";
-            button10.Size = new Size(112, 37);
-            button10.TabIndex = 18;
-            button10.Text = "Guardar";
-            button10.TextAlign = ContentAlignment.MiddleRight;
-            button10.UseVisualStyleBackColor = false;
+            btnGuardar.BackColor = Color.FromArgb(2, 113, 249);
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
+            btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardar.Location = new Point(19, 154);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(142, 37);
+            btnGuardar.TabIndex = 18;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label18
             // 
@@ -542,13 +545,13 @@
             label18.TabIndex = 16;
             label18.Text = "Monto mínimo de compra";
             // 
-            // textBox6
+            // txtMontoMinimoCompra
             // 
-            textBox6.Location = new Point(19, 93);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = " Ej. C$ 5000.00";
-            textBox6.Size = new Size(239, 27);
-            textBox6.TabIndex = 15;
+            txtMontoMinimoCompra.Location = new Point(19, 93);
+            txtMontoMinimoCompra.Name = "txtMontoMinimoCompra";
+            txtMontoMinimoCompra.PlaceholderText = " Ej. C$ 5000.00";
+            txtMontoMinimoCompra.Size = new Size(239, 27);
+            txtMontoMinimoCompra.TabIndex = 15;
             // 
             // pictureBox8
             // 
@@ -574,7 +577,7 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(dataGridView1);
+            panel7.Controls.Add(dgvProveedores);
             panel7.Controls.Add(label15);
             panel7.Controls.Add(pictureBox3);
             panel7.Location = new Point(700, 293);
@@ -582,65 +585,65 @@
             panel7.Size = new Size(872, 608);
             panel7.TabIndex = 52;
             // 
-            // dataGridView1
+            // dgvProveedores
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(220, 233, 247);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colEmpresaP, colDireccionP, colCorreoP, colTelefonoP, colNombreAgenteP, colTelefonoAgenteP, colMontoMinimoP });
-            dataGridView1.Location = new Point(33, 81);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(819, 448);
-            dataGridView1.TabIndex = 8;
+            dgvProveedores.BackgroundColor = Color.FromArgb(220, 233, 247);
+            dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { colEmpresa, colDireccion, colCorreo, colTelefono, colNombreAgente, colTelefonoAgente, colMontoMinimo });
+            dgvProveedores.Location = new Point(33, 81);
+            dgvProveedores.Name = "dgvProveedores";
+            dgvProveedores.RowHeadersWidth = 51;
+            dgvProveedores.Size = new Size(819, 448);
+            dgvProveedores.TabIndex = 8;
             // 
-            // colEmpresaP
+            // colEmpresa
             // 
-            colEmpresaP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colEmpresaP.HeaderText = "Empresa";
-            colEmpresaP.MinimumWidth = 6;
-            colEmpresaP.Name = "colEmpresaP";
+            colEmpresa.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colEmpresa.HeaderText = "Empresa";
+            colEmpresa.MinimumWidth = 6;
+            colEmpresa.Name = "colEmpresa";
             // 
-            // colDireccionP
+            // colDireccion
             // 
-            colDireccionP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colDireccionP.HeaderText = "Dirección";
-            colDireccionP.MinimumWidth = 6;
-            colDireccionP.Name = "colDireccionP";
+            colDireccion.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colDireccion.HeaderText = "Dirección";
+            colDireccion.MinimumWidth = 6;
+            colDireccion.Name = "colDireccion";
             // 
-            // colCorreoP
+            // colCorreo
             // 
-            colCorreoP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colCorreoP.HeaderText = "Correo";
-            colCorreoP.MinimumWidth = 6;
-            colCorreoP.Name = "colCorreoP";
+            colCorreo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colCorreo.HeaderText = "Correo";
+            colCorreo.MinimumWidth = 6;
+            colCorreo.Name = "colCorreo";
             // 
-            // colTelefonoP
+            // colTelefono
             // 
-            colTelefonoP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colTelefonoP.HeaderText = "Teléfono";
-            colTelefonoP.MinimumWidth = 6;
-            colTelefonoP.Name = "colTelefonoP";
+            colTelefono.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colTelefono.HeaderText = "Teléfono";
+            colTelefono.MinimumWidth = 6;
+            colTelefono.Name = "colTelefono";
             // 
-            // colNombreAgenteP
+            // colNombreAgente
             // 
-            colNombreAgenteP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colNombreAgenteP.HeaderText = "Nombre del agente";
-            colNombreAgenteP.MinimumWidth = 6;
-            colNombreAgenteP.Name = "colNombreAgenteP";
+            colNombreAgente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colNombreAgente.HeaderText = "Nombre del agente";
+            colNombreAgente.MinimumWidth = 6;
+            colNombreAgente.Name = "colNombreAgente";
             // 
-            // colTelefonoAgenteP
+            // colTelefonoAgente
             // 
-            colTelefonoAgenteP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colTelefonoAgenteP.HeaderText = "Teléfono del agente";
-            colTelefonoAgenteP.MinimumWidth = 6;
-            colTelefonoAgenteP.Name = "colTelefonoAgenteP";
+            colTelefonoAgente.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colTelefonoAgente.HeaderText = "Teléfono del agente";
+            colTelefonoAgente.MinimumWidth = 6;
+            colTelefonoAgente.Name = "colTelefonoAgente";
             // 
-            // colMontoMinimoP
+            // colMontoMinimo
             // 
-            colMontoMinimoP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colMontoMinimoP.HeaderText = "Monto Mínimo";
-            colMontoMinimoP.MinimumWidth = 6;
-            colMontoMinimoP.Name = "colMontoMinimoP";
+            colMontoMinimo.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            colMontoMinimo.HeaderText = "Monto Mínimo";
+            colMontoMinimo.MinimumWidth = 6;
+            colMontoMinimo.Name = "colMontoMinimo";
             // 
             // label15
             // 
@@ -672,14 +675,15 @@
             pictureBox14.TabIndex = 54;
             pictureBox14.TabStop = false;
             // 
-            // textBox1
+            // txtBuscar
             // 
-            textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(740, 252);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = " Buscar proveedor...";
-            textBox1.Size = new Size(832, 30);
-            textBox1.TabIndex = 53;
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(740, 252);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar proveedor...";
+            txtBuscar.Size = new Size(832, 30);
+            txtBuscar.TabIndex = 53;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // frmProveedores
             // 
@@ -688,7 +692,7 @@
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
-            Controls.Add(textBox1);
+            Controls.Add(txtBuscar);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel1);
@@ -723,7 +727,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ResumeLayout(false);
@@ -733,60 +737,60 @@
         #endregion
 
         private Panel panel4;
-        private Label label10;
+        private Label lblCantidadProductosProveedor;
         private PictureBox pictureBox13;
-        private Label label7;
+        private Label lblProveedorMasProductos;
         private Label label8;
         private Panel panel3;
-        private Label label9;
+        private Label lblProveedorRecienteDescripcion;
         private PictureBox pictureBox12;
-        private Label label4;
+        private Label lblProveedorReciente;
         private Label label6;
         private Panel panel2;
         private PictureBox pictureBox11;
-        private Label label5;
+        private Label lblTotalProveedores;
         private Label label3;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
         private Panel panel5;
-        private TextBox textBox7;
+        private TextBox txtTelefono;
         private Label label11;
         private Label label12;
-        private TextBox textBox4;
+        private TextBox txtCorreo;
         private Label label13;
-        private TextBox textBox3;
+        private TextBox txtDireccion;
         private Label label14;
-        private TextBox textBox2;
+        private TextBox txtNombreEmpresa;
         private PictureBox pictureBox2;
         private Label label16;
         private Panel panel1;
         private Label label17;
-        private TextBox textBox5;
+        private TextBox txtTelefonoAgente;
         private Label label19;
-        private TextBox textBox8;
+        private TextBox txtNombreAgente;
         private PictureBox pictureBox7;
         private Label label20;
         private Panel panel6;
         private Label label18;
-        private TextBox textBox6;
+        private TextBox txtMontoMinimoCompra;
         private PictureBox pictureBox8;
         private Label label21;
-        private Button button9;
-        private Button button11;
-        private Button button10;
+        private Button btnEliminar;
+        private Button btnLimpiar;
+        private Button btnGuardar;
         private Panel panel7;
         private Label label15;
         private PictureBox pictureBox3;
         private PictureBox pictureBox14;
-        private TextBox textBox1;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn colEmpresaP;
-        private DataGridViewTextBoxColumn colDireccionP;
-        private DataGridViewTextBoxColumn colCorreoP;
-        private DataGridViewTextBoxColumn colTelefonoP;
-        private DataGridViewTextBoxColumn colNombreAgenteP;
-        private DataGridViewTextBoxColumn colTelefonoAgenteP;
-        private DataGridViewTextBoxColumn colMontoMinimoP;
+        private TextBox txtBuscar;
+        private DataGridView dgvProveedores;
+        private DataGridViewTextBoxColumn colEmpresa;
+        private DataGridViewTextBoxColumn colDireccion;
+        private DataGridViewTextBoxColumn colCorreo;
+        private DataGridViewTextBoxColumn colTelefono;
+        private DataGridViewTextBoxColumn colNombreAgente;
+        private DataGridViewTextBoxColumn colTelefonoAgente;
+        private DataGridViewTextBoxColumn colMontoMinimo;
     }
 }
