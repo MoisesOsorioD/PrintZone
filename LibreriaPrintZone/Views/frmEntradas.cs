@@ -1,5 +1,6 @@
 ﻿using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
+using LibreriaPrintZone.Components;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -10,24 +11,46 @@ namespace LibreriaPrintZone.Views
     {
         private readonly EntradasController _controller;
 
+        private readonly PaginacionComponent _paginacion;
+
         private List<EntradaListado> _entradas =
             new List<EntradaListado>();
+
 
         public frmEntradas()
         {
             InitializeComponent();
 
-            _controller = new EntradasController();
+            _controller =
+                new EntradasController();
+
+
+            // =====================================================
+            // CONFIGURAR PAGINACIÓN
+            // =====================================================
+
+            _paginacion =
+                new PaginacionComponent(
+                    panelPaginacion,
+                    10
+                );
+
 
             ConfigurarDataGridView();
 
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            txtBuscar.TextChanged +=
+                txtBuscar_TextChanged;
+
 
             CargarProveedores();
+
             CargarProductos();
+
             CargarEntradas();
+
             ActualizarTarjetas();
         }
+
 
         // =========================================================
         // CONFIGURAR DATAGRIDVIEW
@@ -51,6 +74,7 @@ namespace LibreriaPrintZone.Views
             dgvEntradas.ClearSelection();
         }
 
+
         // =========================================================
         // CARGAR PROVEEDORES
         // =========================================================
@@ -62,17 +86,23 @@ namespace LibreriaPrintZone.Views
                 List<Proveedore> proveedores =
                     _controller.ObtenerProveedores();
 
+
                 cmbProveedor.DataSource = null;
 
-                cmbProveedor.DataSource = proveedores;
+                cmbProveedor.DataSource =
+                    proveedores;
+
 
                 cmbProveedor.DisplayMember =
                     "NombreEmpresa";
 
+
                 cmbProveedor.ValueMember =
                     "IdProveedor";
 
-                cmbProveedor.SelectedIndex = -1;
+
+                cmbProveedor.SelectedIndex =
+                    -1;
             }
             catch (Exception ex)
             {
@@ -86,6 +116,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // CARGAR PRODUCTOS
         // =========================================================
@@ -97,17 +128,23 @@ namespace LibreriaPrintZone.Views
                 List<ProductoListado> productos =
                     _controller.ObtenerProductos();
 
+
                 cmbProducto.DataSource = null;
 
-                cmbProducto.DataSource = productos;
+                cmbProducto.DataSource =
+                    productos;
+
 
                 cmbProducto.DisplayMember =
                     "nombre";
 
+
                 cmbProducto.ValueMember =
                     "id_producto";
 
-                cmbProducto.SelectedIndex = -1;
+
+                cmbProducto.SelectedIndex =
+                    -1;
             }
             catch (Exception ex)
             {
@@ -121,6 +158,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // CARGAR ENTRADAS
         // =========================================================
@@ -132,7 +170,11 @@ namespace LibreriaPrintZone.Views
                 _entradas =
                     _controller.ObtenerEntradas();
 
-                MostrarEntradas(_entradas);
+
+                _paginacion.Configurar(
+                    _entradas,
+                    MostrarEntradas
+                );
             }
             catch (Exception ex)
             {
@@ -146,6 +188,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // MOSTRAR ENTRADAS
         // =========================================================
@@ -155,24 +198,32 @@ namespace LibreriaPrintZone.Views
         {
             dgvEntradas.Rows.Clear();
 
-            foreach (EntradaListado entrada in entradas)
+
+            foreach (
+                EntradaListado entrada
+                in entradas
+            )
             {
-                int fila = dgvEntradas.Rows.Add(
-                    entrada.fecha_entrada.ToString(
-                        "dd/MM/yyyy HH:mm"
-                    ),
-                    entrada.nombre_producto,
-                    entrada.nombre_empresa,
-                    entrada.cantidad,
-                    entrada.costo_lote.ToString("C2")
-                );
+                int fila =
+                    dgvEntradas.Rows.Add(
+                        entrada.fecha_entrada.ToString(
+                            "dd/MM/yyyy HH:mm"
+                        ),
+                        entrada.nombre_producto,
+                        entrada.nombre_empresa,
+                        entrada.cantidad,
+                        entrada.costo_lote.ToString("C2")
+                    );
+
 
                 dgvEntradas.Rows[fila].Tag =
                     entrada.id_entrada;
             }
 
+
             dgvEntradas.ClearSelection();
         }
+
 
         // =========================================================
         // ACTUALIZAR TARJETAS
@@ -185,17 +236,22 @@ namespace LibreriaPrintZone.Views
                 int totalEntradas =
                     _controller.ObtenerTotalEntradas();
 
+
                 int totalUnidades =
                     _controller.ObtenerTotalUnidades();
+
 
                 decimal inversion =
                     _controller.ObtenerInversionInventario();
 
+
                 lblTotalEntradas.Text =
                     totalEntradas.ToString("N0");
 
+
                 lblUnidadesIngresadas.Text =
                     totalUnidades.ToString("N0");
+
 
                 lblInversionInventario.Text =
                     inversion.ToString("C2");
@@ -212,6 +268,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // REGISTRAR ENTRADA
         // =========================================================
@@ -220,12 +277,10 @@ namespace LibreriaPrintZone.Views
             object? sender,
             EventArgs e)
         {
-            // -----------------------------------------------------
-            // VALIDAR PROVEEDOR
-            // -----------------------------------------------------
-
-            if (cmbProveedor.SelectedIndex == -1 ||
-                cmbProveedor.SelectedValue == null)
+            if (
+                cmbProveedor.SelectedIndex == -1 ||
+                cmbProveedor.SelectedValue == null
+            )
             {
                 MessageBox.Show(
                     "Seleccione un proveedor.",
@@ -234,17 +289,17 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 cmbProveedor.Focus();
 
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR PRODUCTO
-            // -----------------------------------------------------
 
-            if (cmbProducto.SelectedIndex == -1 ||
-                cmbProducto.SelectedValue == null)
+            if (
+                cmbProducto.SelectedIndex == -1 ||
+                cmbProducto.SelectedValue == null
+            )
             {
                 MessageBox.Show(
                     "Seleccione un producto.",
@@ -253,18 +308,19 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 cmbProducto.Focus();
 
                 return;
             }
 
-            // -----------------------------------------------------
-            // OBTENER ID PROVEEDOR
-            // -----------------------------------------------------
 
-            if (!int.TryParse(
+            if (
+                !int.TryParse(
                     cmbProveedor.SelectedValue.ToString(),
-                    out int idProveedor))
+                    out int idProveedor
+                )
+            )
             {
                 MessageBox.Show(
                     "El proveedor seleccionado no es válido.",
@@ -273,16 +329,17 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
-            // -----------------------------------------------------
-            // OBTENER ID PRODUCTO
-            // -----------------------------------------------------
 
-            if (!int.TryParse(
+            if (
+                !int.TryParse(
                     cmbProducto.SelectedValue.ToString(),
-                    out int idProducto))
+                    out int idProducto
+                )
+            )
             {
                 MessageBox.Show(
                     "El producto seleccionado no es válido.",
@@ -291,16 +348,17 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR CANTIDAD
-            // -----------------------------------------------------
 
-            if (!int.TryParse(
+            if (
+                !int.TryParse(
                     txtCantidad.Text.Trim(),
-                    out int cantidad))
+                    out int cantidad
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese una cantidad válida.",
@@ -309,10 +367,12 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCantidad.Focus();
 
                 return;
             }
+
 
             if (cantidad <= 0)
             {
@@ -323,18 +383,19 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCantidad.Focus();
 
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR COSTO DEL LOTE
-            // -----------------------------------------------------
 
-            if (!decimal.TryParse(
+            if (
+                !decimal.TryParse(
                     txtCostoLote.Text.Trim(),
-                    out decimal costoLote))
+                    out decimal costoLote
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese un costo de lote válido.",
@@ -343,10 +404,12 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCostoLote.Focus();
 
                 return;
             }
+
 
             if (costoLote < 0)
             {
@@ -357,14 +420,12 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCostoLote.Focus();
 
                 return;
             }
 
-            // -----------------------------------------------------
-            // REGISTRAR
-            // -----------------------------------------------------
 
             try
             {
@@ -375,12 +436,14 @@ namespace LibreriaPrintZone.Views
                     idProducto
                 );
 
+
                 MessageBox.Show(
                     "La entrada se registró correctamente.",
                     "Entrada registrada",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+
 
                 LimpiarFormulario();
 
@@ -400,6 +463,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // LIMPIAR FORMULARIO
         // =========================================================
@@ -410,6 +474,7 @@ namespace LibreriaPrintZone.Views
         {
             LimpiarFormulario();
         }
+
 
         private void LimpiarFormulario()
         {
@@ -428,6 +493,7 @@ namespace LibreriaPrintZone.Views
             txtCantidad.Focus();
         }
 
+
         // =========================================================
         // BUSCAR ENTRADAS
         // =========================================================
@@ -439,19 +505,32 @@ namespace LibreriaPrintZone.Views
             string texto =
                 txtBuscar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(texto))
+
+            if (
+                string.IsNullOrWhiteSpace(texto)
+            )
             {
-                MostrarEntradas(_entradas);
+                _paginacion.Configurar(
+                    _entradas,
+                    MostrarEntradas
+                );
 
                 return;
             }
 
+
             try
             {
                 List<EntradaListado> resultados =
-                    _controller.BuscarEntradas(texto);
+                    _controller.BuscarEntradas(
+                        texto
+                    );
 
-                MostrarEntradas(resultados);
+
+                _paginacion.Configurar(
+                    resultados,
+                    MostrarEntradas
+                );
             }
             catch (Exception ex)
             {

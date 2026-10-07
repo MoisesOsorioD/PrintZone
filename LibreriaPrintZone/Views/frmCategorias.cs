@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using LibreriaPrintZone.Controllers;
+using LibreriaPrintZone.Components;
 
 namespace LibreriaPrintZone
 {
     public partial class frmCategorias : Form
     {
         private readonly CategoriasController _controller;
+        private readonly PaginacionComponent _paginacion;
 
         public frmCategorias()
         {
@@ -21,75 +19,146 @@ namespace LibreriaPrintZone
 
             _controller = new CategoriasController();
 
+            _paginacion =
+                new PaginacionComponent(
+                    panelPaginacion,
+                    10
+                );
+
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            dgvCategorias.CellClick += dgvCategorias_CellClick;
+
             CargarCategorias();
         }
 
         private void CargarCategorias()
         {
-            var categorias = _controller.ObtenerCategorias();
-
-            lblTotalCategorias.Text = _controller.ObtenerTotalCategorias().ToString();
-
-            var categoriaMasProductos = _controller.ObtenerCategoriaMasProductos();
-
-            if (categoriaMasProductos != null)
+            try
             {
-                lblCategoriaMasProductos.Text = categoriaMasProductos.NombreCategoria;
-                lblCantidadMasProductos.Text = $"{categoriaMasProductos.Productos.Count} productos";
-            }
-            else
-            {
-                lblCategoriaMasProductos.Text = "-";
-                lblCantidadMasProductos.Text = "0 productos";
-            }
+                var categorias =
+                    _controller.ObtenerCategorias();
 
-            var categoriaMenosProductos = _controller.ObtenerCategoriaMenosProductos();
+                lblTotalCategorias.Text =
+                    _controller
+                        .ObtenerTotalCategorias()
+                        .ToString();
 
-            if (categoriaMenosProductos != null)
-            {
-                lblCategoriaMenosUsada.Text = categoriaMenosProductos.NombreCategoria;
-                lblCantidadMenosUsada.Text = $"{categoriaMenosProductos.Productos.Count} productos";
-            }
-            else
-            {
-                lblCategoriaMenosUsada.Text = "-";
-                lblCantidadMenosUsada.Text = "0 productos";
-            }
+                var categoriaMasProductos =
+                    _controller
+                        .ObtenerCategoriaMasProductos();
 
-            dgvCategorias.Rows.Clear();
+                if (categoriaMasProductos != null)
+                {
+                    lblCategoriaMasProductos.Text =
+                        categoriaMasProductos.NombreCategoria;
 
-            foreach (var categoria in categorias)
-            {
-                int fila = dgvCategorias.Rows.Add(
-                    categoria.NombreCategoria,
-                    categoria.Productos.Count
+                    lblCantidadMasProductos.Text =
+                        $"{categoriaMasProductos.Productos.Count} productos";
+                }
+                else
+                {
+                    lblCategoriaMasProductos.Text = "-";
+                    lblCantidadMasProductos.Text =
+                        "0 productos";
+                }
+
+                var categoriaMenosProductos =
+                    _controller
+                        .ObtenerCategoriaMenosProductos();
+
+                if (categoriaMenosProductos != null)
+                {
+                    lblCategoriaMenosUsada.Text =
+                        categoriaMenosProductos.NombreCategoria;
+
+                    lblCantidadMenosUsada.Text =
+                        $"{categoriaMenosProductos.Productos.Count} productos";
+                }
+                else
+                {
+                    lblCategoriaMenosUsada.Text = "-";
+                    lblCantidadMenosUsada.Text =
+                        "0 productos";
+                }
+
+                _paginacion.Configurar(
+                    categorias,
+                    MostrarCategorias
                 );
 
-                dgvCategorias.Rows[fila].Tag = categoria.IdCategoria;
+                txtNombreCategoria.Clear();
+                txtNombreCategoria.Tag = null;
+
+                btnGuardar.Text = "Guardar";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudieron cargar las categorías.\n\n" +
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
 
+        private void MostrarCategorias(
+            List<LibreriaPrintZone.Models.Categoria> categorias)
+        {
+            dgvCategorias.Rows.Clear();
 
+            foreach (
+                var categoria
+                in categorias
+            )
+            {
+                int fila =
+                    dgvCategorias.Rows.Add(
+                        categoria.NombreCategoria,
+                        categoria.Productos.Count
+                    );
 
-        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+                dgvCategorias.Rows[fila].Tag =
+                    categoria.IdCategoria;
+            }
+
+            dgvCategorias.ClearSelection();
+        }
+
+        private void dgvCategorias_CellClick(
+            object sender,
+            DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0)
                 return;
 
-            DataGridViewRow fila = dgvCategorias.Rows[e.RowIndex];
+            DataGridViewRow fila =
+                dgvCategorias.Rows[e.RowIndex];
 
-            txtNombreCategoria.Text = fila.Cells["colNombreCategoria"].Value?.ToString();
+            txtNombreCategoria.Text =
+                fila.Cells[
+                    "colNombreCategoria"
+                ].Value?.ToString();
 
-            txtNombreCategoria.Tag = fila.Tag;
+            txtNombreCategoria.Tag =
+                fila.Tag;
 
             btnGuardar.Text = "Actualizar";
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(
+            object sender,
+            EventArgs e)
         {
-            string nombreCategoria = txtNombreCategoria.Text.Trim();
+            string nombreCategoria =
+                txtNombreCategoria.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nombreCategoria))
+            if (
+                string.IsNullOrWhiteSpace(
+                    nombreCategoria
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese el nombre de la categoría.",
@@ -101,40 +170,63 @@ namespace LibreriaPrintZone
                 return;
             }
 
-            if (txtNombreCategoria.Tag == null)
+            try
             {
-                _controller.GuardarCategoria(nombreCategoria);
+                if (txtNombreCategoria.Tag == null)
+                {
+                    _controller.GuardarCategoria(
+                        nombreCategoria
+                    );
 
+                    MessageBox.Show(
+                        "Categoría guardada correctamente.",
+                        "Categorías",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    int idCategoria =
+                        Convert.ToInt32(
+                            txtNombreCategoria.Tag
+                        );
+
+                    _controller.ActualizarCategoria(
+                        idCategoria,
+                        nombreCategoria
+                    );
+
+                    MessageBox.Show(
+                        "Categoría actualizada correctamente.",
+                        "Categorías",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+
+                txtNombreCategoria.Clear();
+                txtNombreCategoria.Tag = null;
+
+                btnGuardar.Text = "Guardar";
+
+                CargarCategorias();
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show(
-                    "Categoría guardada correctamente.",
-                    "Categorías",
+                    "No se pudo guardar la categoría.\n\n" +
+                    ex.Message,
+                    "Error",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
+                    MessageBoxIcon.Error
                 );
             }
-            else
-            {
-                int idCategoria = Convert.ToInt32(txtNombreCategoria.Tag);
-
-                _controller.ActualizarCategoria(idCategoria, nombreCategoria);
-
-                MessageBox.Show(
-                    "Categoría actualizada correctamente.",
-                    "Categorías",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-            }
-
-            txtNombreCategoria.Clear();
-            txtNombreCategoria.Tag = null;
-
-            btnGuardar.Text = "Guardar";
-
-            CargarCategorias();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(
+            object sender,
+            EventArgs e)
         {
             if (txtNombreCategoria.Tag == null)
             {
@@ -148,48 +240,75 @@ namespace LibreriaPrintZone
                 return;
             }
 
-            DialogResult resultado = MessageBox.Show(
-                $"¿Está seguro de eliminar la categoría \"{txtNombreCategoria.Text}\"?",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question
-            );
-
-            if (resultado != DialogResult.Yes)
-                return;
-
-            int idCategoria = Convert.ToInt32(txtNombreCategoria.Tag);
-
-            bool eliminada = _controller.EliminarCategoria(idCategoria);
-
-            if (!eliminada)
-            {
+            DialogResult resultado =
                 MessageBox.Show(
-                    "No se puede eliminar esta categoría porque tiene productos asociados.",
-                    "Categoría en uso",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
+                    $"¿Está seguro de eliminar la categoría \"{txtNombreCategoria.Text}\"?",
+                    "Confirmar eliminación",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
                 );
 
+            if (
+                resultado !=
+                DialogResult.Yes
+            )
+            {
                 return;
             }
 
-            MessageBox.Show(
-                "Categoría eliminada correctamente.",
-                "Categorías",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information
-            );
+            try
+            {
+                int idCategoria =
+                    Convert.ToInt32(
+                        txtNombreCategoria.Tag
+                    );
 
-            txtNombreCategoria.Clear();
-            txtNombreCategoria.Tag = null;
+                bool eliminada =
+                    _controller.EliminarCategoria(
+                        idCategoria
+                    );
 
-            btnGuardar.Text = "Guardar";
+                if (!eliminada)
+                {
+                    MessageBox.Show(
+                        "No se puede eliminar esta categoría porque tiene productos asociados.",
+                        "Categoría en uso",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning
+                    );
 
-            CargarCategorias();
+                    return;
+                }
+
+                MessageBox.Show(
+                    "Categoría eliminada correctamente.",
+                    "Categorías",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information
+                );
+
+                txtNombreCategoria.Clear();
+                txtNombreCategoria.Tag = null;
+
+                btnGuardar.Text = "Guardar";
+
+                CargarCategorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudo eliminar la categoría.\n\n" +
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+            }
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(
+            object sender,
+            EventArgs e)
         {
             txtNombreCategoria.Clear();
             txtNombreCategoria.Tag = null;
@@ -199,24 +318,36 @@ namespace LibreriaPrintZone
             dgvCategorias.ClearSelection();
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        private void txtBuscar_TextChanged(
+            object sender,
+            EventArgs e)
         {
-            string texto = txtBuscar.Text.Trim();
+            string texto =
+                txtBuscar.Text.Trim();
 
-            var categorias = string.IsNullOrWhiteSpace(texto)
-                ? _controller.ObtenerCategorias()
-                : _controller.BuscarCategorias(texto);
-
-            dgvCategorias.Rows.Clear();
-
-            foreach (var categoria in categorias)
+            try
             {
-                int fila = dgvCategorias.Rows.Add(
-                    categoria.NombreCategoria,
-                    categoria.Productos.Count
-                );
+                var categorias =
+                    string.IsNullOrWhiteSpace(texto)
+                        ? _controller.ObtenerCategorias()
+                        : _controller.BuscarCategorias(
+                            texto
+                        );
 
-                dgvCategorias.Rows[fila].Tag = categoria.IdCategoria;
+                _paginacion.Configurar(
+                    categorias,
+                    MostrarCategorias
+                );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "No se pudieron buscar las categorías.\n\n" +
+                    ex.Message,
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
             }
         }
     }

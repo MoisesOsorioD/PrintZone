@@ -74,6 +74,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
+            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
@@ -113,6 +114,7 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panelPaginacion);
             panel7.Controls.Add(dgvUsuarios);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
@@ -129,7 +131,7 @@
             dgvUsuarios.Location = new Point(20, 81);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 51;
-            dgvUsuarios.Size = new Size(896, 405);
+            dgvUsuarios.Size = new Size(896, 320);
             dgvUsuarios.TabIndex = 8;
             // 
             // colUsuarioU
@@ -554,6 +556,15 @@
             pictureBox10.TabIndex = 72;
             pictureBox10.TabStop = false;
             // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(20, 441);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(896, 59);
+            panelPaginacion.TabIndex = 10;
+            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -642,5 +653,6 @@
         private DataGridViewTextBoxColumn colRolU;
         private DataGridViewTextBoxColumn colEstadoU;
         private DataGridViewTextBoxColumn colFechaCreacionU;
+        private Panel panelPaginacion;
     }
 }

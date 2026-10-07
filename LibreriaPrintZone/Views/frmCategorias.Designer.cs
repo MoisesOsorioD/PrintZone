@@ -62,6 +62,7 @@
             btnGuardar = new Button();
             label13 = new Label();
             txtNombreCategoria = new TextBox();
+            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
@@ -259,12 +260,13 @@
             // 
             panel5.BackColor = Color.FromArgb(242, 249, 254);
             panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(panelPaginacion);
             panel5.Controls.Add(label11);
             panel5.Controls.Add(pictureBox15);
             panel5.Controls.Add(dgvCategorias);
             panel5.Location = new Point(647, 293);
             panel5.Name = "panel5";
-            panel5.Size = new Size(932, 455);
+            panel5.Size = new Size(932, 541);
             panel5.TabIndex = 9;
             // 
             // label11
@@ -295,7 +297,7 @@
             dgvCategorias.Location = new Point(33, 97);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.RowHeadersWidth = 51;
-            dgvCategorias.Size = new Size(877, 317);
+            dgvCategorias.Size = new Size(877, 320);
             dgvCategorias.TabIndex = 0;
             dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
@@ -441,6 +443,15 @@
             txtNombreCategoria.Size = new Size(342, 27);
             txtNombreCategoria.TabIndex = 9;
             // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(33, 447);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(877, 59);
+            panelPaginacion.TabIndex = 10;
+            // 
             // frmCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -516,5 +527,6 @@
         private PictureBox pictureBox1;
         private DataGridViewTextBoxColumn colNombreCategoria;
         private DataGridViewTextBoxColumn colCantidadProductos;
+        private Panel panelPaginacion;
     }
 }

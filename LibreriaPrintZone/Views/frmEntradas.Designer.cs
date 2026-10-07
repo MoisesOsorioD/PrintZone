@@ -63,6 +63,7 @@
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
             panel7 = new Panel();
+            panelPaginacion = new Panel();
             dgvEntradas = new DataGridView();
             colFecha = new DataGridViewTextBoxColumn();
             colProducto = new DataGridViewTextBoxColumn();
@@ -447,6 +448,7 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panelPaginacion);
             panel7.Controls.Add(dgvEntradas);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
@@ -454,6 +456,15 @@
             panel7.Name = "panel7";
             panel7.Size = new Size(935, 509);
             panel7.TabIndex = 57;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(896, 59);
+            panelPaginacion.TabIndex = 9;
             // 
             // dgvEntradas
             // 
@@ -463,7 +474,7 @@
             dgvEntradas.Location = new Point(20, 81);
             dgvEntradas.Name = "dgvEntradas";
             dgvEntradas.RowHeadersWidth = 51;
-            dgvEntradas.Size = new Size(896, 405);
+            dgvEntradas.Size = new Size(896, 320);
             dgvEntradas.TabIndex = 8;
             // 
             // colFecha
@@ -606,5 +617,6 @@
         private DataGridViewTextBoxColumn colProveedor;
         private DataGridViewTextBoxColumn colCantidad;
         private DataGridViewTextBoxColumn colCostoLote;
+        private Panel panelPaginacion;
     }
 }

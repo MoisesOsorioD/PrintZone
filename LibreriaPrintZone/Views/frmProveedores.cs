@@ -1,5 +1,6 @@
 ﻿using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
+using LibreriaPrintZone.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,42 +12,93 @@ namespace LibreriaPrintZone.Views
     {
         private readonly ProveedoresController _controller;
 
+        private readonly PaginacionComponent _paginacion;
+
         private List<Proveedore> _proveedores =
             new List<Proveedore>();
 
         private int _idProveedorSeleccionado = 0;
 
+
         public frmProveedores()
         {
             InitializeComponent();
 
-            _controller = new ProveedoresController();
+            _controller =
+                new ProveedoresController();
 
-            // Estado inicial del botón
-            btnGuardar.Text = "Guardar";
+
+            // =====================================================
+            // CONFIGURAR PAGINACIÓN
+            // =====================================================
+
+            _paginacion =
+                new PaginacionComponent(
+                    panelPaginacion,
+                    10
+                );
+
+
+            // =====================================================
+            // ESTADO INICIAL DEL BOTÓN
+            // =====================================================
+
+            btnGuardar.Text =
+                "Guardar";
+
 
             ConfigurarDataGridView();
 
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
-            dgvProveedores.CellClick += dgvProveedores_CellClick;
+
+            txtBuscar.TextChanged +=
+                txtBuscar_TextChanged;
+
+
+            dgvProveedores.CellClick +=
+                dgvProveedores_CellClick;
+
 
             CargarProveedores();
         }
+
+
+        // =========================================================
+        // CONFIGURAR DATAGRIDVIEW
+        // =========================================================
 
         private void ConfigurarDataGridView()
         {
             dgvProveedores.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
 
-            dgvProveedores.MultiSelect = false;
-            dgvProveedores.ReadOnly = true;
-            dgvProveedores.AllowUserToAddRows = false;
-            dgvProveedores.AllowUserToDeleteRows = false;
 
-            dgvProveedores.AutoGenerateColumns = false;
+            dgvProveedores.MultiSelect =
+                false;
+
+
+            dgvProveedores.ReadOnly =
+                true;
+
+
+            dgvProveedores.AllowUserToAddRows =
+                false;
+
+
+            dgvProveedores.AllowUserToDeleteRows =
+                false;
+
+
+            dgvProveedores.AutoGenerateColumns =
+                false;
+
 
             dgvProveedores.ClearSelection();
         }
+
+
+        // =========================================================
+        // CARGAR PROVEEDORES
+        // =========================================================
 
         private void CargarProveedores()
         {
@@ -55,14 +107,22 @@ namespace LibreriaPrintZone.Views
                 _proveedores =
                     _controller.ObtenerProveedores();
 
-                MostrarProveedores(_proveedores);
+
+                _paginacion.Configurar(
+                    _proveedores,
+                    MostrarProveedores
+                );
+
 
                 ActualizarTarjetas();
 
-                _idProveedorSeleccionado = 0;
 
-                // Al cargar nuevamente, no hay proveedor seleccionado
-                btnGuardar.Text = "Guardar";
+                _idProveedorSeleccionado =
+                    0;
+
+
+                btnGuardar.Text =
+                    "Guardar";
             }
             catch (Exception ex)
             {
@@ -76,29 +136,47 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
+        // =========================================================
+        // MOSTRAR PROVEEDORES
+        // =========================================================
+
         private void MostrarProveedores(
             List<Proveedore> proveedores)
         {
             dgvProveedores.Rows.Clear();
 
-            foreach (Proveedore proveedor in proveedores)
+
+            foreach (
+                Proveedore proveedor
+                in proveedores
+            )
             {
-                int fila = dgvProveedores.Rows.Add(
-                    proveedor.NombreEmpresa,
-                    proveedor.Direccion,
-                    proveedor.Correo,
-                    proveedor.Telefono,
-                    proveedor.NombreAgente,
-                    proveedor.TelefonoAgente,
-                    proveedor.MontoMinimoCompra.ToString("C2")
-                );
+                int fila =
+                    dgvProveedores.Rows.Add(
+                        proveedor.NombreEmpresa,
+                        proveedor.Direccion,
+                        proveedor.Correo,
+                        proveedor.Telefono,
+                        proveedor.NombreAgente,
+                        proveedor.TelefonoAgente,
+                        proveedor.MontoMinimoCompra
+                            .ToString("C2")
+                    );
+
 
                 dgvProveedores.Rows[fila].Tag =
                     proveedor.IdProveedor;
             }
 
+
             dgvProveedores.ClearSelection();
         }
+
+
+        // =========================================================
+        // SELECCIONAR PROVEEDOR
+        // =========================================================
 
         private void dgvProveedores_CellClick(
             object? sender,
@@ -107,50 +185,76 @@ namespace LibreriaPrintZone.Views
             if (e.RowIndex < 0)
                 return;
 
+
             DataGridViewRow fila =
-                dgvProveedores.Rows[e.RowIndex];
+                dgvProveedores.Rows[
+                    e.RowIndex
+                ];
+
 
             if (fila.Tag == null)
                 return;
 
-            _idProveedorSeleccionado =
-                Convert.ToInt32(fila.Tag);
 
-            // Hay un proveedor seleccionado,
-            // por lo tanto el botón pasa a Actualizar.
-            btnGuardar.Text = "Actualizar";
+            _idProveedorSeleccionado =
+                Convert.ToInt32(
+                    fila.Tag
+                );
+
+
+            // =====================================================
+            // CAMBIAR BOTÓN A ACTUALIZAR
+            // =====================================================
+
+            btnGuardar.Text =
+                "Actualizar";
+
 
             Proveedore? proveedor =
                 _proveedores.FirstOrDefault(
-                    p => p.IdProveedor ==
-                         _idProveedorSeleccionado
+                    p =>
+                        p.IdProveedor ==
+                        _idProveedorSeleccionado
                 );
+
 
             if (proveedor == null)
                 return;
 
+
             txtNombreEmpresa.Text =
                 proveedor.NombreEmpresa;
+
 
             txtDireccion.Text =
                 proveedor.Direccion;
 
+
             txtCorreo.Text =
                 proveedor.Correo;
+
 
             txtTelefono.Text =
                 proveedor.Telefono;
 
+
             txtNombreAgente.Text =
                 proveedor.NombreAgente;
 
+
             txtTelefonoAgente.Text =
                 proveedor.TelefonoAgente;
+
 
             txtMontoMinimoCompra.Text =
                 proveedor.MontoMinimoCompra
                     .ToString("0.00");
         }
+
+
+        // =========================================================
+        // BUSCAR PROVEEDORES
+        // =========================================================
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -159,18 +263,43 @@ namespace LibreriaPrintZone.Views
             string texto =
                 txtBuscar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(texto))
+
+            // =====================================================
+            // SIN BÚSQUEDA
+            // =====================================================
+
+            if (
+                string.IsNullOrWhiteSpace(
+                    texto
+                )
+            )
             {
-                MostrarProveedores(_proveedores);
+                _paginacion.Configurar(
+                    _proveedores,
+                    MostrarProveedores
+                );
+
+
                 return;
             }
+
 
             try
             {
                 List<Proveedore> resultados =
-                    _controller.BuscarProveedores(texto);
+                    _controller.BuscarProveedores(
+                        texto
+                    );
 
-                MostrarProveedores(resultados);
+
+                // =================================================
+                // PAGINAR RESULTADOS DE BÚSQUEDA
+                // =================================================
+
+                _paginacion.Configurar(
+                    resultados,
+                    MostrarProveedores
+                );
             }
             catch (Exception ex)
             {
@@ -184,6 +313,11 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
+        // =========================================================
+        // GUARDAR / ACTUALIZAR
+        // =========================================================
+
         private void btnGuardar_Click(
             object? sender,
             EventArgs e)
@@ -191,22 +325,36 @@ namespace LibreriaPrintZone.Views
             string nombreEmpresa =
                 txtNombreEmpresa.Text.Trim();
 
+
             string direccion =
                 txtDireccion.Text.Trim();
+
 
             string correo =
                 txtCorreo.Text.Trim();
 
+
             string telefono =
                 txtTelefono.Text.Trim();
+
 
             string nombreAgente =
                 txtNombreAgente.Text.Trim();
 
+
             string telefonoAgente =
                 txtTelefonoAgente.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(nombreEmpresa))
+
+            // =====================================================
+            // VALIDAR EMPRESA
+            // =====================================================
+
+            if (
+                string.IsNullOrWhiteSpace(
+                    nombreEmpresa
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese el nombre de la empresa.",
@@ -215,13 +363,23 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtNombreEmpresa.Focus();
+
                 return;
             }
 
-            if (!decimal.TryParse(
+
+            // =====================================================
+            // VALIDAR MONTO MÍNIMO
+            // =====================================================
+
+            if (
+                !decimal.TryParse(
                     txtMontoMinimoCompra.Text.Trim(),
-                    out decimal montoMinimoCompra))
+                    out decimal montoMinimoCompra
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese un monto mínimo de compra válido.",
@@ -230,11 +388,16 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtMontoMinimoCompra.Focus();
+
                 return;
             }
 
-            if (montoMinimoCompra < 0)
+
+            if (
+                montoMinimoCompra < 0
+            )
             {
                 MessageBox.Show(
                     "El monto mínimo de compra no puede ser negativo.",
@@ -243,13 +406,22 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtMontoMinimoCompra.Focus();
+
                 return;
             }
 
+
+            // =====================================================
+            // GUARDAR
+            // =====================================================
+
             try
             {
-                if (_idProveedorSeleccionado == 0)
+                if (
+                    _idProveedorSeleccionado == 0
+                )
                 {
                     _controller.InsertarProveedor(
                         nombreEmpresa,
@@ -260,6 +432,7 @@ namespace LibreriaPrintZone.Views
                         telefonoAgente,
                         montoMinimoCompra
                     );
+
 
                     MessageBox.Show(
                         "El proveedor se creó correctamente.",
@@ -281,6 +454,7 @@ namespace LibreriaPrintZone.Views
                         montoMinimoCompra
                     );
 
+
                     MessageBox.Show(
                         "El proveedor se actualizó correctamente.",
                         "Proveedor actualizado",
@@ -289,8 +463,11 @@ namespace LibreriaPrintZone.Views
                     );
                 }
 
-                // Después de guardar o actualizar:
-                // se limpia el formulario y el botón vuelve a Guardar.
+
+                // =================================================
+                // LIMPIAR Y RECARGAR
+                // =================================================
+
                 LimpiarFormulario();
 
                 CargarProveedores();
@@ -307,6 +484,11 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
+        // =========================================================
+        // BOTÓN LIMPIAR
+        // =========================================================
+
         private void btnLimpiar_Click(
             object? sender,
             EventArgs e)
@@ -314,34 +496,56 @@ namespace LibreriaPrintZone.Views
             LimpiarFormulario();
         }
 
+
+        // =========================================================
+        // LIMPIAR FORMULARIO
+        // =========================================================
+
         private void LimpiarFormulario()
         {
             txtNombreEmpresa.Clear();
+
             txtDireccion.Clear();
+
             txtCorreo.Clear();
+
             txtTelefono.Clear();
+
             txtNombreAgente.Clear();
+
             txtTelefonoAgente.Clear();
+
             txtMontoMinimoCompra.Clear();
 
             txtBuscar.Clear();
 
-            _idProveedorSeleccionado = 0;
 
-            // Al no haber proveedor seleccionado,
-            // el botón vuelve a Guardar.
-            btnGuardar.Text = "Guardar";
+            _idProveedorSeleccionado =
+                0;
+
+
+            btnGuardar.Text =
+                "Guardar";
+
 
             dgvProveedores.ClearSelection();
 
+
             txtNombreEmpresa.Focus();
         }
+
+
+        // =========================================================
+        // ELIMINAR PROVEEDOR
+        // =========================================================
 
         private void btnEliminar_Click(
             object? sender,
             EventArgs e)
         {
-            if (_idProveedorSeleccionado == 0)
+            if (
+                _idProveedorSeleccionado == 0
+            )
             {
                 MessageBox.Show(
                     "Seleccione un proveedor para eliminarlo.",
@@ -350,18 +554,23 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
+
             Proveedore? proveedor =
                 _proveedores.FirstOrDefault(
-                    p => p.IdProveedor ==
-                         _idProveedorSeleccionado
+                    p =>
+                        p.IdProveedor ==
+                        _idProveedorSeleccionado
                 );
+
 
             string nombreProveedor =
                 proveedor?.NombreEmpresa ??
                 "este proveedor";
+
 
             DialogResult resultado =
                 MessageBox.Show(
@@ -373,8 +582,15 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Question
                 );
 
-            if (resultado != DialogResult.Yes)
+
+            if (
+                resultado !=
+                DialogResult.Yes
+            )
+            {
                 return;
+            }
+
 
             try
             {
@@ -382,12 +598,14 @@ namespace LibreriaPrintZone.Views
                     _idProveedorSeleccionado
                 );
 
+
                 MessageBox.Show(
                     "El proveedor se eliminó correctamente.",
                     "Proveedor eliminado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+
 
                 LimpiarFormulario();
 
@@ -406,17 +624,28 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
+        // =========================================================
+        // ACTUALIZAR TARJETAS
+        // =========================================================
+
         private void ActualizarTarjetas()
         {
             lblTotalProveedores.Text =
                 _proveedores.Count.ToString();
 
-            lblProveedorReciente.Text = "—";
+
+            lblProveedorReciente.Text =
+                "—";
+
 
             lblProveedorRecienteDescripcion.Text =
                 "Sin fecha de registro disponible";
 
-            lblProveedorMasProductos.Text = "—";
+
+            lblProveedorMasProductos.Text =
+                "—";
+
 
             lblCantidadProductosProveedor.Text =
                 "Sin información disponible";

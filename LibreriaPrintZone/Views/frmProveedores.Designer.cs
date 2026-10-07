@@ -73,6 +73,7 @@
             pictureBox8 = new PictureBox();
             label21 = new Label();
             panel7 = new Panel();
+            panelPaginacion = new Panel();
             dgvProveedores = new DataGridView();
             colEmpresa = new DataGridViewTextBoxColumn();
             colDireccion = new DataGridViewTextBoxColumn();
@@ -577,23 +578,33 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panelPaginacion);
             panel7.Controls.Add(dgvProveedores);
             panel7.Controls.Add(label15);
             panel7.Controls.Add(pictureBox3);
             panel7.Location = new Point(700, 293);
             panel7.Name = "panel7";
-            panel7.Size = new Size(872, 608);
+            panel7.Size = new Size(872, 517);
             panel7.TabIndex = 52;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(836, 59);
+            panelPaginacion.TabIndex = 9;
             // 
             // dgvProveedores
             // 
             dgvProveedores.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { colEmpresa, colDireccion, colCorreo, colTelefono, colNombreAgente, colTelefonoAgente, colMontoMinimo });
-            dgvProveedores.Location = new Point(33, 81);
+            dgvProveedores.Location = new Point(20, 81);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 51;
-            dgvProveedores.Size = new Size(819, 448);
+            dgvProveedores.Size = new Size(836, 320);
             dgvProveedores.TabIndex = 8;
             // 
             // colEmpresa
@@ -792,5 +803,6 @@
         private DataGridViewTextBoxColumn colNombreAgente;
         private DataGridViewTextBoxColumn colTelefonoAgente;
         private DataGridViewTextBoxColumn colMontoMinimo;
+        private Panel panelPaginacion;
     }
 }

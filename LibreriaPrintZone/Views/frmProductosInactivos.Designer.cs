@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductosInactivos));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
@@ -48,6 +48,7 @@
             colFecha = new DataGridViewTextBoxColumn();
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
+            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductosInactivos).BeginInit();
@@ -88,13 +89,14 @@
             // 
             panel5.BackColor = Color.FromArgb(242, 249, 254);
             panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(panelPaginacion);
             panel5.Controls.Add(btnReactivar);
             panel5.Controls.Add(dgvProductosInactivos);
             panel5.Controls.Add(pictureBox14);
             panel5.Controls.Add(txtBuscar);
             panel5.Location = new Point(122, 134);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1498, 724);
+            panel5.Size = new Size(1498, 524);
             panel5.TabIndex = 13;
             // 
             // btnReactivar
@@ -117,15 +119,15 @@
             // 
             // dgvProductosInactivos
             // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductosInactivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductosInactivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvProductosInactivos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductosInactivos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductosInactivos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP, colFecha });
             dgvProductosInactivos.Location = new Point(7, 84);
             dgvProductosInactivos.Name = "dgvProductosInactivos";
             dgvProductosInactivos.RowHeadersWidth = 51;
-            dgvProductosInactivos.Size = new Size(1481, 624);
+            dgvProductosInactivos.Size = new Size(1481, 320);
             dgvProductosInactivos.TabIndex = 63;
             // 
             // colProductoP
@@ -218,6 +220,15 @@
             txtBuscar.TabIndex = 61;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(7, 433);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(1481, 59);
+            panelPaginacion.TabIndex = 65;
+            // 
             // frmProductosInactivos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -260,5 +271,6 @@
         private DataGridViewTextBoxColumn colStockMinimoP;
         private DataGridViewTextBoxColumn colCategoriaP;
         private DataGridViewTextBoxColumn colFecha;
+        private Panel panelPaginacion;
     }
 }

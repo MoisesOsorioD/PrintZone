@@ -1,5 +1,6 @@
 ﻿using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
+using LibreriaPrintZone.Components;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,6 +11,8 @@ namespace LibreriaPrintZone.Views
     public partial class frmSalidas : Form
     {
         private readonly SalidasController _controller;
+
+        private readonly PaginacionComponent _paginacion;
 
         private List<SalidaListado> _salidas =
             new List<SalidaListado>();
@@ -24,28 +27,50 @@ namespace LibreriaPrintZone.Views
         private const int COLOR_ROJO_G = 220;
         private const int COLOR_ROJO_B = 220;
 
+
         public frmSalidas()
         {
             InitializeComponent();
 
-            _controller = new SalidasController();
+            _controller =
+                new SalidasController();
+
+
+            // =====================================================
+            // CONFIGURAR PAGINACIÓN
+            // =====================================================
+
+            _paginacion =
+                new PaginacionComponent(
+                    panelPaginacion,
+                    10
+                );
+
 
             ConfigurarFormulario();
 
             ConfigurarDataGridView();
 
+
             cmbProducto.SelectedIndexChanged +=
                 cmbProducto_SelectedIndexChanged;
+
 
             txtBuscar.TextChanged +=
                 txtBuscar_TextChanged;
 
-            Load += frmSalidas_Load;
+
+            Load +=
+                frmSalidas_Load;
+
 
             CargarProductos();
+
             CargarSalidas();
+
             ActualizarTarjetas();
         }
+
 
         // =========================================================
         // LOAD DEL FORMULARIO
@@ -58,6 +83,7 @@ namespace LibreriaPrintZone.Views
             CargarUsuarioActual();
         }
 
+
         // =========================================================
         // CONFIGURAR FORMULARIO
         // =========================================================
@@ -65,7 +91,9 @@ namespace LibreriaPrintZone.Views
         private void ConfigurarFormulario()
         {
             txtUsuario.ReadOnly = true;
+
             txtUsuario.TabStop = false;
+
 
             panelStockDisponible.BackColor =
                 Color.FromArgb(
@@ -74,10 +102,15 @@ namespace LibreriaPrintZone.Views
                     COLOR_AZUL_B
                 );
 
-            lblCantidadStock.Text = "0";
 
-            cmbProducto.SelectedIndex = -1;
+            lblCantidadStock.Text =
+                "0";
+
+
+            cmbProducto.SelectedIndex =
+                -1;
         }
+
 
         // =========================================================
         // CONFIGURAR DATAGRIDVIEW
@@ -88,13 +121,30 @@ namespace LibreriaPrintZone.Views
             dgvSalidas.SelectionMode =
                 DataGridViewSelectionMode.FullRowSelect;
 
-            dgvSalidas.MultiSelect = false;
-            dgvSalidas.ReadOnly = true;
-            dgvSalidas.AllowUserToAddRows = false;
-            dgvSalidas.AllowUserToDeleteRows = false;
-            dgvSalidas.AutoGenerateColumns = false;
+
+            dgvSalidas.MultiSelect =
+                false;
+
+
+            dgvSalidas.ReadOnly =
+                true;
+
+
+            dgvSalidas.AllowUserToAddRows =
+                false;
+
+
+            dgvSalidas.AllowUserToDeleteRows =
+                false;
+
+
+            dgvSalidas.AutoGenerateColumns =
+                false;
+
+
             dgvSalidas.ClearSelection();
         }
+
 
         // =========================================================
         // CARGAR USUARIO ACTUAL
@@ -104,10 +154,14 @@ namespace LibreriaPrintZone.Views
         {
             try
             {
-                if (this.ParentForm is frmLayouts layout)
+                if (
+                    this.ParentForm
+                    is frmLayouts layout
+                )
                 {
                     _idUsuarioActual =
                         layout.IdUsuarioActual;
+
 
                     txtUsuario.Text =
                         layout.NombreUsuarioActual;
@@ -130,6 +184,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // CARGAR PRODUCTOS
         // =========================================================
@@ -141,13 +196,30 @@ namespace LibreriaPrintZone.Views
                 List<ProductoListado> productos =
                     _controller.ObtenerProductos();
 
-                cmbProducto.DataSource = null;
-                cmbProducto.DataSource = productos;
-                cmbProducto.DisplayMember = "nombre";
-                cmbProducto.ValueMember = "id_producto";
-                cmbProducto.SelectedIndex = -1;
 
-                lblCantidadStock.Text = "0";
+                cmbProducto.DataSource =
+                    null;
+
+
+                cmbProducto.DataSource =
+                    productos;
+
+
+                cmbProducto.DisplayMember =
+                    "nombre";
+
+
+                cmbProducto.ValueMember =
+                    "id_producto";
+
+
+                cmbProducto.SelectedIndex =
+                    -1;
+
+
+                lblCantidadStock.Text =
+                    "0";
+
 
                 panelStockDisponible.BackColor =
                     Color.FromArgb(
@@ -168,6 +240,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // PRODUCTO SELECCIONADO
         // =========================================================
@@ -176,10 +249,14 @@ namespace LibreriaPrintZone.Views
             object? sender,
             EventArgs e)
         {
-            if (cmbProducto.SelectedIndex == -1 ||
-                cmbProducto.SelectedValue == null)
+            if (
+                cmbProducto.SelectedIndex == -1 ||
+                cmbProducto.SelectedValue == null
+            )
             {
-                lblCantidadStock.Text = "0";
+                lblCantidadStock.Text =
+                    "0";
+
 
                 panelStockDisponible.BackColor =
                     Color.FromArgb(
@@ -188,14 +265,21 @@ namespace LibreriaPrintZone.Views
                         COLOR_AZUL_B
                     );
 
+
                 return;
             }
 
-            if (!int.TryParse(
+
+            if (
+                !int.TryParse(
                     cmbProducto.SelectedValue.ToString(),
-                    out int idProducto))
+                    out int idProducto
+                )
+            )
             {
-                lblCantidadStock.Text = "0";
+                lblCantidadStock.Text =
+                    "0";
+
 
                 panelStockDisponible.BackColor =
                     Color.FromArgb(
@@ -204,11 +288,16 @@ namespace LibreriaPrintZone.Views
                         COLOR_AZUL_B
                     );
 
+
                 return;
             }
 
-            CargarStockProducto(idProducto);
+
+            CargarStockProducto(
+                idProducto
+            );
         }
+
 
         // =========================================================
         // CARGAR STOCK DEL PRODUCTO
@@ -224,9 +313,12 @@ namespace LibreriaPrintZone.Views
                         idProducto
                     );
 
+
                 if (stock == null)
                 {
-                    lblCantidadStock.Text = "0";
+                    lblCantidadStock.Text =
+                        "0";
+
 
                     panelStockDisponible.BackColor =
                         Color.FromArgb(
@@ -235,11 +327,16 @@ namespace LibreriaPrintZone.Views
                             COLOR_AZUL_B
                         );
 
+
                     return;
                 }
 
+
                 lblCantidadStock.Text =
-                    stock.stock_actual.ToString("N0");
+                    stock.stock_actual.ToString(
+                        "N0"
+                    );
+
 
                 ActualizarAlertaStock(
                     stock.stock_actual,
@@ -258,15 +355,19 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // ALERTA DE STOCK
         // =========================================================
 
         private void ActualizarAlertaStock(
-    int stockActual,
-    int stockMinimo)
+            int stockActual,
+            int stockMinimo)
         {
-            if (stockActual <= stockMinimo)
+            if (
+                stockActual <=
+                stockMinimo
+            )
             {
                 panelStockDisponible.BackColor =
                     Color.FromArgb(
@@ -275,7 +376,9 @@ namespace LibreriaPrintZone.Views
                         COLOR_ROJO_B
                     );
 
-                lblStockDisponible.Text = "Stock Bajo";
+
+                lblStockDisponible.Text =
+                    "Stock Bajo";
             }
             else
             {
@@ -286,9 +389,12 @@ namespace LibreriaPrintZone.Views
                         COLOR_AZUL_B
                     );
 
-                lblStockDisponible.Text = "Stock Disponible";
+
+                lblStockDisponible.Text =
+                    "Stock Disponible";
             }
         }
+
 
         // =========================================================
         // CARGAR SALIDAS
@@ -301,7 +407,11 @@ namespace LibreriaPrintZone.Views
                 _salidas =
                     _controller.ObtenerSalidas();
 
-                MostrarSalidas(_salidas);
+
+                _paginacion.Configurar(
+                    _salidas,
+                    MostrarSalidas
+                );
             }
             catch (Exception ex)
             {
@@ -315,6 +425,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // MOSTRAR SALIDAS
         // =========================================================
@@ -324,24 +435,32 @@ namespace LibreriaPrintZone.Views
         {
             dgvSalidas.Rows.Clear();
 
-            foreach (SalidaListado salida in salidas)
+
+            foreach (
+                SalidaListado salida
+                in salidas
+            )
             {
-                int fila = dgvSalidas.Rows.Add(
-                    salida.fecha_salida.ToString(
-                        "dd/MM/yyyy HH:mm"
-                    ),
-                    salida.nombre_producto,
-                    salida.cantidad,
-                    salida.motivo,
-                    salida.nombre_usuario
-                );
+                int fila =
+                    dgvSalidas.Rows.Add(
+                        salida.fecha_salida.ToString(
+                            "dd/MM/yyyy HH:mm"
+                        ),
+                        salida.nombre_producto,
+                        salida.cantidad,
+                        salida.motivo,
+                        salida.nombre_usuario
+                    );
+
 
                 dgvSalidas.Rows[fila].Tag =
                     salida.id_salida;
             }
 
+
             dgvSalidas.ClearSelection();
         }
+
 
         // =========================================================
         // ACTUALIZAR TARJETAS
@@ -354,22 +473,34 @@ namespace LibreriaPrintZone.Views
                 int totalSalidas =
                     _controller.ObtenerTotalSalidas();
 
+
                 int totalUnidades =
                     _controller.ObtenerTotalUnidades();
+
 
                 ProductoMasSalidas? productoMasSalidas =
                     _controller.ObtenerProductoConMasSalidas();
 
+
                 lblTotalS.Text =
-                    totalSalidas.ToString("N0");
+                    totalSalidas.ToString(
+                        "N0"
+                    );
+
 
                 lblUnidadesRetiradas.Text =
-                    totalUnidades.ToString("N0");
+                    totalUnidades.ToString(
+                        "N0"
+                    );
 
-                if (productoMasSalidas == null)
+
+                if (
+                    productoMasSalidas == null
+                )
                 {
                     lblProductoMasSalidas.Text =
                         "Sin registros";
+
 
                     lblCantidadProductoMasSalidas.Text =
                         "0 unidades";
@@ -378,6 +509,7 @@ namespace LibreriaPrintZone.Views
                 {
                     lblProductoMasSalidas.Text =
                         productoMasSalidas.nombre_producto;
+
 
                     lblCantidadProductoMasSalidas.Text =
                         productoMasSalidas.total_unidades
@@ -397,6 +529,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // REGISTRAR SALIDA
         // =========================================================
@@ -405,8 +538,10 @@ namespace LibreriaPrintZone.Views
             object? sender,
             EventArgs e)
         {
-            if (cmbProducto.SelectedIndex == -1 ||
-                cmbProducto.SelectedValue == null)
+            if (
+                cmbProducto.SelectedIndex == -1 ||
+                cmbProducto.SelectedValue == null
+            )
             {
                 MessageBox.Show(
                     "Seleccione un producto.",
@@ -415,11 +550,16 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 cmbProducto.Focus();
+
                 return;
             }
 
-            if (_idUsuarioActual <= 0)
+
+            if (
+                _idUsuarioActual <= 0
+            )
             {
                 MessageBox.Show(
                     "No se pudo identificar al usuario actual.",
@@ -428,12 +568,17 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
-            if (!int.TryParse(
+
+            if (
+                !int.TryParse(
                     cmbProducto.SelectedValue.ToString(),
-                    out int idProducto))
+                    out int idProducto
+                )
+            )
             {
                 MessageBox.Show(
                     "El producto seleccionado no es válido.",
@@ -442,12 +587,17 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
-            if (!int.TryParse(
+
+            if (
+                !int.TryParse(
                     txtCantidad.Text.Trim(),
-                    out int cantidad))
+                    out int cantidad
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese una cantidad válida.",
@@ -456,9 +606,12 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCantidad.Focus();
+
                 return;
             }
+
 
             if (cantidad <= 0)
             {
@@ -469,14 +622,18 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCantidad.Focus();
+
                 return;
             }
+
 
             StockProducto? stock =
                 _controller.ObtenerStockProducto(
                     idProducto
                 );
+
 
             if (stock == null)
             {
@@ -487,10 +644,14 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Error
                 );
 
+
                 return;
             }
 
-            if (stock.stock_actual <= 0)
+
+            if (
+                stock.stock_actual <= 0
+            )
             {
                 MessageBox.Show(
                     "El producto no tiene stock disponible.",
@@ -499,10 +660,15 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 return;
             }
 
-            if (cantidad > stock.stock_actual)
+
+            if (
+                cantidad >
+                stock.stock_actual
+            )
             {
                 MessageBox.Show(
                     "La cantidad solicitada es mayor que el stock disponible.\n\n" +
@@ -513,14 +679,22 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtCantidad.Focus();
+
                 return;
             }
+
 
             string motivo =
                 txtMotivo.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(motivo))
+
+            if (
+                string.IsNullOrWhiteSpace(
+                    motivo
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese el motivo de la salida.",
@@ -529,9 +703,12 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Warning
                 );
 
+
                 txtMotivo.Focus();
+
                 return;
             }
+
 
             try
             {
@@ -542,12 +719,14 @@ namespace LibreriaPrintZone.Views
                     idProducto
                 );
 
+
                 MessageBox.Show(
                     "La salida se registró correctamente.",
                     "Salida registrada",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
+
 
                 LimpiarFormulario();
 
@@ -569,6 +748,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+
         // =========================================================
         // LIMPIAR
         // =========================================================
@@ -580,21 +760,31 @@ namespace LibreriaPrintZone.Views
             LimpiarFormulario();
         }
 
+
         // =========================================================
         // LIMPIAR FORMULARIO
         // =========================================================
 
         private void LimpiarFormulario()
         {
-            cmbProducto.SelectedIndex = -1;
+            cmbProducto.SelectedIndex =
+                -1;
+
 
             txtCantidad.Clear();
+
             txtMotivo.Clear();
 
             txtBuscar.Clear();
 
-            lblCantidadStock.Text = "0";
-            lblStockDisponible.Text = "Stock Disponible";
+
+            lblCantidadStock.Text =
+                "0";
+
+
+            lblStockDisponible.Text =
+                "Stock Disponible";
+
 
             panelStockDisponible.BackColor =
                 Color.FromArgb(
@@ -603,10 +793,13 @@ namespace LibreriaPrintZone.Views
                     COLOR_AZUL_B
                 );
 
+
             dgvSalidas.ClearSelection();
+
 
             txtCantidad.Focus();
         }
+
 
         // =========================================================
         // BUSCAR SALIDAS
@@ -619,11 +812,22 @@ namespace LibreriaPrintZone.Views
             string texto =
                 txtBuscar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(texto))
+
+            if (
+                string.IsNullOrWhiteSpace(
+                    texto
+                )
+            )
             {
-                MostrarSalidas(_salidas);
+                _paginacion.Configurar(
+                    _salidas,
+                    MostrarSalidas
+                );
+
+
                 return;
             }
+
 
             try
             {
@@ -632,7 +836,11 @@ namespace LibreriaPrintZone.Views
                         texto
                     );
 
-                MostrarSalidas(resultados);
+
+                _paginacion.Configurar(
+                    resultados,
+                    MostrarSalidas
+                );
             }
             catch (Exception ex)
             {

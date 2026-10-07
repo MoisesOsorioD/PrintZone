@@ -75,6 +75,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
+            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSalidas).BeginInit();
@@ -116,6 +117,7 @@
             // 
             panel7.BackColor = Color.FromArgb(242, 249, 254);
             panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(panelPaginacion);
             panel7.Controls.Add(dgvSalidas);
             panel7.Controls.Add(label17);
             panel7.Controls.Add(pictureBox3);
@@ -132,7 +134,7 @@
             dgvSalidas.Location = new Point(20, 81);
             dgvSalidas.Name = "dgvSalidas";
             dgvSalidas.RowHeadersWidth = 51;
-            dgvSalidas.Size = new Size(896, 405);
+            dgvSalidas.Size = new Size(896, 320);
             dgvSalidas.TabIndex = 8;
             // 
             // colFecha
@@ -572,6 +574,15 @@
             pictureBox10.TabIndex = 62;
             pictureBox10.TabStop = false;
             // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(896, 59);
+            panelPaginacion.TabIndex = 9;
+            // 
             // frmSalidas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -664,5 +675,6 @@
         private DataGridViewTextBoxColumn colCantidad;
         private DataGridViewTextBoxColumn colMotivo;
         private DataGridViewTextBoxColumn colUsuario;
+        private Panel panelPaginacion;
     }
 }

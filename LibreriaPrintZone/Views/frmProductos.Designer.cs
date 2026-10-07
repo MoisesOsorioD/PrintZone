@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
@@ -72,6 +72,7 @@
             txtBuscar = new TextBox();
             pictureBox14 = new PictureBox();
             btnProductosInactivos = new Button();
+            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel5.SuspendLayout();
@@ -112,15 +113,15 @@
             // 
             // dgvProductos
             // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvProductos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
-            dgvProductos.Location = new Point(687, 255);
+            dgvProductos.Location = new Point(664, 255);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
-            dgvProductos.Size = new Size(933, 601);
+            dgvProductos.Size = new Size(941, 320);
             dgvProductos.TabIndex = 8;
             // 
             // colProductoP
@@ -211,7 +212,7 @@
             panel5.Controls.Add(txtProducto);
             panel5.Location = new Point(139, 209);
             panel5.Name = "panel5";
-            panel5.Size = new Size(524, 647);
+            panel5.Size = new Size(477, 647);
             panel5.TabIndex = 12;
             // 
             // panel1
@@ -219,9 +220,9 @@
             panel1.BackColor = Color.FromArgb(220, 233, 247);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(label3);
-            panel1.Location = new Point(27, 494);
+            panel1.Location = new Point(3, 495);
             panel1.Name = "panel1";
-            panel1.Size = new Size(475, 103);
+            panel1.Size = new Size(453, 103);
             panel1.TabIndex = 38;
             // 
             // pictureBox1
@@ -248,16 +249,16 @@
             // cmbCategoria
             // 
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(27, 280);
+            cmbCategoria.Location = new Point(20, 280);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(227, 28);
+            cmbCategoria.Size = new Size(198, 28);
             cmbCategoria.TabIndex = 35;
             // 
             // label15
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(27, 257);
+            label15.Location = new Point(20, 257);
             label15.Name = "label15";
             label15.Size = new Size(75, 20);
             label15.TabIndex = 37;
@@ -267,7 +268,7 @@
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.Location = new Point(276, 413);
+            label14.Location = new Point(258, 413);
             label14.Name = "label14";
             label14.Size = new Size(102, 20);
             label14.TabIndex = 34;
@@ -275,16 +276,16 @@
             // 
             // txtStockMinimo
             // 
-            txtStockMinimo.Location = new Point(276, 438);
+            txtStockMinimo.Location = new Point(258, 438);
             txtStockMinimo.Name = "txtStockMinimo";
-            txtStockMinimo.Size = new Size(227, 27);
+            txtStockMinimo.Size = new Size(191, 27);
             txtStockMinimo.TabIndex = 33;
             // 
             // label12
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(27, 413);
+            label12.Location = new Point(20, 413);
             label12.Name = "label12";
             label12.Size = new Size(91, 20);
             label12.TabIndex = 31;
@@ -292,16 +293,16 @@
             // 
             // txtCodigoBarras
             // 
-            txtCodigoBarras.Location = new Point(276, 280);
+            txtCodigoBarras.Location = new Point(258, 280);
             txtCodigoBarras.Name = "txtCodigoBarras";
-            txtCodigoBarras.Size = new Size(226, 27);
+            txtCodigoBarras.Size = new Size(191, 27);
             txtCodigoBarras.TabIndex = 27;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(276, 257);
+            label11.Location = new Point(258, 257);
             label11.Name = "label11";
             label11.Size = new Size(126, 20);
             label11.TabIndex = 28;
@@ -309,17 +310,17 @@
             // 
             // txtStockActual
             // 
-            txtStockActual.Location = new Point(27, 438);
+            txtStockActual.Location = new Point(20, 438);
             txtStockActual.Name = "txtStockActual";
             txtStockActual.ReadOnly = true;
-            txtStockActual.Size = new Size(226, 27);
+            txtStockActual.Size = new Size(198, 27);
             txtStockActual.TabIndex = 30;
             // 
             // label10
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(276, 335);
+            label10.Location = new Point(258, 335);
             label10.Name = "label10";
             label10.Size = new Size(115, 20);
             label10.TabIndex = 25;
@@ -327,16 +328,16 @@
             // 
             // txtPrecioVenta
             // 
-            txtPrecioVenta.Location = new Point(276, 360);
+            txtPrecioVenta.Location = new Point(258, 360);
             txtPrecioVenta.Name = "txtPrecioVenta";
-            txtPrecioVenta.Size = new Size(227, 27);
+            txtPrecioVenta.Size = new Size(191, 27);
             txtPrecioVenta.TabIndex = 24;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(27, 335);
+            label9.Location = new Point(20, 335);
             label9.Name = "label9";
             label9.Size = new Size(129, 20);
             label9.TabIndex = 22;
@@ -344,16 +345,16 @@
             // 
             // txtPrecioCompra
             // 
-            txtPrecioCompra.Location = new Point(27, 360);
+            txtPrecioCompra.Location = new Point(20, 360);
             txtPrecioCompra.Name = "txtPrecioCompra";
-            txtPrecioCompra.Size = new Size(226, 27);
+            txtPrecioCompra.Size = new Size(198, 27);
             txtPrecioCompra.TabIndex = 21;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(276, 69);
+            label8.Location = new Point(251, 69);
             label8.Name = "label8";
             label8.Size = new Size(52, 20);
             label8.TabIndex = 19;
@@ -361,16 +362,16 @@
             // 
             // txtMarca
             // 
-            txtMarca.Location = new Point(277, 92);
+            txtMarca.Location = new Point(251, 92);
             txtMarca.Name = "txtMarca";
-            txtMarca.Size = new Size(226, 27);
+            txtMarca.Size = new Size(198, 27);
             txtMarca.TabIndex = 18;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(27, 149);
+            label7.Location = new Point(20, 149);
             label7.Name = "label7";
             label7.Size = new Size(89, 20);
             label7.TabIndex = 16;
@@ -378,17 +379,17 @@
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(27, 172);
+            txtDescripcion.Location = new Point(20, 172);
             txtDescripcion.Multiline = true;
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(475, 57);
+            txtDescripcion.Size = new Size(429, 57);
             txtDescripcion.TabIndex = 15;
             // 
             // label13
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(27, 69);
+            label13.Location = new Point(20, 69);
             label13.Name = "label13";
             label13.Size = new Size(72, 20);
             label13.TabIndex = 13;
@@ -396,9 +397,9 @@
             // 
             // txtProducto
             // 
-            txtProducto.Location = new Point(27, 92);
+            txtProducto.Location = new Point(20, 92);
             txtProducto.Name = "txtProducto";
-            txtProducto.Size = new Size(226, 27);
+            txtProducto.Size = new Size(198, 27);
             txtProducto.TabIndex = 12;
             // 
             // btnEliminar
@@ -476,17 +477,17 @@
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(733, 209);
+            txtBuscar.Location = new Point(710, 209);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = " Buscar productos por nombre o código de barra";
-            txtBuscar.Size = new Size(887, 30);
+            txtBuscar.Size = new Size(910, 30);
             txtBuscar.TabIndex = 42;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(687, 209);
+            pictureBox14.Location = new Point(664, 209);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
@@ -511,12 +512,22 @@
             btnProductosInactivos.UseVisualStyleBackColor = false;
             btnProductosInactivos.Click += btnProductosInactivos_Click;
             // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
+            panelPaginacion.Location = new Point(664, 616);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(941, 59);
+            panelPaginacion.TabIndex = 62;
+            // 
             // frmProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
+            Controls.Add(panelPaginacion);
             Controls.Add(btnProductosInactivos);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
@@ -587,5 +598,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox14;
         private Button btnProductosInactivos;
+        private Panel panelPaginacion;
     }
 }

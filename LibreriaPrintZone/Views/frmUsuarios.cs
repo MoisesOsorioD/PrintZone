@@ -1,5 +1,6 @@
 ﻿using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
+using LibreriaPrintZone.Components;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -9,6 +10,7 @@ namespace LibreriaPrintZone.Views
     public partial class frmUsuarios : Form
     {
         private readonly UsuariosController _controller;
+        private readonly PaginacionComponent _paginacion;
 
         private List<Usuario> _usuarios =
             new List<Usuario>();
@@ -20,6 +22,12 @@ namespace LibreriaPrintZone.Views
             InitializeComponent();
 
             _controller = new UsuariosController();
+
+            _paginacion =
+                new PaginacionComponent(
+                    panelPaginacion,
+                    10
+                );
 
             ConfigurarFormulario();
 
@@ -80,7 +88,10 @@ namespace LibreriaPrintZone.Views
                 _usuarios =
                     _controller.ObtenerUsuarios();
 
-                MostrarUsuarios(_usuarios);
+                _paginacion.Configurar(
+                    _usuarios,
+                    MostrarUsuarios
+                );
             }
             catch (Exception ex)
             {
@@ -110,15 +121,16 @@ namespace LibreriaPrintZone.Views
                         ? "Activo"
                         : "Inactivo";
 
-                int fila = dgvUsuarios.Rows.Add(
-                    usuario.NombreUsuario,
-                    usuario.NombreCompleto,
-                    usuario.Rol,
-                    estado,
-                    usuario.FechaCreacion.ToString(
-                        "dd/MM/yyyy"
-                    )
-                );
+                int fila =
+                    dgvUsuarios.Rows.Add(
+                        usuario.NombreUsuario,
+                        usuario.NombreCompleto,
+                        usuario.Rol,
+                        estado,
+                        usuario.FechaCreacion.ToString(
+                            "dd/MM/yyyy"
+                        )
+                    );
 
                 dgvUsuarios.Rows[fila].Tag =
                     usuario.IdUsuario;
@@ -140,21 +152,29 @@ namespace LibreriaPrintZone.Views
                 return;
             }
 
-            if (dgvUsuarios.Rows[e.RowIndex].Tag == null)
+            if (
+                dgvUsuarios.Rows[e.RowIndex].Tag
+                == null
+            )
             {
                 return;
             }
 
-            if (!int.TryParse(
+            if (
+                !int.TryParse(
                     dgvUsuarios.Rows[e.RowIndex]
                         .Tag
                         .ToString(),
-                    out int idUsuario))
+                    out int idUsuario
+                )
+            )
             {
                 return;
             }
 
-            CargarUsuarioEnFormulario(idUsuario);
+            CargarUsuarioEnFormulario(
+                idUsuario
+            );
         }
 
         // =========================================================
@@ -246,7 +266,11 @@ namespace LibreriaPrintZone.Views
             // VALIDAR NOMBRE DE USUARIO
             // -----------------------------------------------------
 
-            if (string.IsNullOrWhiteSpace(nombreUsuario))
+            if (
+                string.IsNullOrWhiteSpace(
+                    nombreUsuario
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese el nombre de usuario.",
@@ -256,6 +280,7 @@ namespace LibreriaPrintZone.Views
                 );
 
                 txtNombreUsuario.Focus();
+
                 return;
             }
 
@@ -263,7 +288,11 @@ namespace LibreriaPrintZone.Views
             // VALIDAR NOMBRE COMPLETO
             // -----------------------------------------------------
 
-            if (string.IsNullOrWhiteSpace(nombreCompleto))
+            if (
+                string.IsNullOrWhiteSpace(
+                    nombreCompleto
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese el nombre completo.",
@@ -273,6 +302,7 @@ namespace LibreriaPrintZone.Views
                 );
 
                 txtNombreCompleto.Focus();
+
                 return;
             }
 
@@ -280,7 +310,11 @@ namespace LibreriaPrintZone.Views
             // VALIDAR CLAVE
             // -----------------------------------------------------
 
-            if (string.IsNullOrWhiteSpace(clave))
+            if (
+                string.IsNullOrWhiteSpace(
+                    clave
+                )
+            )
             {
                 MessageBox.Show(
                     "Ingrese la contraseña.",
@@ -290,6 +324,7 @@ namespace LibreriaPrintZone.Views
                 );
 
                 txtClave.Focus();
+
                 return;
             }
 
@@ -297,7 +332,11 @@ namespace LibreriaPrintZone.Views
             // VALIDAR ROL
             // -----------------------------------------------------
 
-            if (string.IsNullOrWhiteSpace(rol))
+            if (
+                string.IsNullOrWhiteSpace(
+                    rol
+                )
+            )
             {
                 MessageBox.Show(
                     "Seleccione un rol.",
@@ -307,6 +346,7 @@ namespace LibreriaPrintZone.Views
                 );
 
                 cmbRol.Focus();
+
                 return;
             }
 
@@ -316,7 +356,9 @@ namespace LibreriaPrintZone.Views
                 // NUEVO USUARIO
                 // =================================================
 
-                if (_idUsuarioSeleccionado == 0)
+                if (
+                    _idUsuarioSeleccionado == 0
+                )
                 {
                     _controller.GuardarUsuario(
                         nombreUsuario,
@@ -425,9 +467,17 @@ namespace LibreriaPrintZone.Views
             string texto =
                 txtBuscar.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(texto))
+            if (
+                string.IsNullOrWhiteSpace(
+                    texto
+                )
+            )
             {
-                MostrarUsuarios(_usuarios);
+                _paginacion.Configurar(
+                    _usuarios,
+                    MostrarUsuarios
+                );
+
                 return;
             }
 
@@ -438,7 +488,10 @@ namespace LibreriaPrintZone.Views
                         texto
                     );
 
-                MostrarUsuarios(resultados);
+                _paginacion.Configurar(
+                    resultados,
+                    MostrarUsuarios
+                );
             }
             catch (Exception ex)
             {
