@@ -1,4 +1,5 @@
-﻿using LibreriaPrintZone.Controllers;
+﻿
+using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
 using LibreriaPrintZone.Components;
 using System;
@@ -13,6 +14,9 @@ namespace LibreriaPrintZone.Views
         private readonly ProveedoresController _controller;
 
         private readonly PaginacionComponent _paginacion;
+
+        private readonly EntradasController _entradasController =
+            new EntradasController();
 
         private List<Proveedore> _proveedores =
             new List<Proveedore>();
@@ -631,24 +635,113 @@ namespace LibreriaPrintZone.Views
 
         private void ActualizarTarjetas()
         {
+            // =====================================================
+            // TOTAL DE PROVEEDORES
+            // =====================================================
+
             lblTotalProveedores.Text =
                 _proveedores.Count.ToString();
 
 
-            lblProveedorReciente.Text =
-                "—";
+            // =====================================================
+            // PROVEEDOR REGISTRADO RECIENTEMENTE
+            // =====================================================
+
+            Proveedore? proveedorReciente =
+                _proveedores
+                    .OrderByDescending(
+                        p => p.IdProveedor
+                    )
+                    .FirstOrDefault();
 
 
-            lblProveedorRecienteDescripcion.Text =
-                "Sin fecha de registro disponible";
+            if (proveedorReciente != null)
+            {
+                lblProveedorReciente.Text =
+                    proveedorReciente.NombreEmpresa;
 
 
-            lblProveedorMasProductos.Text =
-                "—";
+                lblProveedorRecienteDescripcion.Text =
+                    "Último proveedor registrado";
+            }
+            else
+            {
+                lblProveedorReciente.Text =
+                    "—";
 
 
-            lblCantidadProductosProveedor.Text =
-                "Sin información disponible";
+                lblProveedorRecienteDescripcion.Text =
+                    "No hay proveedores registrados";
+            }
+
+
+            // =====================================================
+            // PROVEEDOR CON MÁS UNIDADES INGRESADAS
+            // =====================================================
+
+            try
+            {
+                List<EntradaListado> entradas =
+                    _entradasController.ObtenerEntradas();
+
+
+                var proveedorConMasUnidades =
+                    entradas
+                        .GroupBy(
+                            e => new
+                            {
+                                e.id_proveedor,
+                                e.nombre_empresa
+                            }
+                        )
+                        .Select(
+                            grupo => new
+                            {
+                                NombreEmpresa =
+                                    grupo.Key.nombre_empresa,
+
+                                TotalUnidades =
+                                    grupo.Sum(
+                                        entrada => entrada.cantidad
+                                    )
+                            }
+                        )
+                        .OrderByDescending(
+                            grupo => grupo.TotalUnidades
+                        )
+                        .FirstOrDefault();
+
+
+                if (proveedorConMasUnidades != null)
+                {
+                    lblProveedorMasProductos.Text =
+                        proveedorConMasUnidades.NombreEmpresa;
+
+
+                    lblCantidadProductosProveedor.Text =
+                        proveedorConMasUnidades.TotalUnidades
+                            .ToString("N0") +
+                        " unidades ingresadas";
+                }
+                else
+                {
+                    lblProveedorMasProductos.Text =
+                        "—";
+
+
+                    lblCantidadProductosProveedor.Text =
+                        "Sin entradas registradas";
+                }
+            }
+            catch (Exception)
+            {
+                lblProveedorMasProductos.Text =
+                    "—";
+
+
+                lblCantidadProductosProveedor.Text =
+                    "No se pudo cargar la información";
+            }
         }
     }
 }

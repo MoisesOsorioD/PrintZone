@@ -113,9 +113,9 @@
             panel4.Controls.Add(pictureBox13);
             panel4.Controls.Add(lblProveedorMasProductos);
             panel4.Controls.Add(label8);
-            panel4.Location = new Point(1131, 116);
+            panel4.Location = new Point(1087, 116);
             panel4.Name = "panel4";
-            panel4.Size = new Size(441, 116);
+            panel4.Size = new Size(485, 116);
             panel4.TabIndex = 14;
             // 
             // lblCantidadProductosProveedor
@@ -141,10 +141,10 @@
             // lblProveedorMasProductos
             // 
             lblProveedorMasProductos.AutoSize = true;
-            lblProveedorMasProductos.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblProveedorMasProductos.Location = new Point(99, 38);
+            lblProveedorMasProductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblProveedorMasProductos.Location = new Point(99, 45);
             lblProveedorMasProductos.Name = "lblProveedorMasProductos";
-            lblProveedorMasProductos.Size = new Size(275, 38);
+            lblProveedorMasProductos.Size = new Size(199, 28);
             lblProveedorMasProductos.TabIndex = 2;
             lblProveedorMasProductos.Text = "Distribuidora Norte";
             // 
@@ -166,7 +166,7 @@
             panel3.Controls.Add(pictureBox12);
             panel3.Controls.Add(lblProveedorReciente);
             panel3.Controls.Add(label6);
-            panel3.Location = new Point(640, 116);
+            panel3.Location = new Point(613, 116);
             panel3.Name = "panel3";
             panel3.Size = new Size(445, 116);
             panel3.TabIndex = 13;
