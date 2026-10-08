@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
@@ -113,15 +113,15 @@
             // 
             // dgvProductos
             // 
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
             dgvProductos.Location = new Point(664, 255);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
-            dgvProductos.Size = new Size(941, 320);
+            dgvProductos.Size = new Size(941, 363);
             dgvProductos.TabIndex = 8;
             // 
             // colProductoP
@@ -516,7 +516,7 @@
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
             panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(664, 616);
+            panelPaginacion.Location = new Point(664, 666);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(941, 59);
             panelPaginacion.TabIndex = 62;
