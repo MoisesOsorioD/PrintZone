@@ -12,9 +12,6 @@ namespace LibreriaPrintZone.Controllers
             _context = new InventarioPrintzoneContext();
         }
 
-        // =========================================================
-        // INICIAR SESIÓN
-        // =========================================================
 
         public UsuarioLogin? IniciarSesion(
             string nombreUsuario,
@@ -32,9 +29,6 @@ namespace LibreriaPrintZone.Controllers
             return resultado;
         }
 
-        // =========================================================
-        // LISTAR USUARIOS
-        // =========================================================
 
         public List<Usuario> ObtenerUsuarios()
         {
@@ -46,9 +40,7 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // OBTENER USUARIO POR ID
-        // =========================================================
+
 
         public Usuario? ObtenerUsuarioPorId(
             int idUsuario)
@@ -63,9 +55,7 @@ namespace LibreriaPrintZone.Controllers
                 .FirstOrDefault();
         }
 
-        // =========================================================
-        // GUARDAR USUARIO
-        // =========================================================
+
 
         public void GuardarUsuario(
             string nombreUsuario,
@@ -85,9 +75,7 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-        // =========================================================
-        // ACTUALIZAR USUARIO
-        // =========================================================
+
 
         public void ActualizarUsuario(
             int idUsuario,
@@ -109,9 +97,7 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-        // =========================================================
-        // DESACTIVAR USUARIO
-        // =========================================================
+
 
         public void DesactivarUsuario(
             int idUsuario)
@@ -122,9 +108,7 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-        // =========================================================
-        // BUSCAR USUARIOS
-        // =========================================================
+
 
         public List<Usuario> BuscarUsuarios(
             string busqueda)
@@ -160,18 +144,14 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // TOTAL DE USUARIOS
-        // =========================================================
+
 
         public int ObtenerTotalUsuarios()
         {
             return ObtenerUsuarios().Count;
         }
 
-        // =========================================================
-        // TOTAL DE USUARIOS ACTIVOS
-        // =========================================================
+
 
         public int ObtenerUsuariosActivos()
         {
@@ -179,9 +159,7 @@ namespace LibreriaPrintZone.Controllers
                 .Count(u => u.Activo);
         }
 
-        // =========================================================
-        // TOTAL DE USUARIOS DESACTIVADOS
-        // =========================================================
+
 
         public int ObtenerUsuariosDesactivados()
         {

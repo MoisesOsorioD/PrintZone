@@ -1,4 +1,5 @@
-﻿using LibreriaPrintZone.Views;
+﻿
+using LibreriaPrintZone.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,14 +12,10 @@ namespace LibreriaPrintZone
 {
     public partial class frmLayouts : Form
     {
-        // ==========================================
-        // DATOS DEL USUARIO
-        // ==========================================
 
         private string RolUsuario;
         private string NombreUsuario;
 
-        // AGREGADO: nombre de usuario de la cuenta
         private string NombreUsuarioCuenta;
 
         private readonly int _idUsuarioActual;
@@ -28,9 +25,7 @@ namespace LibreriaPrintZone
 
 
 
-        // ==========================================
-        // VARIABLES DEL SIDEBAR
-        // ==========================================
+
 
         private bool sidebarExpandido = false;
 
@@ -39,16 +34,13 @@ namespace LibreriaPrintZone
 
         private Form formularioActivo = null;
 
-        // Guardar posición original de Salidas
+
         private int posicionOriginalSalidas;
 
-        // Guardar posición original del icono de Salidas
         private int posicionOriginalIconoSalidas;
 
 
-        // ==========================================
-        // VARIABLES DEL MENÚ DESPLEGABLE
-        // ==========================================
+
 
         private int alturaMenu = 0;
 
@@ -57,9 +49,7 @@ namespace LibreriaPrintZone
         private bool abrirMenu = false;
 
 
-        // ==========================================
-        // CONSTRUCTOR
-        // ==========================================
+
 
         public frmLayouts(
             int idUsuario,
@@ -72,22 +62,18 @@ namespace LibreriaPrintZone
             _idUsuarioActual = idUsuario;
             _nombreUsuarioActual = nombreCompleto;
 
-            // Guardar información del usuario
+
             RolUsuario = rol;
             NombreUsuario = nombreCompleto;
 
-            // AGREGADO:
-            // Guardar el nombre de usuario de la cuenta
+
             NombreUsuarioCuenta = nombreUsuario;
 
-            // AGREGADO:
-            // Mostrar el nombre de usuario en el botón
+
             btnRolUsuario.Text = NombreUsuarioCuenta;
 
 
-            // ======================================
-            // CONFIGURAR SIDEBAR
-            // ======================================
+
 
             panelSidebar.Width = anchoContraido;
 
@@ -96,17 +82,12 @@ namespace LibreriaPrintZone
             AjustarLogo();
 
 
-            // ======================================
-            // GUARDAR POSICIONES ORIGINALES
-            // ======================================
 
             posicionOriginalSalidas = btnSalidas.Top;
             posicionOriginalIconoSalidas = pbIconoSalidas.Top;
 
 
-            // ==========================================
-            // CONFIGURAR MENÚ
-            // ==========================================
+
 
             alturaMenu = 0;
 
@@ -114,16 +95,12 @@ namespace LibreriaPrintZone
             panelMenu.Visible = false;
 
 
-            // ======================================
-            // CONFIGURAR PERMISOS
-            // ======================================
+
 
             ConfigurarPermisos();
 
 
-            // ======================================
-            // FORMULARIO INICIAL
-            // ======================================
+
 
             AbrirFormulario(
                 new frmPanelPrincipal(
@@ -160,9 +137,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // CONFIGURAR PERMISOS SEGÚN ROL
-        // ==========================================
 
         private void ConfigurarPermisos()
         {
@@ -177,9 +151,6 @@ namespace LibreriaPrintZone
             );
 
 
-            // ======================================
-            // ADMINISTRADOR
-            // ======================================
 
             if (esAdmin)
             {
@@ -193,7 +164,7 @@ namespace LibreriaPrintZone
                 btnConfiguracion.Visible = true;
 
 
-                // Mostrar iconos
+
                 pbIconoInicio.Visible = true;
                 pbIconoProductos.Visible = true;
                 pbIconoCategorias.Visible = true;
@@ -204,36 +175,29 @@ namespace LibreriaPrintZone
                 pbIconoConfiguracion.Visible = true;
 
 
-                // Restaurar posición original de Salidas
+
                 btnSalidas.Top = posicionOriginalSalidas;
                 pbIconoSalidas.Top = posicionOriginalIconoSalidas;
             }
 
 
-            // ======================================
-            // VENDEDOR
-            // ======================================
 
             if (esVendedor)
             {
-                // ----------------------------------
-                // OPCIONES PERMITIDAS
-                // ----------------------------------
+
 
                 btnInicio.Visible = true;
                 btnProductos.Visible = true;
                 btnSalidas.Visible = true;
 
 
-                // Mostrar iconos permitidos
+
                 pbIconoInicio.Visible = true;
                 pbIconoProductos.Visible = true;
                 pbIconoSalidas.Visible = true;
 
 
-                // ----------------------------------
-                // OPCIONES NO PERMITIDAS
-                // ----------------------------------
+
 
                 btnCategorias.Visible = false;
                 btnProveedores.Visible = false;
@@ -242,7 +206,7 @@ namespace LibreriaPrintZone
                 btnConfiguracion.Visible = false;
 
 
-                // Ocultar iconos no permitidos
+
                 pbIconoCategorias.Visible = false;
                 pbIconoProveedores.Visible = false;
                 pbIconoEntradas.Visible = false;
@@ -250,9 +214,7 @@ namespace LibreriaPrintZone
                 pbIconoConfiguracion.Visible = false;
 
 
-                // ----------------------------------
-                // MOVER SALIDAS HACIA ARRIBA
-                // ----------------------------------
+
 
                 btnSalidas.Top = btnCategorias.Top;
 
@@ -261,9 +223,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // CONFIGURAR MOUSE DEL SIDEBAR
-        // ==========================================
+
 
         private void ConfigurarEventosSidebar(Control control)
         {
@@ -277,9 +237,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // MOUSE ENTRA AL SIDEBAR
-        // ==========================================
 
         private void ControlSidebar_MouseEnter(
             object sender,
@@ -289,9 +246,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // MOUSE SALE DEL SIDEBAR
-        // ==========================================
 
         private void ControlSidebar_MouseLeave(
             object sender,
@@ -301,9 +255,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // VERIFICAR MOUSE
-        // ==========================================
+
 
         private void VerificarMouseSidebar()
         {
@@ -317,9 +269,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // EXPANDIR SIDEBAR
-        // ==========================================
+
 
         private void ExpandirSidebar()
         {
@@ -332,9 +282,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // CONTRAER SIDEBAR
-        // ==========================================
+
 
         private void ContraerSidebar()
         {
@@ -347,9 +295,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // TIMER SIDEBAR
-        // ==========================================
+
 
         private void timerSidebar_Tick(
             object sender,
@@ -396,9 +342,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // AJUSTAR LOGO
-        // ==========================================
 
         private void AjustarLogo()
         {
@@ -426,9 +369,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // ABRIR FORMULARIO
-        // ==========================================
+
 
         public void AbrirFormulario(Form formulario)
         {
@@ -459,9 +400,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN INICIO
-        // ==========================================
+
 
         private void btnInicio_Click(
             object sender,
@@ -476,9 +415,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN PRODUCTOS
-        // ==========================================
+
 
         private void btnProductos_Click(
             object sender,
@@ -490,9 +427,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN CATEGORÍAS
-        // ==========================================
+
 
         private void btnCategorias_Click(
             object sender,
@@ -504,9 +439,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN PROVEEDORES
-        // ==========================================
+
 
         private void btnProveedores_Click(
             object sender,
@@ -518,9 +451,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN ENTRADAS
-        // ==========================================
+
 
         private void btnEntradas_Click(
             object sender,
@@ -532,9 +463,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN SALIDAS
-        // ==========================================
+
 
         private void btnSalidas_Click(
             object sender,
@@ -546,9 +475,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN USUARIOS
-        // ==========================================
+
 
         private void btnUsuarios_Click(
             object sender,
@@ -560,23 +487,24 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // BOTÓN CONFIGURACIÓN
-        // ==========================================
+
 
         private void btnConfiguracion_Click(
             object sender,
             EventArgs e)
         {
             AbrirFormulario(
-                new frmConfiguracion()
+                new frmConfiguracion(
+                    _idUsuarioActual,
+                    _nombreUsuarioActual,
+                    NombreUsuarioCuenta,
+                    RolUsuario
+                )
             );
         }
 
 
-        // ==========================================
-        // BOTÓN ROL USUARIO
-        // ==========================================
+
 
         private void btnRolUsuario_Click(
             object sender,
@@ -605,9 +533,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // TIMER MENÚ
-        // ==========================================
+
 
         private void timerMenu_Tick(
             object sender,
@@ -646,9 +572,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // CERRAR SESIÓN
-        // ==========================================
+
 
         private void btnCerrarSesion_Click(
             object sender,
@@ -680,9 +604,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // SALIR
-        // ==========================================
+
 
         private void btnSalir_Click(
             object sender,

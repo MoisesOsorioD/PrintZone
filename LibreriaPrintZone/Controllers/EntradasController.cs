@@ -16,9 +16,6 @@ namespace LibreriaPrintZone.Controllers
             _context = new InventarioPrintzoneContext();
         }
 
-        // =========================================================
-        // LISTAR ENTRADAS
-        // =========================================================
 
         public List<EntradaListado> ObtenerEntradas()
         {
@@ -30,9 +27,7 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // OBTENER ENTRADA POR ID
-        // =========================================================
+
 
         public EntradaListado? ObtenerEntradaPorId(
             int idEntrada)
@@ -49,9 +44,7 @@ namespace LibreriaPrintZone.Controllers
             return resultado.FirstOrDefault();
         }
 
-        // =========================================================
-        // REGISTRAR ENTRADA
-        // =========================================================
+
 
         public void RegistrarEntrada(
             int cantidad,
@@ -118,9 +111,6 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-        // =========================================================
-        // OBTENER PROVEEDORES
-        // =========================================================
 
         public List<Proveedore> ObtenerProveedores()
         {
@@ -132,13 +122,7 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // OBTENER PRODUCTOS
-        // =========================================================
-        // IMPORTANTE:
-        // ProductoListado YA EXISTE EN ProductosController.cs.
-        // NO se vuelve a declarar aquí.
-        // =========================================================
+
 
         public List<ProductoListado> ObtenerProductos()
         {
@@ -150,9 +134,6 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // BUSCAR ENTRADAS
-        // =========================================================
 
         public List<EntradaListado> BuscarEntradas(
             string busqueda)
@@ -183,18 +164,14 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // TOTAL DE ENTRADAS
-        // =========================================================
+
 
         public int ObtenerTotalEntradas()
         {
             return ObtenerEntradas().Count;
         }
 
-        // =========================================================
-        // TOTAL DE UNIDADES INGRESADAS
-        // =========================================================
+
 
         public int ObtenerTotalUnidades()
         {
@@ -202,9 +179,7 @@ namespace LibreriaPrintZone.Controllers
                 .Sum(e => e.cantidad);
         }
 
-        // =========================================================
-        // TOTAL DE INVERSIÓN
-        // =========================================================
+
 
         public decimal ObtenerInversionInventario()
         {
@@ -213,9 +188,7 @@ namespace LibreriaPrintZone.Controllers
         }
     }
 
-    // =============================================================
-    // MODELO PARA MOSTRAR LAS ENTRADAS
-    // =============================================================
+
 
     public class EntradaListado
     {

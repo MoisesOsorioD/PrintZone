@@ -22,9 +22,7 @@ namespace LibreriaPrintZone.Views
             CargarInformacion();
         }
 
-        // =========================================================
-        // CONFIGURAR PANEL
-        // =========================================================
+
 
         private void ConfigurarPanel()
         {
@@ -82,9 +80,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // CARGAR INFORMACIÓN
-        // =========================================================
+
 
         private void CargarInformacion()
         {
@@ -113,16 +109,12 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // DASHBOARD ADMINISTRADOR
-        // =========================================================
+
 
         private void CargarDashboardAdministrador(
             InventarioPrintzoneContext context)
         {
-            // =====================================================
-            // TARJETAS
-            // =====================================================
+
 
             var resultado = context.Database
                 .SqlQueryRaw<DashboardAdminResultado>(
@@ -149,23 +141,17 @@ namespace LibreriaPrintZone.Views
                 lblEntradasHoy.Text = "0";
             }
 
-            // =====================================================
-            // DATAGRID DEL ADMINISTRADOR
-            // =====================================================
+
 
             CargarMovimientosAdministrador(context);
         }
 
-        // =========================================================
-        // MOVIMIENTOS DEL ADMINISTRADOR
-        // =========================================================
+
 
         private void CargarMovimientosAdministrador(
             InventarioPrintzoneContext context)
         {
-            // =====================================================
-            // ENTRADAS
-            // =====================================================
+
 
             var entradas = context.Entradas
                 .AsNoTracking()
@@ -180,9 +166,7 @@ namespace LibreriaPrintZone.Views
                 })
                 .ToList();
 
-            // =====================================================
-            // SALIDAS
-            // =====================================================
+
 
             var salidas = context.Salidas
                 .AsNoTracking()
@@ -196,9 +180,7 @@ namespace LibreriaPrintZone.Views
                 })
                 .ToList();
 
-            // =====================================================
-            // UNIR ENTRADAS Y SALIDAS
-            // =====================================================
+
 
             var movimientos = entradas
                 .Concat(salidas)
@@ -206,15 +188,11 @@ namespace LibreriaPrintZone.Views
                 .Take(10)
                 .ToList();
 
-            // =====================================================
-            // LIMPIAR DATAGRID
-            // =====================================================
+
 
             dgvMovimientos.Rows.Clear();
 
-            // =====================================================
-            // CARGAR DATOS
-            // =====================================================
+
 
             foreach (var movimiento in movimientos)
             {
@@ -229,16 +207,12 @@ namespace LibreriaPrintZone.Views
             dgvMovimientos.ClearSelection();
         }
 
-        // =========================================================
-        // DASHBOARD VENDEDOR
-        // =========================================================
+
 
         private void CargarDashboardVendedor(
             InventarioPrintzoneContext context)
         {
-            // =====================================================
-            // TARJETAS
-            // =====================================================
+
 
             var resultado = context.Database
                 .SqlQueryRaw<DashboardVendedorResultado>(
@@ -271,16 +245,12 @@ namespace LibreriaPrintZone.Views
                 lblEntradasHoy.Text = "-";
             }
 
-            // =====================================================
-            // DATAGRID DEL VENDEDOR
-            // =====================================================
+
 
             CargarMovimientosVendedor(context);
         }
 
-        // =========================================================
-        // MOVIMIENTOS DEL VENDEDOR
-        // =========================================================
+
 
         private void CargarMovimientosVendedor(
             InventarioPrintzoneContext context)
@@ -307,9 +277,7 @@ namespace LibreriaPrintZone.Views
             dgvMovimientos.ClearSelection();
         }
 
-        // =========================================================
-        // RESULTADO DEL PROCEDIMIENTO DEL ADMINISTRADOR
-        // =========================================================
+
 
         public class DashboardAdminResultado
         {
@@ -320,9 +288,7 @@ namespace LibreriaPrintZone.Views
             public int entradas_hoy { get; set; }
         }
 
-        // =========================================================
-        // RESULTADO DEL PROCEDIMIENTO DEL VENDEDOR
-        // =========================================================
+
 
         public class DashboardVendedorResultado
         {
@@ -333,9 +299,7 @@ namespace LibreriaPrintZone.Views
             public string? categoria_mas_salidas { get; set; }
         }
 
-        // =========================================================
-        // MODELO PARA LOS MOVIMIENTOS
-        // =========================================================
+
 
         private class MovimientoViewModel
         {

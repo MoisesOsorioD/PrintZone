@@ -27,9 +27,6 @@ namespace LibreriaPrintZone.Views
                 new ProductosController();
 
 
-            // =====================================================
-            // CONFIGURAR PAGINACIÓN
-            // =====================================================
 
             _paginacion =
                 new PaginacionComponent(
@@ -53,9 +50,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CONFIGURAR DATAGRIDVIEW
-        // =========================================================
+
 
         private void ConfigurarDataGridView()
         {
@@ -87,9 +82,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR PRODUCTOS INACTIVOS
-        // =========================================================
+
 
         private void CargarProductosInactivos()
         {
@@ -122,9 +115,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // MOSTRAR PRODUCTOS
-        // =========================================================
 
         private void MostrarProductos(
             List<ProductoListado> productos)
@@ -164,9 +154,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // BUSCAR PRODUCTOS INACTIVOS
-        // =========================================================
+
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -176,9 +164,7 @@ namespace LibreriaPrintZone.Views
                 txtBuscar.Text.Trim();
 
 
-            // =====================================================
-            // SIN TEXTO DE BÚSQUEDA
-            // =====================================================
+
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -196,9 +182,7 @@ namespace LibreriaPrintZone.Views
             }
 
 
-            // =====================================================
-            // FILTRAR PRODUCTOS
-            // =====================================================
+
 
             List<ProductoListado> resultados =
                 _productosInactivos
@@ -222,9 +206,6 @@ namespace LibreriaPrintZone.Views
                     .ToList();
 
 
-            // =====================================================
-            // PAGINAR RESULTADOS
-            // =====================================================
 
             _paginacion.Configurar(
                 resultados,
@@ -233,9 +214,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // SELECCIONAR PRODUCTO
-        // =========================================================
 
         private void dgvProductosInactivos_CellClick(
             object? sender,
@@ -262,9 +240,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // REACTIVAR PRODUCTO
-        // =========================================================
 
         private void btnReactivar_Click(
             object? sender,

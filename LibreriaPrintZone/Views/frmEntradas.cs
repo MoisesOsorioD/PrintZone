@@ -25,9 +25,6 @@ namespace LibreriaPrintZone.Views
                 new EntradasController();
 
 
-            // =====================================================
-            // CONFIGURAR PAGINACIÓN
-            // =====================================================
 
             _paginacion =
                 new PaginacionComponent(
@@ -52,9 +49,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CONFIGURAR DATAGRIDVIEW
-        // =========================================================
 
         private void ConfigurarDataGridView()
         {
@@ -75,9 +69,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR PROVEEDORES
-        // =========================================================
 
         private void CargarProveedores()
         {
@@ -117,9 +108,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR PRODUCTOS
-        // =========================================================
 
         private void CargarProductos()
         {
@@ -159,9 +147,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR ENTRADAS
-        // =========================================================
 
         private void CargarEntradas()
         {
@@ -189,9 +174,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // MOSTRAR ENTRADAS
-        // =========================================================
 
         private void MostrarEntradas(
             List<EntradaListado> entradas)
@@ -225,9 +207,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // ACTUALIZAR TARJETAS
-        // =========================================================
 
         private void ActualizarTarjetas()
         {
@@ -269,9 +248,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // REGISTRAR ENTRADA
-        // =========================================================
 
         private void btnRegistrarEntrada_Click(
             object? sender,
@@ -464,9 +440,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // LIMPIAR FORMULARIO
-        // =========================================================
 
         private void btnLimpiar_Click(
             object? sender,
@@ -494,9 +467,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // BUSCAR ENTRADAS
-        // =========================================================
 
         private void txtBuscar_TextChanged(
             object? sender,

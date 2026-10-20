@@ -31,9 +31,6 @@ namespace LibreriaPrintZone
                 new ProductosController();
 
 
-            // =====================================================
-            // CONFIGURAR PAGINACIÓN
-            // =====================================================
 
             _paginacion =
                 new PaginacionComponent(
@@ -56,9 +53,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // ==========================================
-        // CONFIGURAR PERMISOS SEGÚN ROL
-        // ==========================================
+
 
         private void ConfigurarPermisos()
         {
@@ -73,9 +68,7 @@ namespace LibreriaPrintZone
                 return;
 
 
-            // ==========================================
-            // VENDEDOR: SOLO CONSULTA
-            // ==========================================
+
 
             btnNuevoProductos.Visible =
                 false;
@@ -90,9 +83,7 @@ namespace LibreriaPrintZone
                 false;
 
 
-            // ==========================================
-            // MOSTRAR SOLAMENTE LIMPIAR
-            // ==========================================
+
 
             btnLimpiar.Visible =
                 true;
@@ -102,9 +93,7 @@ namespace LibreriaPrintZone
                 btnNuevoProductos.Location;
 
 
-            // ==========================================
-            // CAMPOS SOLO PARA CONSULTA
-            // ==========================================
+
 
             txtProducto.ReadOnly =
                 true;
@@ -311,9 +300,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // CARGAR CATEGORÍAS
-        // =========================================================
+
 
         private void CargarCategorias()
         {
@@ -352,9 +339,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // CARGAR PRODUCTOS
-        // =========================================================
+
 
         private void CargarProductos()
         {
@@ -365,9 +350,7 @@ namespace LibreriaPrintZone
                         .ObtenerProductos();
 
 
-                // =================================================
-                // LA PAGINACIÓN CONTROLA QUÉ PRODUCTOS SE MUESTRAN
-                // =================================================
+
 
                 _paginacion.Configurar(
                     productos,
@@ -387,9 +370,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // MOSTRAR PRODUCTOS DE LA PÁGINA ACTUAL
-        // =========================================================
+
 
         private void MostrarProductos(
             List<ProductoListado> productos)
@@ -402,9 +383,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // BUSCAR PRODUCTOS
-        // =========================================================
+
 
         private void BuscarProductos()
         {
@@ -437,9 +416,7 @@ namespace LibreriaPrintZone
                 }
 
 
-                // =================================================
-                // PAGINAR RESULTADOS
-                // =================================================
+
 
                 _paginacion.Configurar(
                     productos,
@@ -459,9 +436,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // SELECCIONAR PRODUCTO
-        // =========================================================
 
         private void dgvProductos_CellClick(
             object? sender,
@@ -530,9 +504,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // GUARDAR / ACTUALIZAR
-        // =========================================================
+
 
         private void btnGuardar_Click(
             object? sender,
@@ -635,9 +607,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // DESACTIVAR PRODUCTO
-        // =========================================================
 
         private void btnEliminar_Click(
             object? sender,
@@ -721,9 +690,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // LIMPIAR
-        // =========================================================
+
 
         private void btnLimpiar_Click(
             object? sender,
@@ -768,9 +735,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // NUEVO PRODUCTO
-        // =========================================================
+
 
         private void btnNuevoProducto_Click(
             object? sender,
@@ -799,9 +764,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // BUSCAR
-        // =========================================================
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -811,9 +773,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // VALIDAR DATOS
-        // =========================================================
+
 
         private bool ValidarDatos()
         {
@@ -970,9 +930,6 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // OBTENER DECIMAL
-        // =========================================================
 
         private decimal ObtenerDecimal(
             string texto)
@@ -1001,9 +958,7 @@ namespace LibreriaPrintZone
         }
 
 
-        // =========================================================
-        // OBTENER DECIMAL SEGURO
-        // =========================================================
+
 
         private bool ObtenerDecimalSeguro(
             string texto,
@@ -1024,10 +979,6 @@ namespace LibreriaPrintZone
             );
         }
 
-
-        // =========================================================
-        // PRODUCTOS INACTIVOS
-        // =========================================================
 
         private void btnProductosInactivos_Click(
             object sender,

@@ -32,9 +32,6 @@ namespace LibreriaPrintZone.Views
                 new ProveedoresController();
 
 
-            // =====================================================
-            // CONFIGURAR PAGINACIÓN
-            // =====================================================
 
             _paginacion =
                 new PaginacionComponent(
@@ -43,9 +40,6 @@ namespace LibreriaPrintZone.Views
                 );
 
 
-            // =====================================================
-            // ESTADO INICIAL DEL BOTÓN
-            // =====================================================
 
             btnGuardar.Text =
                 "Guardar";
@@ -66,9 +60,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CONFIGURAR DATAGRIDVIEW
-        // =========================================================
 
         private void ConfigurarDataGridView()
         {
@@ -100,9 +91,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR PROVEEDORES
-        // =========================================================
 
         private void CargarProveedores()
         {
@@ -141,10 +129,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // MOSTRAR PROVEEDORES
-        // =========================================================
-
         private void MostrarProveedores(
             List<Proveedore> proveedores)
         {
@@ -178,9 +162,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // SELECCIONAR PROVEEDOR
-        // =========================================================
+
 
         private void dgvProveedores_CellClick(
             object? sender,
@@ -206,9 +188,7 @@ namespace LibreriaPrintZone.Views
                 );
 
 
-            // =====================================================
-            // CAMBIAR BOTÓN A ACTUALIZAR
-            // =====================================================
+
 
             btnGuardar.Text =
                 "Actualizar";
@@ -256,9 +236,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // BUSCAR PROVEEDORES
-        // =========================================================
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -267,10 +244,6 @@ namespace LibreriaPrintZone.Views
             string texto =
                 txtBuscar.Text.Trim();
 
-
-            // =====================================================
-            // SIN BÚSQUEDA
-            // =====================================================
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -296,9 +269,7 @@ namespace LibreriaPrintZone.Views
                     );
 
 
-                // =================================================
-                // PAGINAR RESULTADOS DE BÚSQUEDA
-                // =================================================
+
 
                 _paginacion.Configurar(
                     resultados,
@@ -318,9 +289,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // GUARDAR / ACTUALIZAR
-        // =========================================================
 
         private void btnGuardar_Click(
             object? sender,
@@ -350,9 +318,7 @@ namespace LibreriaPrintZone.Views
                 txtTelefonoAgente.Text.Trim();
 
 
-            // =====================================================
-            // VALIDAR EMPRESA
-            // =====================================================
+
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -374,9 +340,7 @@ namespace LibreriaPrintZone.Views
             }
 
 
-            // =====================================================
-            // VALIDAR MONTO MÍNIMO
-            // =====================================================
+
 
             if (
                 !decimal.TryParse(
@@ -417,9 +381,7 @@ namespace LibreriaPrintZone.Views
             }
 
 
-            // =====================================================
-            // GUARDAR
-            // =====================================================
+
 
             try
             {
@@ -468,9 +430,6 @@ namespace LibreriaPrintZone.Views
                 }
 
 
-                // =================================================
-                // LIMPIAR Y RECARGAR
-                // =================================================
 
                 LimpiarFormulario();
 
@@ -489,9 +448,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // BOTÓN LIMPIAR
-        // =========================================================
+
 
         private void btnLimpiar_Click(
             object? sender,
@@ -501,9 +458,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // LIMPIAR FORMULARIO
-        // =========================================================
 
         private void LimpiarFormulario()
         {
@@ -539,9 +493,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // ELIMINAR PROVEEDOR
-        // =========================================================
+
 
         private void btnEliminar_Click(
             object? sender,
@@ -629,23 +581,17 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // ACTUALIZAR TARJETAS
-        // =========================================================
+
 
         private void ActualizarTarjetas()
         {
-            // =====================================================
-            // TOTAL DE PROVEEDORES
-            // =====================================================
+
 
             lblTotalProveedores.Text =
                 _proveedores.Count.ToString();
 
 
-            // =====================================================
-            // PROVEEDOR REGISTRADO RECIENTEMENTE
-            // =====================================================
+
 
             Proveedore? proveedorReciente =
                 _proveedores
@@ -675,9 +621,6 @@ namespace LibreriaPrintZone.Views
             }
 
 
-            // =====================================================
-            // PROVEEDOR CON MÁS UNIDADES INGRESADAS
-            // =====================================================
 
             try
             {

@@ -29,50 +29,57 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConfiguracion));
-            label2 = new Label();
-            label1 = new Label();
             pictureBox10 = new PictureBox();
+            label1 = new Label();
+            label2 = new Label();
+            btnRespaldoManual = new Button();
+            btnRespaldoAutomatico = new Button();
             panel5 = new Panel();
+            cmbTipoRespaldo = new ComboBox();
+            pictureBox7 = new PictureBox();
+            label14 = new Label();
             pictureBox2 = new PictureBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            btnCambiarUbicacion = new Button();
+            txtUbicacionRespaldo = new TextBox();
             label6 = new Label();
-            label11 = new Label();
+            lblNombreBaseDatos = new Label();
             pictureBox9 = new PictureBox();
             label5 = new Label();
-            button2 = new Button();
+            btnCrearRespaldo = new Button();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            panel1 = new Panel();
+            panel3 = new Panel();
             panel6 = new Panel();
             pictureBox4 = new PictureBox();
             label8 = new Label();
             pictureBox3 = new PictureBox();
-            button3 = new Button();
-            textBox2 = new TextBox();
+            btnSeleccionarRespaldo = new Button();
+            txtArchivoRespaldo = new TextBox();
             label7 = new Label();
-            button4 = new Button();
+            btnRestaurarRespaldo = new Button();
             label10 = new Label();
             pictureBox5 = new PictureBox();
             label12 = new Label();
             panel2 = new Panel();
             pictureBox14 = new PictureBox();
-            label22 = new Label();
-            label13 = new Label();
+            lblEstadoUltimoRespaldo = new Label();
+            lblNombreUltimoRespaldo = new Label();
             pictureBox12 = new PictureBox();
             label17 = new Label();
-            label15 = new Label();
+            lblFechaHoraUltimoRespaldo = new Label();
             pictureBox6 = new PictureBox();
             label16 = new Label();
             pictureBox8 = new PictureBox();
             label19 = new Label();
+            pnlRespaldoManual = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            panel3.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -82,27 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            pnlRespaldoManual.SuspendLayout();
             SuspendLayout();
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(235, 68);
-            label2.Name = "label2";
-            label2.Size = new Size(453, 23);
-            label2.TabIndex = 13;
-            label2.Text = "Administración y resguardo de la información del sistema.\r\n";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(204, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(248, 46);
-            label1.TabIndex = 12;
-            label1.Text = "Configuración";
             // 
             // pictureBox10
             // 
@@ -114,25 +102,110 @@
             pictureBox10.TabIndex = 14;
             pictureBox10.TabStop = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(204, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(248, 46);
+            label1.TabIndex = 12;
+            label1.Text = "Configuración";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(235, 68);
+            label2.Name = "label2";
+            label2.Size = new Size(453, 23);
+            label2.TabIndex = 13;
+            label2.Text = "Administración y resguardo de la información del sistema.\r\n";
+            // 
+            // btnRespaldoManual
+            // 
+            btnRespaldoManual.BackColor = Color.FromArgb(2, 113, 249);
+            btnRespaldoManual.FlatAppearance.BorderSize = 0;
+            btnRespaldoManual.FlatStyle = FlatStyle.Flat;
+            btnRespaldoManual.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRespaldoManual.ForeColor = Color.White;
+            btnRespaldoManual.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRespaldoManual.Location = new Point(119, 131);
+            btnRespaldoManual.Name = "btnRespaldoManual";
+            btnRespaldoManual.Size = new Size(706, 37);
+            btnRespaldoManual.TabIndex = 84;
+            btnRespaldoManual.Text = "Respaldo Manual";
+            btnRespaldoManual.UseVisualStyleBackColor = false;
+            btnRespaldoManual.Click += btnRespaldoManual_Click;
+            // 
+            // btnRespaldoAutomatico
+            // 
+            btnRespaldoAutomatico.BackColor = Color.FromArgb(2, 113, 249);
+            btnRespaldoAutomatico.FlatAppearance.BorderSize = 0;
+            btnRespaldoAutomatico.FlatStyle = FlatStyle.Flat;
+            btnRespaldoAutomatico.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRespaldoAutomatico.ForeColor = Color.White;
+            btnRespaldoAutomatico.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRespaldoAutomatico.Location = new Point(856, 131);
+            btnRespaldoAutomatico.Name = "btnRespaldoAutomatico";
+            btnRespaldoAutomatico.Size = new Size(706, 37);
+            btnRespaldoAutomatico.TabIndex = 85;
+            btnRespaldoAutomatico.Text = "Respaldo Automático";
+            btnRespaldoAutomatico.UseVisualStyleBackColor = false;
+            btnRespaldoAutomatico.Click += btnRespaldoAutomatico_Click;
+            // 
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(247, 251, 255);
             panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(cmbTipoRespaldo);
+            panel5.Controls.Add(pictureBox7);
+            panel5.Controls.Add(label14);
             panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(button1);
-            panel5.Controls.Add(textBox1);
+            panel5.Controls.Add(btnCambiarUbicacion);
+            panel5.Controls.Add(txtUbicacionRespaldo);
             panel5.Controls.Add(label6);
-            panel5.Controls.Add(label11);
+            panel5.Controls.Add(lblNombreBaseDatos);
             panel5.Controls.Add(pictureBox9);
             panel5.Controls.Add(label5);
-            panel5.Controls.Add(button2);
+            panel5.Controls.Add(btnCrearRespaldo);
             panel5.Controls.Add(label4);
             panel5.Controls.Add(pictureBox1);
             panel5.Controls.Add(label3);
-            panel5.Location = new Point(119, 133);
+            panel5.Location = new Point(0, 27);
             panel5.Name = "panel5";
             panel5.Size = new Size(706, 434);
-            panel5.TabIndex = 15;
+            panel5.TabIndex = 84;
+            // 
+            // cmbTipoRespaldo
+            // 
+            cmbTipoRespaldo.FormattingEnabled = true;
+            cmbTipoRespaldo.Items.AddRange(new object[] { "FULL", "INCREMENTAL" });
+            cmbTipoRespaldo.Location = new Point(95, 147);
+            cmbTipoRespaldo.Name = "cmbTipoRespaldo";
+            cmbTipoRespaldo.Size = new Size(210, 28);
+            cmbTipoRespaldo.TabIndex = 52;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(29, 118);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(60, 60);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 51;
+            pictureBox7.TabStop = false;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = SystemColors.ControlText;
+            label14.Location = new Point(91, 124);
+            label14.Name = "label14";
+            label14.Size = new Size(145, 23);
+            label14.TabIndex = 50;
+            label14.Text = "Tipo de respaldo";
             // 
             // pictureBox2
             // 
@@ -144,28 +217,29 @@
             pictureBox2.TabIndex = 49;
             pictureBox2.TabStop = false;
             // 
-            // button1
+            // btnCambiarUbicacion
             // 
-            button1.BackColor = Color.FromArgb(2, 113, 249);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(523, 261);
-            button1.Name = "button1";
-            button1.Size = new Size(153, 37);
-            button1.TabIndex = 48;
-            button1.Text = "Cambiar";
-            button1.UseVisualStyleBackColor = false;
+            btnCambiarUbicacion.BackColor = Color.FromArgb(2, 113, 249);
+            btnCambiarUbicacion.FlatAppearance.BorderSize = 0;
+            btnCambiarUbicacion.FlatStyle = FlatStyle.Flat;
+            btnCambiarUbicacion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCambiarUbicacion.ForeColor = Color.White;
+            btnCambiarUbicacion.Image = (Image)resources.GetObject("btnCambiarUbicacion.Image");
+            btnCambiarUbicacion.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCambiarUbicacion.Location = new Point(523, 261);
+            btnCambiarUbicacion.Name = "btnCambiarUbicacion";
+            btnCambiarUbicacion.Size = new Size(153, 37);
+            btnCambiarUbicacion.TabIndex = 48;
+            btnCambiarUbicacion.Text = "Cambiar";
+            btnCambiarUbicacion.UseVisualStyleBackColor = false;
+            btnCambiarUbicacion.Click += btnCambiarUbicacion_Click;
             // 
-            // textBox1
+            // txtUbicacionRespaldo
             // 
-            textBox1.Location = new Point(93, 271);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(424, 27);
-            textBox1.TabIndex = 47;
+            txtUbicacionRespaldo.Location = new Point(93, 271);
+            txtUbicacionRespaldo.Name = "txtUbicacionRespaldo";
+            txtUbicacionRespaldo.Size = new Size(424, 27);
+            txtUbicacionRespaldo.TabIndex = 47;
             // 
             // label6
             // 
@@ -178,20 +252,20 @@
             label6.TabIndex = 46;
             label6.Text = "Ubicación del respaldo";
             // 
-            // label11
+            // lblNombreBaseDatos
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(91, 150);
-            label11.Name = "label11";
-            label11.Size = new Size(166, 23);
-            label11.TabIndex = 45;
-            label11.Text = "inventario_printzone";
+            lblNombreBaseDatos.AutoSize = true;
+            lblNombreBaseDatos.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNombreBaseDatos.Location = new Point(454, 147);
+            lblNombreBaseDatos.Name = "lblNombreBaseDatos";
+            lblNombreBaseDatos.Size = new Size(22, 23);
+            lblNombreBaseDatos.TabIndex = 45;
+            lblNombreBaseDatos.Text = "...";
             // 
             // pictureBox9
             // 
             pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
-            pictureBox9.Location = new Point(29, 121);
+            pictureBox9.Location = new Point(392, 118);
             pictureBox9.Name = "pictureBox9";
             pictureBox9.Size = new Size(60, 60);
             pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
@@ -203,26 +277,27 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlText;
-            label5.Location = new Point(91, 127);
+            label5.Location = new Point(454, 124);
             label5.Name = "label5";
             label5.Size = new Size(120, 23);
             label5.TabIndex = 43;
             label5.Text = "Base de datos";
             // 
-            // button2
+            // btnCrearRespaldo
             // 
-            button2.BackColor = Color.FromArgb(2, 113, 249);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.ImageAlign = ContentAlignment.MiddleLeft;
-            button2.Location = new Point(29, 341);
-            button2.Name = "button2";
-            button2.Size = new Size(647, 37);
-            button2.TabIndex = 42;
-            button2.Text = "Crear Respaldo";
-            button2.UseVisualStyleBackColor = false;
+            btnCrearRespaldo.BackColor = Color.FromArgb(2, 113, 249);
+            btnCrearRespaldo.FlatAppearance.BorderSize = 0;
+            btnCrearRespaldo.FlatStyle = FlatStyle.Flat;
+            btnCrearRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCrearRespaldo.ForeColor = Color.White;
+            btnCrearRespaldo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCrearRespaldo.Location = new Point(29, 341);
+            btnCrearRespaldo.Name = "btnCrearRespaldo";
+            btnCrearRespaldo.Size = new Size(647, 37);
+            btnCrearRespaldo.TabIndex = 42;
+            btnCrearRespaldo.Text = "Crear Respaldo";
+            btnCrearRespaldo.UseVisualStyleBackColor = false;
+            btnCrearRespaldo.Click += btnCrearRespaldo_Click;
             // 
             // label4
             // 
@@ -250,27 +325,27 @@
             label3.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label3.Location = new Point(100, 12);
             label3.Name = "label3";
-            label3.Size = new Size(257, 25);
+            label3.Size = new Size(159, 25);
             label3.TabIndex = 6;
-            label3.Text = "Respaldo de la base de datos";
+            label3.Text = "Respaldo Manual";
             // 
-            // panel1
+            // panel3
             // 
-            panel1.BackColor = Color.FromArgb(247, 251, 255);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(panel6);
-            panel1.Controls.Add(pictureBox3);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(pictureBox5);
-            panel1.Controls.Add(label12);
-            panel1.Location = new Point(856, 133);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(706, 434);
-            panel1.TabIndex = 50;
+            panel3.BackColor = Color.FromArgb(247, 251, 255);
+            panel3.BorderStyle = BorderStyle.FixedSingle;
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(pictureBox3);
+            panel3.Controls.Add(btnSeleccionarRespaldo);
+            panel3.Controls.Add(txtArchivoRespaldo);
+            panel3.Controls.Add(label7);
+            panel3.Controls.Add(btnRestaurarRespaldo);
+            panel3.Controls.Add(label10);
+            panel3.Controls.Add(pictureBox5);
+            panel3.Controls.Add(label12);
+            panel3.Location = new Point(737, 27);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(706, 434);
+            panel3.TabIndex = 85;
             // 
             // panel6
             // 
@@ -313,29 +388,30 @@
             pictureBox3.TabIndex = 49;
             pictureBox3.TabStop = false;
             // 
-            // button3
+            // btnSeleccionarRespaldo
             // 
-            button3.BackColor = Color.FromArgb(2, 113, 249);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.ImageAlign = ContentAlignment.MiddleLeft;
-            button3.Location = new Point(523, 261);
-            button3.Name = "button3";
-            button3.Size = new Size(153, 37);
-            button3.TabIndex = 48;
-            button3.Text = "Seleccionar";
-            button3.TextAlign = ContentAlignment.MiddleRight;
-            button3.UseVisualStyleBackColor = false;
+            btnSeleccionarRespaldo.BackColor = Color.FromArgb(2, 113, 249);
+            btnSeleccionarRespaldo.FlatAppearance.BorderSize = 0;
+            btnSeleccionarRespaldo.FlatStyle = FlatStyle.Flat;
+            btnSeleccionarRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSeleccionarRespaldo.ForeColor = Color.White;
+            btnSeleccionarRespaldo.Image = (Image)resources.GetObject("btnSeleccionarRespaldo.Image");
+            btnSeleccionarRespaldo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSeleccionarRespaldo.Location = new Point(523, 261);
+            btnSeleccionarRespaldo.Name = "btnSeleccionarRespaldo";
+            btnSeleccionarRespaldo.Size = new Size(153, 37);
+            btnSeleccionarRespaldo.TabIndex = 48;
+            btnSeleccionarRespaldo.Text = "Seleccionar";
+            btnSeleccionarRespaldo.TextAlign = ContentAlignment.MiddleRight;
+            btnSeleccionarRespaldo.UseVisualStyleBackColor = false;
+            btnSeleccionarRespaldo.Click += btnSeleccionarRespaldo_Click;
             // 
-            // textBox2
+            // txtArchivoRespaldo
             // 
-            textBox2.Location = new Point(101, 271);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(416, 27);
-            textBox2.TabIndex = 47;
+            txtArchivoRespaldo.Location = new Point(101, 271);
+            txtArchivoRespaldo.Name = "txtArchivoRespaldo";
+            txtArchivoRespaldo.Size = new Size(416, 27);
+            txtArchivoRespaldo.TabIndex = 47;
             // 
             // label7
             // 
@@ -348,20 +424,21 @@
             label7.TabIndex = 46;
             label7.Text = "Archivo de respaldo";
             // 
-            // button4
+            // btnRestaurarRespaldo
             // 
-            button4.BackColor = Color.FromArgb(2, 113, 249);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.ForeColor = Color.White;
-            button4.ImageAlign = ContentAlignment.MiddleLeft;
-            button4.Location = new Point(29, 341);
-            button4.Name = "button4";
-            button4.Size = new Size(647, 37);
-            button4.TabIndex = 42;
-            button4.Text = "Restaurar respaldo";
-            button4.UseVisualStyleBackColor = false;
+            btnRestaurarRespaldo.BackColor = Color.FromArgb(2, 113, 249);
+            btnRestaurarRespaldo.FlatAppearance.BorderSize = 0;
+            btnRestaurarRespaldo.FlatStyle = FlatStyle.Flat;
+            btnRestaurarRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRestaurarRespaldo.ForeColor = Color.White;
+            btnRestaurarRespaldo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRestaurarRespaldo.Location = new Point(29, 341);
+            btnRestaurarRespaldo.Name = "btnRestaurarRespaldo";
+            btnRestaurarRespaldo.Size = new Size(647, 37);
+            btnRestaurarRespaldo.TabIndex = 42;
+            btnRestaurarRespaldo.Text = "Restaurar respaldo";
+            btnRestaurarRespaldo.UseVisualStyleBackColor = false;
+            btnRestaurarRespaldo.Click += btnRestaurarRespaldo_Click;
             // 
             // label10
             // 
@@ -389,28 +466,28 @@
             label12.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label12.Location = new Point(102, 12);
             label12.Name = "label12";
-            label12.Size = new Size(215, 25);
+            label12.Size = new Size(163, 25);
             label12.TabIndex = 6;
-            label12.Text = "Restaurar base de datos";
+            label12.Text = "Restaurar Manual";
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(220, 233, 247);
+            panel2.BackColor = Color.FromArgb(247, 251, 255);
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox14);
-            panel2.Controls.Add(label22);
-            panel2.Controls.Add(label13);
+            panel2.Controls.Add(lblEstadoUltimoRespaldo);
+            panel2.Controls.Add(lblNombreUltimoRespaldo);
             panel2.Controls.Add(pictureBox12);
             panel2.Controls.Add(label17);
-            panel2.Controls.Add(label15);
+            panel2.Controls.Add(lblFechaHoraUltimoRespaldo);
             panel2.Controls.Add(pictureBox6);
             panel2.Controls.Add(label16);
             panel2.Controls.Add(pictureBox8);
             panel2.Controls.Add(label19);
-            panel2.Location = new Point(119, 631);
+            panel2.Location = new Point(0, 484);
             panel2.Name = "panel2";
             panel2.Size = new Size(1443, 195);
-            panel2.TabIndex = 83;
+            panel2.TabIndex = 86;
             // 
             // pictureBox14
             // 
@@ -422,26 +499,26 @@
             pictureBox14.TabIndex = 22;
             pictureBox14.TabStop = false;
             // 
-            // label22
+            // lblEstadoUltimoRespaldo
             // 
-            label22.AutoSize = true;
-            label22.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label22.ForeColor = SystemColors.ControlText;
-            label22.Location = new Point(1063, 123);
-            label22.Name = "label22";
-            label22.Size = new Size(282, 23);
-            label22.TabIndex = 21;
-            label22.Text = "Respaldo realizado correctamente";
+            lblEstadoUltimoRespaldo.AutoSize = true;
+            lblEstadoUltimoRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblEstadoUltimoRespaldo.ForeColor = SystemColors.ControlText;
+            lblEstadoUltimoRespaldo.Location = new Point(1063, 123);
+            lblEstadoUltimoRespaldo.Name = "lblEstadoUltimoRespaldo";
+            lblEstadoUltimoRespaldo.Size = new Size(282, 23);
+            lblEstadoUltimoRespaldo.TabIndex = 21;
+            lblEstadoUltimoRespaldo.Text = "Respaldo realizado correctamente";
             // 
-            // label13
+            // lblNombreUltimoRespaldo
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label13.Location = new Point(560, 137);
-            label13.Name = "label13";
-            label13.Size = new Size(291, 23);
-            label13.TabIndex = 17;
-            label13.Text = "Inventario_Printzone_2026-09-17.bak";
+            lblNombreUltimoRespaldo.AutoSize = true;
+            lblNombreUltimoRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNombreUltimoRespaldo.Location = new Point(560, 137);
+            lblNombreUltimoRespaldo.Name = "lblNombreUltimoRespaldo";
+            lblNombreUltimoRespaldo.Size = new Size(291, 23);
+            lblNombreUltimoRespaldo.TabIndex = 17;
+            lblNombreUltimoRespaldo.Text = "Inventario_Printzone_2026-09-17.bak";
             // 
             // pictureBox12
             // 
@@ -464,15 +541,15 @@
             label17.TabIndex = 15;
             label17.Text = "Archivo";
             // 
-            // label15
+            // lblFechaHoraUltimoRespaldo
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label15.Location = new Point(161, 137);
-            label15.Name = "label15";
-            label15.Size = new Size(174, 23);
-            label15.TabIndex = 11;
-            label15.Text = "20/09/2026 10:34 a.m";
+            lblFechaHoraUltimoRespaldo.AutoSize = true;
+            lblFechaHoraUltimoRespaldo.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblFechaHoraUltimoRespaldo.Location = new Point(161, 137);
+            lblFechaHoraUltimoRespaldo.Name = "lblFechaHoraUltimoRespaldo";
+            lblFechaHoraUltimoRespaldo.Size = new Size(174, 23);
+            lblFechaHoraUltimoRespaldo.TabIndex = 11;
+            lblFechaHoraUltimoRespaldo.Text = "20/09/2026 10:34 a.m";
             // 
             // pictureBox6
             // 
@@ -516,15 +593,25 @@
             label19.TabIndex = 0;
             label19.Text = "Último respaldo";
             // 
+            // pnlRespaldoManual
+            // 
+            pnlRespaldoManual.Controls.Add(panel2);
+            pnlRespaldoManual.Controls.Add(panel3);
+            pnlRespaldoManual.Controls.Add(panel5);
+            pnlRespaldoManual.Location = new Point(119, 197);
+            pnlRespaldoManual.Name = "pnlRespaldoManual";
+            pnlRespaldoManual.Size = new Size(1443, 706);
+            pnlRespaldoManual.TabIndex = 86;
+            // 
             // frmConfiguracion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(panel5);
+            Controls.Add(pnlRespaldoManual);
+            Controls.Add(btnRespaldoAutomatico);
+            Controls.Add(btnRespaldoManual);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -534,11 +621,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -550,49 +638,56 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            pnlRespaldoManual.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label2;
-        private Label label1;
         private PictureBox pictureBox10;
+        private Label label1;
+        private Label label2;
+        private Button btnRespaldoManual;
+        private Button btnRespaldoAutomatico;
         private Panel panel5;
-        private PictureBox pictureBox1;
-        private Label label3;
-        private Label label4;
-        private Button button2;
-        private Label label11;
+        private ComboBox cmbTipoRespaldo;
+        private PictureBox pictureBox7;
+        private Label label14;
+        private PictureBox pictureBox2;
+        private Button btnCambiarUbicacion;
+        private TextBox txtUbicacionRespaldo;
+        private Label label6;
+        private Label lblNombreBaseDatos;
         private PictureBox pictureBox9;
         private Label label5;
-        private Label label6;
-        private TextBox textBox1;
-        private PictureBox pictureBox2;
-        private Button button1;
-        private Panel panel1;
-        private PictureBox pictureBox3;
-        private Button button3;
-        private TextBox textBox2;
-        private Label label7;
-        private Button button4;
-        private Label label10;
-        private PictureBox pictureBox5;
-        private Label label12;
+        private Button btnCrearRespaldo;
+        private Label label4;
+        private PictureBox pictureBox1;
+        private Label label3;
+        private Panel panel3;
         private Panel panel6;
         private PictureBox pictureBox4;
         private Label label8;
+        private PictureBox pictureBox3;
+        private Button btnSeleccionarRespaldo;
+        private TextBox txtArchivoRespaldo;
+        private Label label7;
+        private Button btnRestaurarRespaldo;
+        private Label label10;
+        private PictureBox pictureBox5;
+        private Label label12;
         private Panel panel2;
         private PictureBox pictureBox14;
-        private Label label22;
-        private Label label13;
+        private Label lblEstadoUltimoRespaldo;
+        private Label lblNombreUltimoRespaldo;
         private PictureBox pictureBox12;
         private Label label17;
-        private Label label15;
+        private Label lblFechaHoraUltimoRespaldo;
         private PictureBox pictureBox6;
         private Label label16;
         private PictureBox pictureBox8;
         private Label label19;
+        private Panel pnlRespaldoManual;
     }
 }

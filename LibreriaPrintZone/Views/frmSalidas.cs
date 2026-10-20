@@ -36,9 +36,6 @@ namespace LibreriaPrintZone.Views
                 new SalidasController();
 
 
-            // =====================================================
-            // CONFIGURAR PAGINACIÓN
-            // =====================================================
 
             _paginacion =
                 new PaginacionComponent(
@@ -72,9 +69,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // LOAD DEL FORMULARIO
-        // =========================================================
+
 
         private void frmSalidas_Load(
             object? sender,
@@ -84,9 +79,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CONFIGURAR FORMULARIO
-        // =========================================================
 
         private void ConfigurarFormulario()
         {
@@ -112,9 +104,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CONFIGURAR DATAGRIDVIEW
-        // =========================================================
+
 
         private void ConfigurarDataGridView()
         {
@@ -146,9 +136,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR USUARIO ACTUAL
-        // =========================================================
+
 
         private void CargarUsuarioActual()
         {
@@ -185,9 +173,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR PRODUCTOS
-        // =========================================================
+
 
         private void CargarProductos()
         {
@@ -241,9 +227,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // PRODUCTO SELECCIONADO
-        // =========================================================
+
 
         private void cmbProducto_SelectedIndexChanged(
             object? sender,
@@ -299,9 +283,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR STOCK DEL PRODUCTO
-        // =========================================================
+
 
         private void CargarStockProducto(
             int idProducto)
@@ -356,9 +338,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // ALERTA DE STOCK
-        // =========================================================
 
         private void ActualizarAlertaStock(
             int stockActual,
@@ -396,9 +375,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // CARGAR SALIDAS
-        // =========================================================
+
 
         private void CargarSalidas()
         {
@@ -426,9 +403,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // MOSTRAR SALIDAS
-        // =========================================================
 
         private void MostrarSalidas(
             List<SalidaListado> salidas)
@@ -462,9 +436,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // ACTUALIZAR TARJETAS
-        // =========================================================
+
 
         private void ActualizarTarjetas()
         {
@@ -530,9 +502,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // REGISTRAR SALIDA
-        // =========================================================
+
 
         private void btnRegistrarSalida_Click(
             object? sender,
@@ -749,9 +719,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // LIMPIAR
-        // =========================================================
+
 
         private void btnLimpiar_Click(
             object? sender,
@@ -761,9 +729,7 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // LIMPIAR FORMULARIO
-        // =========================================================
+
 
         private void LimpiarFormulario()
         {
@@ -801,9 +767,6 @@ namespace LibreriaPrintZone.Views
         }
 
 
-        // =========================================================
-        // BUSCAR SALIDAS
-        // =========================================================
 
         private void txtBuscar_TextChanged(
             object? sender,

@@ -16,9 +16,6 @@ namespace LibreriaPrintZone.Controllers
             _context = new InventarioPrintzoneContext();
         }
 
-        // =========================================================
-        // LISTAR SALIDAS
-        // =========================================================
 
         public List<SalidaListado> ObtenerSalidas()
         {
@@ -30,9 +27,6 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // OBTENER SALIDA POR ID
-        // =========================================================
 
         public SalidaListado? ObtenerSalidaPorId(
             int idSalida)
@@ -49,9 +43,7 @@ namespace LibreriaPrintZone.Controllers
             return resultado.FirstOrDefault();
         }
 
-        // =========================================================
-        // REGISTRAR SALIDA
-        // =========================================================
+
 
         public void RegistrarSalida(
             int cantidad,
@@ -117,9 +109,7 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-        // =========================================================
-        // OBTENER PRODUCTOS ACTIVOS
-        // =========================================================
+
 
         public List<ProductoListado> ObtenerProductos()
         {
@@ -131,9 +121,7 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // OBTENER PRODUCTO POR ID
-        // =========================================================
+
 
         public ProductoListado? ObtenerProductoPorId(
             int idProducto)
@@ -150,9 +138,7 @@ namespace LibreriaPrintZone.Controllers
             return resultado.FirstOrDefault();
         }
 
-        // =========================================================
-        // OBTENER USUARIO POR ID
-        // =========================================================
+
 
         public Usuario? ObtenerUsuarioPorId(
             int idUsuario)
@@ -166,9 +152,7 @@ namespace LibreriaPrintZone.Controllers
                 .FirstOrDefault();
         }
 
-        // =========================================================
-        // BUSCAR SALIDAS
-        // =========================================================
+
 
         public List<SalidaListado> BuscarSalidas(
             string busqueda)
@@ -204,18 +188,14 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-        // =========================================================
-        // TOTAL DE SALIDAS REGISTRADAS
-        // =========================================================
+
 
         public int ObtenerTotalSalidas()
         {
             return ObtenerSalidas().Count;
         }
 
-        // =========================================================
-        // TOTAL DE UNIDADES RETIRADAS
-        // =========================================================
+
 
         public int ObtenerTotalUnidades()
         {
@@ -223,9 +203,7 @@ namespace LibreriaPrintZone.Controllers
                 .Sum(s => s.cantidad);
         }
 
-        // =========================================================
-        // PRODUCTO CON MÁS SALIDAS
-        // =========================================================
+
 
         public ProductoMasSalidas? ObtenerProductoConMasSalidas()
         {
@@ -260,9 +238,7 @@ namespace LibreriaPrintZone.Controllers
             return resultado;
         }
 
-        // =========================================================
-        // OBTENER STOCK ACTUAL Y STOCK MÍNIMO
-        // =========================================================
+
 
         public StockProducto? ObtenerStockProducto(
             int idProducto)
@@ -285,9 +261,7 @@ namespace LibreriaPrintZone.Controllers
         }
     }
 
-    // =============================================================
-    // MODELO PARA MOSTRAR LAS SALIDAS
-    // =============================================================
+
 
     public class SalidaListado
     {
@@ -308,9 +282,6 @@ namespace LibreriaPrintZone.Controllers
         public string nombre_producto { get; set; } = "";
     }
 
-    // =============================================================
-    // MODELO PARA PRODUCTO CON MÁS SALIDAS
-    // =============================================================
 
     public class ProductoMasSalidas
     {
@@ -321,9 +292,6 @@ namespace LibreriaPrintZone.Controllers
         public int total_unidades { get; set; }
     }
 
-    // =============================================================
-    // MODELO PARA STOCK DEL PRODUCTO
-    // =============================================================
 
     public class StockProducto
     {

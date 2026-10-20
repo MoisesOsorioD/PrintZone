@@ -43,9 +43,6 @@ namespace LibreriaPrintZone.Views
             ActualizarTarjetas();
         }
 
-        // =========================================================
-        // CONFIGURAR FORMULARIO
-        // =========================================================
 
         private void ConfigurarFormulario()
         {
@@ -59,9 +56,6 @@ namespace LibreriaPrintZone.Views
             dtpFechaCreacion.Enabled = false;
         }
 
-        // =========================================================
-        // CONFIGURAR DATAGRIDVIEW
-        // =========================================================
 
         private void ConfigurarDataGridView()
         {
@@ -77,9 +71,7 @@ namespace LibreriaPrintZone.Views
             dgvUsuarios.ClearSelection();
         }
 
-        // =========================================================
-        // CARGAR USUARIOS
-        // =========================================================
+
 
         private void CargarUsuarios()
         {
@@ -105,9 +97,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // MOSTRAR USUARIOS
-        // =========================================================
+
 
         private void MostrarUsuarios(
             List<Usuario> usuarios)
@@ -139,9 +129,7 @@ namespace LibreriaPrintZone.Views
             dgvUsuarios.ClearSelection();
         }
 
-        // =========================================================
-        // SELECCIONAR USUARIO
-        // =========================================================
+
 
         private void dgvUsuarios_CellClick(
             object? sender,
@@ -177,9 +165,7 @@ namespace LibreriaPrintZone.Views
             );
         }
 
-        // =========================================================
-        // CARGAR USUARIO EN FORMULARIO
-        // =========================================================
+
 
         private void CargarUsuarioEnFormulario(
             int idUsuario)
@@ -239,9 +225,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // GUARDAR / ACTUALIZAR
-        // =========================================================
+
 
         private void btnGuardar_Click(
             object? sender,
@@ -262,9 +246,6 @@ namespace LibreriaPrintZone.Views
             bool activo =
                 chkActivo.Checked;
 
-            // -----------------------------------------------------
-            // VALIDAR NOMBRE DE USUARIO
-            // -----------------------------------------------------
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -284,9 +265,7 @@ namespace LibreriaPrintZone.Views
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR NOMBRE COMPLETO
-            // -----------------------------------------------------
+
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -306,9 +285,7 @@ namespace LibreriaPrintZone.Views
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR CLAVE
-            // -----------------------------------------------------
+ 
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -328,9 +305,7 @@ namespace LibreriaPrintZone.Views
                 return;
             }
 
-            // -----------------------------------------------------
-            // VALIDAR ROL
-            // -----------------------------------------------------
+
 
             if (
                 string.IsNullOrWhiteSpace(
@@ -352,9 +327,7 @@ namespace LibreriaPrintZone.Views
 
             try
             {
-                // =================================================
-                // NUEVO USUARIO
-                // =================================================
+
 
                 if (
                     _idUsuarioSeleccionado == 0
@@ -376,9 +349,7 @@ namespace LibreriaPrintZone.Views
                     );
                 }
 
-                // =================================================
-                // ACTUALIZAR USUARIO
-                // =================================================
+
 
                 else
                 {
@@ -417,9 +388,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // LIMPIAR
-        // =========================================================
+
 
         private void btnLimpiar_Click(
             object? sender,
@@ -428,9 +397,7 @@ namespace LibreriaPrintZone.Views
             LimpiarFormulario();
         }
 
-        // =========================================================
-        // LIMPIAR FORMULARIO
-        // =========================================================
+
 
         private void LimpiarFormulario()
         {
@@ -456,9 +423,7 @@ namespace LibreriaPrintZone.Views
             txtNombreUsuario.Focus();
         }
 
-        // =========================================================
-        // BUSCAR USUARIOS
-        // =========================================================
+
 
         private void txtBuscar_TextChanged(
             object? sender,
@@ -505,9 +470,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
-        // =========================================================
-        // ACTUALIZAR TARJETAS
-        // =========================================================
+
 
         private void ActualizarTarjetas()
         {

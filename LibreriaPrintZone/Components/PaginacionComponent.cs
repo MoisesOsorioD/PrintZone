@@ -51,11 +51,6 @@ namespace LibreriaPrintZone.Components
                 AnchorStyles.Left |
                 AnchorStyles.Right |
                 AnchorStyles.Bottom;
-
-            // IMPORTANTE:
-            // El panel debe permanecer visible
-            // aunque solamente exista una página.
-
             _panel.Visible = true;
         }
 
@@ -68,9 +63,6 @@ namespace LibreriaPrintZone.Components
             _totalPaginas;
 
 
-        // =========================================================
-        // CONFIGURAR REGISTROS
-        // =========================================================
 
         public void Configurar<T>(
             List<T> registros,
@@ -108,9 +100,6 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // CALCULAR TOTAL DE PÁGINAS
-        // =========================================================
 
         private void CalcularTotalPaginas()
         {
@@ -121,17 +110,13 @@ namespace LibreriaPrintZone.Components
                 );
 
 
-            // Aunque haya menos de una página
-            // siempre tendremos al menos la página 1.
+
 
             if (_totalPaginas == 0)
                 _totalPaginas = 1;
         }
 
 
-        // =========================================================
-        // MOSTRAR PÁGINA ACTUAL
-        // =========================================================
 
         private void MostrarPaginaActual()
         {
@@ -175,9 +160,6 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // CREAR BOTONES DE PAGINACIÓN
-        // =========================================================
 
         private void CrearBotonesPaginacion()
         {
@@ -186,16 +168,12 @@ namespace LibreriaPrintZone.Components
             _botones.Clear();
 
 
-            // =====================================================
-            // AHORA LA PAGINACIÓN SE CREA SIEMPRE
-            // =====================================================
+
 
             _panel.Visible = true;
 
 
-            // =====================================================
-            // BOTÓN ANTERIOR
-            // =====================================================
+
 
             Button btnAnterior =
                 CrearBoton("‹");
@@ -217,9 +195,7 @@ namespace LibreriaPrintZone.Components
             );
 
 
-            // =====================================================
-            // NÚMEROS DE PÁGINA
-            // =====================================================
+
 
             int primeraPagina =
                 CalcularPrimeraPagina();
@@ -281,9 +257,7 @@ namespace LibreriaPrintZone.Components
             }
 
 
-            // =====================================================
-            // BOTÓN SIGUIENTE
-            // =====================================================
+
 
             Button btnSiguiente =
                 CrearBoton("›");
@@ -306,10 +280,6 @@ namespace LibreriaPrintZone.Components
             );
 
 
-            // =====================================================
-            // AGREGAR BOTONES AL PANEL
-            // =====================================================
-
             foreach (
                 Button boton
                 in _botones
@@ -325,9 +295,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // CALCULAR PRIMERA PÁGINA
-        // =========================================================
+
 
         private int CalcularPrimeraPagina()
         {
@@ -373,9 +341,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // CREAR BOTÓN
-        // =========================================================
+
 
         private Button CrearBoton(
             string texto)
@@ -445,9 +411,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // CENTRAR BOTONES
-        // =========================================================
+
 
         private void CentrarBotones()
         {
@@ -513,9 +477,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // IR A UNA PÁGINA
-        // =========================================================
+
 
         private void IrAPagina(
             int numeroPagina)
@@ -537,9 +499,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // PÁGINA ANTERIOR
-        // =========================================================
+
 
         private void PaginaAnterior()
         {
@@ -558,9 +518,7 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // PÁGINA SIGUIENTE
-        // =========================================================
+
 
         private void PaginaSiguiente()
         {
@@ -580,9 +538,6 @@ namespace LibreriaPrintZone.Components
         }
 
 
-        // =========================================================
-        // ACTUALIZAR REGISTROS
-        // =========================================================
 
         public void Actualizar<T>(
             List<T> registros)
