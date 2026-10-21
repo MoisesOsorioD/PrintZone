@@ -11,19 +11,24 @@ namespace LibreriaPrintZone.Views
 {
     public partial class frmConfiguracion : Form
     {
+        // Panel que contiene las opciones de respaldo automático.
         private Panel _panelRespaldoAutomatico;
 
+        // Conexión utilizada para consultar la base de datos.
         private readonly string cadenaConexion =
             "Server=ELMK;Database=Inventario_Printzone;Trusted_Connection=True;TrustServerCertificate=True;";
 
+        // Carpeta predeterminada para guardar los archivos de respaldo.
         private const string carpetaPredeterminada =
             @"C:\SQLBackups\PrintZone";
 
+        // Datos del usuario que inició sesión.
         private readonly int _idUsuarioActual;
         private readonly string _nombreCompletoUsuario;
         private readonly string _nombreUsuario;
         private readonly string _rolUsuario;
 
+        // Inicializa el formulario y carga la información de los respaldos.
         public frmConfiguracion(
             int idUsuario,
             string nombreCompleto,
@@ -41,6 +46,7 @@ namespace LibreriaPrintZone.Views
             CargarUltimoRespaldo();
         }
 
+        // Muestra la ubicación predeterminada y consulta el nombre de la base de datos.
         private void CargarDatosRespaldo()
         {
             txtUbicacionRespaldo.Text = carpetaPredeterminada;
@@ -71,6 +77,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+        // Busca el archivo .bak más reciente en la carpeta seleccionada.
         private void CargarUltimoRespaldo()
         {
             try
@@ -126,6 +133,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+        // Abre el panel de respaldo manual y oculta el de respaldo automático.
         private void btnRespaldoManual_Click(object sender, EventArgs e)
         {
             if (_panelRespaldoAutomatico != null)
@@ -137,6 +145,7 @@ namespace LibreriaPrintZone.Views
             pnlRespaldoManual.BringToFront();
         }
 
+        // Crea y muestra el panel de respaldo automático cuando se necesita.
         private void btnRespaldoAutomatico_Click(object sender, EventArgs e)
         {
             if (_panelRespaldoAutomatico == null)
@@ -167,6 +176,7 @@ namespace LibreriaPrintZone.Views
             _panelRespaldoAutomatico.BringToFront();
         }
 
+        // Permite elegir la carpeta donde se guardarán los respaldos.
         private void btnCambiarUbicacion_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialogo = new FolderBrowserDialog())
@@ -190,8 +200,10 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+        // Crea un respaldo y después intenta enviar su notificación por correo.
         private async void btnCrearRespaldo_Click(object sender, EventArgs e)
         {
+            // Comprueba que se haya seleccionado un tipo de respaldo.
             if (cmbTipoRespaldo.SelectedItem == null)
             {
                 MessageBox.Show(
@@ -208,44 +220,52 @@ namespace LibreriaPrintZone.Views
 
             try
             {
+                // Ejecuta la creación del respaldo en SQL Server.
                 RespaldoController controlador = new RespaldoController();
 
                 RespaldoController.ResultadoRespaldo respaldo =
                     controlador.CrearRespaldoConDetalles(tipo, carpeta);
 
+                // Actualiza la información mostrada en pantalla.
                 CargarUltimoRespaldo();
 
                 try
                 {
+                    // Obtiene la clave que DotNetEnv cargó desde el archivo .env.
+                    // No se utiliza EnvironmentVariableTarget.User porque ahora
+                    // la clave se obtiene de la configuración cargada por la aplicación.
                     string apiKey = Environment.GetEnvironmentVariable(
-                        "RESEND_API_KEY",
-                        EnvironmentVariableTarget.User);
+                        "RESEND_API_KEY");
 
+                    // Evita intentar enviar el correo si falta la clave API.
                     if (string.IsNullOrWhiteSpace(apiKey))
                     {
                         throw new InvalidOperationException(
                             "No se encontró RESEND_API_KEY. " +
-                            "Cierra y vuelve a abrir Visual Studio.");
+                            "Verifica que el archivo .env se haya cargado correctamente.");
                     }
 
+                    // Crea el servicio de correo con la clave obtenida.
                     CorreoService correoService =
                         new CorreoService(apiKey);
 
+                    // Envía los detalles del respaldo al correo configurado en CorreoService.
                     await correoService.EnviarNotificacionRespaldoAsync(
                         respaldo,
                         _nombreCompletoUsuario,
                         _nombreUsuario,
                         _rolUsuario);
 
+                    // Informa que el respaldo se creó y que el correo se envió.
                     MessageBox.Show(
-    respaldo.Mensaje,
-    "Respaldo",
-    MessageBoxButtons.OK,
-    MessageBoxIcon.Information
-);
+                        respaldo.Mensaje,
+                        "Respaldo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
                 }
                 catch (Exception exCorreo)
                 {
+                    // El respaldo ya se creó; este error solo indica un problema con el correo.
                     MessageBox.Show(
                         respaldo.Mensaje +
                         "\n\nEl respaldo se creó correctamente, pero no se pudo " +
@@ -258,6 +278,7 @@ namespace LibreriaPrintZone.Views
             }
             catch (Exception ex)
             {
+                // Informa los errores que impidieron crear el respaldo.
                 MessageBox.Show(
                     "No se pudo crear el respaldo:\n" + ex.Message,
                     "Error",
@@ -266,6 +287,7 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+        // Permite seleccionar un archivo .bak para restaurar la base de datos.
         private void btnSeleccionarRespaldo_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog dialogo = new OpenFileDialog())
@@ -282,8 +304,10 @@ namespace LibreriaPrintZone.Views
             }
         }
 
+        // Confirma y ejecuta la restauración del respaldo seleccionado.
         private void btnRestaurarRespaldo_Click(object sender, EventArgs e)
         {
+            // Comprueba que se haya seleccionado un archivo existente.
             if (string.IsNullOrWhiteSpace(txtArchivoRespaldo.Text) ||
                 !File.Exists(txtArchivoRespaldo.Text))
             {
@@ -296,6 +320,7 @@ namespace LibreriaPrintZone.Views
                 return;
             }
 
+            // Advierte que la restauración reemplazará los datos actuales.
             DialogResult confirmacion = MessageBox.Show(
                 "ADVERTENCIA: esta operación reemplazará la base de datos " +
                 "Inventario_Printzone con la información del respaldo seleccionado.\n\n" +
@@ -312,11 +337,13 @@ namespace LibreriaPrintZone.Views
 
             try
             {
+                // Ejecuta la restauración mediante el controlador.
                 RespaldoController controlador = new RespaldoController();
 
                 string resultado =
                     controlador.RestaurarRespaldo(txtArchivoRespaldo.Text);
 
+                // Actualiza la información del último respaldo disponible.
                 CargarUltimoRespaldo();
 
                 MessageBox.Show(
@@ -327,6 +354,7 @@ namespace LibreriaPrintZone.Views
             }
             catch (Exception ex)
             {
+                // Informa si SQL Server no pudo completar la restauración.
                 MessageBox.Show(
                     "No se pudo restaurar la base de datos:\n" +
                     ex.Message,

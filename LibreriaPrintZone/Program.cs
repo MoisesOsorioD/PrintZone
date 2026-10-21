@@ -1,3 +1,4 @@
+
 using LibreriaPrintZone.Models;
 
 namespace LibreriaPrintZone
@@ -7,6 +8,8 @@ namespace LibreriaPrintZone
         [STAThread]
         static void Main()
         {
+            DotNetEnv.Env.Load();
+
             ApplicationConfiguration.Initialize();
 
             Task.Run(() =>
