@@ -19,7 +19,8 @@ namespace LibreriaPrintZone.Components
             if (string.IsNullOrWhiteSpace(apiKey))
             {
                 throw new ArgumentException(
-                    "La clave API de Resend es obligatoria.");
+                    "La clave API de Resend es obligatoria."
+                );
             }
 
             _apiKey = apiKey;
@@ -37,71 +38,453 @@ namespace LibreriaPrintZone.Components
                 throw new ArgumentNullException(nameof(respaldo));
             }
 
-            string duracion = respaldo.Duracion.ToString(@"hh\:mm\:ss");
+            string fechaInicio = respaldo.FechaInicio.ToString(
+                "dd/MM/yyyy HH:mm:ss"
+            );
 
-            string cuerpo =
-                "PRINTZONE\n" +
-                "INFORME DE RESPALDO\n\n" +
+            string fechaFinalizacion =
+                respaldo.FechaFinalizacion.ToString(
+                    "dd/MM/yyyy HH:mm:ss"
+                );
 
-                "RESPALDO COMPLETADO\n" +
-                "Operación finalizada correctamente.\n\n" +
+            string duracion = respaldo.Duracion.ToString(
+                @"hh\:mm\:ss"
+            );
 
-                "1. INFORMACIÓN DE LA OPERACIÓN\n\n" +
-                $"Base de datos: Inventario_Printzone\n" +
-                $"Usuario responsable: {nombreCompleto}\n" +
-                $"Nombre de usuario: {nombreUsuario}\n" +
-                $"Rol: {rolUsuario}\n" +
-                $"Fecha y hora de inicio: {respaldo.FechaInicio:dd/MM/yyyy HH:mm:ss}\n" +
-                $"Fecha y hora de finalización: {respaldo.FechaFinalizacion:dd/MM/yyyy HH:mm:ss}\n" +
-                $"Duración: {duracion}\n" +
-                $"Modalidad: Manual\n" +
-                $"Tipo de respaldo: {respaldo.TipoRespaldo}\n\n" +
+            string tipoRespaldo = HtmlEncode(
+                respaldo.TipoRespaldo
+            );
 
-                "2. ARCHIVO GENERADO\n\n" +
-                $"Nombre del archivo: {respaldo.NombreArchivo}\n" +
-                $"Ruta completa: {respaldo.RutaArchivo}\n" +
-                $"Tamaño: {respaldo.TamanoMB:N2} MB\n\n" +
+            string nombreArchivo = HtmlEncode(
+                respaldo.NombreArchivo
+            );
 
-                "3. RESULTADO\n\n" +
-                $"Estado del respaldo: {respaldo.Estado}\n" +
+            string rutaArchivo = HtmlEncode(
+                respaldo.RutaArchivo
+            );
 
-                "NOTIFICACIÓN\n" +
-                "Este correo fue generado automáticamente por PrintZone.\n" +
-                "El archivo de respaldo no se adjunta.";
+            string baseDatos = "Inventario_Printzone";
+            string tamano = respaldo.TamanoMB.ToString("0.00") + " MB";
+            string estado = HtmlEncode(respaldo.Estado);
 
-            var correo = new
+            string nombreCompletoHtml = HtmlEncode(
+                nombreCompleto
+            );
+
+            string nombreUsuarioHtml = HtmlEncode(
+                nombreUsuario
+            );
+
+            string rolUsuarioHtml = HtmlEncode(
+                rolUsuario
+            );
+
+            string modalidad = "Manual";
+
+            string cuerpoHtml = GenerarPlantillaHtml(
+                baseDatos,
+                nombreCompletoHtml,
+                nombreUsuarioHtml,
+                rolUsuarioHtml,
+                fechaInicio,
+                fechaFinalizacion,
+                duracion,
+                modalidad,
+                tipoRespaldo,
+                nombreArchivo,
+                rutaArchivo,
+                tamano,
+                estado
+            );
+
+            string cuerpoTexto = GenerarTextoPlano(
+                baseDatos,
+                nombreCompleto,
+                nombreUsuario,
+                rolUsuario,
+                fechaInicio,
+                fechaFinalizacion,
+                duracion,
+                modalidad,
+                respaldo.TipoRespaldo,
+                respaldo.NombreArchivo,
+                respaldo.RutaArchivo,
+                tamano,
+                respaldo.Estado
+            );
+
+            var contenido = new
             {
                 from = "PrintZone <onboarding@resend.dev>",
-                to = new[] { "moisesosorio2030@gmail.com" },
-                subject = $"PrintZone - Respaldo {respaldo.TipoRespaldo} completado",
-                text = cuerpo
+                to = new[]
+                {
+                    "moisesosorio2030@gmail.com"
+                },
+                subject =
+                    $"PrintZone - Respaldo {respaldo.TipoRespaldo} completado",
+                html = cuerpoHtml,
+                text = cuerpoTexto
             };
 
-            string json = JsonSerializer.Serialize(correo);
+            string json = JsonSerializer.Serialize(contenido);
 
             using var solicitud = new HttpRequestMessage(
                 HttpMethod.Post,
-                "https://api.resend.com/emails");
+                "https://api.resend.com/emails"
+            );
 
             solicitud.Headers.Authorization =
-                new AuthenticationHeaderValue("Bearer", _apiKey);
+                new AuthenticationHeaderValue(
+                    "Bearer",
+                    _apiKey
+                );
 
             solicitud.Content = new StringContent(
                 json,
                 Encoding.UTF8,
-                "application/json");
+                "application/json"
+            );
 
             using HttpResponseMessage respuesta =
                 await _httpClient.SendAsync(solicitud);
 
-            string contenido =
-                await respuesta.Content.ReadAsStringAsync();
-
             if (!respuesta.IsSuccessStatusCode)
             {
-                throw new InvalidOperationException(
-                    $"Error al enviar el correo ({(int)respuesta.StatusCode}): {contenido}");
+                string detalle = await respuesta.Content
+                    .ReadAsStringAsync();
+
+                throw new Exception(
+                    "No se pudo enviar el correo mediante Resend. " +
+                    $"Código HTTP: {(int)respuesta.StatusCode}. " +
+                    $"Detalle: {detalle}"
+                );
             }
+        }
+
+        private static string GenerarPlantillaHtml(
+            string baseDatos,
+            string nombreCompleto,
+            string nombreUsuario,
+            string rolUsuario,
+            string fechaInicio,
+            string fechaFinalizacion,
+            string duracion,
+            string modalidad,
+            string tipoRespaldo,
+            string nombreArchivo,
+            string rutaArchivo,
+            string tamano,
+            string estado)
+        {
+            var html = new StringBuilder();
+
+            html.Append("""
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de respaldo - PrintZone</title>
+</head>
+<body style="margin:0;padding:0;background-color:#edf1f6;font-family:Arial,Helvetica,sans-serif;color:#17243a;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#edf1f6;width:100%;">
+        <tr>
+            <td align="center" style="padding:24px 10px;">
+                <table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:620px;background-color:#ffffff;border-radius:10px;overflow:hidden;">
+
+                    <!-- Encabezado -->
+                    <tr>
+                        <td style="background-color:#17243a;padding:28px 26px;">
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td valign="middle">
+                                        <div style="font-size:25px;font-weight:bold;letter-spacing:1px;color:#ffffff;">
+                                            PRINTZONE
+                                        </div>
+                                        <div style="font-size:12px;letter-spacing:1.5px;color:#c5d1e0;padding-top:6px;">
+                                            INFORME DE RESPALDO
+                                        </div>
+                                    </td>
+                                    <td align="right" valign="middle" style="font-size:30px;color:#4ade80;">
+                                        &#10003;
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div style="height:1px;background-color:#40516b;margin:22px 0;"></div>
+
+                            <div style="display:inline-block;background-color:#14532d;color:#bbf7d0;font-size:11px;font-weight:bold;letter-spacing:1px;padding:8px 11px;border-radius:4px;">
+                                RESPALDO COMPLETADO
+                            </div>
+
+                            <div style="font-size:26px;line-height:1.3;font-weight:bold;color:#ffffff;margin-top:16px;">
+                                ¡Todo listo!
+                            </div>
+
+                            <div style="font-size:14px;line-height:1.7;color:#d5dfec;margin-top:8px;">
+                                La operación finalizó correctamente.
+                                A continuación, se presenta el detalle
+                                del respaldo realizado.
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Contenido -->
+                    <tr>
+                        <td style="padding:24px 20px;">
+
+                            <!-- 01. Información de la operación -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <div style="font-size:18px;font-weight:bold;color:#17243a;margin-bottom:20px;">
+                                            <span style="color:#526a8e;">01.</span>
+                                            Información de la operación
+                                        </div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                            BASE DE DATOS
+                                        </div>
+                                        <div style="font-size:15px;font-weight:bold;color:#17243a;padding-top:7px;">
+                                            {{BASE_DATOS}}
+                                        </div>
+
+                                        <div style="height:1px;background-color:#e2e8f0;margin:18px 0;"></div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                            USUARIO RESPONSABLE
+                                        </div>
+                                        <div style="font-size:15px;font-weight:bold;color:#17243a;padding-top:7px;">
+                                            {{NOMBRE_COMPLETO}}
+                                        </div>
+                                        <div style="font-size:13px;line-height:1.8;color:#475569;padding-top:4px;">
+                                            Nombre de usuario: {{NOMBRE_USUARIO}}<br>
+                                            Rol: {{ROL_USUARIO}}
+                                        </div>
+
+                                        <div style="height:1px;background-color:#e2e8f0;margin:18px 0;"></div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                            FECHA Y HORA DE INICIO
+                                        </div>
+                                        <div style="font-size:14px;color:#17243a;padding-top:6px;">
+                                            {{FECHA_INICIO}}
+                                        </div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;padding-top:15px;">
+                                            FECHA Y HORA DE FINALIZACIÓN
+                                        </div>
+                                        <div style="font-size:14px;color:#17243a;padding-top:6px;">
+                                            {{FECHA_FINALIZACION}}
+                                        </div>
+
+                                        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:18px;">
+                                            <tr>
+                                                <td width="50%" valign="top" style="padding:12px;background-color:#f1f5f9;border-radius:5px;">
+                                                    <div style="font-size:10px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                                        DURACIÓN
+                                                    </div>
+                                                    <div style="font-size:16px;font-weight:bold;color:#17243a;padding-top:7px;">
+                                                        {{DURACION}}
+                                                    </div>
+                                                </td>
+                                                <td width="10"></td>
+                                                <td width="50%" valign="top" style="padding:12px;background-color:#f1f5f9;border-radius:5px;">
+                                                    <div style="font-size:10px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                                        MODALIDAD
+                                                    </div>
+                                                    <div style="font-size:16px;font-weight:bold;color:#17243a;padding-top:7px;">
+                                                        {{MODALIDAD}}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;padding-top:18px;">
+                                            TIPO DE RESPALDO
+                                        </div>
+                                        <div style="font-size:14px;font-weight:bold;color:#17243a;padding-top:7px;">
+                                            {{TIPO_RESPALDO}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- 02. Archivo generado -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;margin-top:18px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <div style="font-size:18px;font-weight:bold;color:#17243a;margin-bottom:20px;">
+                                            <span style="color:#526a8e;">02.</span>
+                                            Archivo generado
+                                        </div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                            NOMBRE DEL ARCHIVO
+                                        </div>
+                                        <div style="font-size:14px;line-height:1.7;font-weight:bold;color:#17243a;overflow-wrap:anywhere;padding-top:7px;">
+                                            {{NOMBRE_ARCHIVO}}
+                                        </div>
+
+                                        <div style="height:1px;background-color:#e2e8f0;margin:18px 0;"></div>
+
+                                        <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#64748b;">
+                                            RUTA COMPLETA
+                                        </div>
+                                        <div style="font-family:Consolas,Monaco,monospace;font-size:12px;line-height:1.7;color:#334155;background-color:#f1f5f9;border-radius:5px;padding:12px;margin-top:8px;overflow-wrap:anywhere;word-break:break-word;">
+                                            {{RUTA_ARCHIVO}}
+                                        </div>
+
+                                        <div style="background-color:#e7effb;border-radius:6px;padding:14px;margin-top:18px;">
+                                            <div style="font-size:11px;font-weight:bold;letter-spacing:1px;color:#345a91;">
+                                                TAMAÑO DEL ARCHIVO
+                                            </div>
+                                            <div style="font-size:21px;font-weight:bold;color:#17243a;padding-top:6px;">
+                                                {{TAMANO}}
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- 03. Resultado -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e4f5ec;border:1px solid #b5e2ca;border-radius:8px;margin-top:18px;">
+                                <tr>
+                                    <td style="padding:20px;">
+                                        <div style="font-size:18px;font-weight:bold;color:#166534;">
+                                            <span style="color:#16804a;">03.</span>
+                                            Resultado
+                                        </div>
+                                        <div style="font-size:14px;line-height:1.7;color:#166534;padding-top:12px;">
+                                            <strong>Estado del respaldo:</strong><br>
+                                            {{ESTADO}}
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Notificación -->
+                            <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;margin-top:18px;">
+                                <tr>
+                                    <td style="padding:18px 20px;">
+                                        <div style="font-size:15px;font-weight:bold;color:#17243a;">
+                                            &#9432; &nbsp; Notificación
+                                        </div>
+                                        <div style="font-size:13px;line-height:1.8;color:#475569;padding-top:10px;">
+                                            Este correo fue generado automáticamente
+                                            por PrintZone.<br>
+                                            El archivo de respaldo no se adjunta.
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+
+                    <!-- Pie de página -->
+                    <tr>
+                        <td align="center" style="background-color:#17243a;padding:24px 18px;">
+                            <div style="font-size:16px;font-weight:bold;letter-spacing:1px;color:#ffffff;">
+                                PRINTZONE
+                            </div>
+                            <div style="font-size:12px;color:#c5d1e0;padding-top:8px;">
+                                Sistema de gestión de inventario
+                            </div>
+                            <div style="font-size:11px;line-height:1.7;color:#c5d1e0;padding-top:8px;">
+                                Notificación automática · No es necesario responder
+                            </div>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+""");
+
+            return html.ToString()
+                .Replace("{{BASE_DATOS}}", baseDatos)
+                .Replace("{{NOMBRE_COMPLETO}}", nombreCompleto)
+                .Replace("{{NOMBRE_USUARIO}}", nombreUsuario)
+                .Replace("{{ROL_USUARIO}}", rolUsuario)
+                .Replace("{{FECHA_INICIO}}", HtmlEncode(fechaInicio))
+                .Replace("{{FECHA_FINALIZACION}}", HtmlEncode(fechaFinalizacion))
+                .Replace("{{DURACION}}", HtmlEncode(duracion))
+                .Replace("{{MODALIDAD}}", HtmlEncode(modalidad))
+                .Replace("{{TIPO_RESPALDO}}", tipoRespaldo)
+                .Replace("{{NOMBRE_ARCHIVO}}", nombreArchivo)
+                .Replace("{{RUTA_ARCHIVO}}", rutaArchivo)
+                .Replace("{{TAMANO}}", HtmlEncode(tamano))
+                .Replace("{{ESTADO}}", estado);
+        }
+
+        private static string GenerarTextoPlano(
+            string baseDatos,
+            string nombreCompleto,
+            string nombreUsuario,
+            string rolUsuario,
+            string fechaInicio,
+            string fechaFinalizacion,
+            string duracion,
+            string modalidad,
+            string tipoRespaldo,
+            string nombreArchivo,
+            string rutaArchivo,
+            string tamano,
+            string estado)
+        {
+            return $"""
+PRINTZONE
+INFORME DE RESPALDO
+
+RESPALDO COMPLETADO
+Operación finalizada correctamente.
+
+1. INFORMACIÓN DE LA OPERACIÓN
+
+Base de datos: {baseDatos}
+Usuario responsable: {nombreCompleto}
+Nombre de usuario: {nombreUsuario}
+Rol: {rolUsuario}
+Fecha y hora de inicio: {fechaInicio}
+Fecha y hora de finalización: {fechaFinalizacion}
+
+Duración: {duracion}
+Modalidad: {modalidad}
+Tipo de respaldo: {tipoRespaldo}
+
+2. ARCHIVO GENERADO
+
+Nombre del archivo: {nombreArchivo}
+Ruta completa: {rutaArchivo}
+Tamaño: {tamano}
+
+3. RESULTADO
+
+Estado del respaldo: {estado}
+
+NOTIFICACIÓN
+Este correo fue generado automáticamente por PrintZone.
+El archivo de respaldo no se adjunta.
+""";
+        }
+
+        private static string HtmlEncode(string valor)
+        {
+            if (valor == null)
+            {
+                return string.Empty;
+            }
+
+            return valor
+                .Replace("&", "&amp;")
+                .Replace("<", "&lt;")
+                .Replace(">", "&gt;")
+                .Replace("\"", "&quot;")
+                .Replace("'", "&#39;");
         }
     }
 }
