@@ -11,17 +11,14 @@ namespace LibreriaPrintZone.Components
 {
     public class CorreoService
     {
-        // Guarda la clave API y el cliente HTTP utilizado para comunicarse con Resend.
         private readonly string _apiKey;
         private readonly HttpClient _httpClient;
 
-        // Obtiene la clave que DotNetEnv cargó desde el archivo .env.
         public CorreoService()
             : this(Environment.GetEnvironmentVariable("RESEND_API_KEY"))
         {
         }
 
-        // Recibe la clave API y prepara el cliente para enviar solicitudes HTTP.
         public CorreoService(string apiKey)
         {
             if (string.IsNullOrWhiteSpace(apiKey))
@@ -35,20 +32,18 @@ namespace LibreriaPrintZone.Components
             _httpClient = new HttpClient();
         }
 
-        // Prepara y envía un correo con los detalles de un respaldo.
         public async Task EnviarNotificacionRespaldoAsync(
             RespaldoController.ResultadoRespaldo respaldo,
             string nombreCompleto,
             string nombreUsuario,
-            string rolUsuario)
+            string rolUsuario,
+            string modalidad = "Manual")
         {
-            // Comprueba que se hayan recibido los datos del respaldo.
             if (respaldo == null)
             {
                 throw new ArgumentNullException(nameof(respaldo));
             }
 
-            // Convierte las fechas y la duración a formatos legibles.
             string fechaInicio = respaldo.FechaInicio.ToString(
                 "dd/MM/yyyy HH:mm:ss"
             );
@@ -62,7 +57,6 @@ namespace LibreriaPrintZone.Components
                 @"hh\:mm\:ss"
             );
 
-            // Escapa los valores dinámicos para evitar que se interpreten como HTML.
             string tipoRespaldo = HtmlEncode(respaldo.TipoRespaldo);
             string nombreArchivo = HtmlEncode(respaldo.NombreArchivo);
             string rutaArchivo = HtmlEncode(respaldo.RutaArchivo);
@@ -72,12 +66,11 @@ namespace LibreriaPrintZone.Components
             string nombreUsuarioHtml = HtmlEncode(nombreUsuario);
             string rolUsuarioHtml = HtmlEncode(rolUsuario);
 
-            // Define los datos adicionales que aparecerán en el informe.
             string baseDatos = "Inventario_Printzone";
             string tamano = respaldo.TamanoMB.ToString("0.00") + " MB";
-            string modalidad = "Manual";
 
-            // Genera la versión HTML con el diseño visual de PrintZone.
+            string modalidadHtml = HtmlEncode(modalidad);
+
             string cuerpoHtml = GenerarPlantillaHtml(
                 baseDatos,
                 nombreCompletoHtml,
@@ -86,7 +79,7 @@ namespace LibreriaPrintZone.Components
                 fechaInicio,
                 fechaFinalizacion,
                 duracion,
-                modalidad,
+                modalidadHtml,
                 tipoRespaldo,
                 nombreArchivo,
                 rutaArchivo,
@@ -94,7 +87,6 @@ namespace LibreriaPrintZone.Components
                 estado
             );
 
-            // Genera una versión de texto plano como alternativa al HTML.
             string cuerpoTexto = GenerarTextoPlano(
                 baseDatos,
                 nombreCompleto,
@@ -111,7 +103,6 @@ namespace LibreriaPrintZone.Components
                 respaldo.Estado
             );
 
-            // Construye los campos que Resend espera recibir en la solicitud.
             var contenido = new
             {
                 from = "PrintZone <onboarding@resend.dev>",
@@ -125,35 +116,28 @@ namespace LibreriaPrintZone.Components
                 text = cuerpoTexto
             };
 
-            // Convierte los datos del correo a formato JSON.
             string json = JsonSerializer.Serialize(contenido);
 
-            // Crea una solicitud POST dirigida al endpoint de Resend.
             using var solicitud = new HttpRequestMessage(
                 HttpMethod.Post,
                 "https://api.resend.com/emails"
             );
 
-            // Envía la clave API en el encabezado de autenticación.
-            // No se imprime ni se agrega la clave al contenido del correo.
             solicitud.Headers.Authorization =
                 new AuthenticationHeaderValue(
                     "Bearer",
                     _apiKey
                 );
 
-            // Indica que el cuerpo de la solicitud contiene JSON codificado en UTF-8.
             solicitud.Content = new StringContent(
                 json,
                 Encoding.UTF8,
                 "application/json"
             );
 
-            // Envía la solicitud y espera la respuesta del servidor.
             using HttpResponseMessage respuesta =
                 await _httpClient.SendAsync(solicitud);
 
-            // Si Resend devuelve un error, obtiene su detalle y lo comunica.
             if (!respuesta.IsSuccessStatusCode)
             {
                 string detalle = await respuesta.Content
@@ -167,7 +151,6 @@ namespace LibreriaPrintZone.Components
             }
         }
 
-        // Construye el correo HTML y reemplaza sus marcadores por los datos del respaldo.
         private static string GenerarPlantillaHtml(
             string baseDatos,
             string nombreCompleto,
@@ -185,7 +168,6 @@ namespace LibreriaPrintZone.Components
         {
             var html = new StringBuilder();
 
-            // Plantilla visual del correo: encabezado, operación, archivo y resultado.
             html.Append("""
 <!DOCTYPE html>
 <html lang="es">
@@ -199,8 +181,6 @@ namespace LibreriaPrintZone.Components
         <tr>
             <td align="center" style="padding:24px 10px;">
                 <table role="presentation" width="620" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:620px;background-color:#ffffff;border-radius:10px;overflow:hidden;">
-
-                    <!-- Encabezado -->
                     <tr>
                         <td style="background-color:#17243a;padding:28px 26px;">
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -237,11 +217,8 @@ namespace LibreriaPrintZone.Components
                         </td>
                     </tr>
 
-                    <!-- Contenido -->
                     <tr>
                         <td style="padding:24px 20px;">
-
-                            <!-- 01. Información de la operación -->
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;">
                                 <tr>
                                     <td style="padding:20px;">
@@ -318,7 +295,6 @@ namespace LibreriaPrintZone.Components
                                 </tr>
                             </table>
 
-                            <!-- 02. Archivo generado -->
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;margin-top:18px;">
                                 <tr>
                                     <td style="padding:20px;">
@@ -355,7 +331,6 @@ namespace LibreriaPrintZone.Components
                                 </tr>
                             </table>
 
-                            <!-- 03. Resultado -->
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e4f5ec;border:1px solid #b5e2ca;border-radius:8px;margin-top:18px;">
                                 <tr>
                                     <td style="padding:20px;">
@@ -371,7 +346,6 @@ namespace LibreriaPrintZone.Components
                                 </tr>
                             </table>
 
-                            <!-- Notificación -->
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e2e8f0;border-radius:8px;margin-top:18px;">
                                 <tr>
                                     <td style="padding:18px 20px;">
@@ -386,11 +360,9 @@ namespace LibreriaPrintZone.Components
                                     </td>
                                 </tr>
                             </table>
-
                         </td>
                     </tr>
 
-                    <!-- Pie de página -->
                     <tr>
                         <td align="center" style="background-color:#17243a;padding:24px 18px;">
                             <div style="font-size:16px;font-weight:bold;letter-spacing:1px;color:#ffffff;">
@@ -404,7 +376,6 @@ namespace LibreriaPrintZone.Components
                             </div>
                         </td>
                     </tr>
-
                 </table>
             </td>
         </tr>
@@ -413,7 +384,6 @@ namespace LibreriaPrintZone.Components
 </html>
 """);
 
-            // Sustituye los marcadores de la plantilla por los datos correspondientes.
             return html.ToString()
                 .Replace("{{BASE_DATOS}}", HtmlEncode(baseDatos))
                 .Replace("{{NOMBRE_COMPLETO}}", nombreCompleto)
@@ -422,7 +392,7 @@ namespace LibreriaPrintZone.Components
                 .Replace("{{FECHA_INICIO}}", HtmlEncode(fechaInicio))
                 .Replace("{{FECHA_FINALIZACION}}", HtmlEncode(fechaFinalizacion))
                 .Replace("{{DURACION}}", HtmlEncode(duracion))
-                .Replace("{{MODALIDAD}}", HtmlEncode(modalidad))
+                .Replace("{{MODALIDAD}}", modalidad)
                 .Replace("{{TIPO_RESPALDO}}", tipoRespaldo)
                 .Replace("{{NOMBRE_ARCHIVO}}", nombreArchivo)
                 .Replace("{{RUTA_ARCHIVO}}", rutaArchivo)
@@ -430,7 +400,6 @@ namespace LibreriaPrintZone.Components
                 .Replace("{{ESTADO}}", estado);
         }
 
-        // Construye una versión de texto plano con los mismos datos del informe.
         private static string GenerarTextoPlano(
             string baseDatos,
             string nombreCompleto,
@@ -482,7 +451,6 @@ El archivo de respaldo no se adjunta.
 """;
         }
 
-        // Escapa caracteres especiales para que los valores se muestren como texto en HTML.
         private static string HtmlEncode(string valor)
         {
             if (valor == null)
