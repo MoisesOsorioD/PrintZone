@@ -94,7 +94,7 @@
             panelSidebar.Controls.Add(pbIconoCategorias);
             panelSidebar.Controls.Add(pbIconoProductos);
             panelSidebar.Controls.Add(pbIconoInicio);
-            panelSidebar.Location = new Point(0, 0);
+            panelSidebar.Location = new Point(0, 7);
             panelSidebar.Name = "panelSidebar";
             panelSidebar.Size = new Size(100, 915);
             panelSidebar.TabIndex = 0;
@@ -106,7 +106,7 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(90, 626);
+            btnReportes.Location = new Point(90, 630);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(153, 43);
             btnReportes.TabIndex = 25;
@@ -117,8 +117,8 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 626);
+            pictureBox1.Image = Properties.Resources.impresa_icon;
+            pictureBox1.Location = new Point(33, 630);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(41, 48);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +132,7 @@
             btnConfiguracion.FlatStyle = FlatStyle.Flat;
             btnConfiguracion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = Color.White;
-            btnConfiguracion.Location = new Point(92, 684);
+            btnConfiguracion.Location = new Point(92, 691);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(153, 43);
             btnConfiguracion.TabIndex = 23;
@@ -268,7 +268,7 @@
             // pbIconoConfiguracion
             // 
             pbIconoConfiguracion.Image = (Image)resources.GetObject("pbIconoConfiguracion.Image");
-            pbIconoConfiguracion.Location = new Point(33, 684);
+            pbIconoConfiguracion.Location = new Point(33, 691);
             pbIconoConfiguracion.Name = "pbIconoConfiguracion";
             pbIconoConfiguracion.Size = new Size(41, 48);
             pbIconoConfiguracion.SizeMode = PictureBoxSizeMode.Zoom;

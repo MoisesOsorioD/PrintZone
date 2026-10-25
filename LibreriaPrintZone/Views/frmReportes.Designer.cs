@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportes));
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
@@ -110,7 +109,7 @@
             // 
             // pictureBox10
             // 
-            pictureBox10.Image = Properties.Resources.Entrada_2;
+            pictureBox10.Image = Properties.Resources.Categoria_Menos;
             pictureBox10.Location = new Point(150, 12);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
@@ -220,7 +219,7 @@
             // 
             // pictureBox6
             // 
-            pictureBox6.Image = Properties.Resources.Categoria_Menos;
+            pictureBox6.Image = Properties.Resources.Total_Proveedores;
             pictureBox6.Location = new Point(103, 329);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(45, 45);
@@ -249,7 +248,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.Image = Properties.Resources.Categoria_Menos;
+            pictureBox5.Image = Properties.Resources.Salida_2;
             pictureBox5.Location = new Point(103, 257);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(45, 45);
@@ -278,7 +277,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.Categoria_Menos;
+            pictureBox4.Image = Properties.Resources.Entrada_2;
             pictureBox4.Location = new Point(103, 190);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(45, 45);
@@ -307,7 +306,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.Categoria_Menos;
+            pictureBox2.Image = Properties.Resources.Alerta_stock_minino;
             pictureBox2.Location = new Point(103, 125);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(45, 45);
@@ -336,7 +335,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.Categoria_Menos;
+            pictureBox1.Image = Properties.Resources.Total_de_productos;
             pictureBox1.Location = new Point(103, 58);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(45, 45);
@@ -356,10 +355,10 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Categoria_Menos;
-            pictureBox3.Location = new Point(20, 3);
+            pictureBox3.Image = Properties.Resources.Numero_1;
+            pictureBox3.Location = new Point(40, -1);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(60, 60);
+            pictureBox3.Size = new Size(40, 40);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
@@ -425,10 +424,10 @@
             // 
             // pictureBox13
             // 
-            pictureBox13.Image = Properties.Resources.Categoria_Menos;
-            pictureBox13.Location = new Point(20, 3);
+            pictureBox13.Image = Properties.Resources.Numero_2;
+            pictureBox13.Location = new Point(40, -1);
             pictureBox13.Name = "pictureBox13";
-            pictureBox13.Size = new Size(60, 60);
+            pictureBox13.Size = new Size(40, 40);
             pictureBox13.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox13.TabIndex = 7;
             pictureBox13.TabStop = false;
@@ -445,13 +444,13 @@
             panel2.Controls.Add(pictureBox7);
             panel2.Location = new Point(150, 700);
             panel2.Name = "panel2";
-            panel2.Size = new Size(861, 203);
+            panel2.Size = new Size(861, 143);
             panel2.TabIndex = 60;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(488, 110);
+            label16.Location = new Point(488, 87);
             label16.Name = "label16";
             label16.Size = new Size(327, 20);
             label16.TabIndex = 60;
@@ -460,7 +459,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(79, 110);
+            label15.Location = new Point(79, 87);
             label15.Name = "label15";
             label15.Size = new Size(344, 20);
             label15.TabIndex = 59;
@@ -470,7 +469,7 @@
             // 
             chkMostrarTotales.AutoSize = true;
             chkMostrarTotales.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkMostrarTotales.Location = new Point(488, 80);
+            chkMostrarTotales.Location = new Point(488, 57);
             chkMostrarTotales.Name = "chkMostrarTotales";
             chkMostrarTotales.Size = new Size(154, 27);
             chkMostrarTotales.TabIndex = 9;
@@ -481,7 +480,7 @@
             // 
             chkIncluirPrecios.AutoSize = true;
             chkIncluirPrecios.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkIncluirPrecios.Location = new Point(88, 80);
+            chkIncluirPrecios.Location = new Point(88, 57);
             chkIncluirPrecios.Name = "chkIncluirPrecios";
             chkIncluirPrecios.Size = new Size(144, 27);
             chkIncluirPrecios.TabIndex = 8;
@@ -492,7 +491,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label18.Location = new Point(83, 34);
+            label18.Location = new Point(83, 3);
             label18.Name = "label18";
             label18.Size = new Size(219, 25);
             label18.TabIndex = 6;
@@ -500,10 +499,10 @@
             // 
             // pictureBox7
             // 
-            pictureBox7.Image = Properties.Resources.Categoria_Menos;
-            pictureBox7.Location = new Point(20, 15);
+            pictureBox7.Image = Properties.Resources.Numero_3;
+            pictureBox7.Location = new Point(40, 3);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(60, 60);
+            pictureBox7.Size = new Size(40, 40);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 7;
             pictureBox7.TabStop = false;
@@ -517,7 +516,7 @@
             panel3.Controls.Add(label30);
             panel3.Location = new Point(1017, 118);
             panel3.Name = "panel3";
-            panel3.Size = new Size(603, 785);
+            panel3.Size = new Size(603, 725);
             panel3.TabIndex = 59;
             // 
             // btnGenerarReporte
@@ -527,9 +526,9 @@
             btnGenerarReporte.FlatStyle = FlatStyle.Flat;
             btnGenerarReporte.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGenerarReporte.ForeColor = Color.White;
-            btnGenerarReporte.Image = (Image)resources.GetObject("btnGenerarReporte.Image");
+            btnGenerarReporte.Image = Properties.Resources.impresa_icon;
             btnGenerarReporte.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGenerarReporte.Location = new Point(200, 652);
+            btnGenerarReporte.Location = new Point(206, 618);
             btnGenerarReporte.Name = "btnGenerarReporte";
             btnGenerarReporte.Size = new Size(195, 37);
             btnGenerarReporte.TabIndex = 58;
@@ -548,7 +547,7 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label30.Location = new Point(80, 3);
+            label30.Location = new Point(200, 5);
             label30.Name = "label30";
             label30.Size = new Size(235, 25);
             label30.TabIndex = 6;
