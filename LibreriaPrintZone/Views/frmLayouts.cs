@@ -623,5 +623,12 @@ namespace LibreriaPrintZone
                 Application.Exit();
             }
         }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario(
+                new frmReportes()
+            );
+        }
     }
 }

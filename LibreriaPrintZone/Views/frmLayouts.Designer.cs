@@ -31,6 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLayouts));
             panelSidebar = new Panel();
+            btnReportes = new Button();
+            pictureBox1 = new PictureBox();
             btnConfiguracion = new Button();
             btnUsuarios = new Button();
             btnSalidas = new Button();
@@ -56,6 +58,7 @@
             timerSidebar = new System.Windows.Forms.Timer(components);
             timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).BeginInit();
@@ -72,6 +75,8 @@
             // panelSidebar
             // 
             panelSidebar.BackColor = Color.FromArgb(3, 37, 91);
+            panelSidebar.Controls.Add(btnReportes);
+            panelSidebar.Controls.Add(pictureBox1);
             panelSidebar.Controls.Add(btnConfiguracion);
             panelSidebar.Controls.Add(btnUsuarios);
             panelSidebar.Controls.Add(btnSalidas);
@@ -94,6 +99,32 @@
             panelSidebar.Size = new Size(100, 915);
             panelSidebar.TabIndex = 0;
             // 
+            // btnReportes
+            // 
+            btnReportes.Cursor = Cursors.Hand;
+            btnReportes.FlatAppearance.BorderSize = 0;
+            btnReportes.FlatStyle = FlatStyle.Flat;
+            btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReportes.ForeColor = Color.White;
+            btnReportes.Location = new Point(90, 626);
+            btnReportes.Name = "btnReportes";
+            btnReportes.Size = new Size(153, 43);
+            btnReportes.TabIndex = 25;
+            btnReportes.Text = "Reportes";
+            btnReportes.TextAlign = ContentAlignment.MiddleLeft;
+            btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += btnReportes_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(33, 626);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(41, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 24;
+            pictureBox1.TabStop = false;
+            // 
             // btnConfiguracion
             // 
             btnConfiguracion.Cursor = Cursors.Hand;
@@ -101,7 +132,7 @@
             btnConfiguracion.FlatStyle = FlatStyle.Flat;
             btnConfiguracion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = Color.White;
-            btnConfiguracion.Location = new Point(92, 631);
+            btnConfiguracion.Location = new Point(92, 684);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(153, 43);
             btnConfiguracion.TabIndex = 23;
@@ -237,7 +268,7 @@
             // pbIconoConfiguracion
             // 
             pbIconoConfiguracion.Image = (Image)resources.GetObject("pbIconoConfiguracion.Image");
-            pbIconoConfiguracion.Location = new Point(33, 631);
+            pbIconoConfiguracion.Location = new Point(33, 684);
             pbIconoConfiguracion.Name = "pbIconoConfiguracion";
             pbIconoConfiguracion.Size = new Size(41, 48);
             pbIconoConfiguracion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -404,6 +435,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Layouts";
             panelSidebar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).EndInit();
@@ -445,5 +477,7 @@
         private Panel panelMenu;
         private Button btnSalir;
         private Button btnCerrarSesion;
+        private Button btnReportes;
+        private PictureBox pictureBox1;
     }
 }
