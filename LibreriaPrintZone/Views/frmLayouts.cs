@@ -200,14 +200,15 @@ namespace LibreriaPrintZone
 
 
 
+
                 btnCategorias.Visible = false;
                 btnProveedores.Visible = false;
                 btnEntradas.Visible = false;
                 btnUsuarios.Visible = false;
                 btnConfiguracion.Visible = false;
+                btnReportes.Visible = false;
 
-
-
+                pbIconoReportes.Visible = false;
                 pbIconoCategorias.Visible = false;
                 pbIconoProveedores.Visible = false;
                 pbIconoEntradas.Visible = false;

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLayouts));
             panelSidebar = new Panel();
             btnReportes = new Button();
-            pictureBox1 = new PictureBox();
+            pbIconoReportes = new PictureBox();
             btnConfiguracion = new Button();
             btnUsuarios = new Button();
             btnSalidas = new Button();
@@ -58,7 +58,7 @@
             timerSidebar = new System.Windows.Forms.Timer(components);
             timerMenu = new System.Windows.Forms.Timer(components);
             panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoReportes).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).BeginInit();
@@ -76,7 +76,7 @@
             // 
             panelSidebar.BackColor = Color.FromArgb(3, 37, 91);
             panelSidebar.Controls.Add(btnReportes);
-            panelSidebar.Controls.Add(pictureBox1);
+            panelSidebar.Controls.Add(pbIconoReportes);
             panelSidebar.Controls.Add(btnConfiguracion);
             panelSidebar.Controls.Add(btnUsuarios);
             panelSidebar.Controls.Add(btnSalidas);
@@ -115,15 +115,15 @@
             btnReportes.UseVisualStyleBackColor = true;
             btnReportes.Click += btnReportes_Click;
             // 
-            // pictureBox1
+            // pbIconoReportes
             // 
-            pictureBox1.Image = Properties.Resources.impresa_icon;
-            pictureBox1.Location = new Point(33, 630);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(41, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 24;
-            pictureBox1.TabStop = false;
+            pbIconoReportes.Image = Properties.Resources.impresa_icon;
+            pbIconoReportes.Location = new Point(33, 630);
+            pbIconoReportes.Name = "pbIconoReportes";
+            pbIconoReportes.Size = new Size(41, 48);
+            pbIconoReportes.SizeMode = PictureBoxSizeMode.Zoom;
+            pbIconoReportes.TabIndex = 24;
+            pbIconoReportes.TabStop = false;
             // 
             // btnConfiguracion
             // 
@@ -435,7 +435,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Layouts";
             panelSidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbIconoReportes).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoConfiguracion).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbIconoUsuarios).EndInit();
@@ -478,6 +478,6 @@
         private Button btnSalir;
         private Button btnCerrarSesion;
         private Button btnReportes;
-        private PictureBox pictureBox1;
+        private PictureBox pbIconoReportes;
     }
 }
