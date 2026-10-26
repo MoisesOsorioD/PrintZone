@@ -31,7 +31,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel7 = new Panel();
+            panelTipoReporte = new Panel();
             rbProveedores = new RadioButton();
             rbSalidasProductos = new RadioButton();
             rbEntradasProductos = new RadioButton();
@@ -54,37 +54,37 @@
             pictureBox1 = new PictureBox();
             label17 = new Label();
             pictureBox3 = new PictureBox();
-            panel1 = new Panel();
+            panelFiltros = new Panel();
             label14 = new Label();
             label13 = new Label();
             dtpFechaHasta = new DateTimePicker();
             dtpFechaDesde = new DateTimePicker();
             label24 = new Label();
             pictureBox13 = new PictureBox();
-            panel2 = new Panel();
+            panelOpcionesAdicionales = new Panel();
             label16 = new Label();
             label15 = new Label();
             chkMostrarTotales = new CheckBox();
             chkIncluirPrecios = new CheckBox();
             label18 = new Label();
             pictureBox7 = new PictureBox();
-            panel3 = new Panel();
+            panelVistaPrevia = new Panel();
             btnGenerarReporte = new Button();
             pnlDocumentoPrevia = new Panel();
             label30 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel7.SuspendLayout();
+            panelTipoReporte.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel1.SuspendLayout();
+            panelFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel2.SuspendLayout();
+            panelOpcionesAdicionales.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel3.SuspendLayout();
+            panelVistaPrevia.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -117,36 +117,35 @@
             pictureBox10.TabIndex = 14;
             pictureBox10.TabStop = false;
             // 
-            // panel7
+            // panelTipoReporte
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(rbProveedores);
-            panel7.Controls.Add(rbSalidasProductos);
-            panel7.Controls.Add(rbEntradasProductos);
-            panel7.Controls.Add(rbProductosBajoStock);
-            panel7.Controls.Add(rbInventarioGeneral);
-            panel7.Controls.Add(label11);
-            panel7.Controls.Add(label12);
-            panel7.Controls.Add(pictureBox6);
-            panel7.Controls.Add(label9);
-            panel7.Controls.Add(label10);
-            panel7.Controls.Add(pictureBox5);
-            panel7.Controls.Add(label7);
-            panel7.Controls.Add(label8);
-            panel7.Controls.Add(pictureBox4);
-            panel7.Controls.Add(label5);
-            panel7.Controls.Add(label6);
-            panel7.Controls.Add(pictureBox2);
-            panel7.Controls.Add(label4);
-            panel7.Controls.Add(label3);
-            panel7.Controls.Add(pictureBox1);
-            panel7.Controls.Add(label17);
-            panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(150, 118);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(861, 392);
-            panel7.TabIndex = 58;
+            panelTipoReporte.BackColor = Color.FromArgb(242, 249, 254);
+            panelTipoReporte.Controls.Add(rbProveedores);
+            panelTipoReporte.Controls.Add(rbSalidasProductos);
+            panelTipoReporte.Controls.Add(rbEntradasProductos);
+            panelTipoReporte.Controls.Add(rbProductosBajoStock);
+            panelTipoReporte.Controls.Add(rbInventarioGeneral);
+            panelTipoReporte.Controls.Add(label11);
+            panelTipoReporte.Controls.Add(label12);
+            panelTipoReporte.Controls.Add(pictureBox6);
+            panelTipoReporte.Controls.Add(label9);
+            panelTipoReporte.Controls.Add(label10);
+            panelTipoReporte.Controls.Add(pictureBox5);
+            panelTipoReporte.Controls.Add(label7);
+            panelTipoReporte.Controls.Add(label8);
+            panelTipoReporte.Controls.Add(pictureBox4);
+            panelTipoReporte.Controls.Add(label5);
+            panelTipoReporte.Controls.Add(label6);
+            panelTipoReporte.Controls.Add(pictureBox2);
+            panelTipoReporte.Controls.Add(label4);
+            panelTipoReporte.Controls.Add(label3);
+            panelTipoReporte.Controls.Add(pictureBox1);
+            panelTipoReporte.Controls.Add(label17);
+            panelTipoReporte.Controls.Add(pictureBox3);
+            panelTipoReporte.Location = new Point(150, 118);
+            panelTipoReporte.Name = "panelTipoReporte";
+            panelTipoReporte.Size = new Size(861, 392);
+            panelTipoReporte.TabIndex = 58;
             // 
             // rbProveedores
             // 
@@ -363,20 +362,19 @@
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // panel1
+            // panelFiltros
             // 
-            panel1.BackColor = Color.FromArgb(242, 249, 254);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label14);
-            panel1.Controls.Add(label13);
-            panel1.Controls.Add(dtpFechaHasta);
-            panel1.Controls.Add(dtpFechaDesde);
-            panel1.Controls.Add(label24);
-            panel1.Controls.Add(pictureBox13);
-            panel1.Location = new Point(150, 527);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(861, 154);
-            panel1.TabIndex = 59;
+            panelFiltros.BackColor = Color.FromArgb(242, 249, 254);
+            panelFiltros.Controls.Add(label14);
+            panelFiltros.Controls.Add(label13);
+            panelFiltros.Controls.Add(dtpFechaHasta);
+            panelFiltros.Controls.Add(dtpFechaDesde);
+            panelFiltros.Controls.Add(label24);
+            panelFiltros.Controls.Add(pictureBox13);
+            panelFiltros.Location = new Point(150, 527);
+            panelFiltros.Name = "panelFiltros";
+            panelFiltros.Size = new Size(861, 154);
+            panelFiltros.TabIndex = 59;
             // 
             // label14
             // 
@@ -432,20 +430,19 @@
             pictureBox13.TabIndex = 7;
             pictureBox13.TabStop = false;
             // 
-            // panel2
+            // panelOpcionesAdicionales
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label16);
-            panel2.Controls.Add(label15);
-            panel2.Controls.Add(chkMostrarTotales);
-            panel2.Controls.Add(chkIncluirPrecios);
-            panel2.Controls.Add(label18);
-            panel2.Controls.Add(pictureBox7);
-            panel2.Location = new Point(150, 700);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(861, 143);
-            panel2.TabIndex = 60;
+            panelOpcionesAdicionales.BackColor = Color.FromArgb(242, 249, 254);
+            panelOpcionesAdicionales.Controls.Add(label16);
+            panelOpcionesAdicionales.Controls.Add(label15);
+            panelOpcionesAdicionales.Controls.Add(chkMostrarTotales);
+            panelOpcionesAdicionales.Controls.Add(chkIncluirPrecios);
+            panelOpcionesAdicionales.Controls.Add(label18);
+            panelOpcionesAdicionales.Controls.Add(pictureBox7);
+            panelOpcionesAdicionales.Location = new Point(150, 700);
+            panelOpcionesAdicionales.Name = "panelOpcionesAdicionales";
+            panelOpcionesAdicionales.Size = new Size(861, 143);
+            panelOpcionesAdicionales.TabIndex = 60;
             // 
             // label16
             // 
@@ -507,17 +504,16 @@
             pictureBox7.TabIndex = 7;
             pictureBox7.TabStop = false;
             // 
-            // panel3
+            // panelVistaPrevia
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(btnGenerarReporte);
-            panel3.Controls.Add(pnlDocumentoPrevia);
-            panel3.Controls.Add(label30);
-            panel3.Location = new Point(1017, 118);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(603, 725);
-            panel3.TabIndex = 59;
+            panelVistaPrevia.BackColor = Color.FromArgb(242, 249, 254);
+            panelVistaPrevia.Controls.Add(btnGenerarReporte);
+            panelVistaPrevia.Controls.Add(pnlDocumentoPrevia);
+            panelVistaPrevia.Controls.Add(label30);
+            panelVistaPrevia.Location = new Point(1017, 118);
+            panelVistaPrevia.Name = "panelVistaPrevia";
+            panelVistaPrevia.Size = new Size(603, 725);
+            panelVistaPrevia.TabIndex = 59;
             // 
             // btnGenerarReporte
             // 
@@ -559,10 +555,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(panel7);
+            Controls.Add(panelVistaPrevia);
+            Controls.Add(panelOpcionesAdicionales);
+            Controls.Add(panelFiltros);
+            Controls.Add(panelTipoReporte);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -570,22 +566,22 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Reportes";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelTipoReporte.ResumeLayout(false);
+            panelTipoReporte.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelFiltros.ResumeLayout(false);
+            panelFiltros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelOpcionesAdicionales.ResumeLayout(false);
+            panelOpcionesAdicionales.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelVistaPrevia.ResumeLayout(false);
+            panelVistaPrevia.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -595,7 +591,7 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel7;
+        private Panel panelTipoReporte;
         private Label label17;
         private PictureBox pictureBox3;
         private PictureBox pictureBox1;
@@ -613,21 +609,21 @@
         private Label label5;
         private Label label6;
         private PictureBox pictureBox2;
-        private Panel panel1;
+        private Panel panelFiltros;
         private Label label24;
         private PictureBox pictureBox13;
         private Label label14;
         private Label label13;
         private DateTimePicker dtpFechaHasta;
         private DateTimePicker dtpFechaDesde;
-        private Panel panel2;
+        private Panel panelOpcionesAdicionales;
         private Label label18;
         private PictureBox pictureBox7;
         private CheckBox chkIncluirPrecios;
         private CheckBox chkMostrarTotales;
         private Label label16;
         private Label label15;
-        private Panel panel3;
+        private Panel panelVistaPrevia;
         private Label label30;
         private Panel pnlDocumentoPrevia;
         private Button btnGenerarReporte;

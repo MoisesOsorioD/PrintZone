@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRespaldoAutomatico));
             pnlRespaldoAutomatico = new Panel();
-            panel5 = new Panel();
+            panelRespaldoAutomatico = new Panel();
             cmbTipoRespaldoAutomatico = new ComboBox();
             pictureBox7 = new PictureBox();
             label14 = new Label();
@@ -47,12 +47,12 @@
             btnGuardarConfiguracion = new Button();
             txtCarpetaDestino = new TextBox();
             pictureBox5 = new PictureBox();
-            panel7 = new Panel();
+            panelInfoAutomatico = new Panel();
             label9 = new Label();
             pictureBox6 = new PictureBox();
             label8 = new Label();
             label7 = new Label();
-            panel1 = new Panel();
+            panelInfoAutomatico2 = new Panel();
             pictureBox9 = new PictureBox();
             chkRespaldoActivado = new CheckBox();
             label5 = new Label();
@@ -61,57 +61,56 @@
             pictureBox1 = new PictureBox();
             label3 = new Label();
             pnlRespaldoAutomatico.SuspendLayout();
-            panel5.SuspendLayout();
+            panelRespaldoAutomatico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel7.SuspendLayout();
+            panelInfoAutomatico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel1.SuspendLayout();
+            panelInfoAutomatico2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlRespaldoAutomatico
             // 
-            pnlRespaldoAutomatico.Controls.Add(panel5);
+            pnlRespaldoAutomatico.Controls.Add(panelRespaldoAutomatico);
             pnlRespaldoAutomatico.Location = new Point(123, 206);
             pnlRespaldoAutomatico.Name = "pnlRespaldoAutomatico";
             pnlRespaldoAutomatico.Size = new Size(1443, 706);
             pnlRespaldoAutomatico.TabIndex = 92;
             // 
-            // panel5
+            // panelRespaldoAutomatico
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(cmbTipoRespaldoAutomatico);
-            panel5.Controls.Add(pictureBox7);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(dtpHoraInicio);
-            panel5.Controls.Add(cmbDiaSemana);
-            panel5.Controls.Add(pictureBox4);
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(cmbFrecuencia);
-            panel5.Controls.Add(pictureBox3);
-            panel5.Controls.Add(lblDiaSemana);
-            panel5.Controls.Add(btnSeleccionarCarpeta);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label1);
-            panel5.Controls.Add(btnGuardarConfiguracion);
-            panel5.Controls.Add(txtCarpetaDestino);
-            panel5.Controls.Add(pictureBox5);
-            panel5.Controls.Add(panel7);
-            panel5.Controls.Add(label7);
-            panel5.Controls.Add(panel1);
-            panel5.Controls.Add(label4);
-            panel5.Controls.Add(pictureBox1);
-            panel5.Controls.Add(label3);
-            panel5.Location = new Point(26, 6);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1386, 694);
-            panel5.TabIndex = 84;
+            panelRespaldoAutomatico.BackColor = Color.FromArgb(242, 249, 254);
+            panelRespaldoAutomatico.Controls.Add(cmbTipoRespaldoAutomatico);
+            panelRespaldoAutomatico.Controls.Add(pictureBox7);
+            panelRespaldoAutomatico.Controls.Add(label14);
+            panelRespaldoAutomatico.Controls.Add(dtpHoraInicio);
+            panelRespaldoAutomatico.Controls.Add(cmbDiaSemana);
+            panelRespaldoAutomatico.Controls.Add(pictureBox4);
+            panelRespaldoAutomatico.Controls.Add(label6);
+            panelRespaldoAutomatico.Controls.Add(cmbFrecuencia);
+            panelRespaldoAutomatico.Controls.Add(pictureBox3);
+            panelRespaldoAutomatico.Controls.Add(lblDiaSemana);
+            panelRespaldoAutomatico.Controls.Add(btnSeleccionarCarpeta);
+            panelRespaldoAutomatico.Controls.Add(pictureBox2);
+            panelRespaldoAutomatico.Controls.Add(label1);
+            panelRespaldoAutomatico.Controls.Add(btnGuardarConfiguracion);
+            panelRespaldoAutomatico.Controls.Add(txtCarpetaDestino);
+            panelRespaldoAutomatico.Controls.Add(pictureBox5);
+            panelRespaldoAutomatico.Controls.Add(panelInfoAutomatico);
+            panelRespaldoAutomatico.Controls.Add(label7);
+            panelRespaldoAutomatico.Controls.Add(panelInfoAutomatico2);
+            panelRespaldoAutomatico.Controls.Add(label4);
+            panelRespaldoAutomatico.Controls.Add(pictureBox1);
+            panelRespaldoAutomatico.Controls.Add(label3);
+            panelRespaldoAutomatico.Location = new Point(26, 6);
+            panelRespaldoAutomatico.Name = "panelRespaldoAutomatico";
+            panelRespaldoAutomatico.Size = new Size(1386, 694);
+            panelRespaldoAutomatico.TabIndex = 84;
             // 
             // cmbTipoRespaldoAutomatico
             // 
@@ -285,16 +284,16 @@
             pictureBox5.TabIndex = 44;
             pictureBox5.TabStop = false;
             // 
-            // panel7
+            // panelInfoAutomatico
             // 
-            panel7.BackColor = Color.FromArgb(220, 233, 247);
-            panel7.Controls.Add(label9);
-            panel7.Controls.Add(pictureBox6);
-            panel7.Controls.Add(label8);
-            panel7.Location = new Point(35, 482);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(1263, 156);
-            panel7.TabIndex = 53;
+            panelInfoAutomatico.BackColor = Color.FromArgb(220, 233, 247);
+            panelInfoAutomatico.Controls.Add(label9);
+            panelInfoAutomatico.Controls.Add(pictureBox6);
+            panelInfoAutomatico.Controls.Add(label8);
+            panelInfoAutomatico.Location = new Point(35, 482);
+            panelInfoAutomatico.Name = "panelInfoAutomatico";
+            panelInfoAutomatico.Size = new Size(1263, 156);
+            panelInfoAutomatico.TabIndex = 53;
             // 
             // label9
             // 
@@ -339,17 +338,17 @@
             label7.TabIndex = 43;
             label7.Text = "Carpeta de destino";
             // 
-            // panel1
+            // panelInfoAutomatico2
             // 
-            panel1.BackColor = Color.FromArgb(220, 233, 247);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(chkRespaldoActivado);
-            panel1.Controls.Add(label5);
-            panel1.Controls.Add(label11);
-            panel1.Location = new Point(32, 87);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1269, 92);
-            panel1.TabIndex = 50;
+            panelInfoAutomatico2.BackColor = Color.FromArgb(220, 233, 247);
+            panelInfoAutomatico2.Controls.Add(pictureBox9);
+            panelInfoAutomatico2.Controls.Add(chkRespaldoActivado);
+            panelInfoAutomatico2.Controls.Add(label5);
+            panelInfoAutomatico2.Controls.Add(label11);
+            panelInfoAutomatico2.Location = new Point(32, 87);
+            panelInfoAutomatico2.Name = "panelInfoAutomatico2";
+            panelInfoAutomatico2.Size = new Size(1269, 92);
+            panelInfoAutomatico2.TabIndex = 50;
             // 
             // pictureBox9
             // 
@@ -434,18 +433,18 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Configuración - Respaldo Automático";
             pnlRespaldoAutomatico.ResumeLayout(false);
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelRespaldoAutomatico.ResumeLayout(false);
+            panelRespaldoAutomatico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelInfoAutomatico.ResumeLayout(false);
+            panelInfoAutomatico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelInfoAutomatico2.ResumeLayout(false);
+            panelInfoAutomatico2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -454,11 +453,11 @@
         #endregion
 
         private Panel pnlRespaldoAutomatico;
-        private Panel panel5;
+        private Panel panelRespaldoAutomatico;
         private ComboBox cmbFrecuencia;
         private PictureBox pictureBox2;
         private Label label1;
-        private Panel panel1;
+        private Panel panelInfoAutomatico2;
         private PictureBox pictureBox9;
         private CheckBox chkRespaldoActivado;
         private Label label5;
@@ -473,7 +472,7 @@
         private Label label7;
         private TextBox txtCarpetaDestino;
         private Button btnSeleccionarCarpeta;
-        private Panel panel7;
+        private Panel panelInfoAutomatico;
         private PictureBox pictureBox6;
         private Label label8;
         private Button btnGuardarConfiguracion;

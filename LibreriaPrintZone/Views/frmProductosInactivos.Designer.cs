@@ -33,7 +33,8 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel5 = new Panel();
+            panelProductosInactivos = new Panel();
+            panelPaginacion = new Panel();
             btnReactivar = new Button();
             dgvProductosInactivos = new DataGridView();
             colProductoP = new DataGridViewTextBoxColumn();
@@ -48,9 +49,8 @@
             colFecha = new DataGridViewTextBoxColumn();
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel5.SuspendLayout();
+            panelProductosInactivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductosInactivos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
@@ -85,19 +85,26 @@
             pictureBox10.TabIndex = 11;
             pictureBox10.TabStop = false;
             // 
-            // panel5
+            // panelProductosInactivos
             // 
-            panel5.BackColor = Color.FromArgb(242, 249, 254);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(panelPaginacion);
-            panel5.Controls.Add(btnReactivar);
-            panel5.Controls.Add(dgvProductosInactivos);
-            panel5.Controls.Add(pictureBox14);
-            panel5.Controls.Add(txtBuscar);
-            panel5.Location = new Point(122, 134);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(1498, 524);
-            panel5.TabIndex = 13;
+            panelProductosInactivos.BackColor = Color.FromArgb(242, 249, 254);
+            panelProductosInactivos.Controls.Add(panelPaginacion);
+            panelProductosInactivos.Controls.Add(btnReactivar);
+            panelProductosInactivos.Controls.Add(dgvProductosInactivos);
+            panelProductosInactivos.Controls.Add(pictureBox14);
+            panelProductosInactivos.Controls.Add(txtBuscar);
+            panelProductosInactivos.Location = new Point(122, 134);
+            panelProductosInactivos.Name = "panelProductosInactivos";
+            panelProductosInactivos.Size = new Size(1498, 524);
+            panelProductosInactivos.TabIndex = 13;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.Location = new Point(7, 433);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(1481, 59);
+            panelPaginacion.TabIndex = 65;
             // 
             // btnReactivar
             // 
@@ -220,22 +227,13 @@
             txtBuscar.TabIndex = 61;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // panelPaginacion
-            // 
-            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(7, 433);
-            panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(1481, 59);
-            panelPaginacion.TabIndex = 65;
-            // 
             // frmProductosInactivos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(panel5);
+            Controls.Add(panelProductosInactivos);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -243,8 +241,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Productos Inactivos";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelProductosInactivos.ResumeLayout(false);
+            panelProductosInactivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductosInactivos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ResumeLayout(false);
@@ -256,7 +254,7 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel5;
+        private Panel panelProductosInactivos;
         private PictureBox pictureBox14;
         private TextBox txtBuscar;
         private DataGridView dgvProductosInactivos;

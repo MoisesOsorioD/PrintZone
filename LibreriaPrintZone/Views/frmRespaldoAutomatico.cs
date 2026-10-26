@@ -1,9 +1,10 @@
 ﻿
+using LibreriaPrintZone.Components;
+using LibreriaPrintZone.Models;
+using LibreriaPrintZone.Services;
 using System;
 using System.IO;
 using System.Windows.Forms;
-using LibreriaPrintZone.Models;
-using LibreriaPrintZone.Services;
 
 namespace LibreriaPrintZone.Views
 {
@@ -19,6 +20,11 @@ namespace LibreriaPrintZone.Views
         public frmRespaldoAutomatico()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelInfoAutomatico, 20);
+            PanelRedondeado.Aplicar(panelInfoAutomatico2, 20);
+            PanelRedondeado.Aplicar(panelRespaldoAutomatico, 20);
+
+
 
             CargarFrecuencias();
             CargarTiposRespaldo();

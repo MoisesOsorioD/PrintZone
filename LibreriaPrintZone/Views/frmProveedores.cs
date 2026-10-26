@@ -27,6 +27,16 @@ namespace LibreriaPrintZone.Views
         public frmProveedores()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelCondicionesCompra, 20);
+            PanelRedondeado.Aplicar(panelInformacionContacto, 20);
+            PanelRedondeado.Aplicar(panelInformacionEmpresarial, 20);
+            PanelRedondeado.Aplicar(panelProveedorConMas, 20);
+            PanelRedondeado.Aplicar(panelProveedoresRegsitrados, 20);
+            PanelRedondeado.Aplicar(panelProveedorReciente, 20);
+            PanelRedondeado.Aplicar(panelTotalProveedores, 20);
+
+
             DataGridViewEstilo.Aplicar(dgvProveedores);
 
             _controller =

@@ -32,7 +32,7 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel5 = new Panel();
+            panelinformacionProducto = new Panel();
             txtCodigoBarras = new TextBox();
             label11 = new Label();
             label8 = new Label();
@@ -45,7 +45,7 @@
             txtNombre = new TextBox();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            panel3 = new Panel();
+            panelInfo = new Panel();
             pictureBox13 = new PictureBox();
             pictureBox23 = new PictureBox();
             pictureBox20 = new PictureBox();
@@ -58,7 +58,7 @@
             pictureBox8 = new PictureBox();
             label16 = new Label();
             pictureBox6 = new PictureBox();
-            panel7 = new Panel();
+            panelInfo2 = new Panel();
             pictureBox5 = new PictureBox();
             label25 = new Label();
             label24 = new Label();
@@ -69,18 +69,18 @@
             label5 = new Label();
             pictureBox3 = new PictureBox();
             btnCancelar = new Button();
-            panel4 = new Panel();
+            panelBotones = new Panel();
             btnLimpiar = new Button();
             btnGuardar = new Button();
-            panel1 = new Panel();
+            panelInformacionComercial = new Panel();
             label10 = new Label();
             txtPrecioVenta = new TextBox();
             label9 = new Label();
             txtPrecioCompra = new TextBox();
             pictureBox7 = new PictureBox();
             label12 = new Label();
-            panel2 = new Panel();
-            panel6 = new Panel();
+            panelControlnventario = new Panel();
+            panelinfo1 = new Panel();
             pictureBox2 = new PictureBox();
             label4 = new Label();
             label14 = new Label();
@@ -88,9 +88,9 @@
             pictureBox4 = new PictureBox();
             label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel5.SuspendLayout();
+            panelinformacionProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
+            panelInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox23).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
@@ -99,14 +99,14 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            panel7.SuspendLayout();
+            panelInfo2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
+            panelBotones.SuspendLayout();
+            panelInformacionComercial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel2.SuspendLayout();
-            panel6.SuspendLayout();
+            panelControlnventario.SuspendLayout();
+            panelinfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
@@ -141,26 +141,25 @@
             pictureBox10.TabIndex = 11;
             pictureBox10.TabStop = false;
             // 
-            // panel5
+            // panelinformacionProducto
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(txtCodigoBarras);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(label8);
-            panel5.Controls.Add(txtMarca);
-            panel5.Controls.Add(label7);
-            panel5.Controls.Add(txtDescripcion);
-            panel5.Controls.Add(cmbCategoria);
-            panel5.Controls.Add(label15);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(txtNombre);
-            panel5.Controls.Add(pictureBox1);
-            panel5.Controls.Add(label3);
-            panel5.Location = new Point(137, 139);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(863, 255);
-            panel5.TabIndex = 13;
+            panelinformacionProducto.BackColor = Color.FromArgb(242, 249, 254);
+            panelinformacionProducto.Controls.Add(txtCodigoBarras);
+            panelinformacionProducto.Controls.Add(label11);
+            panelinformacionProducto.Controls.Add(label8);
+            panelinformacionProducto.Controls.Add(txtMarca);
+            panelinformacionProducto.Controls.Add(label7);
+            panelinformacionProducto.Controls.Add(txtDescripcion);
+            panelinformacionProducto.Controls.Add(cmbCategoria);
+            panelinformacionProducto.Controls.Add(label15);
+            panelinformacionProducto.Controls.Add(label13);
+            panelinformacionProducto.Controls.Add(txtNombre);
+            panelinformacionProducto.Controls.Add(pictureBox1);
+            panelinformacionProducto.Controls.Add(label3);
+            panelinformacionProducto.Location = new Point(137, 139);
+            panelinformacionProducto.Name = "panelinformacionProducto";
+            panelinformacionProducto.Size = new Size(863, 255);
+            panelinformacionProducto.TabIndex = 13;
             // 
             // txtCodigoBarras
             // 
@@ -273,34 +272,33 @@
             label3.TabIndex = 6;
             label3.Text = "Información del producto";
             // 
-            // panel3
+            // panelInfo
             // 
-            panel3.BackColor = Color.FromArgb(247, 251, 255);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(pictureBox13);
-            panel3.Controls.Add(pictureBox23);
-            panel3.Controls.Add(pictureBox20);
-            panel3.Controls.Add(label22);
-            panel3.Controls.Add(pictureBox14);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(pictureBox11);
-            panel3.Controls.Add(label18);
-            panel3.Controls.Add(label17);
-            panel3.Controls.Add(pictureBox8);
-            panel3.Controls.Add(label16);
-            panel3.Controls.Add(pictureBox6);
-            panel3.Controls.Add(panel7);
-            panel3.Controls.Add(label24);
-            panel3.Controls.Add(label23);
-            panel3.Controls.Add(label21);
-            panel3.Controls.Add(label20);
-            panel3.Controls.Add(label19);
-            panel3.Controls.Add(label5);
-            panel3.Controls.Add(pictureBox3);
-            panel3.Location = new Point(1023, 139);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(575, 588);
-            panel3.TabIndex = 14;
+            panelInfo.BackColor = Color.FromArgb(242, 249, 254);
+            panelInfo.Controls.Add(pictureBox13);
+            panelInfo.Controls.Add(pictureBox23);
+            panelInfo.Controls.Add(pictureBox20);
+            panelInfo.Controls.Add(label22);
+            panelInfo.Controls.Add(pictureBox14);
+            panelInfo.Controls.Add(pictureBox12);
+            panelInfo.Controls.Add(pictureBox11);
+            panelInfo.Controls.Add(label18);
+            panelInfo.Controls.Add(label17);
+            panelInfo.Controls.Add(pictureBox8);
+            panelInfo.Controls.Add(label16);
+            panelInfo.Controls.Add(pictureBox6);
+            panelInfo.Controls.Add(panelInfo2);
+            panelInfo.Controls.Add(label24);
+            panelInfo.Controls.Add(label23);
+            panelInfo.Controls.Add(label21);
+            panelInfo.Controls.Add(label20);
+            panelInfo.Controls.Add(label19);
+            panelInfo.Controls.Add(label5);
+            panelInfo.Controls.Add(pictureBox3);
+            panelInfo.Location = new Point(1023, 139);
+            panelInfo.Name = "panelInfo";
+            panelInfo.Size = new Size(575, 588);
+            panelInfo.TabIndex = 14;
             // 
             // pictureBox13
             // 
@@ -422,15 +420,15 @@
             pictureBox6.TabIndex = 50;
             pictureBox6.TabStop = false;
             // 
-            // panel7
+            // panelInfo2
             // 
-            panel7.BackColor = Color.FromArgb(220, 233, 247);
-            panel7.Controls.Add(pictureBox5);
-            panel7.Controls.Add(label25);
-            panel7.Location = new Point(35, 461);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(475, 103);
-            panel7.TabIndex = 40;
+            panelInfo2.BackColor = Color.FromArgb(220, 233, 247);
+            panelInfo2.Controls.Add(pictureBox5);
+            panelInfo2.Controls.Add(label25);
+            panelInfo2.Location = new Point(35, 461);
+            panelInfo2.Name = "panelInfo2";
+            panelInfo2.Size = new Size(475, 103);
+            panelInfo2.TabIndex = 40;
             // 
             // pictureBox5
             // 
@@ -516,9 +514,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Campos_o_no;
-            pictureBox3.Location = new Point(3, -1);
+            pictureBox3.Location = new Point(3, 3);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(571, 160);
+            pictureBox3.Size = new Size(571, 156);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 8;
             pictureBox3.TabStop = false;
@@ -541,17 +539,16 @@
             btnCancelar.UseVisualStyleBackColor = false;
             btnCancelar.Click += btnCancelar_Click;
             // 
-            // panel4
+            // panelBotones
             // 
-            panel4.BackColor = Color.FromArgb(247, 251, 255);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(btnLimpiar);
-            panel4.Controls.Add(btnGuardar);
-            panel4.Controls.Add(btnCancelar);
-            panel4.Location = new Point(137, 777);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(1461, 87);
-            panel4.TabIndex = 16;
+            panelBotones.BackColor = Color.FromArgb(242, 249, 254);
+            panelBotones.Controls.Add(btnLimpiar);
+            panelBotones.Controls.Add(btnGuardar);
+            panelBotones.Controls.Add(btnCancelar);
+            panelBotones.Location = new Point(137, 777);
+            panelBotones.Name = "panelBotones";
+            panelBotones.Size = new Size(1461, 87);
+            panelBotones.TabIndex = 16;
             // 
             // btnLimpiar
             // 
@@ -589,20 +586,19 @@
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // panel1
+            // panelInformacionComercial
             // 
-            panel1.BackColor = Color.FromArgb(247, 251, 255);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(txtPrecioVenta);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(txtPrecioCompra);
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label12);
-            panel1.Location = new Point(137, 415);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(863, 142);
-            panel1.TabIndex = 50;
+            panelInformacionComercial.BackColor = Color.FromArgb(242, 249, 254);
+            panelInformacionComercial.Controls.Add(label10);
+            panelInformacionComercial.Controls.Add(txtPrecioVenta);
+            panelInformacionComercial.Controls.Add(label9);
+            panelInformacionComercial.Controls.Add(txtPrecioCompra);
+            panelInformacionComercial.Controls.Add(pictureBox7);
+            panelInformacionComercial.Controls.Add(label12);
+            panelInformacionComercial.Location = new Point(137, 415);
+            panelInformacionComercial.Name = "panelInformacionComercial";
+            panelInformacionComercial.Size = new Size(863, 142);
+            panelInformacionComercial.TabIndex = 50;
             // 
             // label10
             // 
@@ -660,29 +656,28 @@
             label12.TabIndex = 6;
             label12.Text = "Información comercial";
             // 
-            // panel2
+            // panelControlnventario
             // 
-            panel2.BackColor = Color.FromArgb(247, 251, 255);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(panel6);
-            panel2.Controls.Add(label14);
-            panel2.Controls.Add(txtStockMinimo);
-            panel2.Controls.Add(pictureBox4);
-            panel2.Controls.Add(label6);
-            panel2.Location = new Point(137, 581);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(863, 146);
-            panel2.TabIndex = 51;
+            panelControlnventario.BackColor = Color.FromArgb(242, 249, 254);
+            panelControlnventario.Controls.Add(panelinfo1);
+            panelControlnventario.Controls.Add(label14);
+            panelControlnventario.Controls.Add(txtStockMinimo);
+            panelControlnventario.Controls.Add(pictureBox4);
+            panelControlnventario.Controls.Add(label6);
+            panelControlnventario.Location = new Point(137, 581);
+            panelControlnventario.Name = "panelControlnventario";
+            panelControlnventario.Size = new Size(863, 146);
+            panelControlnventario.TabIndex = 51;
             // 
-            // panel6
+            // panelinfo1
             // 
-            panel6.BackColor = Color.FromArgb(220, 233, 247);
-            panel6.Controls.Add(pictureBox2);
-            panel6.Controls.Add(label4);
-            panel6.Location = new Point(350, 19);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(475, 103);
-            panel6.TabIndex = 39;
+            panelinfo1.BackColor = Color.FromArgb(220, 233, 247);
+            panelinfo1.Controls.Add(pictureBox2);
+            panelinfo1.Controls.Add(label4);
+            panelinfo1.Location = new Point(350, 19);
+            panelinfo1.Name = "panelinfo1";
+            panelinfo1.Size = new Size(475, 103);
+            panelinfo1.TabIndex = 39;
             // 
             // pictureBox2
             // 
@@ -749,11 +744,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel5);
+            Controls.Add(panelControlnventario);
+            Controls.Add(panelInformacionComercial);
+            Controls.Add(panelBotones);
+            Controls.Add(panelInfo);
+            Controls.Add(panelinformacionProducto);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -761,11 +756,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Nuevo Producto";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelinformacionProducto.ResumeLayout(false);
+            panelinformacionProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelInfo.ResumeLayout(false);
+            panelInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox23).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
@@ -774,18 +769,18 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelInfo2.ResumeLayout(false);
+            panelInfo2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel4.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelBotones.ResumeLayout(false);
+            panelInformacionComercial.ResumeLayout(false);
+            panelInformacionComercial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelControlnventario.ResumeLayout(false);
+            panelControlnventario.PerformLayout();
+            panelinfo1.ResumeLayout(false);
+            panelinfo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
@@ -797,10 +792,10 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel5;
-        private Panel panel3;
+        private Panel panelinformacionProducto;
+        private Panel panelInfo;
         private Button btnCancelar;
-        private Panel panel4;
+        private Panel panelBotones;
         private Button btnLimpiar;
         private Button btnGuardar;
         private PictureBox pictureBox1;
@@ -815,19 +810,19 @@
         private TextBox txtMarca;
         private TextBox txtCodigoBarras;
         private Label label11;
-        private Panel panel1;
+        private Panel panelInformacionComercial;
         private PictureBox pictureBox7;
         private Label label12;
         private Label label10;
         private TextBox txtPrecioVenta;
         private Label label9;
         private TextBox txtPrecioCompra;
-        private Panel panel2;
+        private Panel panelControlnventario;
         private PictureBox pictureBox4;
         private Label label6;
         private Label label14;
         private TextBox txtStockMinimo;
-        private Panel panel6;
+        private Panel panelinfo1;
         private PictureBox pictureBox2;
         private Label label4;
         private PictureBox pictureBox3;
@@ -841,7 +836,7 @@
         private Label label16;
         private Label label24;
         private Label label23;
-        private Panel panel7;
+        private Panel panelInfo2;
         private PictureBox pictureBox5;
         private Label label25;
         private PictureBox pictureBox14;

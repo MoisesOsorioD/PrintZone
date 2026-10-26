@@ -32,21 +32,22 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel2 = new Panel();
+            panelTotalCategoria = new Panel();
             pictureBox11 = new PictureBox();
             lblTotalCategorias = new Label();
             label3 = new Label();
-            panel3 = new Panel();
+            panelCategoriaMasProductos = new Panel();
             lblCantidadMasProductos = new Label();
             pictureBox12 = new PictureBox();
             lblCategoriaMasProductos = new Label();
             label6 = new Label();
-            panel4 = new Panel();
+            panelCategoriaMenosUsada = new Panel();
             lblCantidadMenosUsada = new Label();
             pictureBox13 = new PictureBox();
             lblCategoriaMenosUsada = new Label();
             label8 = new Label();
-            panel5 = new Panel();
+            panelCategoriasRegistradas = new Panel();
+            panelPaginacion = new Panel();
             label11 = new Label();
             pictureBox15 = new PictureBox();
             dgvCategorias = new DataGridView();
@@ -54,7 +55,7 @@
             colCantidadProductos = new DataGridViewTextBoxColumn();
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panel6 = new Panel();
+            panelDetalles = new Panel();
             label12 = new Label();
             pictureBox1 = new PictureBox();
             btnEliminar = new Button();
@@ -62,19 +63,18 @@
             btnGuardar = new Button();
             label13 = new Label();
             txtNombreCategoria = new TextBox();
-            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel2.SuspendLayout();
+            panelTotalCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            panel3.SuspendLayout();
+            panelCategoriaMasProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel4.SuspendLayout();
+            panelCategoriaMenosUsada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel5.SuspendLayout();
+            panelCategoriasRegistradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            panel6.SuspendLayout();
+            panelDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -108,17 +108,16 @@
             pictureBox10.TabIndex = 5;
             pictureBox10.TabStop = false;
             // 
-            // panel2
+            // panelTotalCategoria
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(lblTotalCategorias);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(131, 107);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(445, 116);
-            panel2.TabIndex = 6;
+            panelTotalCategoria.BackColor = Color.FromArgb(242, 249, 254);
+            panelTotalCategoria.Controls.Add(pictureBox11);
+            panelTotalCategoria.Controls.Add(lblTotalCategorias);
+            panelTotalCategoria.Controls.Add(label3);
+            panelTotalCategoria.Location = new Point(131, 107);
+            panelTotalCategoria.Name = "panelTotalCategoria";
+            panelTotalCategoria.Size = new Size(445, 116);
+            panelTotalCategoria.TabIndex = 6;
             // 
             // pictureBox11
             // 
@@ -150,18 +149,17 @@
             label3.TabIndex = 0;
             label3.Text = "Total de categorías";
             // 
-            // panel3
+            // panelCategoriaMasProductos
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(lblCantidadMasProductos);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(lblCategoriaMasProductos);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(647, 107);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(445, 116);
-            panel3.TabIndex = 7;
+            panelCategoriaMasProductos.BackColor = Color.FromArgb(242, 249, 254);
+            panelCategoriaMasProductos.Controls.Add(lblCantidadMasProductos);
+            panelCategoriaMasProductos.Controls.Add(pictureBox12);
+            panelCategoriaMasProductos.Controls.Add(lblCategoriaMasProductos);
+            panelCategoriaMasProductos.Controls.Add(label6);
+            panelCategoriaMasProductos.Location = new Point(647, 107);
+            panelCategoriaMasProductos.Name = "panelCategoriaMasProductos";
+            panelCategoriaMasProductos.Size = new Size(445, 116);
+            panelCategoriaMasProductos.TabIndex = 7;
             // 
             // lblCantidadMasProductos
             // 
@@ -203,18 +201,17 @@
             label6.TabIndex = 0;
             label6.Text = "Categoría con más productos";
             // 
-            // panel4
+            // panelCategoriaMenosUsada
             // 
-            panel4.BackColor = Color.FromArgb(242, 249, 254);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(lblCantidadMenosUsada);
-            panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(lblCategoriaMenosUsada);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(1138, 107);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(441, 116);
-            panel4.TabIndex = 8;
+            panelCategoriaMenosUsada.BackColor = Color.FromArgb(242, 249, 254);
+            panelCategoriaMenosUsada.Controls.Add(lblCantidadMenosUsada);
+            panelCategoriaMenosUsada.Controls.Add(pictureBox13);
+            panelCategoriaMenosUsada.Controls.Add(lblCategoriaMenosUsada);
+            panelCategoriaMenosUsada.Controls.Add(label8);
+            panelCategoriaMenosUsada.Location = new Point(1138, 107);
+            panelCategoriaMenosUsada.Name = "panelCategoriaMenosUsada";
+            panelCategoriaMenosUsada.Size = new Size(441, 116);
+            panelCategoriaMenosUsada.TabIndex = 8;
             // 
             // lblCantidadMenosUsada
             // 
@@ -256,18 +253,25 @@
             label8.TabIndex = 0;
             label8.Text = "Categoría menos usada";
             // 
-            // panel5
+            // panelCategoriasRegistradas
             // 
-            panel5.BackColor = Color.FromArgb(242, 249, 254);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(panelPaginacion);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(pictureBox15);
-            panel5.Controls.Add(dgvCategorias);
-            panel5.Location = new Point(647, 293);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(932, 541);
-            panel5.TabIndex = 9;
+            panelCategoriasRegistradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelCategoriasRegistradas.Controls.Add(panelPaginacion);
+            panelCategoriasRegistradas.Controls.Add(label11);
+            panelCategoriasRegistradas.Controls.Add(pictureBox15);
+            panelCategoriasRegistradas.Controls.Add(dgvCategorias);
+            panelCategoriasRegistradas.Location = new Point(647, 293);
+            panelCategoriasRegistradas.Name = "panelCategoriasRegistradas";
+            panelCategoriasRegistradas.Size = new Size(932, 541);
+            panelCategoriasRegistradas.TabIndex = 9;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.Location = new Point(33, 447);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(877, 59);
+            panelPaginacion.TabIndex = 10;
             // 
             // label11
             // 
@@ -335,21 +339,20 @@
             txtBuscar.TabIndex = 1;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // panel6
+            // panelDetalles
             // 
-            panel6.BackColor = Color.FromArgb(242, 249, 254);
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(label12);
-            panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(btnEliminar);
-            panel6.Controls.Add(btnLimpiar);
-            panel6.Controls.Add(btnGuardar);
-            panel6.Controls.Add(label13);
-            panel6.Controls.Add(txtNombreCategoria);
-            panel6.Location = new Point(131, 240);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(445, 508);
-            panel6.TabIndex = 10;
+            panelDetalles.BackColor = Color.FromArgb(242, 249, 254);
+            panelDetalles.Controls.Add(label12);
+            panelDetalles.Controls.Add(pictureBox1);
+            panelDetalles.Controls.Add(btnEliminar);
+            panelDetalles.Controls.Add(btnLimpiar);
+            panelDetalles.Controls.Add(btnGuardar);
+            panelDetalles.Controls.Add(label13);
+            panelDetalles.Controls.Add(txtNombreCategoria);
+            panelDetalles.Location = new Point(131, 240);
+            panelDetalles.Name = "panelDetalles";
+            panelDetalles.Size = new Size(445, 508);
+            panelDetalles.TabIndex = 10;
             // 
             // label12
             // 
@@ -443,28 +446,19 @@
             txtNombreCategoria.Size = new Size(342, 27);
             txtNombreCategoria.TabIndex = 9;
             // 
-            // panelPaginacion
-            // 
-            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(33, 447);
-            panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(877, 59);
-            panelPaginacion.TabIndex = 10;
-            // 
             // frmCategorias
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1614, 868);
-            Controls.Add(panel6);
+            Controls.Add(panelDetalles);
             Controls.Add(pictureBox14);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
+            Controls.Add(panelCategoriasRegistradas);
+            Controls.Add(panelCategoriaMenosUsada);
             Controls.Add(txtBuscar);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panelCategoriaMasProductos);
+            Controls.Add(panelTotalCategoria);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -472,22 +466,22 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de categorías";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelTotalCategoria.ResumeLayout(false);
+            panelTotalCategoria.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelCategoriaMasProductos.ResumeLayout(false);
+            panelCategoriaMasProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelCategoriaMenosUsada.ResumeLayout(false);
+            panelCategoriaMenosUsada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelCategoriasRegistradas.ResumeLayout(false);
+            panelCategoriasRegistradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelDetalles.ResumeLayout(false);
+            panelDetalles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -497,26 +491,26 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel2;
+        private Panel panelTotalCategoria;
         private PictureBox pictureBox11;
         private Label lblTotalCategorias;
         private Label label3;
-        private Panel panel3;
+        private Panel panelCategoriaMasProductos;
         private PictureBox pictureBox12;
         private Label lblCategoriaMasProductos;
         private Label label6;
-        private Panel panel4;
+        private Panel panelCategoriaMenosUsada;
         private PictureBox pictureBox13;
         private Label lblCategoriaMenosUsada;
         private Label label8;
         private Label lblCantidadMasProductos;
         private Label lblCantidadMenosUsada;
-        private Panel panel5;
+        private Panel panelCategoriasRegistradas;
         private DataGridView dgvCategorias;
         private TextBox txtBuscar;
         private PictureBox pictureBox14;
         private Label label11;
-        private Panel panel6;
+        private Panel panelDetalles;
         private Label label12;
         private TextBox txtNombreCategoria;
         private Label label13;

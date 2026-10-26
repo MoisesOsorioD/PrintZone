@@ -20,6 +20,15 @@ namespace LibreriaPrintZone.Views
         public frmUsuarios()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelAgregarEditar, 20);
+            PanelRedondeado.Aplicar(panelListaUsuarios, 20);
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelTotalUsuario, 20);
+            PanelRedondeado.Aplicar(panelUsuarioActivos, 20);
+            PanelRedondeado.Aplicar(panelUsuarioDesactivados, 20);
+
+
+
             DataGridViewEstilo.Aplicar(dgvUsuarios);
 
             _controller = new UsuariosController();

@@ -22,6 +22,10 @@ namespace LibreriaPrintZone.Views
         public frmProductosInactivos()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelProductosInactivos, 20);
+
+
             DataGridViewEstilo.Aplicar(dgvProductosInactivos);
 
             _controller =

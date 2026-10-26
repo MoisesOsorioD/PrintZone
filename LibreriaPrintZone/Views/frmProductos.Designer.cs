@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
@@ -43,8 +43,8 @@
             colStockActualP = new DataGridViewTextBoxColumn();
             colStockMinimoP = new DataGridViewTextBoxColumn();
             colCategoriaP = new DataGridViewTextBoxColumn();
-            panel5 = new Panel();
-            panel1 = new Panel();
+            panelEditar = new Panel();
+            panelInfo1 = new Panel();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             cmbCategoria = new ComboBox();
@@ -73,12 +73,14 @@
             pictureBox14 = new PictureBox();
             btnProductosInactivos = new Button();
             panelPaginacion = new Panel();
+            panelProductosRegistrados = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
-            panel5.SuspendLayout();
-            panel1.SuspendLayout();
+            panelEditar.SuspendLayout();
+            panelInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            panelProductosRegistrados.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -113,15 +115,15 @@
             // 
             // dgvProductos
             // 
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvProductos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
-            dgvProductos.Location = new Point(664, 255);
+            dgvProductos.Location = new Point(23, 25);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 51;
-            dgvProductos.Size = new Size(941, 363);
+            dgvProductos.Size = new Size(916, 363);
             dgvProductos.TabIndex = 8;
             // 
             // colProductoP
@@ -187,43 +189,42 @@
             colCategoriaP.MinimumWidth = 6;
             colCategoriaP.Name = "colCategoriaP";
             // 
-            // panel5
+            // panelEditar
             // 
-            panel5.BackColor = Color.FromArgb(242, 249, 254);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(panel1);
-            panel5.Controls.Add(cmbCategoria);
-            panel5.Controls.Add(label15);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txtStockMinimo);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(txtCodigoBarras);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(txtStockActual);
-            panel5.Controls.Add(label10);
-            panel5.Controls.Add(txtPrecioVenta);
-            panel5.Controls.Add(label9);
-            panel5.Controls.Add(txtPrecioCompra);
-            panel5.Controls.Add(label8);
-            panel5.Controls.Add(txtMarca);
-            panel5.Controls.Add(label7);
-            panel5.Controls.Add(txtDescripcion);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(txtProducto);
-            panel5.Location = new Point(139, 209);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(477, 647);
-            panel5.TabIndex = 12;
+            panelEditar.BackColor = Color.FromArgb(242, 249, 254);
+            panelEditar.Controls.Add(panelInfo1);
+            panelEditar.Controls.Add(cmbCategoria);
+            panelEditar.Controls.Add(label15);
+            panelEditar.Controls.Add(label14);
+            panelEditar.Controls.Add(txtStockMinimo);
+            panelEditar.Controls.Add(label12);
+            panelEditar.Controls.Add(txtCodigoBarras);
+            panelEditar.Controls.Add(label11);
+            panelEditar.Controls.Add(txtStockActual);
+            panelEditar.Controls.Add(label10);
+            panelEditar.Controls.Add(txtPrecioVenta);
+            panelEditar.Controls.Add(label9);
+            panelEditar.Controls.Add(txtPrecioCompra);
+            panelEditar.Controls.Add(label8);
+            panelEditar.Controls.Add(txtMarca);
+            panelEditar.Controls.Add(label7);
+            panelEditar.Controls.Add(txtDescripcion);
+            panelEditar.Controls.Add(label13);
+            panelEditar.Controls.Add(txtProducto);
+            panelEditar.Location = new Point(139, 209);
+            panelEditar.Name = "panelEditar";
+            panelEditar.Size = new Size(477, 647);
+            panelEditar.TabIndex = 12;
             // 
-            // panel1
+            // panelInfo1
             // 
-            panel1.BackColor = Color.FromArgb(220, 233, 247);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(label3);
-            panel1.Location = new Point(3, 495);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(453, 103);
-            panel1.TabIndex = 38;
+            panelInfo1.BackColor = Color.FromArgb(220, 233, 247);
+            panelInfo1.Controls.Add(pictureBox1);
+            panelInfo1.Controls.Add(label3);
+            panelInfo1.Location = new Point(8, 495);
+            panelInfo1.Name = "panelInfo1";
+            panelInfo1.Size = new Size(453, 103);
+            panelInfo1.TabIndex = 38;
             // 
             // pictureBox1
             // 
@@ -515,11 +516,20 @@
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(664, 666);
+            panelPaginacion.Location = new Point(23, 436);
             panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(941, 59);
+            panelPaginacion.Size = new Size(916, 59);
             panelPaginacion.TabIndex = 62;
+            // 
+            // panelProductosRegistrados
+            // 
+            panelProductosRegistrados.BackColor = Color.FromArgb(242, 249, 254);
+            panelProductosRegistrados.Controls.Add(panelPaginacion);
+            panelProductosRegistrados.Controls.Add(dgvProductos);
+            panelProductosRegistrados.Location = new Point(664, 269);
+            panelProductosRegistrados.Name = "panelProductosRegistrados";
+            panelProductosRegistrados.Size = new Size(956, 539);
+            panelProductosRegistrados.TabIndex = 63;
             // 
             // frmProductos
             // 
@@ -527,16 +537,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
             ClientSize = new Size(1632, 915);
-            Controls.Add(panelPaginacion);
+            Controls.Add(panelProductosRegistrados);
             Controls.Add(btnProductosInactivos);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
             Controls.Add(btnLimpiar);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
-            Controls.Add(panel5);
+            Controls.Add(panelEditar);
             Controls.Add(btnNuevoProductos);
-            Controls.Add(dgvProductos);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -545,12 +554,13 @@
             Text = "Librería PrintZone - Gestión de Productos";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelEditar.ResumeLayout(false);
+            panelEditar.PerformLayout();
+            panelInfo1.ResumeLayout(false);
+            panelInfo1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            panelProductosRegistrados.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -569,7 +579,7 @@
         private DataGridViewTextBoxColumn colStockActualP;
         private DataGridViewTextBoxColumn colStockMinimoP;
         private DataGridViewTextBoxColumn colCategoriaP;
-        private Panel panel5;
+        private Panel panelEditar;
         private Label label10;
         private TextBox txtPrecioVenta;
         private Label label9;
@@ -593,11 +603,12 @@
         private Button btnNuevoProductos;
         private Button btnLimpiar;
         private TextBox txtBuscar;
-        private Panel panel1;
+        private Panel panelInfo1;
         private Label label3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox14;
         private Button btnProductosInactivos;
         private Panel panelPaginacion;
+        private Panel panelProductosRegistrados;
     }
 }

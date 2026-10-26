@@ -34,7 +34,7 @@
             label2 = new Label();
             btnRespaldoManual = new Button();
             btnRespaldoAutomatico = new Button();
-            panel5 = new Panel();
+            panelExportarManual = new Panel();
             cmbTipoRespaldo = new ComboBox();
             pictureBox7 = new PictureBox();
             label14 = new Label();
@@ -49,7 +49,7 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
-            panel3 = new Panel();
+            panelImportarManual = new Panel();
             panel6 = new Panel();
             pictureBox4 = new PictureBox();
             label8 = new Label();
@@ -61,7 +61,7 @@
             label10 = new Label();
             pictureBox5 = new PictureBox();
             label12 = new Label();
-            panel2 = new Panel();
+            PanelUltimoRespaldo = new Panel();
             pictureBox14 = new PictureBox();
             lblEstadoUltimoRespaldo = new Label();
             lblNombreUltimoRespaldo = new Label();
@@ -74,17 +74,17 @@
             label19 = new Label();
             pnlRespaldoManual = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel5.SuspendLayout();
+            panelExportarManual.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel3.SuspendLayout();
+            panelImportarManual.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel2.SuspendLayout();
+            PanelUltimoRespaldo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
@@ -154,28 +154,27 @@
             btnRespaldoAutomatico.UseVisualStyleBackColor = false;
             btnRespaldoAutomatico.Click += btnRespaldoAutomatico_Click;
             // 
-            // panel5
+            // panelExportarManual
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(cmbTipoRespaldo);
-            panel5.Controls.Add(pictureBox7);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(btnCambiarUbicacion);
-            panel5.Controls.Add(txtUbicacionRespaldo);
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(lblNombreBaseDatos);
-            panel5.Controls.Add(pictureBox9);
-            panel5.Controls.Add(label5);
-            panel5.Controls.Add(btnCrearRespaldo);
-            panel5.Controls.Add(label4);
-            panel5.Controls.Add(pictureBox1);
-            panel5.Controls.Add(label3);
-            panel5.Location = new Point(0, 27);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(706, 434);
-            panel5.TabIndex = 84;
+            panelExportarManual.BackColor = Color.FromArgb(242, 249, 254);
+            panelExportarManual.Controls.Add(cmbTipoRespaldo);
+            panelExportarManual.Controls.Add(pictureBox7);
+            panelExportarManual.Controls.Add(label14);
+            panelExportarManual.Controls.Add(pictureBox2);
+            panelExportarManual.Controls.Add(btnCambiarUbicacion);
+            panelExportarManual.Controls.Add(txtUbicacionRespaldo);
+            panelExportarManual.Controls.Add(label6);
+            panelExportarManual.Controls.Add(lblNombreBaseDatos);
+            panelExportarManual.Controls.Add(pictureBox9);
+            panelExportarManual.Controls.Add(label5);
+            panelExportarManual.Controls.Add(btnCrearRespaldo);
+            panelExportarManual.Controls.Add(label4);
+            panelExportarManual.Controls.Add(pictureBox1);
+            panelExportarManual.Controls.Add(label3);
+            panelExportarManual.Location = new Point(21, 27);
+            panelExportarManual.Name = "panelExportarManual";
+            panelExportarManual.Size = new Size(706, 434);
+            panelExportarManual.TabIndex = 84;
             // 
             // cmbTipoRespaldo
             // 
@@ -329,23 +328,22 @@
             label3.TabIndex = 6;
             label3.Text = "Respaldo Manual";
             // 
-            // panel3
+            // panelImportarManual
             // 
-            panel3.BackColor = Color.FromArgb(247, 251, 255);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(panel6);
-            panel3.Controls.Add(pictureBox3);
-            panel3.Controls.Add(btnSeleccionarRespaldo);
-            panel3.Controls.Add(txtArchivoRespaldo);
-            panel3.Controls.Add(label7);
-            panel3.Controls.Add(btnRestaurarRespaldo);
-            panel3.Controls.Add(label10);
-            panel3.Controls.Add(pictureBox5);
-            panel3.Controls.Add(label12);
-            panel3.Location = new Point(737, 27);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(706, 434);
-            panel3.TabIndex = 85;
+            panelImportarManual.BackColor = Color.FromArgb(242, 249, 254);
+            panelImportarManual.Controls.Add(panel6);
+            panelImportarManual.Controls.Add(pictureBox3);
+            panelImportarManual.Controls.Add(btnSeleccionarRespaldo);
+            panelImportarManual.Controls.Add(txtArchivoRespaldo);
+            panelImportarManual.Controls.Add(label7);
+            panelImportarManual.Controls.Add(btnRestaurarRespaldo);
+            panelImportarManual.Controls.Add(label10);
+            panelImportarManual.Controls.Add(pictureBox5);
+            panelImportarManual.Controls.Add(label12);
+            panelImportarManual.Location = new Point(758, 27);
+            panelImportarManual.Name = "panelImportarManual";
+            panelImportarManual.Size = new Size(706, 434);
+            panelImportarManual.TabIndex = 85;
             // 
             // panel6
             // 
@@ -470,24 +468,23 @@
             label12.TabIndex = 6;
             label12.Text = "Restaurar Manual";
             // 
-            // panel2
+            // PanelUltimoRespaldo
             // 
-            panel2.BackColor = Color.FromArgb(247, 251, 255);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(pictureBox14);
-            panel2.Controls.Add(lblEstadoUltimoRespaldo);
-            panel2.Controls.Add(lblNombreUltimoRespaldo);
-            panel2.Controls.Add(pictureBox12);
-            panel2.Controls.Add(label17);
-            panel2.Controls.Add(lblFechaHoraUltimoRespaldo);
-            panel2.Controls.Add(pictureBox6);
-            panel2.Controls.Add(label16);
-            panel2.Controls.Add(pictureBox8);
-            panel2.Controls.Add(label19);
-            panel2.Location = new Point(0, 484);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1443, 195);
-            panel2.TabIndex = 86;
+            PanelUltimoRespaldo.BackColor = Color.FromArgb(242, 249, 254);
+            PanelUltimoRespaldo.Controls.Add(pictureBox14);
+            PanelUltimoRespaldo.Controls.Add(lblEstadoUltimoRespaldo);
+            PanelUltimoRespaldo.Controls.Add(lblNombreUltimoRespaldo);
+            PanelUltimoRespaldo.Controls.Add(pictureBox12);
+            PanelUltimoRespaldo.Controls.Add(label17);
+            PanelUltimoRespaldo.Controls.Add(lblFechaHoraUltimoRespaldo);
+            PanelUltimoRespaldo.Controls.Add(pictureBox6);
+            PanelUltimoRespaldo.Controls.Add(label16);
+            PanelUltimoRespaldo.Controls.Add(pictureBox8);
+            PanelUltimoRespaldo.Controls.Add(label19);
+            PanelUltimoRespaldo.Location = new Point(21, 484);
+            PanelUltimoRespaldo.Name = "PanelUltimoRespaldo";
+            PanelUltimoRespaldo.Size = new Size(1443, 195);
+            PanelUltimoRespaldo.TabIndex = 86;
             // 
             // pictureBox14
             // 
@@ -595,12 +592,12 @@
             // 
             // pnlRespaldoManual
             // 
-            pnlRespaldoManual.Controls.Add(panel2);
-            pnlRespaldoManual.Controls.Add(panel3);
-            pnlRespaldoManual.Controls.Add(panel5);
-            pnlRespaldoManual.Location = new Point(119, 197);
+            pnlRespaldoManual.Controls.Add(PanelUltimoRespaldo);
+            pnlRespaldoManual.Controls.Add(panelImportarManual);
+            pnlRespaldoManual.Controls.Add(panelExportarManual);
+            pnlRespaldoManual.Location = new Point(98, 197);
             pnlRespaldoManual.Name = "pnlRespaldoManual";
-            pnlRespaldoManual.Size = new Size(1443, 706);
+            pnlRespaldoManual.Size = new Size(1494, 706);
             pnlRespaldoManual.TabIndex = 86;
             // 
             // frmConfiguracion
@@ -619,21 +616,21 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Configuración";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelExportarManual.ResumeLayout(false);
+            panelExportarManual.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelImportarManual.ResumeLayout(false);
+            panelImportarManual.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            PanelUltimoRespaldo.ResumeLayout(false);
+            PanelUltimoRespaldo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
@@ -650,7 +647,7 @@
         private Label label2;
         private Button btnRespaldoManual;
         private Button btnRespaldoAutomatico;
-        private Panel panel5;
+        private Panel panelExportarManual;
         private ComboBox cmbTipoRespaldo;
         private PictureBox pictureBox7;
         private Label label14;
@@ -665,7 +662,7 @@
         private Label label4;
         private PictureBox pictureBox1;
         private Label label3;
-        private Panel panel3;
+        private Panel panelImportarManual;
         private Panel panel6;
         private PictureBox pictureBox4;
         private Label label8;
@@ -677,7 +674,7 @@
         private Label label10;
         private PictureBox pictureBox5;
         private Label label12;
-        private Panel panel2;
+        private Panel PanelUltimoRespaldo;
         private PictureBox pictureBox14;
         private Label lblEstadoUltimoRespaldo;
         private Label lblNombreUltimoRespaldo;

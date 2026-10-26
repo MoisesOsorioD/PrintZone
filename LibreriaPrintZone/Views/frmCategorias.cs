@@ -14,6 +14,13 @@ namespace LibreriaPrintZone
         public frmCategorias()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelCategoriaMasProductos, 20);
+            PanelRedondeado.Aplicar(panelCategoriaMenosUsada, 20);
+            PanelRedondeado.Aplicar(panelCategoriasRegistradas, 20);
+            PanelRedondeado.Aplicar(panelDetalles, 20);
+            PanelRedondeado.Aplicar(panelTotalCategoria, 20);
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+
             DataGridViewEstilo.Aplicar(dgvCategorias);
 
             dgvCategorias.AutoGenerateColumns = false;

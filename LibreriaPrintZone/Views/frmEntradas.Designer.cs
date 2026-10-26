@@ -32,22 +32,22 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel4 = new Panel();
+            panelInversion = new Panel();
             label10 = new Label();
             pictureBox13 = new PictureBox();
             lblInversionInventario = new Label();
             label8 = new Label();
-            panel3 = new Panel();
+            panelUnidadesIngresadas = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
             lblUnidadesIngresadas = new Label();
             label6 = new Label();
-            panel2 = new Panel();
+            panelEntradasRegistradas = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
             lblTotalEntradas = new Label();
             label3 = new Label();
-            panel5 = new Panel();
+            panelRegistrarEntrada = new Panel();
             btnLimpiar = new Button();
             txtCostoLote = new TextBox();
             btnRegistrarEntrada = new Button();
@@ -62,7 +62,7 @@
             label16 = new Label();
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panel7 = new Panel();
+            panelEntradas = new Panel();
             panelPaginacion = new Panel();
             dgvEntradas = new DataGridView();
             colFecha = new DataGridViewTextBoxColumn();
@@ -73,16 +73,16 @@
             label17 = new Label();
             pictureBox3 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel4.SuspendLayout();
+            panelInversion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel3.SuspendLayout();
+            panelUnidadesIngresadas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel2.SuspendLayout();
+            panelEntradasRegistradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            panel5.SuspendLayout();
+            panelRegistrarEntrada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            panel7.SuspendLayout();
+            panelEntradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEntradas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
@@ -117,18 +117,17 @@
             pictureBox10.TabIndex = 11;
             pictureBox10.TabStop = false;
             // 
-            // panel4
+            // panelInversion
             // 
-            panel4.BackColor = Color.FromArgb(242, 249, 254);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(lblInversionInventario);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(1130, 108);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(441, 116);
-            panel4.TabIndex = 18;
+            panelInversion.BackColor = Color.FromArgb(242, 249, 254);
+            panelInversion.Controls.Add(label10);
+            panelInversion.Controls.Add(pictureBox13);
+            panelInversion.Controls.Add(lblInversionInventario);
+            panelInversion.Controls.Add(label8);
+            panelInversion.Location = new Point(1130, 108);
+            panelInversion.Name = "panelInversion";
+            panelInversion.Size = new Size(441, 116);
+            panelInversion.TabIndex = 18;
             // 
             // label10
             // 
@@ -170,18 +169,17 @@
             label8.TabIndex = 0;
             label8.Text = "Inversión en inventario";
             // 
-            // panel3
+            // panelUnidadesIngresadas
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(lblUnidadesIngresadas);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(639, 108);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(445, 116);
-            panel3.TabIndex = 17;
+            panelUnidadesIngresadas.BackColor = Color.FromArgb(242, 249, 254);
+            panelUnidadesIngresadas.Controls.Add(label9);
+            panelUnidadesIngresadas.Controls.Add(pictureBox12);
+            panelUnidadesIngresadas.Controls.Add(lblUnidadesIngresadas);
+            panelUnidadesIngresadas.Controls.Add(label6);
+            panelUnidadesIngresadas.Location = new Point(639, 108);
+            panelUnidadesIngresadas.Name = "panelUnidadesIngresadas";
+            panelUnidadesIngresadas.Size = new Size(445, 116);
+            panelUnidadesIngresadas.TabIndex = 17;
             // 
             // label9
             // 
@@ -223,18 +221,17 @@
             label6.TabIndex = 0;
             label6.Text = "Unidades ingresadas";
             // 
-            // panel2
+            // panelEntradasRegistradas
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(lblTotalEntradas);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(123, 108);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(445, 116);
-            panel2.TabIndex = 16;
+            panelEntradasRegistradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelEntradasRegistradas.Controls.Add(label11);
+            panelEntradasRegistradas.Controls.Add(pictureBox11);
+            panelEntradasRegistradas.Controls.Add(lblTotalEntradas);
+            panelEntradasRegistradas.Controls.Add(label3);
+            panelEntradasRegistradas.Location = new Point(123, 108);
+            panelEntradasRegistradas.Name = "panelEntradasRegistradas";
+            panelEntradasRegistradas.Size = new Size(445, 116);
+            panelEntradasRegistradas.TabIndex = 16;
             // 
             // label11
             // 
@@ -276,26 +273,25 @@
             label3.TabIndex = 0;
             label3.Text = "Entradas registradas";
             // 
-            // panel5
+            // panelRegistrarEntrada
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(btnLimpiar);
-            panel5.Controls.Add(txtCostoLote);
-            panel5.Controls.Add(btnRegistrarEntrada);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txtCantidad);
-            panel5.Controls.Add(cmbProducto);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(cmbProveedor);
-            panel5.Controls.Add(label15);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(123, 249);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(475, 578);
-            panel5.TabIndex = 19;
+            panelRegistrarEntrada.BackColor = Color.FromArgb(247, 251, 255);
+            panelRegistrarEntrada.Controls.Add(btnLimpiar);
+            panelRegistrarEntrada.Controls.Add(txtCostoLote);
+            panelRegistrarEntrada.Controls.Add(btnRegistrarEntrada);
+            panelRegistrarEntrada.Controls.Add(label13);
+            panelRegistrarEntrada.Controls.Add(label14);
+            panelRegistrarEntrada.Controls.Add(txtCantidad);
+            panelRegistrarEntrada.Controls.Add(cmbProducto);
+            panelRegistrarEntrada.Controls.Add(label12);
+            panelRegistrarEntrada.Controls.Add(cmbProveedor);
+            panelRegistrarEntrada.Controls.Add(label15);
+            panelRegistrarEntrada.Controls.Add(pictureBox2);
+            panelRegistrarEntrada.Controls.Add(label16);
+            panelRegistrarEntrada.Location = new Point(123, 249);
+            panelRegistrarEntrada.Name = "panelRegistrarEntrada";
+            panelRegistrarEntrada.Size = new Size(475, 578);
+            panelRegistrarEntrada.TabIndex = 19;
             // 
             // btnLimpiar
             // 
@@ -444,23 +440,21 @@
             txtBuscar.TabIndex = 58;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // panel7
+            // panelEntradas
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(panelPaginacion);
-            panel7.Controls.Add(dgvEntradas);
-            panel7.Controls.Add(label17);
-            panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(643, 318);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(935, 509);
-            panel7.TabIndex = 57;
+            panelEntradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelEntradas.Controls.Add(panelPaginacion);
+            panelEntradas.Controls.Add(dgvEntradas);
+            panelEntradas.Controls.Add(label17);
+            panelEntradas.Controls.Add(pictureBox3);
+            panelEntradas.Location = new Point(643, 318);
+            panelEntradas.Name = "panelEntradas";
+            panelEntradas.Size = new Size(935, 509);
+            panelEntradas.TabIndex = 57;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
             panelPaginacion.Location = new Point(20, 432);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(896, 59);
@@ -540,11 +534,11 @@
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
-            Controls.Add(panel7);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panelEntradas);
+            Controls.Add(panelRegistrarEntrada);
+            Controls.Add(panelInversion);
+            Controls.Add(panelUnidadesIngresadas);
+            Controls.Add(panelEntradasRegistradas);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -552,21 +546,21 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de entradas";
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelInversion.ResumeLayout(false);
+            panelInversion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelUnidadesIngresadas.ResumeLayout(false);
+            panelUnidadesIngresadas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelEntradasRegistradas.ResumeLayout(false);
+            panelEntradasRegistradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelRegistrarEntrada.ResumeLayout(false);
+            panelRegistrarEntrada.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelEntradas.ResumeLayout(false);
+            panelEntradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEntradas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
@@ -578,22 +572,22 @@
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel4;
+        private Panel panelInversion;
         private Label label10;
         private PictureBox pictureBox13;
         private Label lblInversionInventario;
         private Label label8;
-        private Panel panel3;
+        private Panel panelUnidadesIngresadas;
         private Label label9;
         private PictureBox pictureBox12;
         private Label lblUnidadesIngresadas;
         private Label label6;
-        private Panel panel2;
+        private Panel panelEntradasRegistradas;
         private PictureBox pictureBox11;
         private Label lblTotalEntradas;
         private Label label3;
         private Label label11;
-        private Panel panel5;
+        private Panel panelRegistrarEntrada;
         private Label label15;
         private PictureBox pictureBox2;
         private Label label16;
@@ -608,7 +602,7 @@
         private Button btnRegistrarEntrada;
         private PictureBox pictureBox14;
         private TextBox txtBuscar;
-        private Panel panel7;
+        private Panel panelEntradas;
         private DataGridView dgvEntradas;
         private Label label17;
         private PictureBox pictureBox3;

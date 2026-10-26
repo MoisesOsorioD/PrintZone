@@ -24,6 +24,12 @@ namespace LibreriaPrintZone
         public frmProductos(string rolUsuario)
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelEditar, 20);
+            PanelRedondeado.Aplicar(panelInfo1, 20);
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelProductosRegistrados, 20);
+
+
             DataGridViewEstilo.Aplicar(dgvProductos);
 
             _rolUsuario = rolUsuario;

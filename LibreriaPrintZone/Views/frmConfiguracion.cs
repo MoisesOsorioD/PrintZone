@@ -32,6 +32,14 @@ namespace LibreriaPrintZone.Views
             string rolUsuario)
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(pnlRespaldoManual, 20);
+            PanelRedondeado.Aplicar(panelExportarManual, 20);
+            PanelRedondeado.Aplicar(panelImportarManual, 20);
+            PanelRedondeado.Aplicar(PanelUltimoRespaldo, 20);
+            PanelRedondeado.Aplicar(panel6, 20);
+
+
+
 
             _idUsuarioActual = idUsuario;
             _nombreCompletoUsuario = nombreCompleto;

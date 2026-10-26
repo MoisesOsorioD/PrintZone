@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
-            panel4 = new Panel();
+            panelProveedorConMas = new Panel();
             lblCantidadProductosProveedor = new Label();
             pictureBox13 = new PictureBox();
             lblProveedorMasProductos = new Label();
             label8 = new Label();
-            panel3 = new Panel();
+            panelProveedorReciente = new Panel();
             lblProveedorRecienteDescripcion = new Label();
             pictureBox12 = new PictureBox();
             lblProveedorReciente = new Label();
             label6 = new Label();
-            panel2 = new Panel();
+            panelTotalProveedores = new Panel();
             pictureBox11 = new PictureBox();
             lblTotalProveedores = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panel5 = new Panel();
+            panelInformacionEmpresarial = new Panel();
             txtTelefono = new TextBox();
             label11 = new Label();
             label12 = new Label();
@@ -57,14 +57,14 @@
             txtNombreEmpresa = new TextBox();
             pictureBox2 = new PictureBox();
             label16 = new Label();
-            panel1 = new Panel();
+            panelInformacionContacto = new Panel();
             label17 = new Label();
             txtTelefonoAgente = new TextBox();
             label19 = new Label();
             txtNombreAgente = new TextBox();
             pictureBox7 = new PictureBox();
             label20 = new Label();
-            panel6 = new Panel();
+            panelCondicionesCompra = new Panel();
             btnEliminar = new Button();
             btnLimpiar = new Button();
             btnGuardar = new Button();
@@ -72,7 +72,7 @@
             txtMontoMinimoCompra = new TextBox();
             pictureBox8 = new PictureBox();
             label21 = new Label();
-            panel7 = new Panel();
+            panelProveedoresRegsitrados = new Panel();
             panelPaginacion = new Panel();
             dgvProveedores = new DataGridView();
             colEmpresa = new DataGridViewTextBoxColumn();
@@ -86,37 +86,36 @@
             pictureBox3 = new PictureBox();
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panel4.SuspendLayout();
+            panelProveedorConMas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel3.SuspendLayout();
+            panelProveedorReciente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel2.SuspendLayout();
+            panelTotalProveedores.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            panel5.SuspendLayout();
+            panelInformacionEmpresarial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel1.SuspendLayout();
+            panelInformacionContacto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            panel6.SuspendLayout();
+            panelCondicionesCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            panel7.SuspendLayout();
+            panelProveedoresRegsitrados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
             // 
-            // panel4
+            // panelProveedorConMas
             // 
-            panel4.BackColor = Color.FromArgb(242, 249, 254);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(lblCantidadProductosProveedor);
-            panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(lblProveedorMasProductos);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(1087, 116);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(485, 116);
-            panel4.TabIndex = 14;
+            panelProveedorConMas.BackColor = Color.FromArgb(242, 249, 254);
+            panelProveedorConMas.Controls.Add(lblCantidadProductosProveedor);
+            panelProveedorConMas.Controls.Add(pictureBox13);
+            panelProveedorConMas.Controls.Add(lblProveedorMasProductos);
+            panelProveedorConMas.Controls.Add(label8);
+            panelProveedorConMas.Location = new Point(1087, 116);
+            panelProveedorConMas.Name = "panelProveedorConMas";
+            panelProveedorConMas.Size = new Size(485, 116);
+            panelProveedorConMas.TabIndex = 14;
             // 
             // lblCantidadProductosProveedor
             // 
@@ -158,18 +157,17 @@
             label8.TabIndex = 0;
             label8.Text = "Proveedor con más productos";
             // 
-            // panel3
+            // panelProveedorReciente
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(lblProveedorRecienteDescripcion);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(lblProveedorReciente);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(613, 116);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(445, 116);
-            panel3.TabIndex = 13;
+            panelProveedorReciente.BackColor = Color.FromArgb(242, 249, 254);
+            panelProveedorReciente.Controls.Add(lblProveedorRecienteDescripcion);
+            panelProveedorReciente.Controls.Add(pictureBox12);
+            panelProveedorReciente.Controls.Add(lblProveedorReciente);
+            panelProveedorReciente.Controls.Add(label6);
+            panelProveedorReciente.Location = new Point(613, 116);
+            panelProveedorReciente.Name = "panelProveedorReciente";
+            panelProveedorReciente.Size = new Size(445, 116);
+            panelProveedorReciente.TabIndex = 13;
             // 
             // lblProveedorRecienteDescripcion
             // 
@@ -211,17 +209,16 @@
             label6.TabIndex = 0;
             label6.Text = "Proveedor registrado recientemente";
             // 
-            // panel2
+            // panelTotalProveedores
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(lblTotalProveedores);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(124, 116);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(445, 116);
-            panel2.TabIndex = 12;
+            panelTotalProveedores.BackColor = Color.FromArgb(242, 249, 254);
+            panelTotalProveedores.Controls.Add(pictureBox11);
+            panelTotalProveedores.Controls.Add(lblTotalProveedores);
+            panelTotalProveedores.Controls.Add(label3);
+            panelTotalProveedores.Location = new Point(124, 116);
+            panelTotalProveedores.Name = "panelTotalProveedores";
+            panelTotalProveedores.Size = new Size(445, 116);
+            panelTotalProveedores.TabIndex = 12;
             // 
             // pictureBox11
             // 
@@ -283,24 +280,23 @@
             pictureBox10.TabIndex = 11;
             pictureBox10.TabStop = false;
             // 
-            // panel5
+            // panelInformacionEmpresarial
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(txtTelefono);
-            panel5.Controls.Add(label11);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(txtCorreo);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(txtDireccion);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txtNombreEmpresa);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(124, 252);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(542, 255);
-            panel5.TabIndex = 15;
+            panelInformacionEmpresarial.BackColor = Color.FromArgb(247, 251, 255);
+            panelInformacionEmpresarial.Controls.Add(txtTelefono);
+            panelInformacionEmpresarial.Controls.Add(label11);
+            panelInformacionEmpresarial.Controls.Add(label12);
+            panelInformacionEmpresarial.Controls.Add(txtCorreo);
+            panelInformacionEmpresarial.Controls.Add(label13);
+            panelInformacionEmpresarial.Controls.Add(txtDireccion);
+            panelInformacionEmpresarial.Controls.Add(label14);
+            panelInformacionEmpresarial.Controls.Add(txtNombreEmpresa);
+            panelInformacionEmpresarial.Controls.Add(pictureBox2);
+            panelInformacionEmpresarial.Controls.Add(label16);
+            panelInformacionEmpresarial.Location = new Point(124, 252);
+            panelInformacionEmpresarial.Name = "panelInformacionEmpresarial";
+            panelInformacionEmpresarial.Size = new Size(542, 255);
+            panelInformacionEmpresarial.TabIndex = 15;
             // 
             // txtTelefono
             // 
@@ -395,20 +391,19 @@
             label16.TabIndex = 6;
             label16.Text = "Información empresarial";
             // 
-            // panel1
+            // panelInformacionContacto
             // 
-            panel1.BackColor = Color.FromArgb(247, 251, 255);
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(label17);
-            panel1.Controls.Add(txtTelefonoAgente);
-            panel1.Controls.Add(label19);
-            panel1.Controls.Add(txtNombreAgente);
-            panel1.Controls.Add(pictureBox7);
-            panel1.Controls.Add(label20);
-            panel1.Location = new Point(124, 518);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(542, 153);
-            panel1.TabIndex = 50;
+            panelInformacionContacto.BackColor = Color.FromArgb(247, 251, 255);
+            panelInformacionContacto.Controls.Add(label17);
+            panelInformacionContacto.Controls.Add(txtTelefonoAgente);
+            panelInformacionContacto.Controls.Add(label19);
+            panelInformacionContacto.Controls.Add(txtNombreAgente);
+            panelInformacionContacto.Controls.Add(pictureBox7);
+            panelInformacionContacto.Controls.Add(label20);
+            panelInformacionContacto.Location = new Point(124, 518);
+            panelInformacionContacto.Name = "panelInformacionContacto";
+            panelInformacionContacto.Size = new Size(542, 153);
+            panelInformacionContacto.TabIndex = 50;
             // 
             // label17
             // 
@@ -466,21 +461,20 @@
             label20.TabIndex = 6;
             label20.Text = "Información del contacto";
             // 
-            // panel6
+            // panelCondicionesCompra
             // 
-            panel6.BackColor = Color.FromArgb(247, 251, 255);
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(btnEliminar);
-            panel6.Controls.Add(btnLimpiar);
-            panel6.Controls.Add(btnGuardar);
-            panel6.Controls.Add(label18);
-            panel6.Controls.Add(txtMontoMinimoCompra);
-            panel6.Controls.Add(pictureBox8);
-            panel6.Controls.Add(label21);
-            panel6.Location = new Point(124, 684);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(542, 217);
-            panel6.TabIndex = 51;
+            panelCondicionesCompra.BackColor = Color.FromArgb(247, 251, 255);
+            panelCondicionesCompra.Controls.Add(btnEliminar);
+            panelCondicionesCompra.Controls.Add(btnLimpiar);
+            panelCondicionesCompra.Controls.Add(btnGuardar);
+            panelCondicionesCompra.Controls.Add(label18);
+            panelCondicionesCompra.Controls.Add(txtMontoMinimoCompra);
+            panelCondicionesCompra.Controls.Add(pictureBox8);
+            panelCondicionesCompra.Controls.Add(label21);
+            panelCondicionesCompra.Location = new Point(124, 684);
+            panelCondicionesCompra.Name = "panelCondicionesCompra";
+            panelCondicionesCompra.Size = new Size(542, 217);
+            panelCondicionesCompra.TabIndex = 51;
             // 
             // btnEliminar
             // 
@@ -574,23 +568,21 @@
             label21.TabIndex = 6;
             label21.Text = "Condiciones de compra";
             // 
-            // panel7
+            // panelProveedoresRegsitrados
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(panelPaginacion);
-            panel7.Controls.Add(dgvProveedores);
-            panel7.Controls.Add(label15);
-            panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(700, 293);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(872, 517);
-            panel7.TabIndex = 52;
+            panelProveedoresRegsitrados.BackColor = Color.FromArgb(242, 249, 254);
+            panelProveedoresRegsitrados.Controls.Add(panelPaginacion);
+            panelProveedoresRegsitrados.Controls.Add(dgvProveedores);
+            panelProveedoresRegsitrados.Controls.Add(label15);
+            panelProveedoresRegsitrados.Controls.Add(pictureBox3);
+            panelProveedoresRegsitrados.Location = new Point(700, 293);
+            panelProveedoresRegsitrados.Name = "panelProveedoresRegsitrados";
+            panelProveedoresRegsitrados.Size = new Size(872, 517);
+            panelProveedoresRegsitrados.TabIndex = 52;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
             panelPaginacion.Location = new Point(20, 432);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(836, 59);
@@ -704,40 +696,40 @@
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel1);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panelProveedoresRegsitrados);
+            Controls.Add(panelCondicionesCompra);
+            Controls.Add(panelInformacionContacto);
+            Controls.Add(panelInformacionEmpresarial);
+            Controls.Add(panelProveedorConMas);
+            Controls.Add(panelProveedorReciente);
+            Controls.Add(panelTotalProveedores);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
             Name = "frmProveedores";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de proveedores";
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelProveedorConMas.ResumeLayout(false);
+            panelProveedorConMas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelProveedorReciente.ResumeLayout(false);
+            panelProveedorReciente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelTotalProveedores.ResumeLayout(false);
+            panelTotalProveedores.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelInformacionEmpresarial.ResumeLayout(false);
+            panelInformacionEmpresarial.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panelInformacionContacto.ResumeLayout(false);
+            panelInformacionContacto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelCondicionesCompra.ResumeLayout(false);
+            panelCondicionesCompra.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelProveedoresRegsitrados.ResumeLayout(false);
+            panelProveedoresRegsitrados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
@@ -747,24 +739,24 @@
 
         #endregion
 
-        private Panel panel4;
+        private Panel panelProveedorConMas;
         private Label lblCantidadProductosProveedor;
         private PictureBox pictureBox13;
         private Label lblProveedorMasProductos;
         private Label label8;
-        private Panel panel3;
+        private Panel panelProveedorReciente;
         private Label lblProveedorRecienteDescripcion;
         private PictureBox pictureBox12;
         private Label lblProveedorReciente;
         private Label label6;
-        private Panel panel2;
+        private Panel panelTotalProveedores;
         private PictureBox pictureBox11;
         private Label lblTotalProveedores;
         private Label label3;
         private Label label2;
         private Label label1;
         private PictureBox pictureBox10;
-        private Panel panel5;
+        private Panel panelInformacionEmpresarial;
         private TextBox txtTelefono;
         private Label label11;
         private Label label12;
@@ -775,14 +767,14 @@
         private TextBox txtNombreEmpresa;
         private PictureBox pictureBox2;
         private Label label16;
-        private Panel panel1;
+        private Panel panelInformacionContacto;
         private Label label17;
         private TextBox txtTelefonoAgente;
         private Label label19;
         private TextBox txtNombreAgente;
         private PictureBox pictureBox7;
         private Label label20;
-        private Panel panel6;
+        private Panel panelCondicionesCompra;
         private Label label18;
         private TextBox txtMontoMinimoCompra;
         private PictureBox pictureBox8;
@@ -790,7 +782,7 @@
         private Button btnEliminar;
         private Button btnLimpiar;
         private Button btnGuardar;
-        private Panel panel7;
+        private Panel panelProveedoresRegsitrados;
         private Label label15;
         private PictureBox pictureBox3;
         private PictureBox pictureBox14;

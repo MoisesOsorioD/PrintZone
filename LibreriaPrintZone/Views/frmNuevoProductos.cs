@@ -1,4 +1,5 @@
-﻿using LibreriaPrintZone.Controllers;
+﻿using LibreriaPrintZone.Components;
+using LibreriaPrintZone.Controllers;
 using System;
 using System.Windows.Forms;
 
@@ -11,6 +12,14 @@ namespace LibreriaPrintZone.Views
         public frmNuevoProductos()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelBotones, 20);
+            PanelRedondeado.Aplicar(panelControlnventario, 20);
+            PanelRedondeado.Aplicar(panelInfo, 20);
+            PanelRedondeado.Aplicar(panelinfo1, 20);
+            PanelRedondeado.Aplicar(panelInfo2, 20);
+            PanelRedondeado.Aplicar(panelInformacionComercial, 20);
+            PanelRedondeado.Aplicar(panelinformacionProducto, 20);
+
 
             _controller = new ProductosController();
 

@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panel7 = new Panel();
+            panelListaUsuarios = new Panel();
+            panelPaginacion = new Panel();
             dgvUsuarios = new DataGridView();
             colUsuarioU = new DataGridViewTextBoxColumn();
             colNombreCompletoU = new DataGridViewTextBoxColumn();
@@ -40,7 +41,7 @@
             colFechaCreacionU = new DataGridViewTextBoxColumn();
             label17 = new Label();
             pictureBox3 = new PictureBox();
-            panel5 = new Panel();
+            panelAgregarEditar = new Panel();
             label15 = new Label();
             dtpFechaCreacion = new DateTimePicker();
             chkActivo = new CheckBox();
@@ -56,17 +57,17 @@
             label12 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
-            panel4 = new Panel();
+            panelUsuarioDesactivados = new Panel();
             label10 = new Label();
             pictureBox13 = new PictureBox();
             lblUsuariosDesactivados = new Label();
             label8 = new Label();
-            panel3 = new Panel();
+            panelUsuarioActivos = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
             lblUsuariosActivos = new Label();
             label6 = new Label();
-            panel2 = new Panel();
+            panelTotalUsuario = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
             lblTotalUsuarios = new Label();
@@ -74,18 +75,17 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            panel7.SuspendLayout();
+            panelListaUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel5.SuspendLayout();
+            panelAgregarEditar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel4.SuspendLayout();
+            panelUsuarioDesactivados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel3.SuspendLayout();
+            panelUsuarioActivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel2.SuspendLayout();
+            panelTotalUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
@@ -110,18 +110,25 @@
             txtBuscar.TabIndex = 78;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // panel7
+            // panelListaUsuarios
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(panelPaginacion);
-            panel7.Controls.Add(dgvUsuarios);
-            panel7.Controls.Add(label17);
-            panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(632, 302);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(935, 535);
-            panel7.TabIndex = 77;
+            panelListaUsuarios.BackColor = Color.FromArgb(242, 249, 254);
+            panelListaUsuarios.Controls.Add(panelPaginacion);
+            panelListaUsuarios.Controls.Add(dgvUsuarios);
+            panelListaUsuarios.Controls.Add(label17);
+            panelListaUsuarios.Controls.Add(pictureBox3);
+            panelListaUsuarios.Location = new Point(632, 302);
+            panelListaUsuarios.Name = "panelListaUsuarios";
+            panelListaUsuarios.Size = new Size(935, 535);
+            panelListaUsuarios.TabIndex = 77;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.Location = new Point(20, 441);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(896, 59);
+            panelPaginacion.TabIndex = 10;
             // 
             // dgvUsuarios
             // 
@@ -189,29 +196,28 @@
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // panel5
+            // panelAgregarEditar
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(label15);
-            panel5.Controls.Add(dtpFechaCreacion);
-            panel5.Controls.Add(chkActivo);
-            panel5.Controls.Add(cmbRol);
-            panel5.Controls.Add(txtNombreUsuario);
-            panel5.Controls.Add(label19);
-            panel5.Controls.Add(btnLimpiar);
-            panel5.Controls.Add(txtClave);
-            panel5.Controls.Add(btnGuardar);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txtNombreCompleto);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(112, 259);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(475, 578);
-            panel5.TabIndex = 76;
+            panelAgregarEditar.BackColor = Color.FromArgb(247, 251, 255);
+            panelAgregarEditar.Controls.Add(label15);
+            panelAgregarEditar.Controls.Add(dtpFechaCreacion);
+            panelAgregarEditar.Controls.Add(chkActivo);
+            panelAgregarEditar.Controls.Add(cmbRol);
+            panelAgregarEditar.Controls.Add(txtNombreUsuario);
+            panelAgregarEditar.Controls.Add(label19);
+            panelAgregarEditar.Controls.Add(btnLimpiar);
+            panelAgregarEditar.Controls.Add(txtClave);
+            panelAgregarEditar.Controls.Add(btnGuardar);
+            panelAgregarEditar.Controls.Add(label13);
+            panelAgregarEditar.Controls.Add(label14);
+            panelAgregarEditar.Controls.Add(txtNombreCompleto);
+            panelAgregarEditar.Controls.Add(label12);
+            panelAgregarEditar.Controls.Add(pictureBox2);
+            panelAgregarEditar.Controls.Add(label16);
+            panelAgregarEditar.Location = new Point(112, 259);
+            panelAgregarEditar.Name = "panelAgregarEditar";
+            panelAgregarEditar.Size = new Size(475, 578);
+            panelAgregarEditar.TabIndex = 76;
             // 
             // label15
             // 
@@ -367,18 +373,17 @@
             label16.TabIndex = 6;
             label16.Text = "Agregar o editar usuarios";
             // 
-            // panel4
+            // panelUsuarioDesactivados
             // 
-            panel4.BackColor = Color.FromArgb(242, 249, 254);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(lblUsuariosDesactivados);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(1119, 118);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(448, 116);
-            panel4.TabIndex = 75;
+            panelUsuarioDesactivados.BackColor = Color.FromArgb(242, 249, 254);
+            panelUsuarioDesactivados.Controls.Add(label10);
+            panelUsuarioDesactivados.Controls.Add(pictureBox13);
+            panelUsuarioDesactivados.Controls.Add(lblUsuariosDesactivados);
+            panelUsuarioDesactivados.Controls.Add(label8);
+            panelUsuarioDesactivados.Location = new Point(1119, 118);
+            panelUsuarioDesactivados.Name = "panelUsuarioDesactivados";
+            panelUsuarioDesactivados.Size = new Size(448, 116);
+            panelUsuarioDesactivados.TabIndex = 75;
             // 
             // label10
             // 
@@ -420,18 +425,17 @@
             label8.TabIndex = 0;
             label8.Text = "Usuarios desactivados";
             // 
-            // panel3
+            // panelUsuarioActivos
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(lblUsuariosActivos);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(628, 118);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(445, 116);
-            panel3.TabIndex = 74;
+            panelUsuarioActivos.BackColor = Color.FromArgb(242, 249, 254);
+            panelUsuarioActivos.Controls.Add(label9);
+            panelUsuarioActivos.Controls.Add(pictureBox12);
+            panelUsuarioActivos.Controls.Add(lblUsuariosActivos);
+            panelUsuarioActivos.Controls.Add(label6);
+            panelUsuarioActivos.Location = new Point(628, 118);
+            panelUsuarioActivos.Name = "panelUsuarioActivos";
+            panelUsuarioActivos.Size = new Size(445, 116);
+            panelUsuarioActivos.TabIndex = 74;
             // 
             // label9
             // 
@@ -473,18 +477,17 @@
             label6.TabIndex = 0;
             label6.Text = "Usuarios activos";
             // 
-            // panel2
+            // panelTotalUsuario
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(lblTotalUsuarios);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(112, 118);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(445, 116);
-            panel2.TabIndex = 73;
+            panelTotalUsuario.BackColor = Color.FromArgb(242, 249, 254);
+            panelTotalUsuario.Controls.Add(label11);
+            panelTotalUsuario.Controls.Add(pictureBox11);
+            panelTotalUsuario.Controls.Add(lblTotalUsuarios);
+            panelTotalUsuario.Controls.Add(label3);
+            panelTotalUsuario.Location = new Point(112, 118);
+            panelTotalUsuario.Name = "panelTotalUsuario";
+            panelTotalUsuario.Size = new Size(445, 116);
+            panelTotalUsuario.TabIndex = 73;
             // 
             // label11
             // 
@@ -556,15 +559,6 @@
             pictureBox10.TabIndex = 72;
             pictureBox10.TabStop = false;
             // 
-            // panelPaginacion
-            // 
-            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(20, 441);
-            panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(896, 59);
-            panelPaginacion.TabIndex = 10;
-            // 
             // frmUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -573,11 +567,11 @@
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
-            Controls.Add(panel7);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panelListaUsuarios);
+            Controls.Add(panelAgregarEditar);
+            Controls.Add(panelUsuarioDesactivados);
+            Controls.Add(panelUsuarioActivos);
+            Controls.Add(panelTotalUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -585,21 +579,21 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de usuarios";
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelListaUsuarios.ResumeLayout(false);
+            panelListaUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelAgregarEditar.ResumeLayout(false);
+            panelAgregarEditar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelUsuarioDesactivados.ResumeLayout(false);
+            panelUsuarioDesactivados.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelUsuarioActivos.ResumeLayout(false);
+            panelUsuarioActivos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelTotalUsuario.ResumeLayout(false);
+            panelTotalUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
@@ -610,11 +604,11 @@
 
         private PictureBox pictureBox14;
         private TextBox txtBuscar;
-        private Panel panel7;
+        private Panel panelListaUsuarios;
         private DataGridView dgvUsuarios;
         private Label label17;
         private PictureBox pictureBox3;
-        private Panel panel5;
+        private Panel panelAgregarEditar;
         private Label label19;
         private Button btnLimpiar;
         private TextBox txtClave;
@@ -625,17 +619,17 @@
         private Label label12;
         private PictureBox pictureBox2;
         private Label label16;
-        private Panel panel4;
+        private Panel panelUsuarioDesactivados;
         private Label label10;
         private PictureBox pictureBox13;
         private Label lblUsuariosDesactivados;
         private Label label8;
-        private Panel panel3;
+        private Panel panelUsuarioActivos;
         private Label label9;
         private PictureBox pictureBox12;
         private Label lblUsuariosActivos;
         private Label label6;
-        private Panel panel2;
+        private Panel panelTotalUsuario;
         private Label label11;
         private PictureBox pictureBox11;
         private Label lblTotalUsuarios;

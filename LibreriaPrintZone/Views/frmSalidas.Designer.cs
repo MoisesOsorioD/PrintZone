@@ -31,7 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalidas));
             pictureBox14 = new PictureBox();
             txtBuscar = new TextBox();
-            panel7 = new Panel();
+            panelTotalRegistro = new Panel();
+            panelPaginacion = new Panel();
             dgvSalidas = new DataGridView();
             colFecha = new DataGridViewTextBoxColumn();
             colProducto = new DataGridViewTextBoxColumn();
@@ -40,7 +41,7 @@
             colUsuario = new DataGridViewTextBoxColumn();
             label17 = new Label();
             pictureBox3 = new PictureBox();
-            panel5 = new Panel();
+            panelRegistrar = new Panel();
             txtUsuario = new TextBox();
             label19 = new Label();
             panelStockDisponible = new Panel();
@@ -57,17 +58,17 @@
             label12 = new Label();
             pictureBox2 = new PictureBox();
             label16 = new Label();
-            panel4 = new Panel();
+            panelMasSalidas = new Panel();
             lblCantidadProductoMasSalidas = new Label();
             pictureBox13 = new PictureBox();
             lblProductoMasSalidas = new Label();
             label8 = new Label();
-            panel3 = new Panel();
+            panelUnidadesRetiradas = new Panel();
             label9 = new Label();
             pictureBox12 = new PictureBox();
             lblUnidadesRetiradas = new Label();
             label6 = new Label();
-            panel2 = new Panel();
+            panelSalidasRegistradas = new Panel();
             label11 = new Label();
             pictureBox11 = new PictureBox();
             lblTotalS = new Label();
@@ -75,20 +76,19 @@
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
-            panelPaginacion = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            panel7.SuspendLayout();
+            panelTotalRegistro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSalidas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel5.SuspendLayout();
+            panelRegistrar.SuspendLayout();
             panelStockDisponible.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            panel4.SuspendLayout();
+            panelMasSalidas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
-            panel3.SuspendLayout();
+            panelUnidadesRetiradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
-            panel2.SuspendLayout();
+            panelSalidasRegistradas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
@@ -113,18 +113,25 @@
             txtBuscar.TabIndex = 68;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
-            // panel7
+            // panelTotalRegistro
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(panelPaginacion);
-            panel7.Controls.Add(dgvSalidas);
-            panel7.Controls.Add(label17);
-            panel7.Controls.Add(pictureBox3);
-            panel7.Location = new Point(646, 292);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(935, 539);
-            panel7.TabIndex = 67;
+            panelTotalRegistro.BackColor = Color.FromArgb(242, 249, 254);
+            panelTotalRegistro.Controls.Add(panelPaginacion);
+            panelTotalRegistro.Controls.Add(dgvSalidas);
+            panelTotalRegistro.Controls.Add(label17);
+            panelTotalRegistro.Controls.Add(pictureBox3);
+            panelTotalRegistro.Location = new Point(646, 292);
+            panelTotalRegistro.Name = "panelTotalRegistro";
+            panelTotalRegistro.Size = new Size(935, 539);
+            panelTotalRegistro.TabIndex = 67;
+            // 
+            // panelPaginacion
+            // 
+            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
+            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Name = "panelPaginacion";
+            panelPaginacion.Size = new Size(896, 59);
+            panelPaginacion.TabIndex = 9;
             // 
             // dgvSalidas
             // 
@@ -192,27 +199,26 @@
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // panel5
+            // panelRegistrar
             // 
-            panel5.BackColor = Color.FromArgb(247, 251, 255);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(txtUsuario);
-            panel5.Controls.Add(label19);
-            panel5.Controls.Add(panelStockDisponible);
-            panel5.Controls.Add(btnLimpiar);
-            panel5.Controls.Add(txtMotivo);
-            panel5.Controls.Add(btnRegistrarSalida);
-            panel5.Controls.Add(label13);
-            panel5.Controls.Add(label14);
-            panel5.Controls.Add(txtCantidad);
-            panel5.Controls.Add(cmbProducto);
-            panel5.Controls.Add(label12);
-            panel5.Controls.Add(pictureBox2);
-            panel5.Controls.Add(label16);
-            panel5.Location = new Point(126, 253);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(475, 578);
-            panel5.TabIndex = 66;
+            panelRegistrar.BackColor = Color.FromArgb(247, 251, 255);
+            panelRegistrar.Controls.Add(txtUsuario);
+            panelRegistrar.Controls.Add(label19);
+            panelRegistrar.Controls.Add(panelStockDisponible);
+            panelRegistrar.Controls.Add(btnLimpiar);
+            panelRegistrar.Controls.Add(txtMotivo);
+            panelRegistrar.Controls.Add(btnRegistrarSalida);
+            panelRegistrar.Controls.Add(label13);
+            panelRegistrar.Controls.Add(label14);
+            panelRegistrar.Controls.Add(txtCantidad);
+            panelRegistrar.Controls.Add(cmbProducto);
+            panelRegistrar.Controls.Add(label12);
+            panelRegistrar.Controls.Add(pictureBox2);
+            panelRegistrar.Controls.Add(label16);
+            panelRegistrar.Location = new Point(126, 253);
+            panelRegistrar.Name = "panelRegistrar";
+            panelRegistrar.Size = new Size(475, 578);
+            panelRegistrar.TabIndex = 66;
             // 
             // txtUsuario
             // 
@@ -235,7 +241,6 @@
             // panelStockDisponible
             // 
             panelStockDisponible.BackColor = Color.FromArgb(220, 233, 247);
-            panelStockDisponible.BorderStyle = BorderStyle.FixedSingle;
             panelStockDisponible.Controls.Add(lblCantidadStock);
             panelStockDisponible.Controls.Add(pictureBox4);
             panelStockDisponible.Controls.Add(lblStockDisponible);
@@ -385,18 +390,17 @@
             label16.TabIndex = 6;
             label16.Text = "Registrar salida";
             // 
-            // panel4
+            // panelMasSalidas
             // 
-            panel4.BackColor = Color.FromArgb(242, 249, 254);
-            panel4.BorderStyle = BorderStyle.FixedSingle;
-            panel4.Controls.Add(lblCantidadProductoMasSalidas);
-            panel4.Controls.Add(pictureBox13);
-            panel4.Controls.Add(lblProductoMasSalidas);
-            panel4.Controls.Add(label8);
-            panel4.Location = new Point(1133, 112);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(448, 116);
-            panel4.TabIndex = 65;
+            panelMasSalidas.BackColor = Color.FromArgb(242, 249, 254);
+            panelMasSalidas.Controls.Add(lblCantidadProductoMasSalidas);
+            panelMasSalidas.Controls.Add(pictureBox13);
+            panelMasSalidas.Controls.Add(lblProductoMasSalidas);
+            panelMasSalidas.Controls.Add(label8);
+            panelMasSalidas.Location = new Point(1133, 112);
+            panelMasSalidas.Name = "panelMasSalidas";
+            panelMasSalidas.Size = new Size(448, 116);
+            panelMasSalidas.TabIndex = 65;
             // 
             // lblCantidadProductoMasSalidas
             // 
@@ -438,18 +442,17 @@
             label8.TabIndex = 0;
             label8.Text = "Producto con más salidas";
             // 
-            // panel3
+            // panelUnidadesRetiradas
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(label9);
-            panel3.Controls.Add(pictureBox12);
-            panel3.Controls.Add(lblUnidadesRetiradas);
-            panel3.Controls.Add(label6);
-            panel3.Location = new Point(642, 112);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(445, 116);
-            panel3.TabIndex = 64;
+            panelUnidadesRetiradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelUnidadesRetiradas.Controls.Add(label9);
+            panelUnidadesRetiradas.Controls.Add(pictureBox12);
+            panelUnidadesRetiradas.Controls.Add(lblUnidadesRetiradas);
+            panelUnidadesRetiradas.Controls.Add(label6);
+            panelUnidadesRetiradas.Location = new Point(642, 112);
+            panelUnidadesRetiradas.Name = "panelUnidadesRetiradas";
+            panelUnidadesRetiradas.Size = new Size(445, 116);
+            panelUnidadesRetiradas.TabIndex = 64;
             // 
             // label9
             // 
@@ -491,18 +494,17 @@
             label6.TabIndex = 0;
             label6.Text = "Unidades retiradas";
             // 
-            // panel2
+            // panelSalidasRegistradas
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label11);
-            panel2.Controls.Add(pictureBox11);
-            panel2.Controls.Add(lblTotalS);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(126, 112);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(445, 116);
-            panel2.TabIndex = 63;
+            panelSalidasRegistradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelSalidasRegistradas.Controls.Add(label11);
+            panelSalidasRegistradas.Controls.Add(pictureBox11);
+            panelSalidasRegistradas.Controls.Add(lblTotalS);
+            panelSalidasRegistradas.Controls.Add(label3);
+            panelSalidasRegistradas.Location = new Point(126, 112);
+            panelSalidasRegistradas.Name = "panelSalidasRegistradas";
+            panelSalidasRegistradas.Size = new Size(445, 116);
+            panelSalidasRegistradas.TabIndex = 63;
             // 
             // label11
             // 
@@ -574,15 +576,6 @@
             pictureBox10.TabIndex = 62;
             pictureBox10.TabStop = false;
             // 
-            // panelPaginacion
-            // 
-            panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.BorderStyle = BorderStyle.FixedSingle;
-            panelPaginacion.Location = new Point(20, 432);
-            panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(896, 59);
-            panelPaginacion.TabIndex = 9;
-            // 
             // frmSalidas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -591,11 +584,11 @@
             ClientSize = new Size(1632, 915);
             Controls.Add(pictureBox14);
             Controls.Add(txtBuscar);
-            Controls.Add(panel7);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panelTotalRegistro);
+            Controls.Add(panelRegistrar);
+            Controls.Add(panelMasSalidas);
+            Controls.Add(panelUnidadesRetiradas);
+            Controls.Add(panelSalidasRegistradas);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox10);
@@ -603,24 +596,24 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Gestión de salidas";
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelTotalRegistro.ResumeLayout(false);
+            panelTotalRegistro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvSalidas).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            panelRegistrar.ResumeLayout(false);
+            panelRegistrar.PerformLayout();
             panelStockDisponible.ResumeLayout(false);
             panelStockDisponible.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            panelMasSalidas.ResumeLayout(false);
+            panelMasSalidas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelUnidadesRetiradas.ResumeLayout(false);
+            panelUnidadesRetiradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelSalidasRegistradas.ResumeLayout(false);
+            panelSalidasRegistradas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
@@ -631,11 +624,11 @@
 
         private PictureBox pictureBox14;
         private TextBox txtBuscar;
-        private Panel panel7;
+        private Panel panelTotalRegistro;
         private DataGridView dgvSalidas;
         private Label label17;
         private PictureBox pictureBox3;
-        private Panel panel5;
+        private Panel panelRegistrar;
         private Button btnLimpiar;
         private TextBox txtMotivo;
         private Button btnRegistrarSalida;
@@ -646,17 +639,17 @@
         private Label label12;
         private PictureBox pictureBox2;
         private Label label16;
-        private Panel panel4;
+        private Panel panelMasSalidas;
         private Label lblCantidadProductoMasSalidas;
         private PictureBox pictureBox13;
         private Label lblProductoMasSalidas;
         private Label label8;
-        private Panel panel3;
+        private Panel panelUnidadesRetiradas;
         private Label label9;
         private PictureBox pictureBox12;
         private Label lblUnidadesRetiradas;
         private Label label6;
-        private Panel panel2;
+        private Panel panelSalidasRegistradas;
         private Label label11;
         private PictureBox pictureBox11;
         private Label lblTotalS;

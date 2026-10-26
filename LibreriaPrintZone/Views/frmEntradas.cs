@@ -20,6 +20,14 @@ namespace LibreriaPrintZone.Views
         public frmEntradas()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelEntradas, 20);
+            PanelRedondeado.Aplicar(panelEntradasRegistradas, 20);
+            PanelRedondeado.Aplicar(panelInversion, 20);
+            PanelRedondeado.Aplicar(panelUnidadesIngresadas, 20);
+            PanelRedondeado.Aplicar(panelRegistrarEntrada, 20);
+
+
             DataGridViewEstilo.Aplicar(dgvEntradas);
 
             _controller =

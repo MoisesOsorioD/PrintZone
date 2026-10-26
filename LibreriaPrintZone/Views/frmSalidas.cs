@@ -31,6 +31,16 @@ namespace LibreriaPrintZone.Views
         public frmSalidas()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelMasSalidas, 20);
+            PanelRedondeado.Aplicar(panelPaginacion, 20);
+            PanelRedondeado.Aplicar(panelRegistrar, 20);
+            PanelRedondeado.Aplicar(panelSalidasRegistradas, 20);
+            PanelRedondeado.Aplicar(panelStockDisponible, 20);
+            PanelRedondeado.Aplicar(panelTotalRegistro, 20);
+            PanelRedondeado.Aplicar(panelUnidadesRetiradas, 20);
+
+
+
             DataGridViewEstilo.Aplicar(dgvSalidas);
 
             _controller =

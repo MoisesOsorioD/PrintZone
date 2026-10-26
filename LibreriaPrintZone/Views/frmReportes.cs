@@ -1,14 +1,15 @@
-﻿using System;
+﻿using LibreriaPrintZone.Components;
+using LibreriaPrintZone.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
-using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
-using Microsoft.EntityFrameworkCore;
-using LibreriaPrintZone.Models;
 
 namespace LibreriaPrintZone.Views
 {
@@ -27,6 +28,12 @@ namespace LibreriaPrintZone.Views
         public frmReportes()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelFiltros, 20);
+            PanelRedondeado.Aplicar(panelOpcionesAdicionales, 20);
+            PanelRedondeado.Aplicar(panelTipoReporte, 20);
+            PanelRedondeado.Aplicar(panelVistaPrevia, 20);
+
+
 
             btnGenerarReporte.Click -= btnGenerarReporte_Click;
             btnGenerarReporte.Click += btnGenerarReporte_Click;
