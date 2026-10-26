@@ -1,3 +1,4 @@
+using LibreriaPrintZone.Components;
 using LibreriaPrintZone.Controllers;
 using LibreriaPrintZone.Models;
 using LibreriaPrintZone.Views;
@@ -11,9 +12,14 @@ namespace LibreriaPrintZone
         public frmInicioSesion()
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelLogin, 20);
+
+            BotonRedondeado.Aplicar(btnIniciarSesion, 15);
 
             _usuariosController = new UsuariosController();
         }
+
+
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {

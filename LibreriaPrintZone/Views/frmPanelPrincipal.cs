@@ -15,6 +15,10 @@ namespace LibreriaPrintZone.Views
         public frmPanelPrincipal(string rol, string nombreCompleto)
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelMovimientosRecientes, 20);
+            PanelRedondeado.Aplicar(panelTotalProductos, 20);
+            PanelRedondeado.Aplicar(panelProductoStockMinimo, 20);
+            PanelRedondeado.Aplicar(panelEntradasHoy, 20);
             DataGridViewEstilo.Aplicar(dgvMovimientos);
 
             _rol = rol;

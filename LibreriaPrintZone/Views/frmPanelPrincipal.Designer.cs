@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPanelPrincipal));
-            panel7 = new Panel();
+            panelEntradasHoy = new Panel();
             lblEntradasHoy = new Label();
             lblDescripcionEntradas = new Label();
             pictureBox14 = new PictureBox();
             lblTituloTarjeta3 = new Label();
-            panel6 = new Panel();
+            panelMovimientosRecientes = new Panel();
             dgvMovimientos = new DataGridView();
             colFecha = new DataGridViewTextBoxColumn();
             colMovimiento = new DataGridViewTextBoxColumn();
@@ -43,41 +43,40 @@
             btnVerTodos = new Button();
             label14 = new Label();
             pictureBox15 = new PictureBox();
-            panel3 = new Panel();
+            panelProductoStockMinimo = new Panel();
             lblProductosStockMinimo = new Label();
             lblDescripcionStock = new Label();
             pictureBox11 = new PictureBox();
             lblTituloTarjeta2 = new Label();
-            panel2 = new Panel();
+            panelTotalProductos = new Panel();
             lblTotalProductos = new Label();
             lblDescripcionProductos = new Label();
             lblTituloTarjeta1 = new Label();
             pictureBox10 = new PictureBox();
             lblDescripcion = new Label();
             lblBienvenida = new Label();
-            panel7.SuspendLayout();
+            panelEntradasHoy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
-            panel6.SuspendLayout();
+            panelMovimientosRecientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovimientos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            panel3.SuspendLayout();
+            panelProductoStockMinimo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
-            panel2.SuspendLayout();
+            panelTotalProductos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
-            // panel7
+            // panelEntradasHoy
             // 
-            panel7.BackColor = Color.FromArgb(242, 249, 254);
-            panel7.BorderStyle = BorderStyle.FixedSingle;
-            panel7.Controls.Add(lblEntradasHoy);
-            panel7.Controls.Add(lblDescripcionEntradas);
-            panel7.Controls.Add(pictureBox14);
-            panel7.Controls.Add(lblTituloTarjeta3);
-            panel7.Location = new Point(1101, 154);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(424, 164);
-            panel7.TabIndex = 17;
+            panelEntradasHoy.BackColor = Color.FromArgb(242, 249, 254);
+            panelEntradasHoy.Controls.Add(lblEntradasHoy);
+            panelEntradasHoy.Controls.Add(lblDescripcionEntradas);
+            panelEntradasHoy.Controls.Add(pictureBox14);
+            panelEntradasHoy.Controls.Add(lblTituloTarjeta3);
+            panelEntradasHoy.Location = new Point(1202, 138);
+            panelEntradasHoy.Name = "panelEntradasHoy";
+            panelEntradasHoy.Size = new Size(424, 164);
+            panelEntradasHoy.TabIndex = 17;
             // 
             // lblEntradasHoy
             // 
@@ -119,28 +118,28 @@
             lblTituloTarjeta3.TabIndex = 0;
             lblTituloTarjeta3.Text = "Total de entradas hoy";
             // 
-            // panel6
+            // panelMovimientosRecientes
             // 
-            panel6.BorderStyle = BorderStyle.FixedSingle;
-            panel6.Controls.Add(dgvMovimientos);
-            panel6.Controls.Add(btnVerTodos);
-            panel6.Controls.Add(label14);
-            panel6.Controls.Add(pictureBox15);
-            panel6.Location = new Point(171, 367);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(1354, 483);
-            panel6.TabIndex = 18;
+            panelMovimientosRecientes.BackColor = Color.FromArgb(242, 249, 254);
+            panelMovimientosRecientes.Controls.Add(dgvMovimientos);
+            panelMovimientosRecientes.Controls.Add(btnVerTodos);
+            panelMovimientosRecientes.Controls.Add(label14);
+            panelMovimientosRecientes.Controls.Add(pictureBox15);
+            panelMovimientosRecientes.Location = new Point(272, 351);
+            panelMovimientosRecientes.Name = "panelMovimientosRecientes";
+            panelMovimientosRecientes.Size = new Size(1354, 493);
+            panelMovimientosRecientes.TabIndex = 18;
             // 
             // dgvMovimientos
             // 
             dgvMovimientos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvMovimientos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvMovimientos.Columns.AddRange(new DataGridViewColumn[] { colFecha, colMovimiento, colProducto, colCantidad });
-            dgvMovimientos.Location = new Point(-1, 95);
+            dgvMovimientos.Location = new Point(17, 95);
             dgvMovimientos.Name = "dgvMovimientos";
             dgvMovimientos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dgvMovimientos.RowHeadersWidth = 51;
-            dgvMovimientos.Size = new Size(1354, 383);
+            dgvMovimientos.Size = new Size(1321, 383);
             dgvMovimientos.TabIndex = 11;
             // 
             // colFecha
@@ -207,18 +206,17 @@
             pictureBox15.TabIndex = 10;
             pictureBox15.TabStop = false;
             // 
-            // panel3
+            // panelProductoStockMinimo
             // 
-            panel3.BackColor = Color.FromArgb(242, 249, 254);
-            panel3.BorderStyle = BorderStyle.FixedSingle;
-            panel3.Controls.Add(lblProductosStockMinimo);
-            panel3.Controls.Add(lblDescripcionStock);
-            panel3.Controls.Add(pictureBox11);
-            panel3.Controls.Add(lblTituloTarjeta2);
-            panel3.Location = new Point(637, 154);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(424, 164);
-            panel3.TabIndex = 14;
+            panelProductoStockMinimo.BackColor = Color.FromArgb(242, 249, 254);
+            panelProductoStockMinimo.Controls.Add(lblProductosStockMinimo);
+            panelProductoStockMinimo.Controls.Add(lblDescripcionStock);
+            panelProductoStockMinimo.Controls.Add(pictureBox11);
+            panelProductoStockMinimo.Controls.Add(lblTituloTarjeta2);
+            panelProductoStockMinimo.Location = new Point(738, 138);
+            panelProductoStockMinimo.Name = "panelProductoStockMinimo";
+            panelProductoStockMinimo.Size = new Size(424, 164);
+            panelProductoStockMinimo.TabIndex = 14;
             // 
             // lblProductosStockMinimo
             // 
@@ -260,18 +258,17 @@
             lblTituloTarjeta2.TabIndex = 0;
             lblTituloTarjeta2.Text = "Productos con stock mínimo";
             // 
-            // panel2
+            // panelTotalProductos
             // 
-            panel2.BackColor = Color.FromArgb(242, 249, 254);
-            panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(lblTotalProductos);
-            panel2.Controls.Add(lblDescripcionProductos);
-            panel2.Controls.Add(lblTituloTarjeta1);
-            panel2.Controls.Add(pictureBox10);
-            panel2.Location = new Point(171, 154);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(424, 164);
-            panel2.TabIndex = 13;
+            panelTotalProductos.BackColor = Color.FromArgb(242, 249, 254);
+            panelTotalProductos.Controls.Add(lblTotalProductos);
+            panelTotalProductos.Controls.Add(lblDescripcionProductos);
+            panelTotalProductos.Controls.Add(lblTituloTarjeta1);
+            panelTotalProductos.Controls.Add(pictureBox10);
+            panelTotalProductos.Location = new Point(272, 138);
+            panelTotalProductos.Name = "panelTotalProductos";
+            panelTotalProductos.Size = new Size(424, 164);
+            panelTotalProductos.TabIndex = 13;
             // 
             // lblTotalProductos
             // 
@@ -317,7 +314,7 @@
             // 
             lblDescripcion.AutoSize = true;
             lblDescripcion.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDescripcion.Location = new Point(189, 100);
+            lblDescripcion.Location = new Point(290, 84);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(406, 23);
             lblDescripcion.TabIndex = 12;
@@ -327,7 +324,7 @@
             // 
             lblBienvenida.AutoSize = true;
             lblBienvenida.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBienvenida.Location = new Point(158, 44);
+            lblBienvenida.Location = new Point(259, 28);
             lblBienvenida.Name = "lblBienvenida";
             lblBienvenida.Size = new Size(473, 46);
             lblBienvenida.TabIndex = 11;
@@ -338,48 +335,49 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            ClientSize = new Size(1902, 983);
+            Controls.Add(panelEntradasHoy);
+            Controls.Add(panelMovimientosRecientes);
+            Controls.Add(panelProductoStockMinimo);
+            Controls.Add(panelTotalProductos);
             Controls.Add(lblDescripcion);
             Controls.Add(lblBienvenida);
             Name = "frmPanelPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Librería PrintZone - Sistema de Inventario";
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            panelEntradasHoy.ResumeLayout(false);
+            panelEntradasHoy.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
+            panelMovimientosRecientes.ResumeLayout(false);
+            panelMovimientosRecientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvMovimientos).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelProductoStockMinimo.ResumeLayout(false);
+            panelProductoStockMinimo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panelTotalProductos.ResumeLayout(false);
+            panelTotalProductos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Panel panel7;
+        private Panel panelEntradasHoy;
         private Label lblEntradasHoy;
         private Label lblDescripcionEntradas;
         private PictureBox pictureBox14;
         private Label lblTituloTarjeta3;
-        private Panel panel6;
+        private Panel panelMovimientosRecientes;
         private Button btnVerTodos;
         private Label label14;
         private PictureBox pictureBox15;
-        private Panel panel3;
+        private Panel panelProductoStockMinimo;
         private Label lblProductosStockMinimo;
         private Label lblDescripcionStock;
         private PictureBox pictureBox11;
         private Label lblTituloTarjeta2;
-        private Panel panel2;
+        private Panel panelTotalProductos;
         private PictureBox pictureBox10;
         private Label lblTotalProductos;
         private Label lblDescripcionProductos;

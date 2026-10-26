@@ -38,9 +38,13 @@
             label4 = new Label();
             txtContra = new TextBox();
             btnIniciarSesion = new Button();
+            panelLogin = new Panel();
             pictureBox3 = new PictureBox();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +52,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(450, 89);
+            label1.Location = new Point(96, 30);
             label1.Name = "label1";
             label1.Size = new Size(411, 46);
             label1.TabIndex = 0;
@@ -58,7 +62,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(439, 135);
+            label2.Location = new Point(85, 76);
             label2.Name = "label2";
             label2.Size = new Size(442, 28);
             label2.TabIndex = 1;
@@ -67,7 +71,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Usuario;
-            pictureBox1.Location = new Point(453, 199);
+            pictureBox1.Location = new Point(99, 140);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(77, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -78,7 +82,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(522, 194);
+            label3.Location = new Point(182, 142);
             label3.Name = "label3";
             label3.Size = new Size(62, 20);
             label3.TabIndex = 3;
@@ -88,7 +92,7 @@
             // 
             txtUsuario.BorderStyle = BorderStyle.FixedSingle;
             txtUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(522, 217);
+            txtUsuario.Location = new Point(182, 165);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = " Ingresa tu usuario";
             txtUsuario.Size = new Size(359, 34);
@@ -98,7 +102,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Contraseña;
-            pictureBox2.Location = new Point(453, 303);
+            pictureBox2.Location = new Point(99, 244);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(77, 70);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -109,7 +113,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(522, 298);
+            label4.Location = new Point(182, 246);
             label4.Name = "label4";
             label4.Size = new Size(86, 20);
             label4.TabIndex = 6;
@@ -119,7 +123,7 @@
             // 
             txtContra.BorderStyle = BorderStyle.FixedSingle;
             txtContra.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContra.Location = new Point(522, 321);
+            txtContra.Location = new Point(182, 269);
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.PlaceholderText = " Ingresa tu contraseña";
@@ -131,49 +135,84 @@
             // 
             btnIniciarSesion.BackColor = Color.FromArgb(26, 99, 212);
             btnIniciarSesion.Cursor = Cursors.Hand;
-            btnIniciarSesion.FlatStyle = FlatStyle.Popup;
+            btnIniciarSesion.FlatAppearance.BorderSize = 0;
+            btnIniciarSesion.FlatStyle = FlatStyle.Flat;
             btnIniciarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIniciarSesion.ForeColor = Color.White;
-            btnIniciarSesion.Location = new Point(463, 401);
+            btnIniciarSesion.Location = new Point(99, 342);
             btnIniciarSesion.Name = "btnIniciarSesion";
-            btnIniciarSesion.Size = new Size(418, 46);
+            btnIniciarSesion.Size = new Size(442, 46);
             btnIniciarSesion.TabIndex = 8;
             btnIniciarSesion.Text = "Iniciar Sesión";
             btnIniciarSesion.UseVisualStyleBackColor = false;
             btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
+            // panelLogin
+            // 
+            panelLogin.BackColor = Color.White;
+            panelLogin.Controls.Add(label1);
+            panelLogin.Controls.Add(btnIniciarSesion);
+            panelLogin.Controls.Add(label2);
+            panelLogin.Controls.Add(txtContra);
+            panelLogin.Controls.Add(pictureBox1);
+            panelLogin.Controls.Add(label4);
+            panelLogin.Controls.Add(label3);
+            panelLogin.Controls.Add(pictureBox2);
+            panelLogin.Controls.Add(txtUsuario);
+            panelLogin.Location = new Point(1059, 232);
+            panelLogin.Name = "panelLogin";
+            panelLogin.Size = new Size(665, 488);
+            panelLogin.TabIndex = 9;
+            // 
             // pictureBox3
             // 
-            pictureBox3.Dock = DockStyle.Left;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(0, 0);
+            pictureBox3.Location = new Point(349, 232);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(377, 582);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 9;
+            pictureBox3.Size = new Size(400, 400);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.White;
+            label5.Location = new Point(371, 635);
+            label5.Name = "label5";
+            label5.Size = new Size(363, 54);
+            label5.TabIndex = 11;
+            label5.Text = "Librería PrintZone";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(312, 692);
+            label6.Name = "label6";
+            label6.Size = new Size(502, 28);
+            label6.TabIndex = 12;
+            label6.Text = "Imprime tus ideas, copiá tu mundo y descubre tu librería";
             // 
             // frmInicioSesion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(933, 582);
+            BackColor = Color.FromArgb(3, 37, 91);
+            ClientSize = new Size(1902, 983);
+            Controls.Add(label6);
+            Controls.Add(label5);
             Controls.Add(pictureBox3);
-            Controls.Add(btnIniciarSesion);
-            Controls.Add(txtContra);
-            Controls.Add(label4);
-            Controls.Add(pictureBox2);
-            Controls.Add(txtUsuario);
-            Controls.Add(label3);
-            Controls.Add(pictureBox1);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(panelLogin);
             Name = "frmInicioSesion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de Sesión";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panelLogin.ResumeLayout(false);
+            panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -190,6 +229,9 @@
         private Label label4;
         private TextBox txtContra;
         private Button btnIniciarSesion;
+        private Panel panelLogin;
         private PictureBox pictureBox3;
+        private Label label5;
+        private Label label6;
     }
 }

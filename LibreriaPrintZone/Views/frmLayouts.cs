@@ -59,6 +59,8 @@ namespace LibreriaPrintZone
             string nombreCompleto)
         {
             InitializeComponent();
+            PanelRedondeado.Aplicar(panelMenu, 20);
+            PanelRedondeado.Aplicar(panelSidebar, 20);
 
             _idUsuarioActual = idUsuario;
             _nombreUsuarioActual = nombreCompleto;

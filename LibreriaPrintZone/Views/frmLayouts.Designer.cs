@@ -94,9 +94,9 @@
             panelSidebar.Controls.Add(pbIconoCategorias);
             panelSidebar.Controls.Add(pbIconoProductos);
             panelSidebar.Controls.Add(pbIconoInicio);
-            panelSidebar.Location = new Point(0, 7);
+            panelSidebar.Location = new Point(-11, -7);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(100, 915);
+            panelSidebar.Size = new Size(100, 1001);
             panelSidebar.TabIndex = 0;
             // 
             // btnReportes
@@ -106,7 +106,7 @@
             btnReportes.FlatStyle = FlatStyle.Flat;
             btnReportes.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(90, 630);
+            btnReportes.Location = new Point(97, 633);
             btnReportes.Name = "btnReportes";
             btnReportes.Size = new Size(153, 43);
             btnReportes.TabIndex = 25;
@@ -118,7 +118,7 @@
             // pbIconoReportes
             // 
             pbIconoReportes.Image = Properties.Resources.impresa_icon;
-            pbIconoReportes.Location = new Point(33, 630);
+            pbIconoReportes.Location = new Point(41, 628);
             pbIconoReportes.Name = "pbIconoReportes";
             pbIconoReportes.Size = new Size(41, 48);
             pbIconoReportes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +132,7 @@
             btnConfiguracion.FlatStyle = FlatStyle.Flat;
             btnConfiguracion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfiguracion.ForeColor = Color.White;
-            btnConfiguracion.Location = new Point(92, 691);
+            btnConfiguracion.Location = new Point(99, 694);
             btnConfiguracion.Name = "btnConfiguracion";
             btnConfiguracion.Size = new Size(153, 43);
             btnConfiguracion.TabIndex = 23;
@@ -148,7 +148,7 @@
             btnUsuarios.FlatStyle = FlatStyle.Flat;
             btnUsuarios.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUsuarios.ForeColor = Color.White;
-            btnUsuarios.Location = new Point(92, 570);
+            btnUsuarios.Location = new Point(99, 573);
             btnUsuarios.Name = "btnUsuarios";
             btnUsuarios.Size = new Size(153, 43);
             btnUsuarios.TabIndex = 22;
@@ -164,7 +164,7 @@
             btnSalidas.FlatStyle = FlatStyle.Flat;
             btnSalidas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSalidas.ForeColor = Color.White;
-            btnSalidas.Location = new Point(92, 507);
+            btnSalidas.Location = new Point(99, 510);
             btnSalidas.Name = "btnSalidas";
             btnSalidas.Size = new Size(153, 43);
             btnSalidas.TabIndex = 21;
@@ -180,7 +180,7 @@
             btnProductos.FlatStyle = FlatStyle.Flat;
             btnProductos.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProductos.ForeColor = Color.White;
-            btnProductos.Location = new Point(92, 255);
+            btnProductos.Location = new Point(99, 258);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(153, 43);
             btnProductos.TabIndex = 17;
@@ -196,7 +196,7 @@
             btnEntradas.FlatStyle = FlatStyle.Flat;
             btnEntradas.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntradas.ForeColor = Color.White;
-            btnEntradas.Location = new Point(92, 444);
+            btnEntradas.Location = new Point(99, 447);
             btnEntradas.Name = "btnEntradas";
             btnEntradas.Size = new Size(153, 43);
             btnEntradas.TabIndex = 20;
@@ -212,7 +212,7 @@
             btnProveedores.FlatStyle = FlatStyle.Flat;
             btnProveedores.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnProveedores.ForeColor = Color.White;
-            btnProveedores.Location = new Point(92, 381);
+            btnProveedores.Location = new Point(99, 384);
             btnProveedores.Name = "btnProveedores";
             btnProveedores.Size = new Size(153, 43);
             btnProveedores.TabIndex = 19;
@@ -228,7 +228,7 @@
             btnCategorias.FlatStyle = FlatStyle.Flat;
             btnCategorias.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCategorias.ForeColor = Color.White;
-            btnCategorias.Location = new Point(92, 318);
+            btnCategorias.Location = new Point(99, 321);
             btnCategorias.Name = "btnCategorias";
             btnCategorias.Size = new Size(153, 43);
             btnCategorias.TabIndex = 18;
@@ -246,7 +246,7 @@
             btnInicio.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInicio.ForeColor = Color.White;
             btnInicio.ImageAlign = ContentAlignment.MiddleLeft;
-            btnInicio.Location = new Point(92, 192);
+            btnInicio.Location = new Point(99, 195);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(153, 43);
             btnInicio.TabIndex = 16;
@@ -258,7 +258,7 @@
             // pbLogo
             // 
             pbLogo.Image = (Image)resources.GetObject("pbLogo.Image");
-            pbLogo.Location = new Point(3, 21);
+            pbLogo.Location = new Point(11, 19);
             pbLogo.Name = "pbLogo";
             pbLogo.Size = new Size(96, 168);
             pbLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -268,7 +268,7 @@
             // pbIconoConfiguracion
             // 
             pbIconoConfiguracion.Image = (Image)resources.GetObject("pbIconoConfiguracion.Image");
-            pbIconoConfiguracion.Location = new Point(33, 691);
+            pbIconoConfiguracion.Location = new Point(41, 689);
             pbIconoConfiguracion.Name = "pbIconoConfiguracion";
             pbIconoConfiguracion.Size = new Size(41, 48);
             pbIconoConfiguracion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -278,7 +278,7 @@
             // pbIconoUsuarios
             // 
             pbIconoUsuarios.Image = (Image)resources.GetObject("pbIconoUsuarios.Image");
-            pbIconoUsuarios.Location = new Point(33, 570);
+            pbIconoUsuarios.Location = new Point(41, 568);
             pbIconoUsuarios.Name = "pbIconoUsuarios";
             pbIconoUsuarios.Size = new Size(43, 48);
             pbIconoUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
@@ -288,7 +288,7 @@
             // pbIconoSalidas
             // 
             pbIconoSalidas.Image = (Image)resources.GetObject("pbIconoSalidas.Image");
-            pbIconoSalidas.Location = new Point(33, 507);
+            pbIconoSalidas.Location = new Point(41, 505);
             pbIconoSalidas.Name = "pbIconoSalidas";
             pbIconoSalidas.Size = new Size(43, 48);
             pbIconoSalidas.SizeMode = PictureBoxSizeMode.Zoom;
@@ -298,7 +298,7 @@
             // pbIconoEntradas
             // 
             pbIconoEntradas.Image = (Image)resources.GetObject("pbIconoEntradas.Image");
-            pbIconoEntradas.Location = new Point(33, 444);
+            pbIconoEntradas.Location = new Point(41, 442);
             pbIconoEntradas.Name = "pbIconoEntradas";
             pbIconoEntradas.Size = new Size(43, 48);
             pbIconoEntradas.SizeMode = PictureBoxSizeMode.Zoom;
@@ -308,7 +308,7 @@
             // pbIconoProveedores
             // 
             pbIconoProveedores.Image = (Image)resources.GetObject("pbIconoProveedores.Image");
-            pbIconoProveedores.Location = new Point(33, 381);
+            pbIconoProveedores.Location = new Point(41, 379);
             pbIconoProveedores.Name = "pbIconoProveedores";
             pbIconoProveedores.Size = new Size(43, 48);
             pbIconoProveedores.SizeMode = PictureBoxSizeMode.Zoom;
@@ -318,7 +318,7 @@
             // pbIconoCategorias
             // 
             pbIconoCategorias.Image = (Image)resources.GetObject("pbIconoCategorias.Image");
-            pbIconoCategorias.Location = new Point(33, 318);
+            pbIconoCategorias.Location = new Point(41, 316);
             pbIconoCategorias.Name = "pbIconoCategorias";
             pbIconoCategorias.Size = new Size(43, 48);
             pbIconoCategorias.SizeMode = PictureBoxSizeMode.Zoom;
@@ -328,7 +328,7 @@
             // pbIconoProductos
             // 
             pbIconoProductos.Image = (Image)resources.GetObject("pbIconoProductos.Image");
-            pbIconoProductos.Location = new Point(33, 255);
+            pbIconoProductos.Location = new Point(41, 253);
             pbIconoProductos.Name = "pbIconoProductos";
             pbIconoProductos.Size = new Size(43, 48);
             pbIconoProductos.SizeMode = PictureBoxSizeMode.Zoom;
@@ -338,7 +338,7 @@
             // pbIconoInicio
             // 
             pbIconoInicio.Image = (Image)resources.GetObject("pbIconoInicio.Image");
-            pbIconoInicio.Location = new Point(33, 192);
+            pbIconoInicio.Location = new Point(41, 190);
             pbIconoInicio.Name = "pbIconoInicio";
             pbIconoInicio.Size = new Size(43, 48);
             pbIconoInicio.SizeMode = PictureBoxSizeMode.Zoom;
@@ -353,7 +353,7 @@
             btnRolUsuario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRolUsuario.Image = (Image)resources.GetObject("btnRolUsuario.Image");
             btnRolUsuario.ImageAlign = ContentAlignment.MiddleRight;
-            btnRolUsuario.Location = new Point(1431, 21);
+            btnRolUsuario.Location = new Point(1695, 22);
             btnRolUsuario.Name = "btnRolUsuario";
             btnRolUsuario.Size = new Size(160, 35);
             btnRolUsuario.TabIndex = 10;
@@ -368,7 +368,7 @@
             panelContenido.Dock = DockStyle.Fill;
             panelContenido.Location = new Point(0, 0);
             panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(1632, 915);
+            panelContenido.Size = new Size(1902, 983);
             panelContenido.TabIndex = 11;
             // 
             // panelMenu
@@ -377,7 +377,7 @@
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
             panelMenu.Controls.Add(btnSalir);
             panelMenu.Controls.Add(btnCerrarSesion);
-            panelMenu.Location = new Point(1421, 77);
+            panelMenu.Location = new Point(1685, 78);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(182, 221);
             panelMenu.TabIndex = 0;
@@ -427,7 +427,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(btnRolUsuario);
             Controls.Add(panelSidebar);
             Controls.Add(panelContenido);
