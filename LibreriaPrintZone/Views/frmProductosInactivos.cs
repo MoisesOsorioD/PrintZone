@@ -22,6 +22,7 @@ namespace LibreriaPrintZone.Views
         public frmProductosInactivos()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvProductosInactivos);
 
             _controller =
                 new ProductosController();

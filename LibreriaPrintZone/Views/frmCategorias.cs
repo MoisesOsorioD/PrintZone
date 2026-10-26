@@ -14,6 +14,7 @@ namespace LibreriaPrintZone
         public frmCategorias()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvCategorias);
 
             dgvCategorias.AutoGenerateColumns = false;
 

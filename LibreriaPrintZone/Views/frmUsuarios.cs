@@ -20,6 +20,7 @@ namespace LibreriaPrintZone.Views
         public frmUsuarios()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvUsuarios);
 
             _controller = new UsuariosController();
 

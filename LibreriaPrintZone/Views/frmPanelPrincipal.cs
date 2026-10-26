@@ -1,4 +1,5 @@
-﻿using LibreriaPrintZone.Models;
+﻿using LibreriaPrintZone.Components;
+using LibreriaPrintZone.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace LibreriaPrintZone.Views
         public frmPanelPrincipal(string rol, string nombreCompleto)
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvMovimientos);
 
             _rol = rol;
             _nombreCompleto = nombreCompleto;

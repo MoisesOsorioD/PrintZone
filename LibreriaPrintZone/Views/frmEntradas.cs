@@ -20,6 +20,7 @@ namespace LibreriaPrintZone.Views
         public frmEntradas()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvEntradas);
 
             _controller =
                 new EntradasController();

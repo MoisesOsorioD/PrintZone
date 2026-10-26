@@ -49,8 +49,8 @@ namespace LibreriaPrintZone.Views
         {
             cmbTipoRespaldoAutomatico.Items.Clear();
 
-            cmbTipoRespaldoAutomatico.Items.Add("Completo");
-            cmbTipoRespaldoAutomatico.Items.Add("Diferencial");
+            cmbTipoRespaldoAutomatico.Items.Add("FULL");
+            cmbTipoRespaldoAutomatico.Items.Add("INCREMENTAL");
 
             cmbTipoRespaldoAutomatico.SelectedIndex = 0;
         }

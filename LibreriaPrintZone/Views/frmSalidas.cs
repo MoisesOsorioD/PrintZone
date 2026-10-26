@@ -31,6 +31,7 @@ namespace LibreriaPrintZone.Views
         public frmSalidas()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvSalidas);
 
             _controller =
                 new SalidasController();

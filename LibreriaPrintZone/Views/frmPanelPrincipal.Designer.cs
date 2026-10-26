@@ -128,7 +128,7 @@
             panel6.Controls.Add(pictureBox15);
             panel6.Location = new Point(171, 367);
             panel6.Name = "panel6";
-            panel6.Size = new Size(1354, 413);
+            panel6.Size = new Size(1354, 483);
             panel6.TabIndex = 18;
             // 
             // dgvMovimientos
@@ -140,7 +140,7 @@
             dgvMovimientos.Name = "dgvMovimientos";
             dgvMovimientos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
             dgvMovimientos.RowHeadersWidth = 51;
-            dgvMovimientos.Size = new Size(1354, 317);
+            dgvMovimientos.Size = new Size(1354, 383);
             dgvMovimientos.TabIndex = 11;
             // 
             // colFecha

@@ -27,6 +27,7 @@ namespace LibreriaPrintZone.Views
         public frmProveedores()
         {
             InitializeComponent();
+            DataGridViewEstilo.Aplicar(dgvProveedores);
 
             _controller =
                 new ProveedoresController();
