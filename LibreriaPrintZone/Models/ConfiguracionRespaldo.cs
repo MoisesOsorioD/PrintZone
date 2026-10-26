@@ -14,7 +14,7 @@ namespace LibreriaPrintZone.Models
         public TimeSpan HoraInicio { get; set; } =
             new TimeSpan(20, 0, 0);
 
-        public string TipoRespaldo { get; set; } = "Completo";
+        public string TipoRespaldo { get; set; } = "FULL";
 
         public string CarpetaDestino { get; set; } = "";
     }

@@ -57,6 +57,7 @@ namespace LibreriaPrintZone.Controllers
 
             string procedimiento;
             string prefijo;
+
             string tipoNormalizado =
                 tipoRespaldo?.Trim().ToUpperInvariant() ?? "";
 
@@ -64,22 +65,27 @@ namespace LibreriaPrintZone.Controllers
             {
                 case "FULL":
                 case "COMPLETO":
+
                     procedimiento = "dbo.sp_Respaldo_Full";
                     prefijo = "PrintZone_FULL_";
-                    tipoNormalizado = "Completo";
+                    tipoNormalizado = "FULL";
+
                     break;
 
                 case "INCREMENTAL":
                 case "DIFERENCIAL":
                 case "DIFFERENTIAL":
+
                     procedimiento = "dbo.sp_Respaldo_Diferencial";
                     prefijo = "PrintZone_DIFF_";
-                    tipoNormalizado = "Diferencial";
+                    tipoNormalizado = "INCREMENTAL";
+
                     break;
 
                 default:
+
                     throw new ArgumentException(
-                        "Selecciona un respaldo completo o diferencial.");
+                        "Selecciona un respaldo FULL o INCREMENTAL.");
             }
 
             string carpeta = carpetaRespaldo.Trim();
@@ -98,71 +104,68 @@ namespace LibreriaPrintZone.Controllers
                 .Select(Path.GetFullPath)
                 .ToHashSet(StringComparer.OrdinalIgnoreCase);
 
-            try
+            using (SqlConnection conexion =
+                   new SqlConnection(_cadenaConexion))
             {
-                using (SqlConnection conexion =
-                       new SqlConnection(_cadenaConexion))
+                conexion.Open();
+
+                using (SqlCommand comando =
+                       new SqlCommand(procedimiento, conexion))
                 {
-                    conexion.Open();
+                    comando.CommandType =
+                        CommandType.StoredProcedure;
 
-                    using (SqlCommand comando =
-                           new SqlCommand(procedimiento, conexion))
-                    {
-                        comando.CommandType =
-                            CommandType.StoredProcedure;
+                    comando.CommandTimeout = 0;
 
-                        comando.CommandTimeout = 0;
+                    comando.Parameters.Add(
+                        "@Carpeta",
+                        SqlDbType.NVarChar,
+                        500
+                    ).Value = carpeta;
 
-                        comando.Parameters.Add(
-                            "@Carpeta",
-                            SqlDbType.NVarChar,
-                            500
-                        ).Value = carpeta;
-
-                        comando.ExecuteNonQuery();
-                    }
+                    comando.ExecuteNonQuery();
                 }
-
-                DateTime fechaFinalizacion = DateTime.Now;
-
-                string rutaArchivo = Directory
-                    .GetFiles(carpeta, prefijo + "*.bak")
-                    .Select(Path.GetFullPath)
-                    .Where(archivo => !archivosAnteriores.Contains(archivo))
-                    .OrderByDescending(
-                        archivo => File.GetLastWriteTime(archivo))
-                    .FirstOrDefault();
-
-                if (rutaArchivo == null)
-                {
-                    throw new FileNotFoundException(
-                        "El procedimiento terminó, pero no se pudo " +
-                        "identificar el nuevo archivo de respaldo. " +
-                        "Verifica la carpeta y los permisos de SQL Server.",
-                        carpeta);
-                }
-
-                FileInfo informacionArchivo =
-                    new FileInfo(rutaArchivo);
-
-                return new ResultadoRespaldo
-                {
-                    TipoRespaldo = tipoNormalizado,
-                    NombreArchivo = informacionArchivo.Name,
-                    RutaArchivo = informacionArchivo.FullName,
-                    TamanoMB = Math.Round(
-                        informacionArchivo.Length / (1024.0 * 1024.0),
-                        2),
-                    FechaInicio = fechaInicio,
-                    FechaFinalizacion = fechaFinalizacion,
-                    Duracion = fechaFinalizacion - fechaInicio,
-                    Estado = "Realizado correctamente"
-                };
             }
-            catch
+
+            DateTime fechaFinalizacion = DateTime.Now;
+
+            string rutaArchivo = Directory
+                .GetFiles(carpeta, prefijo + "*.bak")
+                .Select(Path.GetFullPath)
+                .Where(archivo =>
+                    !archivosAnteriores.Contains(archivo))
+                .OrderByDescending(
+                    archivo => File.GetLastWriteTime(archivo))
+                .FirstOrDefault();
+
+            if (rutaArchivo == null)
             {
-                throw;
+                throw new FileNotFoundException(
+                    "El procedimiento terminó, pero no se pudo " +
+                    "identificar el nuevo archivo de respaldo. " +
+                    "Verifica la carpeta y los permisos de SQL Server.",
+                    carpeta);
             }
+
+            FileInfo informacionArchivo =
+                new FileInfo(rutaArchivo);
+
+            return new ResultadoRespaldo
+            {
+                TipoRespaldo = tipoNormalizado,
+                NombreArchivo = informacionArchivo.Name,
+                RutaArchivo = informacionArchivo.FullName,
+
+                TamanoMB = Math.Round(
+                    informacionArchivo.Length / (1024.0 * 1024.0),
+                    2),
+
+                FechaInicio = fechaInicio,
+                FechaFinalizacion = fechaFinalizacion,
+                Duracion = fechaFinalizacion - fechaInicio,
+
+                Estado = "Realizado correctamente"
+            };
         }
 
         public string RestaurarRespaldo(string rutaArchivo)
