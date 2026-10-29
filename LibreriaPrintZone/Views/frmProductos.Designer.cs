@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             label2 = new Label();
             label1 = new Label();
@@ -117,8 +117,8 @@
             // 
             // dgvProductos
             // 
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProductos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
@@ -166,8 +166,8 @@
             // colCodigoBarrasP
             // 
             colCodigoBarrasP.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 4.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            colCodigoBarrasP.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 4.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            colCodigoBarrasP.DefaultCellStyle = dataGridViewCellStyle2;
             colCodigoBarrasP.HeaderText = "Código de barras";
             colCodigoBarrasP.MinimumWidth = 6;
             colCodigoBarrasP.Name = "colCodigoBarrasP";
@@ -540,7 +540,7 @@
             // 
             // pictureBox15
             // 
-            pictureBox15.Image = Properties.Resources.Detalle_categoria;
+            pictureBox15.Image = Properties.Resources.Total_de_productos;
             pictureBox15.Location = new Point(15, 0);
             pictureBox15.Name = "pictureBox15";
             pictureBox15.Size = new Size(60, 60);

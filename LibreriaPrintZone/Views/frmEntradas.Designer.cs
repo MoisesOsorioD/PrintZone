@@ -521,7 +521,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.Categoria_Menos;
+            pictureBox3.Image = Properties.Resources.Entradas_hoy;
             pictureBox3.Location = new Point(20, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(60, 60);

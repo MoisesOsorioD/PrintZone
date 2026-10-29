@@ -333,7 +333,7 @@
             // 
             // pictureBox15
             // 
-            pictureBox15.Image = Properties.Resources.Detalle_categoria;
+            pictureBox15.Image = (Image)resources.GetObject("pictureBox15.Image");
             pictureBox15.Location = new Point(33, 3);
             pictureBox15.Name = "pictureBox15";
             pictureBox15.Size = new Size(60, 60);
