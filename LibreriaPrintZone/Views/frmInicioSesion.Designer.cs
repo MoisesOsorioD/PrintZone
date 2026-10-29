@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
-            label1 = new Label();
-            label2 = new Label();
             pictureBox1 = new PictureBox();
             label3 = new Label();
             txtUsuario = new TextBox();
@@ -46,30 +44,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(96, 30);
-            label1.Name = "label1";
-            label1.Size = new Size(411, 46);
-            label1.TabIndex = 0;
-            label1.Text = "Bienvenidos a PrintZone";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(85, 76);
-            label2.Name = "label2";
-            label2.Size = new Size(442, 28);
-            label2.TabIndex = 1;
-            label2.Text = "Inicia sesión para acceder al sistema de inventario";
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Usuario;
-            pictureBox1.Location = new Point(99, 140);
+            pictureBox1.Location = new Point(13, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(77, 70);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -79,10 +57,10 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(182, 142);
+            label3.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label3.Location = new Point(96, 12);
             label3.Name = "label3";
-            label3.Size = new Size(62, 20);
+            label3.Size = new Size(81, 28);
             label3.TabIndex = 3;
             label3.Text = "Usuario";
             // 
@@ -90,7 +68,7 @@
             // 
             txtUsuario.BorderStyle = BorderStyle.FixedSingle;
             txtUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(182, 165);
+            txtUsuario.Location = new Point(96, 48);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = " Ingresa tu usuario";
             txtUsuario.Size = new Size(359, 34);
@@ -100,7 +78,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Contraseña;
-            pictureBox2.Location = new Point(99, 244);
+            pictureBox2.Location = new Point(13, 137);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(77, 70);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -110,10 +88,10 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(182, 246);
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            label4.Location = new Point(96, 137);
             label4.Name = "label4";
-            label4.Size = new Size(86, 20);
+            label4.Size = new Size(114, 28);
             label4.TabIndex = 6;
             label4.Text = "Contraseña";
             // 
@@ -121,7 +99,7 @@
             // 
             txtContra.BorderStyle = BorderStyle.FixedSingle;
             txtContra.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtContra.Location = new Point(182, 269);
+            txtContra.Location = new Point(96, 173);
             txtContra.Name = "txtContra";
             txtContra.PasswordChar = '*';
             txtContra.PlaceholderText = " Ingresa tu contraseña";
@@ -137,9 +115,9 @@
             btnIniciarSesion.FlatStyle = FlatStyle.Flat;
             btnIniciarSesion.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnIniciarSesion.ForeColor = Color.White;
-            btnIniciarSesion.Location = new Point(99, 342);
+            btnIniciarSesion.Location = new Point(25, 235);
             btnIniciarSesion.Name = "btnIniciarSesion";
-            btnIniciarSesion.Size = new Size(442, 46);
+            btnIniciarSesion.Size = new Size(430, 46);
             btnIniciarSesion.TabIndex = 8;
             btnIniciarSesion.Text = "Iniciar Sesión";
             btnIniciarSesion.UseVisualStyleBackColor = false;
@@ -148,27 +126,25 @@
             // panelLogin
             // 
             panelLogin.BackColor = Color.White;
-            panelLogin.Controls.Add(label1);
             panelLogin.Controls.Add(btnIniciarSesion);
-            panelLogin.Controls.Add(label2);
             panelLogin.Controls.Add(txtContra);
             panelLogin.Controls.Add(pictureBox1);
             panelLogin.Controls.Add(label4);
             panelLogin.Controls.Add(label3);
             panelLogin.Controls.Add(pictureBox2);
             panelLogin.Controls.Add(txtUsuario);
-            panelLogin.Location = new Point(1059, 232);
+            panelLogin.Location = new Point(1256, 328);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(665, 488);
+            panelLogin.Size = new Size(480, 325);
             panelLogin.TabIndex = 9;
             // 
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(-75, -30);
+            pictureBox3.Location = new Point(-411, -7);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(2572, 1164);
-            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox3.Size = new Size(2788, 999);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
             // 
@@ -189,13 +165,9 @@
             panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label label1;
-        private Label label2;
         private PictureBox pictureBox1;
         private Label label3;
         private TextBox txtUsuario;
