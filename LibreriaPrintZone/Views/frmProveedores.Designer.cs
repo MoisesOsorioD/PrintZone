@@ -605,9 +605,9 @@
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.Location = new Point(20, 537);
+            panelPaginacion.Location = new Point(14, 574);
             panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(1208, 59);
+            panelPaginacion.Size = new Size(1214, 59);
             panelPaginacion.TabIndex = 9;
             // 
             // dgvProveedores
@@ -618,7 +618,7 @@
             dgvProveedores.Location = new Point(14, 129);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 51;
-            dgvProveedores.Size = new Size(1214, 320);
+            dgvProveedores.Size = new Size(1214, 439);
             dgvProveedores.TabIndex = 8;
             // 
             // colEmpresa

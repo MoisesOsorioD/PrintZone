@@ -1,4 +1,5 @@
-﻿using LibreriaPrintZone.Models;
+﻿
+using LibreriaPrintZone.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,7 +17,6 @@ namespace LibreriaPrintZone.Controllers
             _context = new InventarioPrintzoneContext();
         }
 
-
         public List<EntradaListado> ObtenerEntradas()
         {
             return _context.Database
@@ -24,13 +24,12 @@ namespace LibreriaPrintZone.Controllers
                     "EXEC sp_Entradas_Listar"
                 )
                 .AsEnumerable()
+                .OrderByDescending(e => e.fecha_entrada)
+                .ThenByDescending(e => e.id_entrada)
                 .ToList();
         }
 
-
-
-        public EntradaListado? ObtenerEntradaPorId(
-            int idEntrada)
+        public EntradaListado? ObtenerEntradaPorId(int idEntrada)
         {
             List<EntradaListado> resultado =
                 _context.Database
@@ -44,8 +43,6 @@ namespace LibreriaPrintZone.Controllers
             return resultado.FirstOrDefault();
         }
 
-
-
         public void RegistrarEntrada(
             int cantidad,
             decimal costoLote,
@@ -56,24 +53,21 @@ namespace LibreriaPrintZone.Controllers
 
             var parametroFecha = new SqlParameter(
                 "@fecha_entrada",
-                System.Data.SqlDbType.DateTime
-            )
+                System.Data.SqlDbType.DateTime)
             {
                 Value = fechaEntrada
             };
 
             var parametroCantidad = new SqlParameter(
                 "@cantidad",
-                System.Data.SqlDbType.Int
-            )
+                System.Data.SqlDbType.Int)
             {
                 Value = cantidad
             };
 
             var parametroCostoLote = new SqlParameter(
                 "@costo_lote",
-                System.Data.SqlDbType.Decimal
-            )
+                System.Data.SqlDbType.Decimal)
             {
                 Precision = 10,
                 Scale = 2,
@@ -82,16 +76,14 @@ namespace LibreriaPrintZone.Controllers
 
             var parametroProveedor = new SqlParameter(
                 "@id_proveedor",
-                System.Data.SqlDbType.Int
-            )
+                System.Data.SqlDbType.Int)
             {
                 Value = idProveedor
             };
 
             var parametroProducto = new SqlParameter(
                 "@id_producto",
-                System.Data.SqlDbType.Int
-            )
+                System.Data.SqlDbType.Int)
             {
                 Value = idProducto
             };
@@ -111,18 +103,13 @@ namespace LibreriaPrintZone.Controllers
             );
         }
 
-
         public List<Proveedore> ObtenerProveedores()
         {
             return _context.Proveedores
-                .FromSqlRaw(
-                    "EXEC sp_Proveedores_Listar"
-                )
+                .FromSqlRaw("EXEC sp_Proveedores_Listar")
                 .AsNoTracking()
                 .ToList();
         }
-
-
 
         public List<ProductoListado> ObtenerProductos()
         {
@@ -134,15 +121,11 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-
-        public List<EntradaListado> BuscarEntradas(
-            string busqueda)
+        public List<EntradaListado> BuscarEntradas(string busqueda)
         {
-            List<EntradaListado> entradas =
-                ObtenerEntradas();
+            List<EntradaListado> entradas = ObtenerEntradas();
 
-            string texto =
-                busqueda.Trim();
+            string texto = busqueda.Trim();
 
             if (string.IsNullOrWhiteSpace(texto))
             {
@@ -164,31 +147,21 @@ namespace LibreriaPrintZone.Controllers
                 .ToList();
         }
 
-
-
         public int ObtenerTotalEntradas()
         {
             return ObtenerEntradas().Count;
         }
 
-
-
         public int ObtenerTotalUnidades()
         {
-            return ObtenerEntradas()
-                .Sum(e => e.cantidad);
+            return ObtenerEntradas().Sum(e => e.cantidad);
         }
-
-
 
         public decimal ObtenerInversionInventario()
         {
-            return ObtenerEntradas()
-                .Sum(e => e.costo_lote);
+            return ObtenerEntradas().Sum(e => e.costo_lote);
         }
     }
-
-
 
     public class EntradaListado
     {

@@ -313,7 +313,7 @@
             dgvCategorias.Location = new Point(33, 121);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.RowHeadersWidth = 51;
-            dgvCategorias.Size = new Size(877, 352);
+            dgvCategorias.Size = new Size(877, 373);
             dgvCategorias.TabIndex = 0;
             dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
