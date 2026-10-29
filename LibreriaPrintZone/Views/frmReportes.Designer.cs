@@ -91,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(270, 77);
+            label2.Location = new Point(353, 113);
             label2.Name = "label2";
             label2.Size = new Size(326, 23);
             label2.TabIndex = 13;
@@ -101,7 +101,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(239, 21);
+            label1.Location = new Point(322, 57);
             label1.Name = "label1";
             label1.Size = new Size(162, 46);
             label1.TabIndex = 12;
@@ -110,7 +110,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Categoria_Menos;
-            pictureBox10.Location = new Point(150, 12);
+            pictureBox10.Location = new Point(233, 48);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -142,7 +142,7 @@
             panelTipoReporte.Controls.Add(pictureBox1);
             panelTipoReporte.Controls.Add(label17);
             panelTipoReporte.Controls.Add(pictureBox3);
-            panelTipoReporte.Location = new Point(150, 118);
+            panelTipoReporte.Location = new Point(233, 154);
             panelTipoReporte.Name = "panelTipoReporte";
             panelTipoReporte.Size = new Size(861, 392);
             panelTipoReporte.TabIndex = 58;
@@ -371,7 +371,7 @@
             panelFiltros.Controls.Add(dtpFechaDesde);
             panelFiltros.Controls.Add(label24);
             panelFiltros.Controls.Add(pictureBox13);
-            panelFiltros.Location = new Point(150, 527);
+            panelFiltros.Location = new Point(233, 563);
             panelFiltros.Name = "panelFiltros";
             panelFiltros.Size = new Size(861, 154);
             panelFiltros.TabIndex = 59;
@@ -439,7 +439,7 @@
             panelOpcionesAdicionales.Controls.Add(chkIncluirPrecios);
             panelOpcionesAdicionales.Controls.Add(label18);
             panelOpcionesAdicionales.Controls.Add(pictureBox7);
-            panelOpcionesAdicionales.Location = new Point(150, 700);
+            panelOpcionesAdicionales.Location = new Point(233, 736);
             panelOpcionesAdicionales.Name = "panelOpcionesAdicionales";
             panelOpcionesAdicionales.Size = new Size(861, 143);
             panelOpcionesAdicionales.TabIndex = 60;
@@ -510,7 +510,7 @@
             panelVistaPrevia.Controls.Add(btnGenerarReporte);
             panelVistaPrevia.Controls.Add(pnlDocumentoPrevia);
             panelVistaPrevia.Controls.Add(label30);
-            panelVistaPrevia.Location = new Point(1017, 118);
+            panelVistaPrevia.Location = new Point(1111, 154);
             panelVistaPrevia.Name = "panelVistaPrevia";
             panelVistaPrevia.Size = new Size(603, 725);
             panelVistaPrevia.TabIndex = 59;
@@ -554,7 +554,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelVistaPrevia);
             Controls.Add(panelOpcionesAdicionales);
             Controls.Add(panelFiltros);

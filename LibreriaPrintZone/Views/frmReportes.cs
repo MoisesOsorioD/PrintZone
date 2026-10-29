@@ -33,6 +33,9 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelTipoReporte, 20);
             PanelRedondeado.Aplicar(panelVistaPrevia, 20);
 
+            BotonRedondeado.Aplicar(btnGenerarReporte, 10);
+
+
 
 
             btnGenerarReporte.Click -= btnGenerarReporte_Click;
@@ -662,6 +665,11 @@ namespace LibreriaPrintZone.Views
 
             Button btnPdf = CrearBotonOpcion("Guardar como PDF", 48);
             Button btnExcel = CrearBotonOpcion("Exportar a Excel", 94);
+
+            BotonRedondeado.Aplicar(btnPdf, 10);
+            BotonRedondeado.Aplicar(btnExcel, 10);
+
+
 
             btnPdf.Click += (s, args) =>
             {

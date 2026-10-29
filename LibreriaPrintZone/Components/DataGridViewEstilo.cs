@@ -32,7 +32,7 @@ namespace LibreriaPrintZone.Components
                 Color.White;
 
             dgv.ColumnHeadersDefaultCellStyle.Font =
-                new Font("Segoe UI", 10F, FontStyle.Bold);
+                new Font("Segoe UI", 9F, FontStyle.Bold);
 
             dgv.ColumnHeadersDefaultCellStyle.Alignment =
                 DataGridViewContentAlignment.MiddleLeft;
@@ -52,7 +52,7 @@ namespace LibreriaPrintZone.Components
             dgv.DefaultCellStyle.ForeColor = Color.FromArgb(40, 50, 65);
 
             dgv.DefaultCellStyle.Font =
-                new Font("Segoe UI", 9.5F, FontStyle.Regular);
+                new Font("Segoe UI", 9F, FontStyle.Regular);
 
             dgv.DefaultCellStyle.SelectionBackColor =
                 Color.FromArgb(210, 230, 255);

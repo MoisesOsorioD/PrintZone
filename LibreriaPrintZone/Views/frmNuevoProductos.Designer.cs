@@ -115,7 +115,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(257, 77);
+            label2.Location = new Point(348, 113);
             label2.Name = "label2";
             label2.Size = new Size(338, 46);
             label2.TabIndex = 10;
@@ -125,7 +125,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(226, 21);
+            label1.Location = new Point(317, 57);
             label1.Name = "label1";
             label1.Size = new Size(282, 46);
             label1.TabIndex = 9;
@@ -134,7 +134,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Total_de_productos;
-            pictureBox10.Location = new Point(137, 12);
+            pictureBox10.Location = new Point(228, 48);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -156,7 +156,7 @@
             panelinformacionProducto.Controls.Add(txtNombre);
             panelinformacionProducto.Controls.Add(pictureBox1);
             panelinformacionProducto.Controls.Add(label3);
-            panelinformacionProducto.Location = new Point(137, 139);
+            panelinformacionProducto.Location = new Point(228, 175);
             panelinformacionProducto.Name = "panelinformacionProducto";
             panelinformacionProducto.Size = new Size(863, 255);
             panelinformacionProducto.TabIndex = 13;
@@ -295,7 +295,7 @@
             panelInfo.Controls.Add(label19);
             panelInfo.Controls.Add(label5);
             panelInfo.Controls.Add(pictureBox3);
-            panelInfo.Location = new Point(1023, 139);
+            panelInfo.Location = new Point(1114, 175);
             panelInfo.Name = "panelInfo";
             panelInfo.Size = new Size(575, 588);
             panelInfo.TabIndex = 14;
@@ -545,7 +545,7 @@
             panelBotones.Controls.Add(btnLimpiar);
             panelBotones.Controls.Add(btnGuardar);
             panelBotones.Controls.Add(btnCancelar);
-            panelBotones.Location = new Point(137, 777);
+            panelBotones.Location = new Point(228, 813);
             panelBotones.Name = "panelBotones";
             panelBotones.Size = new Size(1461, 87);
             panelBotones.TabIndex = 16;
@@ -595,7 +595,7 @@
             panelInformacionComercial.Controls.Add(txtPrecioCompra);
             panelInformacionComercial.Controls.Add(pictureBox7);
             panelInformacionComercial.Controls.Add(label12);
-            panelInformacionComercial.Location = new Point(137, 415);
+            panelInformacionComercial.Location = new Point(228, 451);
             panelInformacionComercial.Name = "panelInformacionComercial";
             panelInformacionComercial.Size = new Size(863, 142);
             panelInformacionComercial.TabIndex = 50;
@@ -664,7 +664,7 @@
             panelControlnventario.Controls.Add(txtStockMinimo);
             panelControlnventario.Controls.Add(pictureBox4);
             panelControlnventario.Controls.Add(label6);
-            panelControlnventario.Location = new Point(137, 581);
+            panelControlnventario.Location = new Point(228, 617);
             panelControlnventario.Name = "panelControlnventario";
             panelControlnventario.Size = new Size(863, 146);
             panelControlnventario.TabIndex = 51;
@@ -743,7 +743,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelControlnventario);
             Controls.Add(panelInformacionComercial);
             Controls.Add(panelBotones);

@@ -19,6 +19,10 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelTotalProductos, 20);
             PanelRedondeado.Aplicar(panelProductoStockMinimo, 20);
             PanelRedondeado.Aplicar(panelEntradasHoy, 20);
+
+            BotonRedondeado.Aplicar(btnVerTodos, 10);
+
+
             DataGridViewEstilo.Aplicar(dgvMovimientos);
 
             _rol = rol;
@@ -379,6 +383,9 @@ namespace LibreriaPrintZone.Views
                     Location = new Point(195, 70),
                     Cursor = Cursors.Hand
                 };
+
+                BotonRedondeado.Aplicar(btnSalidas, 10);
+                BotonRedondeado.Aplicar(btnEntradas, 10);
 
                 btnSalidas.FlatAppearance.BorderSize = 0;
 

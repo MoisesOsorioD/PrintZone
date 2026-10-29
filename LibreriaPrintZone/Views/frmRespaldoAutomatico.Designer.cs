@@ -77,7 +77,7 @@
             // pnlRespaldoAutomatico
             // 
             pnlRespaldoAutomatico.Controls.Add(panelRespaldoAutomatico);
-            pnlRespaldoAutomatico.Location = new Point(123, 206);
+            pnlRespaldoAutomatico.Location = new Point(232, 136);
             pnlRespaldoAutomatico.Name = "pnlRespaldoAutomatico";
             pnlRespaldoAutomatico.Size = new Size(1443, 706);
             pnlRespaldoAutomatico.TabIndex = 92;
@@ -427,7 +427,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(pnlRespaldoAutomatico);
             Name = "frmRespaldoAutomatico";
             StartPosition = FormStartPosition.CenterScreen;

@@ -93,7 +93,7 @@
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(632, 256);
+            pictureBox14.Location = new Point(20, 77);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
@@ -103,7 +103,7 @@
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(678, 263);
+            txtBuscar.Location = new Point(66, 84);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = " Buscar usuarios...";
             txtBuscar.Size = new Size(889, 30);
@@ -113,19 +113,21 @@
             // panelListaUsuarios
             // 
             panelListaUsuarios.BackColor = Color.FromArgb(242, 249, 254);
+            panelListaUsuarios.Controls.Add(pictureBox14);
+            panelListaUsuarios.Controls.Add(txtBuscar);
             panelListaUsuarios.Controls.Add(panelPaginacion);
             panelListaUsuarios.Controls.Add(dgvUsuarios);
             panelListaUsuarios.Controls.Add(label17);
             panelListaUsuarios.Controls.Add(pictureBox3);
-            panelListaUsuarios.Location = new Point(632, 302);
+            panelListaUsuarios.Location = new Point(749, 297);
             panelListaUsuarios.Name = "panelListaUsuarios";
-            panelListaUsuarios.Size = new Size(935, 535);
+            panelListaUsuarios.Size = new Size(935, 578);
             panelListaUsuarios.TabIndex = 77;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.Location = new Point(20, 441);
+            panelPaginacion.Location = new Point(20, 492);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(896, 59);
             panelPaginacion.TabIndex = 10;
@@ -135,10 +137,10 @@
             dgvUsuarios.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Columns.AddRange(new DataGridViewColumn[] { colUsuarioU, colNombreCompletoU, colRolU, colEstadoU, colFechaCreacionU });
-            dgvUsuarios.Location = new Point(20, 81);
+            dgvUsuarios.Location = new Point(20, 123);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 51;
-            dgvUsuarios.Size = new Size(896, 320);
+            dgvUsuarios.Size = new Size(896, 359);
             dgvUsuarios.TabIndex = 8;
             // 
             // colUsuarioU
@@ -214,7 +216,7 @@
             panelAgregarEditar.Controls.Add(label12);
             panelAgregarEditar.Controls.Add(pictureBox2);
             panelAgregarEditar.Controls.Add(label16);
-            panelAgregarEditar.Location = new Point(112, 259);
+            panelAgregarEditar.Location = new Point(230, 297);
             panelAgregarEditar.Name = "panelAgregarEditar";
             panelAgregarEditar.Size = new Size(475, 578);
             panelAgregarEditar.TabIndex = 76;
@@ -380,7 +382,7 @@
             panelUsuarioDesactivados.Controls.Add(pictureBox13);
             panelUsuarioDesactivados.Controls.Add(lblUsuariosDesactivados);
             panelUsuarioDesactivados.Controls.Add(label8);
-            panelUsuarioDesactivados.Location = new Point(1119, 118);
+            panelUsuarioDesactivados.Location = new Point(1237, 156);
             panelUsuarioDesactivados.Name = "panelUsuarioDesactivados";
             panelUsuarioDesactivados.Size = new Size(448, 116);
             panelUsuarioDesactivados.TabIndex = 75;
@@ -432,7 +434,7 @@
             panelUsuarioActivos.Controls.Add(pictureBox12);
             panelUsuarioActivos.Controls.Add(lblUsuariosActivos);
             panelUsuarioActivos.Controls.Add(label6);
-            panelUsuarioActivos.Location = new Point(628, 118);
+            panelUsuarioActivos.Location = new Point(746, 156);
             panelUsuarioActivos.Name = "panelUsuarioActivos";
             panelUsuarioActivos.Size = new Size(445, 116);
             panelUsuarioActivos.TabIndex = 74;
@@ -484,7 +486,7 @@
             panelTotalUsuario.Controls.Add(pictureBox11);
             panelTotalUsuario.Controls.Add(lblTotalUsuarios);
             panelTotalUsuario.Controls.Add(label3);
-            panelTotalUsuario.Location = new Point(112, 118);
+            panelTotalUsuario.Location = new Point(230, 156);
             panelTotalUsuario.Name = "panelTotalUsuario";
             panelTotalUsuario.Size = new Size(445, 116);
             panelTotalUsuario.TabIndex = 73;
@@ -533,7 +535,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(232, 77);
+            label2.Location = new Point(350, 115);
             label2.Name = "label2";
             label2.Size = new Size(360, 23);
             label2.TabIndex = 71;
@@ -543,7 +545,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(201, 21);
+            label1.Location = new Point(326, 59);
             label1.Name = "label1";
             label1.Size = new Size(159, 46);
             label1.TabIndex = 70;
@@ -552,7 +554,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Usuario_3;
-            pictureBox10.Location = new Point(112, 12);
+            pictureBox10.Location = new Point(230, 50);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -564,9 +566,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
-            Controls.Add(pictureBox14);
-            Controls.Add(txtBuscar);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelListaUsuarios);
             Controls.Add(panelAgregarEditar);
             Controls.Add(panelUsuarioDesactivados);

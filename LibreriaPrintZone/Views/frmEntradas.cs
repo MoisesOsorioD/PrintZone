@@ -27,6 +27,10 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelUnidadesIngresadas, 20);
             PanelRedondeado.Aplicar(panelRegistrarEntrada, 20);
 
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+            BotonRedondeado.Aplicar(btnRegistrarEntrada, 10);
+
+
 
             DataGridViewEstilo.Aplicar(dgvEntradas);
 
@@ -521,6 +525,11 @@ namespace LibreriaPrintZone.Views
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void pictureBox14_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

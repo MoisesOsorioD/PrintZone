@@ -62,6 +62,18 @@ namespace LibreriaPrintZone
             PanelRedondeado.Aplicar(panelMenu, 20);
             PanelRedondeado.Aplicar(panelSidebar, 20);
 
+            BotonRedondeado.Aplicar(btnCategorias, 10);
+            BotonRedondeado.Aplicar(btnConfiguracion, 10);
+            BotonRedondeado.Aplicar(btnEntradas, 10);
+            BotonRedondeado.Aplicar(btnInicio, 10);
+            BotonRedondeado.Aplicar(btnProductos, 10);
+            BotonRedondeado.Aplicar(btnProveedores, 10);
+            BotonRedondeado.Aplicar(btnReportes, 10);
+            BotonRedondeado.Aplicar(btnRolUsuario, 10);
+            BotonRedondeado.Aplicar(btnSalidas, 10);
+            BotonRedondeado.Aplicar(btnUsuarios, 10);
+
+
             _idUsuarioActual = idUsuario;
             _nombreUsuarioActual = nombreCompleto;
 

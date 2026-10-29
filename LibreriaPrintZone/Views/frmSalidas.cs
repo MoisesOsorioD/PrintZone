@@ -39,6 +39,10 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelTotalRegistro, 20);
             PanelRedondeado.Aplicar(panelUnidadesRetiradas, 20);
 
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+            BotonRedondeado.Aplicar(btnRegistrarSalida, 10);
+
+
 
 
             DataGridViewEstilo.Aplicar(dgvSalidas);

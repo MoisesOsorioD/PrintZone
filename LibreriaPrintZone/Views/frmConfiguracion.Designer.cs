@@ -95,7 +95,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Configuracion_2;
-            pictureBox10.Location = new Point(115, 3);
+            pictureBox10.Location = new Point(223, 47);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -106,7 +106,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(204, 12);
+            label1.Location = new Point(312, 56);
             label1.Name = "label1";
             label1.Size = new Size(248, 46);
             label1.TabIndex = 12;
@@ -116,7 +116,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(235, 68);
+            label2.Location = new Point(343, 112);
             label2.Name = "label2";
             label2.Size = new Size(453, 23);
             label2.TabIndex = 13;
@@ -130,9 +130,9 @@
             btnRespaldoManual.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRespaldoManual.ForeColor = Color.White;
             btnRespaldoManual.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRespaldoManual.Location = new Point(119, 131);
+            btnRespaldoManual.Location = new Point(227, 164);
             btnRespaldoManual.Name = "btnRespaldoManual";
-            btnRespaldoManual.Size = new Size(706, 37);
+            btnRespaldoManual.Size = new Size(641, 37);
             btnRespaldoManual.TabIndex = 84;
             btnRespaldoManual.Text = "Respaldo Manual";
             btnRespaldoManual.UseVisualStyleBackColor = false;
@@ -146,9 +146,9 @@
             btnRespaldoAutomatico.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRespaldoAutomatico.ForeColor = Color.White;
             btnRespaldoAutomatico.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRespaldoAutomatico.Location = new Point(856, 131);
+            btnRespaldoAutomatico.Location = new Point(964, 164);
             btnRespaldoAutomatico.Name = "btnRespaldoAutomatico";
-            btnRespaldoAutomatico.Size = new Size(706, 37);
+            btnRespaldoAutomatico.Size = new Size(641, 37);
             btnRespaldoAutomatico.TabIndex = 85;
             btnRespaldoAutomatico.Text = "Respaldo Automático";
             btnRespaldoAutomatico.UseVisualStyleBackColor = false;
@@ -595,7 +595,7 @@
             pnlRespaldoManual.Controls.Add(PanelUltimoRespaldo);
             pnlRespaldoManual.Controls.Add(panelImportarManual);
             pnlRespaldoManual.Controls.Add(panelExportarManual);
-            pnlRespaldoManual.Location = new Point(98, 197);
+            pnlRespaldoManual.Location = new Point(206, 207);
             pnlRespaldoManual.Name = "pnlRespaldoManual";
             pnlRespaldoManual.Size = new Size(1494, 706);
             pnlRespaldoManual.TabIndex = 86;
@@ -605,7 +605,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(pnlRespaldoManual);
             Controls.Add(btnRespaldoAutomatico);
             Controls.Add(btnRespaldoManual);

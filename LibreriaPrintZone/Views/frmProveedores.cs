@@ -36,6 +36,11 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelProveedorReciente, 20);
             PanelRedondeado.Aplicar(panelTotalProveedores, 20);
 
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+            BotonRedondeado.Aplicar(btnGuardar, 10);
+            BotonRedondeado.Aplicar(btnEliminar, 10);
+
+
 
             DataGridViewEstilo.Aplicar(dgvProveedores);
 

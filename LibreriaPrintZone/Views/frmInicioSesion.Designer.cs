@@ -40,8 +40,6 @@
             btnIniciarSesion = new Button();
             panelLogin = new Panel();
             pictureBox3 = new PictureBox();
-            label5 = new Label();
-            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelLogin.SuspendLayout();
@@ -167,34 +165,12 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(349, 232);
+            pictureBox3.Location = new Point(-75, -30);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(400, 400);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.Size = new Size(2572, 1164);
+            pictureBox3.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox3.TabIndex = 10;
             pictureBox3.TabStop = false;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(371, 635);
-            label5.Name = "label5";
-            label5.Size = new Size(363, 54);
-            label5.TabIndex = 11;
-            label5.Text = "Librería PrintZone";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(312, 692);
-            label6.Name = "label6";
-            label6.Size = new Size(502, 28);
-            label6.TabIndex = 12;
-            label6.Text = "Imprime tus ideas, copiá tu mundo y descubre tu librería";
             // 
             // frmInicioSesion
             // 
@@ -202,10 +178,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 37, 91);
             ClientSize = new Size(1902, 983);
-            Controls.Add(label6);
-            Controls.Add(label5);
-            Controls.Add(pictureBox3);
             Controls.Add(panelLogin);
+            Controls.Add(pictureBox3);
             Name = "frmInicioSesion";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de Sesión";
@@ -231,7 +205,5 @@
         private Button btnIniciarSesion;
         private Panel panelLogin;
         private PictureBox pictureBox3;
-        private Label label5;
-        private Label label6;
     }
 }

@@ -27,6 +27,10 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelUsuarioActivos, 20);
             PanelRedondeado.Aplicar(panelUsuarioDesactivados, 20);
 
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+            BotonRedondeado.Aplicar(btnGuardar, 10);
+
+
 
 
             DataGridViewEstilo.Aplicar(dgvUsuarios);

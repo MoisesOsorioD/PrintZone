@@ -47,14 +47,14 @@
             lblCategoriaMenosUsada = new Label();
             label8 = new Label();
             panelCategoriasRegistradas = new Panel();
+            pictureBox14 = new PictureBox();
+            txtBuscar = new TextBox();
             panelPaginacion = new Panel();
             label11 = new Label();
-            pictureBox15 = new PictureBox();
             dgvCategorias = new DataGridView();
             colNombreCategoria = new DataGridViewTextBoxColumn();
             colCantidadProductos = new DataGridViewTextBoxColumn();
-            pictureBox14 = new PictureBox();
-            txtBuscar = new TextBox();
+            pictureBox15 = new PictureBox();
             panelDetalles = new Panel();
             label12 = new Label();
             pictureBox1 = new PictureBox();
@@ -71,9 +71,9 @@
             panelCategoriaMenosUsada.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panelCategoriasRegistradas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             panelDetalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(251, 66);
+            label2.Location = new Point(349, 112);
             label2.Name = "label2";
             label2.Size = new Size(599, 23);
             label2.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(220, 10);
+            label1.Location = new Point(318, 56);
             label1.Name = "label1";
             label1.Size = new Size(189, 46);
             label1.TabIndex = 3;
@@ -101,7 +101,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = (Image)resources.GetObject("pictureBox10.Image");
-            pictureBox10.Location = new Point(131, 1);
+            pictureBox10.Location = new Point(229, 47);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@
             panelTotalCategoria.Controls.Add(pictureBox11);
             panelTotalCategoria.Controls.Add(lblTotalCategorias);
             panelTotalCategoria.Controls.Add(label3);
-            panelTotalCategoria.Location = new Point(131, 107);
+            panelTotalCategoria.Location = new Point(244, 153);
             panelTotalCategoria.Name = "panelTotalCategoria";
             panelTotalCategoria.Size = new Size(445, 116);
             panelTotalCategoria.TabIndex = 6;
@@ -156,7 +156,7 @@
             panelCategoriaMasProductos.Controls.Add(pictureBox12);
             panelCategoriaMasProductos.Controls.Add(lblCategoriaMasProductos);
             panelCategoriaMasProductos.Controls.Add(label6);
-            panelCategoriaMasProductos.Location = new Point(647, 107);
+            panelCategoriaMasProductos.Location = new Point(745, 153);
             panelCategoriaMasProductos.Name = "panelCategoriaMasProductos";
             panelCategoriaMasProductos.Size = new Size(445, 116);
             panelCategoriaMasProductos.TabIndex = 7;
@@ -208,7 +208,7 @@
             panelCategoriaMenosUsada.Controls.Add(pictureBox13);
             panelCategoriaMenosUsada.Controls.Add(lblCategoriaMenosUsada);
             panelCategoriaMenosUsada.Controls.Add(label8);
-            panelCategoriaMenosUsada.Location = new Point(1138, 107);
+            panelCategoriaMenosUsada.Location = new Point(1236, 153);
             panelCategoriaMenosUsada.Name = "panelCategoriaMenosUsada";
             panelCategoriaMenosUsada.Size = new Size(441, 116);
             panelCategoriaMenosUsada.TabIndex = 8;
@@ -256,19 +256,41 @@
             // panelCategoriasRegistradas
             // 
             panelCategoriasRegistradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelCategoriasRegistradas.Controls.Add(pictureBox14);
+            panelCategoriasRegistradas.Controls.Add(txtBuscar);
             panelCategoriasRegistradas.Controls.Add(panelPaginacion);
             panelCategoriasRegistradas.Controls.Add(label11);
-            panelCategoriasRegistradas.Controls.Add(pictureBox15);
             panelCategoriasRegistradas.Controls.Add(dgvCategorias);
-            panelCategoriasRegistradas.Location = new Point(647, 293);
+            panelCategoriasRegistradas.Controls.Add(pictureBox15);
+            panelCategoriasRegistradas.Location = new Point(745, 286);
             panelCategoriasRegistradas.Name = "panelCategoriasRegistradas";
-            panelCategoriasRegistradas.Size = new Size(932, 541);
+            panelCategoriasRegistradas.Size = new Size(932, 568);
             panelCategoriasRegistradas.TabIndex = 9;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(33, 75);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(40, 40);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 6;
+            pictureBox14.TabStop = false;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(79, 80);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar categoría por nombre...";
+            txtBuscar.Size = new Size(831, 30);
+            txtBuscar.TabIndex = 1;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.Location = new Point(33, 447);
+            panelPaginacion.Location = new Point(33, 500);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(877, 59);
             panelPaginacion.TabIndex = 10;
@@ -277,31 +299,21 @@
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label11.Location = new Point(99, 40);
+            label11.Location = new Point(99, 21);
             label11.Name = "label11";
             label11.Size = new Size(230, 25);
             label11.TabIndex = 6;
             label11.Text = "Categorías registradas";
-            // 
-            // pictureBox15
-            // 
-            pictureBox15.Image = Properties.Resources.Detalle_categoria;
-            pictureBox15.Location = new Point(33, 22);
-            pictureBox15.Name = "pictureBox15";
-            pictureBox15.Size = new Size(60, 60);
-            pictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox15.TabIndex = 7;
-            pictureBox15.TabStop = false;
             // 
             // dgvCategorias
             // 
             dgvCategorias.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCategorias.Columns.AddRange(new DataGridViewColumn[] { colNombreCategoria, colCantidadProductos });
-            dgvCategorias.Location = new Point(33, 97);
+            dgvCategorias.Location = new Point(33, 121);
             dgvCategorias.Name = "dgvCategorias";
             dgvCategorias.RowHeadersWidth = 51;
-            dgvCategorias.Size = new Size(877, 320);
+            dgvCategorias.Size = new Size(877, 352);
             dgvCategorias.TabIndex = 0;
             dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
@@ -319,25 +331,15 @@
             colCantidadProductos.MinimumWidth = 6;
             colCantidadProductos.Name = "colCantidadProductos";
             // 
-            // pictureBox14
+            // pictureBox15
             // 
-            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(651, 240);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(40, 40);
-            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox14.TabIndex = 6;
-            pictureBox14.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(697, 245);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = " Buscar categoría por nombre...";
-            txtBuscar.Size = new Size(882, 30);
-            txtBuscar.TabIndex = 1;
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            pictureBox15.Image = Properties.Resources.Detalle_categoria;
+            pictureBox15.Location = new Point(33, 3);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new Size(60, 60);
+            pictureBox15.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox15.TabIndex = 7;
+            pictureBox15.TabStop = false;
             // 
             // panelDetalles
             // 
@@ -349,9 +351,9 @@
             panelDetalles.Controls.Add(btnGuardar);
             panelDetalles.Controls.Add(label13);
             panelDetalles.Controls.Add(txtNombreCategoria);
-            panelDetalles.Location = new Point(131, 240);
+            panelDetalles.Location = new Point(244, 286);
             panelDetalles.Name = "panelDetalles";
-            panelDetalles.Size = new Size(445, 508);
+            panelDetalles.Size = new Size(445, 568);
             panelDetalles.TabIndex = 10;
             // 
             // label12
@@ -451,12 +453,10 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1614, 868);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelDetalles);
-            Controls.Add(pictureBox14);
             Controls.Add(panelCategoriasRegistradas);
             Controls.Add(panelCategoriaMenosUsada);
-            Controls.Add(txtBuscar);
             Controls.Add(panelCategoriaMasProductos);
             Controls.Add(panelTotalCategoria);
             Controls.Add(label2);
@@ -477,9 +477,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
             panelCategoriasRegistradas.ResumeLayout(false);
             panelCategoriasRegistradas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCategorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             panelDetalles.ResumeLayout(false);
             panelDetalles.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

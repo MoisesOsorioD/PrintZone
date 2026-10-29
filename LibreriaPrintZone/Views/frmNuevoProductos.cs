@@ -21,6 +21,12 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelinformacionProducto, 20);
 
 
+            BotonRedondeado.Aplicar(btnCancelar, 10);
+            BotonRedondeado.Aplicar(btnGuardar, 10);
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+
+
+
             _controller = new ProductosController();
 
             CargarCategorias();

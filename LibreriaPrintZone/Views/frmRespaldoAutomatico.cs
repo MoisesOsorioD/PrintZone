@@ -24,6 +24,10 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelInfoAutomatico2, 20);
             PanelRedondeado.Aplicar(panelRespaldoAutomatico, 20);
 
+            BotonRedondeado.Aplicar(btnGuardarConfiguracion, 10);
+            BotonRedondeado.Aplicar(btnSeleccionarCarpeta, 10);
+
+
 
 
             CargarFrecuencias();

@@ -29,6 +29,12 @@ namespace LibreriaPrintZone
             PanelRedondeado.Aplicar(panelPaginacion, 20);
             PanelRedondeado.Aplicar(panelProductosRegistrados, 20);
 
+            BotonRedondeado.Aplicar(btnEliminar, 10);
+            BotonRedondeado.Aplicar(btnGuardar, 10);
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+            BotonRedondeado.Aplicar(btnNuevoProductos, 10);
+            BotonRedondeado.Aplicar(btnProductosInactivos, 10);
+
 
             DataGridViewEstilo.Aplicar(dgvProductos);
 

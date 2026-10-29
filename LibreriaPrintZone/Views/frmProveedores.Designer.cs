@@ -73,6 +73,8 @@
             pictureBox8 = new PictureBox();
             label21 = new Label();
             panelProveedoresRegsitrados = new Panel();
+            pictureBox14 = new PictureBox();
+            txtBuscar = new TextBox();
             panelPaginacion = new Panel();
             dgvProveedores = new DataGridView();
             colEmpresa = new DataGridViewTextBoxColumn();
@@ -84,8 +86,6 @@
             colMontoMinimo = new DataGridViewTextBoxColumn();
             label15 = new Label();
             pictureBox3 = new PictureBox();
-            pictureBox14 = new PictureBox();
-            txtBuscar = new TextBox();
             panelProveedorConMas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
             panelProveedorReciente.SuspendLayout();
@@ -100,9 +100,9 @@
             panelCondicionesCompra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             panelProveedoresRegsitrados.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
             SuspendLayout();
             // 
             // panelProveedorConMas
@@ -112,7 +112,7 @@
             panelProveedorConMas.Controls.Add(pictureBox13);
             panelProveedorConMas.Controls.Add(lblProveedorMasProductos);
             panelProveedorConMas.Controls.Add(label8);
-            panelProveedorConMas.Location = new Point(1087, 116);
+            panelProveedorConMas.Location = new Point(1152, 151);
             panelProveedorConMas.Name = "panelProveedorConMas";
             panelProveedorConMas.Size = new Size(485, 116);
             panelProveedorConMas.TabIndex = 14;
@@ -164,9 +164,9 @@
             panelProveedorReciente.Controls.Add(pictureBox12);
             panelProveedorReciente.Controls.Add(lblProveedorReciente);
             panelProveedorReciente.Controls.Add(label6);
-            panelProveedorReciente.Location = new Point(613, 116);
+            panelProveedorReciente.Location = new Point(652, 151);
             panelProveedorReciente.Name = "panelProveedorReciente";
-            panelProveedorReciente.Size = new Size(445, 116);
+            panelProveedorReciente.Size = new Size(466, 116);
             panelProveedorReciente.TabIndex = 13;
             // 
             // lblProveedorRecienteDescripcion
@@ -215,9 +215,9 @@
             panelTotalProveedores.Controls.Add(pictureBox11);
             panelTotalProveedores.Controls.Add(lblTotalProveedores);
             panelTotalProveedores.Controls.Add(label3);
-            panelTotalProveedores.Location = new Point(124, 116);
+            panelTotalProveedores.Location = new Point(161, 151);
             panelTotalProveedores.Name = "panelTotalProveedores";
-            panelTotalProveedores.Size = new Size(445, 116);
+            panelTotalProveedores.Size = new Size(466, 116);
             panelTotalProveedores.TabIndex = 12;
             // 
             // pictureBox11
@@ -254,7 +254,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(244, 75);
+            label2.Location = new Point(281, 110);
             label2.Name = "label2";
             label2.Size = new Size(346, 23);
             label2.TabIndex = 10;
@@ -264,7 +264,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(213, 19);
+            label1.Location = new Point(250, 54);
             label1.Name = "label1";
             label1.Size = new Size(219, 46);
             label1.TabIndex = 9;
@@ -273,7 +273,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Total_Proveedores;
-            pictureBox10.Location = new Point(124, 10);
+            pictureBox10.Location = new Point(161, 45);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -293,24 +293,24 @@
             panelInformacionEmpresarial.Controls.Add(txtNombreEmpresa);
             panelInformacionEmpresarial.Controls.Add(pictureBox2);
             panelInformacionEmpresarial.Controls.Add(label16);
-            panelInformacionEmpresarial.Location = new Point(124, 252);
+            panelInformacionEmpresarial.Location = new Point(161, 287);
             panelInformacionEmpresarial.Name = "panelInformacionEmpresarial";
-            panelInformacionEmpresarial.Size = new Size(542, 255);
+            panelInformacionEmpresarial.Size = new Size(466, 255);
             panelInformacionEmpresarial.TabIndex = 15;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(294, 175);
+            txtTelefono.Location = new Point(264, 174);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = " Ej. 2255-4433";
-            txtTelefono.Size = new Size(226, 27);
+            txtTelefono.Size = new Size(168, 27);
             txtTelefono.TabIndex = 48;
             // 
             // label11
             // 
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(294, 152);
+            label11.Location = new Point(264, 151);
             label11.Name = "label11";
             label11.Size = new Size(68, 20);
             label11.TabIndex = 49;
@@ -320,7 +320,7 @@
             // 
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(294, 70);
+            label12.Location = new Point(264, 71);
             label12.Name = "label12";
             label12.Size = new Size(56, 20);
             label12.TabIndex = 46;
@@ -328,10 +328,10 @@
             // 
             // txtCorreo
             // 
-            txtCorreo.Location = new Point(294, 93);
+            txtCorreo.Location = new Point(264, 94);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = " Ej. contacto@empresa.com";
-            txtCorreo.Size = new Size(226, 27);
+            txtCorreo.Size = new Size(168, 27);
             txtCorreo.TabIndex = 45;
             // 
             // label13
@@ -350,7 +350,7 @@
             txtDireccion.Multiline = true;
             txtDireccion.Name = "txtDireccion";
             txtDireccion.PlaceholderText = " Ej. Estelí, Nicaragua";
-            txtDireccion.Size = new Size(254, 57);
+            txtDireccion.Size = new Size(221, 57);
             txtDireccion.TabIndex = 42;
             // 
             // label14
@@ -368,7 +368,7 @@
             txtNombreEmpresa.Location = new Point(19, 93);
             txtNombreEmpresa.Name = "txtNombreEmpresa";
             txtNombreEmpresa.PlaceholderText = " Ej. Distribuidora Norte";
-            txtNombreEmpresa.Size = new Size(254, 27);
+            txtNombreEmpresa.Size = new Size(221, 27);
             txtNombreEmpresa.TabIndex = 15;
             // 
             // pictureBox2
@@ -400,16 +400,16 @@
             panelInformacionContacto.Controls.Add(txtNombreAgente);
             panelInformacionContacto.Controls.Add(pictureBox7);
             panelInformacionContacto.Controls.Add(label20);
-            panelInformacionContacto.Location = new Point(124, 518);
+            panelInformacionContacto.Location = new Point(161, 553);
             panelInformacionContacto.Name = "panelInformacionContacto";
-            panelInformacionContacto.Size = new Size(542, 153);
+            panelInformacionContacto.Size = new Size(466, 153);
             panelInformacionContacto.TabIndex = 50;
             // 
             // label17
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(294, 70);
+            label17.Location = new Point(264, 71);
             label17.Name = "label17";
             label17.Size = new Size(144, 20);
             label17.TabIndex = 46;
@@ -417,10 +417,10 @@
             // 
             // txtTelefonoAgente
             // 
-            txtTelefonoAgente.Location = new Point(294, 92);
+            txtTelefonoAgente.Location = new Point(264, 93);
             txtTelefonoAgente.Name = "txtTelefonoAgente";
             txtTelefonoAgente.PlaceholderText = " Ej. 5522-1199";
-            txtTelefonoAgente.Size = new Size(226, 27);
+            txtTelefonoAgente.Size = new Size(168, 27);
             txtTelefonoAgente.TabIndex = 45;
             // 
             // label19
@@ -438,7 +438,7 @@
             txtNombreAgente.Location = new Point(19, 93);
             txtNombreAgente.Name = "txtNombreAgente";
             txtNombreAgente.PlaceholderText = " Ej. Juan Lopez";
-            txtNombreAgente.Size = new Size(254, 27);
+            txtNombreAgente.Size = new Size(221, 27);
             txtNombreAgente.TabIndex = 15;
             // 
             // pictureBox7
@@ -471,9 +471,9 @@
             panelCondicionesCompra.Controls.Add(txtMontoMinimoCompra);
             panelCondicionesCompra.Controls.Add(pictureBox8);
             panelCondicionesCompra.Controls.Add(label21);
-            panelCondicionesCompra.Location = new Point(124, 684);
+            panelCondicionesCompra.Location = new Point(161, 719);
             panelCondicionesCompra.Name = "panelCondicionesCompra";
-            panelCondicionesCompra.Size = new Size(542, 217);
+            panelCondicionesCompra.Size = new Size(466, 217);
             panelCondicionesCompra.TabIndex = 51;
             // 
             // btnEliminar
@@ -485,7 +485,7 @@
             btnEliminar.ForeColor = Color.White;
             btnEliminar.Image = (Image)resources.GetObject("btnEliminar.Image");
             btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminar.Location = new Point(331, 154);
+            btnEliminar.Location = new Point(299, 154);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(109, 37);
             btnEliminar.TabIndex = 19;
@@ -503,7 +503,7 @@
             btnLimpiar.ForeColor = Color.White;
             btnLimpiar.Image = (Image)resources.GetObject("btnLimpiar.Image");
             btnLimpiar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLimpiar.Location = new Point(195, 154);
+            btnLimpiar.Location = new Point(172, 154);
             btnLimpiar.Name = "btnLimpiar";
             btnLimpiar.Size = new Size(109, 37);
             btnLimpiar.TabIndex = 17;
@@ -521,7 +521,7 @@
             btnGuardar.ForeColor = Color.White;
             btnGuardar.Image = (Image)resources.GetObject("btnGuardar.Image");
             btnGuardar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardar.Location = new Point(19, 154);
+            btnGuardar.Location = new Point(15, 154);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(142, 37);
             btnGuardar.TabIndex = 18;
@@ -571,21 +571,43 @@
             // panelProveedoresRegsitrados
             // 
             panelProveedoresRegsitrados.BackColor = Color.FromArgb(242, 249, 254);
+            panelProveedoresRegsitrados.Controls.Add(pictureBox14);
+            panelProveedoresRegsitrados.Controls.Add(txtBuscar);
             panelProveedoresRegsitrados.Controls.Add(panelPaginacion);
             panelProveedoresRegsitrados.Controls.Add(dgvProveedores);
             panelProveedoresRegsitrados.Controls.Add(label15);
             panelProveedoresRegsitrados.Controls.Add(pictureBox3);
-            panelProveedoresRegsitrados.Location = new Point(700, 293);
+            panelProveedoresRegsitrados.Location = new Point(653, 287);
             panelProveedoresRegsitrados.Name = "panelProveedoresRegsitrados";
-            panelProveedoresRegsitrados.Size = new Size(872, 517);
+            panelProveedoresRegsitrados.Size = new Size(1237, 649);
             panelProveedoresRegsitrados.TabIndex = 52;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(20, 81);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(40, 40);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 54;
+            pictureBox14.TabStop = false;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(64, 86);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar proveedor...";
+            txtBuscar.Size = new Size(832, 30);
+            txtBuscar.TabIndex = 53;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Location = new Point(20, 537);
             panelPaginacion.Name = "panelPaginacion";
-            panelPaginacion.Size = new Size(836, 59);
+            panelPaginacion.Size = new Size(1208, 59);
             panelPaginacion.TabIndex = 9;
             // 
             // dgvProveedores
@@ -593,10 +615,10 @@
             dgvProveedores.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProveedores.Columns.AddRange(new DataGridViewColumn[] { colEmpresa, colDireccion, colCorreo, colTelefono, colNombreAgente, colTelefonoAgente, colMontoMinimo });
-            dgvProveedores.Location = new Point(20, 81);
+            dgvProveedores.Location = new Point(14, 129);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 51;
-            dgvProveedores.Size = new Size(836, 320);
+            dgvProveedores.Size = new Size(1214, 320);
             dgvProveedores.TabIndex = 8;
             // 
             // colEmpresa
@@ -652,7 +674,7 @@
             // 
             label15.AutoSize = true;
             label15.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label15.Location = new Point(94, 31);
+            label15.Location = new Point(81, 23);
             label15.Name = "label15";
             label15.Size = new Size(247, 25);
             label15.TabIndex = 6;
@@ -661,41 +683,19 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Categoria_Menos;
-            pictureBox3.Location = new Point(33, 15);
+            pictureBox3.Location = new Point(20, 7);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(60, 60);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 7;
             pictureBox3.TabStop = false;
             // 
-            // pictureBox14
-            // 
-            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(696, 247);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(40, 40);
-            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox14.TabIndex = 54;
-            pictureBox14.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(740, 252);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = " Buscar proveedor...";
-            txtBuscar.Size = new Size(832, 30);
-            txtBuscar.TabIndex = 53;
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
-            // 
             // frmProveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
-            Controls.Add(pictureBox14);
-            Controls.Add(txtBuscar);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelProveedoresRegsitrados);
             Controls.Add(panelCondicionesCompra);
             Controls.Add(panelInformacionContacto);
@@ -730,9 +730,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             panelProveedoresRegsitrados.ResumeLayout(false);
             panelProveedoresRegsitrados.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

@@ -118,7 +118,7 @@
             // pbIconoReportes
             // 
             pbIconoReportes.Image = Properties.Resources.impresa_icon;
-            pbIconoReportes.Location = new Point(41, 628);
+            pbIconoReportes.Location = new Point(35, 628);
             pbIconoReportes.Name = "pbIconoReportes";
             pbIconoReportes.Size = new Size(41, 48);
             pbIconoReportes.SizeMode = PictureBoxSizeMode.Zoom;
@@ -268,7 +268,7 @@
             // pbIconoConfiguracion
             // 
             pbIconoConfiguracion.Image = (Image)resources.GetObject("pbIconoConfiguracion.Image");
-            pbIconoConfiguracion.Location = new Point(41, 689);
+            pbIconoConfiguracion.Location = new Point(35, 689);
             pbIconoConfiguracion.Name = "pbIconoConfiguracion";
             pbIconoConfiguracion.Size = new Size(41, 48);
             pbIconoConfiguracion.SizeMode = PictureBoxSizeMode.Zoom;
@@ -278,7 +278,7 @@
             // pbIconoUsuarios
             // 
             pbIconoUsuarios.Image = (Image)resources.GetObject("pbIconoUsuarios.Image");
-            pbIconoUsuarios.Location = new Point(41, 568);
+            pbIconoUsuarios.Location = new Point(35, 568);
             pbIconoUsuarios.Name = "pbIconoUsuarios";
             pbIconoUsuarios.Size = new Size(43, 48);
             pbIconoUsuarios.SizeMode = PictureBoxSizeMode.Zoom;
@@ -288,7 +288,7 @@
             // pbIconoSalidas
             // 
             pbIconoSalidas.Image = (Image)resources.GetObject("pbIconoSalidas.Image");
-            pbIconoSalidas.Location = new Point(41, 505);
+            pbIconoSalidas.Location = new Point(35, 505);
             pbIconoSalidas.Name = "pbIconoSalidas";
             pbIconoSalidas.Size = new Size(43, 48);
             pbIconoSalidas.SizeMode = PictureBoxSizeMode.Zoom;
@@ -298,7 +298,7 @@
             // pbIconoEntradas
             // 
             pbIconoEntradas.Image = (Image)resources.GetObject("pbIconoEntradas.Image");
-            pbIconoEntradas.Location = new Point(41, 442);
+            pbIconoEntradas.Location = new Point(35, 442);
             pbIconoEntradas.Name = "pbIconoEntradas";
             pbIconoEntradas.Size = new Size(43, 48);
             pbIconoEntradas.SizeMode = PictureBoxSizeMode.Zoom;
@@ -308,7 +308,7 @@
             // pbIconoProveedores
             // 
             pbIconoProveedores.Image = (Image)resources.GetObject("pbIconoProveedores.Image");
-            pbIconoProveedores.Location = new Point(41, 379);
+            pbIconoProveedores.Location = new Point(35, 379);
             pbIconoProveedores.Name = "pbIconoProveedores";
             pbIconoProveedores.Size = new Size(43, 48);
             pbIconoProveedores.SizeMode = PictureBoxSizeMode.Zoom;
@@ -318,7 +318,7 @@
             // pbIconoCategorias
             // 
             pbIconoCategorias.Image = (Image)resources.GetObject("pbIconoCategorias.Image");
-            pbIconoCategorias.Location = new Point(41, 316);
+            pbIconoCategorias.Location = new Point(35, 316);
             pbIconoCategorias.Name = "pbIconoCategorias";
             pbIconoCategorias.Size = new Size(43, 48);
             pbIconoCategorias.SizeMode = PictureBoxSizeMode.Zoom;
@@ -328,7 +328,7 @@
             // pbIconoProductos
             // 
             pbIconoProductos.Image = (Image)resources.GetObject("pbIconoProductos.Image");
-            pbIconoProductos.Location = new Point(41, 253);
+            pbIconoProductos.Location = new Point(35, 253);
             pbIconoProductos.Name = "pbIconoProductos";
             pbIconoProductos.Size = new Size(43, 48);
             pbIconoProductos.SizeMode = PictureBoxSizeMode.Zoom;
@@ -338,7 +338,7 @@
             // pbIconoInicio
             // 
             pbIconoInicio.Image = (Image)resources.GetObject("pbIconoInicio.Image");
-            pbIconoInicio.Location = new Point(41, 190);
+            pbIconoInicio.Location = new Point(35, 190);
             pbIconoInicio.Name = "pbIconoInicio";
             pbIconoInicio.Size = new Size(43, 48);
             pbIconoInicio.SizeMode = PictureBoxSizeMode.Zoom;
@@ -353,7 +353,7 @@
             btnRolUsuario.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRolUsuario.Image = (Image)resources.GetObject("btnRolUsuario.Image");
             btnRolUsuario.ImageAlign = ContentAlignment.MiddleRight;
-            btnRolUsuario.Location = new Point(1695, 22);
+            btnRolUsuario.Location = new Point(1708, 22);
             btnRolUsuario.Name = "btnRolUsuario";
             btnRolUsuario.Size = new Size(160, 35);
             btnRolUsuario.TabIndex = 10;
@@ -377,7 +377,7 @@
             panelMenu.BorderStyle = BorderStyle.FixedSingle;
             panelMenu.Controls.Add(btnSalir);
             panelMenu.Controls.Add(btnCerrarSesion);
-            panelMenu.Location = new Point(1685, 78);
+            panelMenu.Location = new Point(1698, 78);
             panelMenu.Name = "panelMenu";
             panelMenu.Size = new Size(182, 221);
             panelMenu.TabIndex = 0;

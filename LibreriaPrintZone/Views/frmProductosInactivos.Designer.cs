@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductosInactivos));
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label2 = new Label();
             label1 = new Label();
             pictureBox10 = new PictureBox();
@@ -37,6 +37,8 @@
             panelPaginacion = new Panel();
             btnReactivar = new Button();
             dgvProductosInactivos = new DataGridView();
+            pictureBox14 = new PictureBox();
+            txtBuscar = new TextBox();
             colProductoP = new DataGridViewTextBoxColumn();
             colDescripcionP = new DataGridViewTextBoxColumn();
             colMarcaP = new DataGridViewTextBoxColumn();
@@ -46,9 +48,6 @@
             colStockActualP = new DataGridViewTextBoxColumn();
             colStockMinimoP = new DataGridViewTextBoxColumn();
             colCategoriaP = new DataGridViewTextBoxColumn();
-            colFecha = new DataGridViewTextBoxColumn();
-            pictureBox14 = new PictureBox();
-            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             panelProductosInactivos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvProductosInactivos).BeginInit();
@@ -59,7 +58,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(242, 77);
+            label2.Location = new Point(323, 110);
             label2.Name = "label2";
             label2.Size = new Size(642, 23);
             label2.TabIndex = 10;
@@ -69,7 +68,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(211, 21);
+            label1.Location = new Point(292, 54);
             label1.Name = "label1";
             label1.Size = new Size(335, 46);
             label1.TabIndex = 9;
@@ -78,7 +77,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Total_de_productos;
-            pictureBox10.Location = new Point(122, 12);
+            pictureBox10.Location = new Point(203, 45);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -93,7 +92,7 @@
             panelProductosInactivos.Controls.Add(dgvProductosInactivos);
             panelProductosInactivos.Controls.Add(pictureBox14);
             panelProductosInactivos.Controls.Add(txtBuscar);
-            panelProductosInactivos.Location = new Point(122, 134);
+            panelProductosInactivos.Location = new Point(203, 167);
             panelProductosInactivos.Name = "panelProductosInactivos";
             panelProductosInactivos.Size = new Size(1498, 524);
             panelProductosInactivos.TabIndex = 13;
@@ -126,16 +125,36 @@
             // 
             // dgvProductosInactivos
             // 
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvProductosInactivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dgvProductosInactivos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvProductosInactivos.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvProductosInactivos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductosInactivos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP, colFecha });
+            dgvProductosInactivos.Columns.AddRange(new DataGridViewColumn[] { colProductoP, colDescripcionP, colMarcaP, colPrecioCompraP, colPrecioVentaP, colCodigoBarrasP, colStockActualP, colStockMinimoP, colCategoriaP });
             dgvProductosInactivos.Location = new Point(7, 84);
             dgvProductosInactivos.Name = "dgvProductosInactivos";
             dgvProductosInactivos.RowHeadersWidth = 51;
             dgvProductosInactivos.Size = new Size(1481, 320);
             dgvProductosInactivos.TabIndex = 63;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
+            pictureBox14.Location = new Point(77, 18);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new Size(40, 40);
+            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox14.TabIndex = 62;
+            pictureBox14.TabStop = false;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(123, 18);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = " Buscar productos por nombre o código de barra";
+            txtBuscar.Size = new Size(887, 30);
+            txtBuscar.TabIndex = 61;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // colProductoP
             // 
@@ -200,39 +219,12 @@
             colCategoriaP.MinimumWidth = 6;
             colCategoriaP.Name = "colCategoriaP";
             // 
-            // colFecha
-            // 
-            colFecha.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            colFecha.HeaderText = "Fecha de Desactivación";
-            colFecha.MinimumWidth = 6;
-            colFecha.Name = "colFecha";
-            // 
-            // pictureBox14
-            // 
-            pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(77, 18);
-            pictureBox14.Name = "pictureBox14";
-            pictureBox14.Size = new Size(40, 40);
-            pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox14.TabIndex = 62;
-            pictureBox14.TabStop = false;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(123, 18);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = " Buscar productos por nombre o código de barra";
-            txtBuscar.Size = new Size(887, 30);
-            txtBuscar.TabIndex = 61;
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
-            // 
             // frmProductosInactivos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelProductosInactivos);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -259,6 +251,7 @@
         private TextBox txtBuscar;
         private DataGridView dgvProductosInactivos;
         private Button btnReactivar;
+        private Panel panelPaginacion;
         private DataGridViewTextBoxColumn colProductoP;
         private DataGridViewTextBoxColumn colDescripcionP;
         private DataGridViewTextBoxColumn colMarcaP;
@@ -268,7 +261,5 @@
         private DataGridViewTextBoxColumn colStockActualP;
         private DataGridViewTextBoxColumn colStockMinimoP;
         private DataGridViewTextBoxColumn colCategoriaP;
-        private DataGridViewTextBoxColumn colFecha;
-        private Panel panelPaginacion;
     }
 }

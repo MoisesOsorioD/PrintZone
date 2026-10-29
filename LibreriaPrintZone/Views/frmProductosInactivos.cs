@@ -25,6 +25,9 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(panelPaginacion, 20);
             PanelRedondeado.Aplicar(panelProductosInactivos, 20);
 
+            BotonRedondeado.Aplicar(btnReactivar, 10);
+
+
 
             DataGridViewEstilo.Aplicar(dgvProductosInactivos);
 

@@ -14,7 +14,7 @@ namespace LibreriaPrintZone
             InitializeComponent();
             PanelRedondeado.Aplicar(panelLogin, 20);
 
-            BotonRedondeado.Aplicar(btnIniciarSesion, 15);
+            BotonRedondeado.Aplicar(btnIniciarSesion, 10);
 
             _usuariosController = new UsuariosController();
         }

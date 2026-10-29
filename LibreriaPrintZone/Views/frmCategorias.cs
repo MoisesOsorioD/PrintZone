@@ -21,6 +21,11 @@ namespace LibreriaPrintZone
             PanelRedondeado.Aplicar(panelTotalCategoria, 20);
             PanelRedondeado.Aplicar(panelPaginacion, 20);
 
+            BotonRedondeado.Aplicar(btnEliminar, 10);
+            BotonRedondeado.Aplicar(btnGuardar, 10);
+            BotonRedondeado.Aplicar(btnLimpiar, 10);
+
+
             DataGridViewEstilo.Aplicar(dgvCategorias);
 
             dgvCategorias.AutoGenerateColumns = false;

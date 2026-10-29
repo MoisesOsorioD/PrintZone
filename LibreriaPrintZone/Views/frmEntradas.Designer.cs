@@ -91,7 +91,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(243, 67);
+            label2.Location = new Point(343, 116);
             label2.Name = "label2";
             label2.Size = new Size(657, 23);
             label2.TabIndex = 10;
@@ -101,7 +101,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(212, 11);
+            label1.Location = new Point(312, 60);
             label1.Name = "label1";
             label1.Size = new Size(158, 46);
             label1.TabIndex = 9;
@@ -110,7 +110,7 @@
             // pictureBox10
             // 
             pictureBox10.Image = Properties.Resources.Entrada_2;
-            pictureBox10.Location = new Point(123, 2);
+            pictureBox10.Location = new Point(223, 51);
             pictureBox10.Name = "pictureBox10";
             pictureBox10.Size = new Size(100, 100);
             pictureBox10.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             panelInversion.Controls.Add(pictureBox13);
             panelInversion.Controls.Add(lblInversionInventario);
             panelInversion.Controls.Add(label8);
-            panelInversion.Location = new Point(1130, 108);
+            panelInversion.Location = new Point(1230, 157);
             panelInversion.Name = "panelInversion";
             panelInversion.Size = new Size(441, 116);
             panelInversion.TabIndex = 18;
@@ -176,7 +176,7 @@
             panelUnidadesIngresadas.Controls.Add(pictureBox12);
             panelUnidadesIngresadas.Controls.Add(lblUnidadesIngresadas);
             panelUnidadesIngresadas.Controls.Add(label6);
-            panelUnidadesIngresadas.Location = new Point(639, 108);
+            panelUnidadesIngresadas.Location = new Point(739, 157);
             panelUnidadesIngresadas.Name = "panelUnidadesIngresadas";
             panelUnidadesIngresadas.Size = new Size(445, 116);
             panelUnidadesIngresadas.TabIndex = 17;
@@ -228,7 +228,7 @@
             panelEntradasRegistradas.Controls.Add(pictureBox11);
             panelEntradasRegistradas.Controls.Add(lblTotalEntradas);
             panelEntradasRegistradas.Controls.Add(label3);
-            panelEntradasRegistradas.Location = new Point(123, 108);
+            panelEntradasRegistradas.Location = new Point(231, 157);
             panelEntradasRegistradas.Name = "panelEntradasRegistradas";
             panelEntradasRegistradas.Size = new Size(445, 116);
             panelEntradasRegistradas.TabIndex = 16;
@@ -288,7 +288,7 @@
             panelRegistrarEntrada.Controls.Add(label15);
             panelRegistrarEntrada.Controls.Add(pictureBox2);
             panelRegistrarEntrada.Controls.Add(label16);
-            panelRegistrarEntrada.Location = new Point(123, 249);
+            panelRegistrarEntrada.Location = new Point(231, 298);
             panelRegistrarEntrada.Name = "panelRegistrarEntrada";
             panelRegistrarEntrada.Size = new Size(475, 578);
             panelRegistrarEntrada.TabIndex = 19;
@@ -423,39 +423,42 @@
             // pictureBox14
             // 
             pictureBox14.Image = (Image)resources.GetObject("pictureBox14.Image");
-            pictureBox14.Location = new Point(643, 253);
+            pictureBox14.Location = new Point(20, 69);
             pictureBox14.Name = "pictureBox14";
             pictureBox14.Size = new Size(40, 40);
             pictureBox14.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox14.TabIndex = 59;
             pictureBox14.TabStop = false;
+            pictureBox14.Click += pictureBox14_Click;
             // 
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(689, 260);
+            txtBuscar.Location = new Point(66, 76);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = " Buscar entradas...";
-            txtBuscar.Size = new Size(882, 30);
+            txtBuscar.Size = new Size(850, 30);
             txtBuscar.TabIndex = 58;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // panelEntradas
             // 
             panelEntradas.BackColor = Color.FromArgb(242, 249, 254);
+            panelEntradas.Controls.Add(pictureBox14);
+            panelEntradas.Controls.Add(txtBuscar);
             panelEntradas.Controls.Add(panelPaginacion);
             panelEntradas.Controls.Add(dgvEntradas);
             panelEntradas.Controls.Add(label17);
             panelEntradas.Controls.Add(pictureBox3);
-            panelEntradas.Location = new Point(643, 318);
+            panelEntradas.Location = new Point(739, 298);
             panelEntradas.Name = "panelEntradas";
-            panelEntradas.Size = new Size(935, 509);
+            panelEntradas.Size = new Size(935, 578);
             panelEntradas.TabIndex = 57;
             // 
             // panelPaginacion
             // 
             panelPaginacion.BackColor = Color.FromArgb(220, 233, 247);
-            panelPaginacion.Location = new Point(20, 432);
+            panelPaginacion.Location = new Point(20, 506);
             panelPaginacion.Name = "panelPaginacion";
             panelPaginacion.Size = new Size(896, 59);
             panelPaginacion.TabIndex = 9;
@@ -465,10 +468,10 @@
             dgvEntradas.BackgroundColor = Color.FromArgb(220, 233, 247);
             dgvEntradas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEntradas.Columns.AddRange(new DataGridViewColumn[] { colFecha, colProducto, colProveedor, colCantidad, colCostoLote });
-            dgvEntradas.Location = new Point(20, 81);
+            dgvEntradas.Location = new Point(20, 115);
             dgvEntradas.Name = "dgvEntradas";
             dgvEntradas.RowHeadersWidth = 51;
-            dgvEntradas.Size = new Size(896, 320);
+            dgvEntradas.Size = new Size(896, 375);
             dgvEntradas.TabIndex = 8;
             // 
             // colFecha
@@ -510,7 +513,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
-            label17.Location = new Point(83, 34);
+            label17.Location = new Point(83, 22);
             label17.Name = "label17";
             label17.Size = new Size(211, 25);
             label17.TabIndex = 6;
@@ -519,7 +522,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.Categoria_Menos;
-            pictureBox3.Location = new Point(20, 15);
+            pictureBox3.Location = new Point(20, 3);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(60, 60);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -531,9 +534,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(220, 233, 247);
-            ClientSize = new Size(1632, 915);
-            Controls.Add(pictureBox14);
-            Controls.Add(txtBuscar);
+            ClientSize = new Size(1902, 983);
             Controls.Add(panelEntradas);
             Controls.Add(panelRegistrarEntrada);
             Controls.Add(panelInversion);

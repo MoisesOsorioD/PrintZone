@@ -38,6 +38,13 @@ namespace LibreriaPrintZone.Views
             PanelRedondeado.Aplicar(PanelUltimoRespaldo, 20);
             PanelRedondeado.Aplicar(panel6, 20);
 
+            BotonRedondeado.Aplicar(btnCambiarUbicacion, 10);
+            BotonRedondeado.Aplicar(btnCrearRespaldo, 10);
+            BotonRedondeado.Aplicar(btnRespaldoAutomatico, 10);
+            BotonRedondeado.Aplicar(btnRespaldoManual, 10);
+            BotonRedondeado.Aplicar(btnRestaurarRespaldo, 10);
+            BotonRedondeado.Aplicar(btnSeleccionarRespaldo, 10);
+
 
 
 
